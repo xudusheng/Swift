@@ -59,6 +59,10 @@
 		098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E44031D472360003D5455 /* MyHTTPConnection.m */; };
 		098E44371D472360003D5455 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 098E44051D472360003D5455 /* index.html */; };
 		098E44381D472360003D5455 /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = 098E44061D472360003D5455 /* upload.html */; };
+		09FAE7EA1D4732EF00281F83 /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */; };
+		09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */; };
+		09FAE7F11D47686500281F83 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F01D47686500281F83 /* snowman.png */; };
+		09FAE7F31D476CEB00281F83 /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F21D476CEB00281F83 /* map.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +150,10 @@
 		098E44031D472360003D5455 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
 		098E44051D472360003D5455 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		098E44061D472360003D5455 /* upload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = upload.html; sourceTree = "<group>"; };
+		09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
+		09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSRootViewController.swift; sourceTree = "<group>"; };
+		09FAE7F01D47686500281F83 /* snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowman.png; sourceTree = "<group>"; };
+		09FAE7F21D476CEB00281F83 /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,7 @@
 		098E43A01D472360003D5455 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				09FAE7EB1D4733B100281F83 /* RootControllers */,
 				09FAE7E81D4732D400281F83 /* Core-Animation-Advanced-Techniques */,
 			);
 			path = ViewControllers;
@@ -477,8 +486,19 @@
 		09FAE7E81D4732D400281F83 /* Core-Animation-Advanced-Techniques */ = {
 			isa = PBXGroup;
 			children = (
+				09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */,
+				09FAE7F01D47686500281F83 /* snowman.png */,
+				09FAE7F21D476CEB00281F83 /* map.bmp */,
 			);
 			path = "Core-Animation-Advanced-Techniques";
+			sourceTree = "<group>";
+		};
+		09FAE7EB1D4733B100281F83 /* RootControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */,
+			);
+			path = RootControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +568,7 @@
 				098E44381D472360003D5455 /* upload.html in Resources */,
 				098E44191D472360003D5455 /* 长投专刊 精华版（一）穷爸爸，富爸爸-长投网 in Resources */,
 				098E44161D472360003D5455 /* 快挖掘你的财商-任宪法 著 in Resources */,
+				09FAE7F31D476CEB00281F83 /* map.bmp in Resources */,
 				098E43911D4721AE003D5455 /* Assets.xcassets in Resources */,
 				098E44181D472360003D5455 /* 途客圈创业记：不疯魔，不成活-陈天 in Resources */,
 				098E44101D472360003D5455 /* 30岁前建人脉 30岁后赚大钱-龙柒 in Resources */,
@@ -555,6 +576,7 @@
 				098E441A1D472360003D5455 /* About.txt in Resources */,
 				098E44171D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 in Resources */,
 				098E44111D472360003D5455 /* 一开口就能找对话题-刘成 in Resources */,
+				09FAE7F11D47686500281F83 /* snowman.png in Resources */,
 				098E44121D472360003D5455 /* 互联网思维-钟殿舟 in Resources */,
 				098E438C1D4721AE003D5455 /* Main.storyboard in Resources */,
 				098E44141D472360003D5455 /* 创新的赢利模式-纪永英 in Resources */,
@@ -590,6 +612,7 @@
 				098E44321D472360003D5455 /* HTTPErrorResponse.m in Sources */,
 				098E440E1D472360003D5455 /* XDSSwiftHeaders.swift in Sources */,
 				098E44281D472360003D5455 /* HTTPAuthenticationRequest.m in Sources */,
+				09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */,
 				098E44201D472360003D5455 /* DDLog.m in Sources */,
 				098E44301D472360003D5455 /* HTTPDataResponse.m in Sources */,
 				098E44291D472360003D5455 /* HTTPConnection.m in Sources */,
@@ -598,6 +621,7 @@
 				098E441E1D472360003D5455 /* DDASLLogger.m in Sources */,
 				098E442A1D472360003D5455 /* HTTPMessage.m in Sources */,
 				098E44331D472360003D5455 /* HTTPFileResponse.m in Sources */,
+				09FAE7EA1D4732EF00281F83 /* CoreAnimationViewController.swift in Sources */,
 				098E44221D472360003D5455 /* ContextFilterLogFormatter.m in Sources */,
 				098E44341D472360003D5455 /* HTTPRedirectResponse.m in Sources */,
 				098E442D1D472360003D5455 /* MultipartMessageHeader.m in Sources */,

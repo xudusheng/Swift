@@ -8,28 +8,47 @@
 
 import UIKit
 
-class CoreAnimationViewController: UIViewController {
+class CoreAnimationViewController: XDSRootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.swiftRootTableViewControllerDataInit();
+        self.createSwiftRootTableViewControllerUI();
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: - UI相关
+    func createSwiftRootTableViewControllerUI(){
+        let layerView = UIView(frame: CGRectMake(0, 0, 200, 200));
+        layerView.backgroundColor = UIColor.brownColor();
+        layerView.center = self.view.center;
+        self.view.addSubview(layerView);
+        
+//        let snowmanImage:UIImage! = UIImage(named: "snowman");
+//        layerView.layer.contents = snowmanImage.CGImage;
+//        layerView.layer.contentsGravity = kCAGravityCenter;
+//        layerView.layer.contentsScale = snowmanImage.scale;
+        
+        
+        let mapImage = UIImage(named: "map.bmp");
+        layerView.layer.contents = mapImage?.CGImage;
+        layerView.layer.contentsGravity = kCAGravityResizeAspect;
+        layerView.layer.contentsRect = CGRectMake(0.5, 0.5, 0.5, 0.5);
+        
     }
+
     
+    
+    //MARK: - 代理方法
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: - 网络请求
+    
+    //MARK: - 事件响应处理
+    
+    //MARK: - 其他私有方法
+    
+    //MARK: - 内存管理相关
+    func swiftRootTableViewControllerDataInit(){
+        
     }
-    */
 
 }

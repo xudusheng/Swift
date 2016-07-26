@@ -16,15 +16,15 @@
                         <sections>
                             <tableViewSection headerTitle="功能" id="bN7-nY-CFq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="PeF-Ya-DqX" style="IBUITableViewCellStyleDefault" id="tW4-Ai-4gX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="PeF-Ya-DqX" style="IBUITableViewCellStyleDefault" id="tW4-Ai-4gX">
                                         <rect key="frame" x="0.0" y="114" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tW4-Ai-4gX" id="XcR-eX-0Vw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Core-Animation-Advanced-Techniques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PeF-Ya-DqX">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -32,6 +32,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sve-XS-7fl" kind="push" id="kRQ-pB-a2D"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VFb-jr-U2C">
                                         <rect key="frame" x="0.0" y="158" width="375" height="44"/>
@@ -90,6 +93,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Vy-K7-rNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="418.5" y="508.5"/>
+        </scene>
+        <!--Core-Animation-Advanced-Techniques-->
+        <scene sceneID="bDJ-UZ-6Bl">
+            <objects>
+                <viewController id="sve-XS-7fl" customClass="CoreAnimationViewController" customModule="XDSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vG8-Cg-VLV"/>
+                        <viewControllerLayoutGuide type="bottom" id="A0b-Be-Qd0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gtq-rl-iTR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Core-Animation-Advanced-Techniques" id="hqD-ia-J8T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cA-DT-aeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882.5" y="508.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qEr-2m-Ozl">
