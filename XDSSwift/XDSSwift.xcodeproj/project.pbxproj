@@ -1,0 +1,773 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43861D4721AE003D5455 /* AppDelegate.swift */; };
+		098E43891D4721AE003D5455 /* XDSSwiftRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */; };
+		098E438C1D4721AE003D5455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098E438A1D4721AE003D5455 /* Main.storyboard */; };
+		098E438F1D4721AE003D5455 /* XDSSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 098E438D1D4721AE003D5455 /* XDSSwift.xcdatamodeld */; };
+		098E43911D4721AE003D5455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098E43901D4721AE003D5455 /* Assets.xcassets */; };
+		098E43941D4721AE003D5455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098E43921D4721AE003D5455 /* LaunchScreen.storyboard */; };
+		098E440A1D472360003D5455 /* XDSIPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43A81D472360003D5455 /* XDSIPHelper.m */; };
+		098E440B1D472360003D5455 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43AB1D472360003D5455 /* SSKeychain.m */; };
+		098E440C1D472360003D5455 /* XDSThirdPartyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43AD1D472360003D5455 /* XDSThirdPartyService.swift */; };
+		098E440E1D472360003D5455 /* XDSSwiftHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43B21D472360003D5455 /* XDSSwiftHeaders.swift */; };
+		098E440F1D472360003D5455 /* wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 098E43B61D472360003D5455 /* wifi.png */; };
+		098E44101D472360003D5455 /* 30岁前建人脉 30岁后赚大钱-龙柒 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43B81D472360003D5455 /* 30岁前建人脉 30岁后赚大钱-龙柒 */; };
+		098E44111D472360003D5455 /* 一开口就能找对话题-刘成 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43B91D472360003D5455 /* 一开口就能找对话题-刘成 */; };
+		098E44121D472360003D5455 /* 互联网思维-钟殿舟 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43BA1D472360003D5455 /* 互联网思维-钟殿舟 */; };
+		098E44131D472360003D5455 /* 创业时，我们在知乎聊什么?-知乎 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43BB1D472360003D5455 /* 创业时，我们在知乎聊什么?-知乎 */; };
+		098E44141D472360003D5455 /* 创新的赢利模式-纪永英 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43BC1D472360003D5455 /* 创新的赢利模式-纪永英 */; };
+		098E44151D472360003D5455 /* 引爆社群：移动互联网时代的新4C法则-唐兴通 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43BD1D472360003D5455 /* 引爆社群：移动互联网时代的新4C法则-唐兴通 */; };
+		098E44161D472360003D5455 /* 快挖掘你的财商-任宪法 著 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43BE1D472360003D5455 /* 快挖掘你的财商-任宪法 著 */; };
+		098E44171D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43BF1D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 */; };
+		098E44181D472360003D5455 /* 途客圈创业记：不疯魔，不成活-陈天 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43C01D472360003D5455 /* 途客圈创业记：不疯魔，不成活-陈天 */; };
+		098E44191D472360003D5455 /* 长投专刊 精华版（一）穷爸爸，富爸爸-长投网 in Resources */ = {isa = PBXBuildFile; fileRef = 098E43C11D472360003D5455 /* 长投专刊 精华版（一）穷爸爸，富爸爸-长投网 */; };
+		098E441A1D472360003D5455 /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = 098E43C51D472360003D5455 /* About.txt */; };
+		098E441B1D472360003D5455 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43C71D472360003D5455 /* GCDAsyncSocket.m */; };
+		098E441C1D472360003D5455 /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = 098E43C91D472360003D5455 /* About.txt */; };
+		098E441D1D472360003D5455 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43CB1D472360003D5455 /* DDAbstractDatabaseLogger.m */; };
+		098E441E1D472360003D5455 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43CD1D472360003D5455 /* DDASLLogger.m */; };
+		098E441F1D472360003D5455 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43CF1D472360003D5455 /* DDFileLogger.m */; };
+		098E44201D472360003D5455 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43D11D472360003D5455 /* DDLog.m */; };
+		098E44211D472360003D5455 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43D31D472360003D5455 /* DDTTYLogger.m */; };
+		098E44221D472360003D5455 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43D61D472360003D5455 /* ContextFilterLogFormatter.m */; };
+		098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43D81D472360003D5455 /* DispatchQueueLogFormatter.m */; };
+		098E44241D472360003D5455 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 098E43D91D472360003D5455 /* README.txt */; };
+		098E44251D472360003D5455 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43DD1D472360003D5455 /* DDData.m */; };
+		098E44261D472360003D5455 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43DF1D472360003D5455 /* DDNumber.m */; };
+		098E44271D472360003D5455 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43E11D472360003D5455 /* DDRange.m */; };
+		098E44281D472360003D5455 /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43E31D472360003D5455 /* HTTPAuthenticationRequest.m */; };
+		098E44291D472360003D5455 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43E51D472360003D5455 /* HTTPConnection.m */; };
+		098E442A1D472360003D5455 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43E81D472360003D5455 /* HTTPMessage.m */; };
+		098E442B1D472360003D5455 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43EB1D472360003D5455 /* HTTPServer.m */; };
+		098E442C1D472360003D5455 /* MultipartFormDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43EE1D472360003D5455 /* MultipartFormDataParser.m */; };
+		098E442D1D472360003D5455 /* MultipartMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43F01D472360003D5455 /* MultipartMessageHeader.m */; };
+		098E442E1D472360003D5455 /* MultipartMessageHeaderField.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43F21D472360003D5455 /* MultipartMessageHeaderField.m */; };
+		098E442F1D472360003D5455 /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43F51D472360003D5455 /* HTTPAsyncFileResponse.m */; };
+		098E44301D472360003D5455 /* HTTPDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43F71D472360003D5455 /* HTTPDataResponse.m */; };
+		098E44311D472360003D5455 /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43F91D472360003D5455 /* HTTPDynamicFileResponse.m */; };
+		098E44321D472360003D5455 /* HTTPErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43FB1D472360003D5455 /* HTTPErrorResponse.m */; };
+		098E44331D472360003D5455 /* HTTPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43FD1D472360003D5455 /* HTTPFileResponse.m */; };
+		098E44341D472360003D5455 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E43FF1D472360003D5455 /* HTTPRedirectResponse.m */; };
+		098E44351D472360003D5455 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E44011D472360003D5455 /* WebSocket.m */; };
+		098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E44031D472360003D5455 /* MyHTTPConnection.m */; };
+		098E44371D472360003D5455 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 098E44051D472360003D5455 /* index.html */; };
+		098E44381D472360003D5455 /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = 098E44061D472360003D5455 /* upload.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		098E43831D4721AE003D5455 /* XDSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		098E43861D4721AE003D5455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDSSwiftRootTableViewController.swift; sourceTree = "<group>"; };
+		098E438B1D4721AE003D5455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		098E438E1D4721AE003D5455 /* XDSSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XDSSwift.xcdatamodel; sourceTree = "<group>"; };
+		098E43901D4721AE003D5455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		098E43931D4721AE003D5455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		098E43951D4721AE003D5455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		098E43A71D472360003D5455 /* XDSIPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSIPHelper.h; sourceTree = "<group>"; };
+		098E43A81D472360003D5455 /* XDSIPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSIPHelper.m; sourceTree = "<group>"; };
+		098E43AA1D472360003D5455 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		098E43AB1D472360003D5455 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		098E43AD1D472360003D5455 /* XDSThirdPartyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSThirdPartyService.swift; sourceTree = "<group>"; };
+		098E43B21D472360003D5455 /* XDSSwiftHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSSwiftHeaders.swift; sourceTree = "<group>"; };
+		098E43B61D472360003D5455 /* wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifi.png; sourceTree = "<group>"; };
+		098E43B81D472360003D5455 /* 30岁前建人脉 30岁后赚大钱-龙柒 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "30岁前建人脉 30岁后赚大钱-龙柒"; sourceTree = "<group>"; };
+		098E43B91D472360003D5455 /* 一开口就能找对话题-刘成 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "一开口就能找对话题-刘成"; sourceTree = "<group>"; };
+		098E43BA1D472360003D5455 /* 互联网思维-钟殿舟 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "互联网思维-钟殿舟"; sourceTree = "<group>"; };
+		098E43BB1D472360003D5455 /* 创业时，我们在知乎聊什么?-知乎 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "创业时，我们在知乎聊什么?-知乎"; sourceTree = "<group>"; };
+		098E43BC1D472360003D5455 /* 创新的赢利模式-纪永英 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "创新的赢利模式-纪永英"; sourceTree = "<group>"; };
+		098E43BD1D472360003D5455 /* 引爆社群：移动互联网时代的新4C法则-唐兴通 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "引爆社群：移动互联网时代的新4C法则-唐兴通"; sourceTree = "<group>"; };
+		098E43BE1D472360003D5455 /* 快挖掘你的财商-任宪法 著 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "快挖掘你的财商-任宪法 著"; sourceTree = "<group>"; };
+		098E43BF1D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "货币的教训：汇率与货币系列评论-周其仁"; sourceTree = "<group>"; };
+		098E43C01D472360003D5455 /* 途客圈创业记：不疯魔，不成活-陈天 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "途客圈创业记：不疯魔，不成活-陈天"; sourceTree = "<group>"; };
+		098E43C11D472360003D5455 /* 长投专刊 精华版（一）穷爸爸，富爸爸-长投网 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "长投专刊 精华版（一）穷爸爸，富爸爸-长投网"; sourceTree = "<group>"; };
+		098E43C51D472360003D5455 /* About.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About.txt; sourceTree = "<group>"; };
+		098E43C61D472360003D5455 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		098E43C71D472360003D5455 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		098E43C91D472360003D5455 /* About.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About.txt; sourceTree = "<group>"; };
+		098E43CA1D472360003D5455 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		098E43CB1D472360003D5455 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		098E43CC1D472360003D5455 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		098E43CD1D472360003D5455 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		098E43CE1D472360003D5455 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		098E43CF1D472360003D5455 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		098E43D01D472360003D5455 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		098E43D11D472360003D5455 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		098E43D21D472360003D5455 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		098E43D31D472360003D5455 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		098E43D51D472360003D5455 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		098E43D61D472360003D5455 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		098E43D71D472360003D5455 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		098E43D81D472360003D5455 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		098E43D91D472360003D5455 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		098E43DC1D472360003D5455 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
+		098E43DD1D472360003D5455 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
+		098E43DE1D472360003D5455 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
+		098E43DF1D472360003D5455 /* DDNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNumber.m; sourceTree = "<group>"; };
+		098E43E01D472360003D5455 /* DDRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRange.h; sourceTree = "<group>"; };
+		098E43E11D472360003D5455 /* DDRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRange.m; sourceTree = "<group>"; };
+		098E43E21D472360003D5455 /* HTTPAuthenticationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAuthenticationRequest.h; sourceTree = "<group>"; };
+		098E43E31D472360003D5455 /* HTTPAuthenticationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAuthenticationRequest.m; sourceTree = "<group>"; };
+		098E43E41D472360003D5455 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
+		098E43E51D472360003D5455 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
+		098E43E61D472360003D5455 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
+		098E43E71D472360003D5455 /* HTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPMessage.h; sourceTree = "<group>"; };
+		098E43E81D472360003D5455 /* HTTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPMessage.m; sourceTree = "<group>"; };
+		098E43E91D472360003D5455 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
+		098E43EA1D472360003D5455 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		098E43EB1D472360003D5455 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		098E43ED1D472360003D5455 /* MultipartFormDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartFormDataParser.h; sourceTree = "<group>"; };
+		098E43EE1D472360003D5455 /* MultipartFormDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartFormDataParser.m; sourceTree = "<group>"; };
+		098E43EF1D472360003D5455 /* MultipartMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeader.h; sourceTree = "<group>"; };
+		098E43F01D472360003D5455 /* MultipartMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeader.m; sourceTree = "<group>"; };
+		098E43F11D472360003D5455 /* MultipartMessageHeaderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeaderField.h; sourceTree = "<group>"; };
+		098E43F21D472360003D5455 /* MultipartMessageHeaderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeaderField.m; sourceTree = "<group>"; };
+		098E43F41D472360003D5455 /* HTTPAsyncFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAsyncFileResponse.h; sourceTree = "<group>"; };
+		098E43F51D472360003D5455 /* HTTPAsyncFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAsyncFileResponse.m; sourceTree = "<group>"; };
+		098E43F61D472360003D5455 /* HTTPDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDataResponse.h; sourceTree = "<group>"; };
+		098E43F71D472360003D5455 /* HTTPDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDataResponse.m; sourceTree = "<group>"; };
+		098E43F81D472360003D5455 /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
+		098E43F91D472360003D5455 /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
+		098E43FA1D472360003D5455 /* HTTPErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPErrorResponse.h; sourceTree = "<group>"; };
+		098E43FB1D472360003D5455 /* HTTPErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPErrorResponse.m; sourceTree = "<group>"; };
+		098E43FC1D472360003D5455 /* HTTPFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPFileResponse.h; sourceTree = "<group>"; };
+		098E43FD1D472360003D5455 /* HTTPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPFileResponse.m; sourceTree = "<group>"; };
+		098E43FE1D472360003D5455 /* HTTPRedirectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRedirectResponse.h; sourceTree = "<group>"; };
+		098E43FF1D472360003D5455 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
+		098E44001D472360003D5455 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		098E44011D472360003D5455 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
+		098E44021D472360003D5455 /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHTTPConnection.h; sourceTree = "<group>"; };
+		098E44031D472360003D5455 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
+		098E44051D472360003D5455 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		098E44061D472360003D5455 /* upload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = upload.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		098E43801D4721AE003D5455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		098E437A1D4721AE003D5455 = {
+			isa = PBXGroup;
+			children = (
+				098E43851D4721AE003D5455 /* XDSSwift */,
+				098E43841D4721AE003D5455 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		098E43841D4721AE003D5455 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				098E43831D4721AE003D5455 /* XDSSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		098E43851D4721AE003D5455 /* XDSSwift */ = {
+			isa = PBXGroup;
+			children = (
+				098E43861D4721AE003D5455 /* AppDelegate.swift */,
+				098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */,
+				098E438A1D4721AE003D5455 /* Main.storyboard */,
+				098E439B1D47235F003D5455 /* APPDelegate */,
+				098E439D1D472360003D5455 /* Categories */,
+				098E439E1D472360003D5455 /* General */,
+				098E43A51D472360003D5455 /* Helpers */,
+				098E43B01D472360003D5455 /* Macro */,
+				098E43B31D472360003D5455 /* Models */,
+				098E43B41D472360003D5455 /* Resources */,
+				098E43C21D472360003D5455 /* Vendors */,
+				098E43901D4721AE003D5455 /* Assets.xcassets */,
+				098E43921D4721AE003D5455 /* LaunchScreen.storyboard */,
+				098E43951D4721AE003D5455 /* Info.plist */,
+				098E438D1D4721AE003D5455 /* XDSSwift.xcdatamodeld */,
+			);
+			path = XDSSwift;
+			sourceTree = "<group>";
+		};
+		098E439B1D47235F003D5455 /* APPDelegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APPDelegate;
+			sourceTree = "<group>";
+		};
+		098E439D1D472360003D5455 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		098E439E1D472360003D5455 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				098E439F1D472360003D5455 /* Components */,
+				098E43A01D472360003D5455 /* ViewControllers */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		098E439F1D472360003D5455 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		098E43A01D472360003D5455 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09FAE7E81D4732D400281F83 /* Core-Animation-Advanced-Techniques */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		098E43A51D472360003D5455 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				098E43A61D472360003D5455 /* IPHelper */,
+				098E43A91D472360003D5455 /* KeyChain */,
+				098E43AC1D472360003D5455 /* ThirdPartyService */,
+				098E43AE1D472360003D5455 /* Tracker */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		098E43A61D472360003D5455 /* IPHelper */ = {
+			isa = PBXGroup;
+			children = (
+				098E43A71D472360003D5455 /* XDSIPHelper.h */,
+				098E43A81D472360003D5455 /* XDSIPHelper.m */,
+			);
+			path = IPHelper;
+			sourceTree = "<group>";
+		};
+		098E43A91D472360003D5455 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				098E43AA1D472360003D5455 /* SSKeychain.h */,
+				098E43AB1D472360003D5455 /* SSKeychain.m */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		098E43AC1D472360003D5455 /* ThirdPartyService */ = {
+			isa = PBXGroup;
+			children = (
+				098E43AD1D472360003D5455 /* XDSThirdPartyService.swift */,
+			);
+			path = ThirdPartyService;
+			sourceTree = "<group>";
+		};
+		098E43AE1D472360003D5455 /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tracker;
+			sourceTree = "<group>";
+		};
+		098E43B01D472360003D5455 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				098E43B11D472360003D5455 /* SwiftHeaders */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		098E43B11D472360003D5455 /* SwiftHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				098E43B21D472360003D5455 /* XDSSwiftHeaders.swift */,
+			);
+			path = SwiftHeaders;
+			sourceTree = "<group>";
+		};
+		098E43B31D472360003D5455 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		098E43B41D472360003D5455 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				098E43B51D472360003D5455 /* images */,
+				098E43B71D472360003D5455 /* wechatNotes */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		098E43B51D472360003D5455 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				098E43B61D472360003D5455 /* wifi.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		098E43B71D472360003D5455 /* wechatNotes */ = {
+			isa = PBXGroup;
+			children = (
+				098E43B81D472360003D5455 /* 30岁前建人脉 30岁后赚大钱-龙柒 */,
+				098E43B91D472360003D5455 /* 一开口就能找对话题-刘成 */,
+				098E43BA1D472360003D5455 /* 互联网思维-钟殿舟 */,
+				098E43BB1D472360003D5455 /* 创业时，我们在知乎聊什么?-知乎 */,
+				098E43BC1D472360003D5455 /* 创新的赢利模式-纪永英 */,
+				098E43BD1D472360003D5455 /* 引爆社群：移动互联网时代的新4C法则-唐兴通 */,
+				098E43BE1D472360003D5455 /* 快挖掘你的财商-任宪法 著 */,
+				098E43BF1D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 */,
+				098E43C01D472360003D5455 /* 途客圈创业记：不疯魔，不成活-陈天 */,
+				098E43C11D472360003D5455 /* 长投专刊 精华版（一）穷爸爸，富爸爸-长投网 */,
+			);
+			path = wechatNotes;
+			sourceTree = "<group>";
+		};
+		098E43C21D472360003D5455 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				098E43C31D472360003D5455 /* SimpleFileUploadServer */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		098E43C31D472360003D5455 /* SimpleFileUploadServer */ = {
+			isa = PBXGroup;
+			children = (
+				098E43C41D472360003D5455 /* CocoaAsyncSocket */,
+				098E43C81D472360003D5455 /* CocoaLumberjack */,
+				098E43DA1D472360003D5455 /* Core */,
+				098E44021D472360003D5455 /* MyHTTPConnection.h */,
+				098E44031D472360003D5455 /* MyHTTPConnection.m */,
+				098E44041D472360003D5455 /* web */,
+			);
+			path = SimpleFileUploadServer;
+			sourceTree = "<group>";
+		};
+		098E43C41D472360003D5455 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				098E43C51D472360003D5455 /* About.txt */,
+				098E43C61D472360003D5455 /* GCDAsyncSocket.h */,
+				098E43C71D472360003D5455 /* GCDAsyncSocket.m */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		098E43C81D472360003D5455 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				098E43C91D472360003D5455 /* About.txt */,
+				098E43CA1D472360003D5455 /* DDAbstractDatabaseLogger.h */,
+				098E43CB1D472360003D5455 /* DDAbstractDatabaseLogger.m */,
+				098E43CC1D472360003D5455 /* DDASLLogger.h */,
+				098E43CD1D472360003D5455 /* DDASLLogger.m */,
+				098E43CE1D472360003D5455 /* DDFileLogger.h */,
+				098E43CF1D472360003D5455 /* DDFileLogger.m */,
+				098E43D01D472360003D5455 /* DDLog.h */,
+				098E43D11D472360003D5455 /* DDLog.m */,
+				098E43D21D472360003D5455 /* DDTTYLogger.h */,
+				098E43D31D472360003D5455 /* DDTTYLogger.m */,
+				098E43D41D472360003D5455 /* Extensions */,
+			);
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		098E43D41D472360003D5455 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				098E43D51D472360003D5455 /* ContextFilterLogFormatter.h */,
+				098E43D61D472360003D5455 /* ContextFilterLogFormatter.m */,
+				098E43D71D472360003D5455 /* DispatchQueueLogFormatter.h */,
+				098E43D81D472360003D5455 /* DispatchQueueLogFormatter.m */,
+				098E43D91D472360003D5455 /* README.txt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		098E43DA1D472360003D5455 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				098E43DB1D472360003D5455 /* Categories */,
+				098E43E21D472360003D5455 /* HTTPAuthenticationRequest.h */,
+				098E43E31D472360003D5455 /* HTTPAuthenticationRequest.m */,
+				098E43E41D472360003D5455 /* HTTPConnection.h */,
+				098E43E51D472360003D5455 /* HTTPConnection.m */,
+				098E43E61D472360003D5455 /* HTTPLogging.h */,
+				098E43E71D472360003D5455 /* HTTPMessage.h */,
+				098E43E81D472360003D5455 /* HTTPMessage.m */,
+				098E43E91D472360003D5455 /* HTTPResponse.h */,
+				098E43EA1D472360003D5455 /* HTTPServer.h */,
+				098E43EB1D472360003D5455 /* HTTPServer.m */,
+				098E43EC1D472360003D5455 /* Mime */,
+				098E43F31D472360003D5455 /* Responses */,
+				098E44001D472360003D5455 /* WebSocket.h */,
+				098E44011D472360003D5455 /* WebSocket.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		098E43DB1D472360003D5455 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				098E43DC1D472360003D5455 /* DDData.h */,
+				098E43DD1D472360003D5455 /* DDData.m */,
+				098E43DE1D472360003D5455 /* DDNumber.h */,
+				098E43DF1D472360003D5455 /* DDNumber.m */,
+				098E43E01D472360003D5455 /* DDRange.h */,
+				098E43E11D472360003D5455 /* DDRange.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		098E43EC1D472360003D5455 /* Mime */ = {
+			isa = PBXGroup;
+			children = (
+				098E43ED1D472360003D5455 /* MultipartFormDataParser.h */,
+				098E43EE1D472360003D5455 /* MultipartFormDataParser.m */,
+				098E43EF1D472360003D5455 /* MultipartMessageHeader.h */,
+				098E43F01D472360003D5455 /* MultipartMessageHeader.m */,
+				098E43F11D472360003D5455 /* MultipartMessageHeaderField.h */,
+				098E43F21D472360003D5455 /* MultipartMessageHeaderField.m */,
+			);
+			path = Mime;
+			sourceTree = "<group>";
+		};
+		098E43F31D472360003D5455 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				098E43F41D472360003D5455 /* HTTPAsyncFileResponse.h */,
+				098E43F51D472360003D5455 /* HTTPAsyncFileResponse.m */,
+				098E43F61D472360003D5455 /* HTTPDataResponse.h */,
+				098E43F71D472360003D5455 /* HTTPDataResponse.m */,
+				098E43F81D472360003D5455 /* HTTPDynamicFileResponse.h */,
+				098E43F91D472360003D5455 /* HTTPDynamicFileResponse.m */,
+				098E43FA1D472360003D5455 /* HTTPErrorResponse.h */,
+				098E43FB1D472360003D5455 /* HTTPErrorResponse.m */,
+				098E43FC1D472360003D5455 /* HTTPFileResponse.h */,
+				098E43FD1D472360003D5455 /* HTTPFileResponse.m */,
+				098E43FE1D472360003D5455 /* HTTPRedirectResponse.h */,
+				098E43FF1D472360003D5455 /* HTTPRedirectResponse.m */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		098E44041D472360003D5455 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				098E44051D472360003D5455 /* index.html */,
+				098E44061D472360003D5455 /* upload.html */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+		09FAE7E81D4732D400281F83 /* Core-Animation-Advanced-Techniques */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core-Animation-Advanced-Techniques";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		098E43821D4721AE003D5455 /* XDSSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 098E43981D4721AE003D5455 /* Build configuration list for PBXNativeTarget "XDSSwift" */;
+			buildPhases = (
+				098E437F1D4721AE003D5455 /* Sources */,
+				098E43801D4721AE003D5455 /* Frameworks */,
+				098E43811D4721AE003D5455 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XDSSwift;
+			productName = XDSSwift;
+			productReference = 098E43831D4721AE003D5455 /* XDSSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		098E437B1D4721AE003D5455 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = zhengda;
+				TargetAttributes = {
+					098E43821D4721AE003D5455 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 098E437E1D4721AE003D5455 /* Build configuration list for PBXProject "XDSSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 098E437A1D4721AE003D5455;
+			productRefGroup = 098E43841D4721AE003D5455 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				098E43821D4721AE003D5455 /* XDSSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		098E43811D4721AE003D5455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098E44131D472360003D5455 /* 创业时，我们在知乎聊什么?-知乎 in Resources */,
+				098E44241D472360003D5455 /* README.txt in Resources */,
+				098E43941D4721AE003D5455 /* LaunchScreen.storyboard in Resources */,
+				098E44371D472360003D5455 /* index.html in Resources */,
+				098E441C1D472360003D5455 /* About.txt in Resources */,
+				098E44151D472360003D5455 /* 引爆社群：移动互联网时代的新4C法则-唐兴通 in Resources */,
+				098E44381D472360003D5455 /* upload.html in Resources */,
+				098E44191D472360003D5455 /* 长投专刊 精华版（一）穷爸爸，富爸爸-长投网 in Resources */,
+				098E44161D472360003D5455 /* 快挖掘你的财商-任宪法 著 in Resources */,
+				098E43911D4721AE003D5455 /* Assets.xcassets in Resources */,
+				098E44181D472360003D5455 /* 途客圈创业记：不疯魔，不成活-陈天 in Resources */,
+				098E44101D472360003D5455 /* 30岁前建人脉 30岁后赚大钱-龙柒 in Resources */,
+				098E440F1D472360003D5455 /* wifi.png in Resources */,
+				098E441A1D472360003D5455 /* About.txt in Resources */,
+				098E44171D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 in Resources */,
+				098E44111D472360003D5455 /* 一开口就能找对话题-刘成 in Resources */,
+				098E44121D472360003D5455 /* 互联网思维-钟殿舟 in Resources */,
+				098E438C1D4721AE003D5455 /* Main.storyboard in Resources */,
+				098E44141D472360003D5455 /* 创新的赢利模式-纪永英 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		098E437F1D4721AE003D5455 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098E441B1D472360003D5455 /* GCDAsyncSocket.m in Sources */,
+				098E44271D472360003D5455 /* DDRange.m in Sources */,
+				098E440B1D472360003D5455 /* SSKeychain.m in Sources */,
+				098E442F1D472360003D5455 /* HTTPAsyncFileResponse.m in Sources */,
+				098E44211D472360003D5455 /* DDTTYLogger.m in Sources */,
+				098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */,
+				098E442C1D472360003D5455 /* MultipartFormDataParser.m in Sources */,
+				098E44311D472360003D5455 /* HTTPDynamicFileResponse.m in Sources */,
+				098E441F1D472360003D5455 /* DDFileLogger.m in Sources */,
+				098E438F1D4721AE003D5455 /* XDSSwift.xcdatamodeld in Sources */,
+				098E442B1D472360003D5455 /* HTTPServer.m in Sources */,
+				098E43891D4721AE003D5455 /* XDSSwiftRootTableViewController.swift in Sources */,
+				098E440C1D472360003D5455 /* XDSThirdPartyService.swift in Sources */,
+				098E440A1D472360003D5455 /* XDSIPHelper.m in Sources */,
+				098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */,
+				098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */,
+				098E44351D472360003D5455 /* WebSocket.m in Sources */,
+				098E441D1D472360003D5455 /* DDAbstractDatabaseLogger.m in Sources */,
+				098E44251D472360003D5455 /* DDData.m in Sources */,
+				098E44321D472360003D5455 /* HTTPErrorResponse.m in Sources */,
+				098E440E1D472360003D5455 /* XDSSwiftHeaders.swift in Sources */,
+				098E44281D472360003D5455 /* HTTPAuthenticationRequest.m in Sources */,
+				098E44201D472360003D5455 /* DDLog.m in Sources */,
+				098E44301D472360003D5455 /* HTTPDataResponse.m in Sources */,
+				098E44291D472360003D5455 /* HTTPConnection.m in Sources */,
+				098E44261D472360003D5455 /* DDNumber.m in Sources */,
+				098E442E1D472360003D5455 /* MultipartMessageHeaderField.m in Sources */,
+				098E441E1D472360003D5455 /* DDASLLogger.m in Sources */,
+				098E442A1D472360003D5455 /* HTTPMessage.m in Sources */,
+				098E44331D472360003D5455 /* HTTPFileResponse.m in Sources */,
+				098E44221D472360003D5455 /* ContextFilterLogFormatter.m in Sources */,
+				098E44341D472360003D5455 /* HTTPRedirectResponse.m in Sources */,
+				098E442D1D472360003D5455 /* MultipartMessageHeader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		098E438A1D4721AE003D5455 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				098E438B1D4721AE003D5455 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		098E43921D4721AE003D5455 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				098E43931D4721AE003D5455 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		098E43961D4721AE003D5455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		098E43971D4721AE003D5455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		098E43991D4721AE003D5455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XDSSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.XDSSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		098E439A1D4721AE003D5455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XDSSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.XDSSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		098E437E1D4721AE003D5455 /* Build configuration list for PBXProject "XDSSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098E43961D4721AE003D5455 /* Debug */,
+				098E43971D4721AE003D5455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		098E43981D4721AE003D5455 /* Build configuration list for PBXNativeTarget "XDSSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098E43991D4721AE003D5455 /* Debug */,
+				098E439A1D4721AE003D5455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		098E438D1D4721AE003D5455 /* XDSSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				098E438E1D4721AE003D5455 /* XDSSwift.xcdatamodel */,
+			);
+			currentVersion = 098E438E1D4721AE003D5455 /* XDSSwift.xcdatamodel */;
+			path = XDSSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 098E437B1D4721AE003D5455 /* Project object */;
+}
