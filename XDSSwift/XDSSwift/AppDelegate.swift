@@ -14,21 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    //MARK: - UI相关
-    func createSwiftRootTableViewControllerUI(){
-    }
-    
-    //MARK: - 代理方法
-
-    //MARK: - 网络请求
-    
-    //MARK: - 事件响应处理
-    
-    //MARK: - 其他私有方法
-    
-    //MARK: - 内存管理相关
-    func swiftRootTableViewControllerDataInit(){
-    }
+//    //MARK: - UI相关
+//    func createSwiftRootTableViewControllerUI(){
+//    }
+//    
+//    //MARK: - 代理方法
+//
+//    //MARK: - 网络请求
+//    
+//    //MARK: - 事件响应处理
+//    
+//    //MARK: - 其他私有方法
+//    
+//    //MARK: - 内存管理相关
+//    func swiftRootTableViewControllerDataInit(){
+//    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

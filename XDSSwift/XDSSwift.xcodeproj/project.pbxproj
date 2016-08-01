@@ -66,10 +66,13 @@
 		09BEA8B81D4873360043499F /* lostgarden.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09BEA8B41D4873360043499F /* lostgarden.plist */; };
 		09BEA8B91D4873360043499F /* lostgarden.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BEA8B51D4873360043499F /* lostgarden.png */; };
 		09BEA8BA1D4873360043499F /* lostgarden@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BEA8B61D4873360043499F /* lostgarden@2x.png */; };
+		09BF643B1D4EE71C00CA1792 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BF643A1D4EE71C00CA1792 /* GLKit.framework */; };
+		09BF643D1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF643C1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift */; };
 		09FAE7EA1D4732EF00281F83 /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */; };
 		09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */; };
 		09FAE7F11D47686500281F83 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F01D47686500281F83 /* snowman.png */; };
 		09FAE7F31D476CEB00281F83 /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F21D476CEB00281F83 /* map.bmp */; };
+		DEEB0D561A994E049213243E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA704DD93B65A9E29F2A3500 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,15 +167,19 @@
 		09BEA89E1D4849620043499F /* LSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageView.h; sourceTree = "<group>"; };
 		09BEA89F1D4849620043499F /* LSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSImageView.m; sourceTree = "<group>"; };
 		09BEA8A71D484A180043499F /* XDSSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XDSSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		09BEA8A81D4854880043499F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		09BEA8AB1D4871C70043499F /* XDSLayerSpritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSLayerSpritesViewController.swift; sourceTree = "<group>"; };
 		09BEA8B41D4873360043499F /* lostgarden.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lostgarden.plist; sourceTree = "<group>"; };
 		09BEA8B51D4873360043499F /* lostgarden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lostgarden.png; sourceTree = "<group>"; };
 		09BEA8B61D4873360043499F /* lostgarden@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lostgarden@2x.png"; sourceTree = "<group>"; };
+		09BF643A1D4EE71C00CA1792 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		09BF643C1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSCoreAnimationViewController4.swift; sourceTree = "<group>"; };
 		09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
 		09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSRootViewController.swift; sourceTree = "<group>"; };
 		09FAE7F01D47686500281F83 /* snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowman.png; sourceTree = "<group>"; };
 		09FAE7F21D476CEB00281F83 /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
+		3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AA704DD93B65A9E29F2A3500 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +187,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BF643B1D4EE71C00CA1792 /* GLKit.framework in Frameworks */,
+				DEEB0D561A994E049213243E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,9 +198,10 @@
 		098E437A1D4721AE003D5455 = {
 			isa = PBXGroup;
 			children = (
-				09BEA8A81D4854880043499F /* QuartzCore.framework */,
 				098E43851D4721AE003D5455 /* XDSSwift */,
 				098E43841D4721AE003D5455 /* Products */,
+				50510F41356A9182C81776C8 /* Pods */,
+				C487D4CECB8DC6E7A05E565B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -542,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */,
+				09BF643C1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift */,
 				09FAE7F01D47686500281F83 /* snowman.png */,
 				09FAE7F21D476CEB00281F83 /* map.bmp */,
 			);
@@ -556,6 +567,24 @@
 			path = RootControllers;
 			sourceTree = "<group>";
 		};
+		50510F41356A9182C81776C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */,
+				3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C487D4CECB8DC6E7A05E565B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09BF643A1D4EE71C00CA1792 /* GLKit.framework */,
+				AA704DD93B65A9E29F2A3500 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -563,9 +592,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 098E43981D4721AE003D5455 /* Build configuration list for PBXNativeTarget "XDSSwift" */;
 			buildPhases = (
+				71443C4FC2B8AAFA6731EE51 /* Check Pods Manifest.lock */,
 				098E437F1D4721AE003D5455 /* Sources */,
 				098E43801D4721AE003D5455 /* Frameworks */,
 				098E43811D4721AE003D5455 /* Resources */,
+				2B7DD6F39BE6272C647CA552 /* Embed Pods Frameworks */,
+				19943EA13ADE531D2AC7B79C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -643,6 +675,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19943EA13ADE531D2AC7B79C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B7DD6F39BE6272C647CA552 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71443C4FC2B8AAFA6731EE51 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		098E437F1D4721AE003D5455 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -651,6 +731,7 @@
 				098E441B1D472360003D5455 /* GCDAsyncSocket.m in Sources */,
 				098E44271D472360003D5455 /* DDRange.m in Sources */,
 				098E440B1D472360003D5455 /* SSKeychain.m in Sources */,
+				09BF643D1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift in Sources */,
 				098E442F1D472360003D5455 /* HTTPAsyncFileResponse.m in Sources */,
 				098E44211D472360003D5455 /* DDTTYLogger.m in Sources */,
 				098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */,
@@ -799,6 +880,7 @@
 		};
 		098E43991D4721AE003D5455 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -813,6 +895,7 @@
 		};
 		098E439A1D4721AE003D5455 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
