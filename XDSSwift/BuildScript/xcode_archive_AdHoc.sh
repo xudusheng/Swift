@@ -31,7 +31,7 @@ CODE_SIGN_IDENTITY="iPhone Developer: mu he (FX98SJ5KRZ)"
 PROVISIONING_PROFILE="2db1df01-36ed-43f2-94d0-e810b6acc521"
 XCARCHIVE_PATH="${BUILD_PATH}/${ARCHIVE_FILE_NAME}.xcarchive"
 xcodebuild -workspace "$WORKSPACE_NAME" -scheme "$SCHEME_NAME" -configuration "$CONFIGURATION"  -archivePath "$XCARCHIVE_PATH" CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" archive
-#
+
 EXPORT_OPTIONS_PLIST_PATH="BuildScript/AdHocExportOptions.plist"
 IPA_PATH="${BUILD_PATH}"
 xcodebuild -exportArchive -archivePath "$XCARCHIVE_PATH" -exportPath "$IPA_PATH" -exportOptionsPlist "$EXPORT_OPTIONS_PLIST_PATH"
