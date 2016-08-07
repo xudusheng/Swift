@@ -1,9 +1,6 @@
 # Swift
-
 大标题
-====
-<br/>
-
+==
 中标题
 ----
 
@@ -13,8 +10,12 @@
 ####四级标题
 #####五级标题
 ######六级标题
+如果你想使一段话中部分文字高亮显示，来起到突出`强调`的作用，那么可以把它用``包围起来。
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        let transition = CATransition();
+        transition.type = kCATransitionFade;
+        self.view.layer.addAnimation(transition, forKey: nil);
+    } 
 
-	欢迎到访
-	很高兴见到您  
-	祝您，早上好，中午好，下午好，晚安  
-youwentima
+xxxx
+==
