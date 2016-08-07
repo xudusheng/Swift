@@ -72,6 +72,7 @@
 		09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */; };
 		09FAE7F11D47686500281F83 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F01D47686500281F83 /* snowman.png */; };
 		09FAE7F31D476CEB00281F83 /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F21D476CEB00281F83 /* map.bmp */; };
+		A0D257DE1D56D76800302E1B /* XDSMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */; };
 		DEEB0D561A994E049213243E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA704DD93B65A9E29F2A3500 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -179,6 +180,7 @@
 		09FAE7F21D476CEB00281F83 /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
 		3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSMainTabBarController.swift; sourceTree = "<group>"; };
 		AA704DD93B65A9E29F2A3500 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				098E43861D4721AE003D5455 /* AppDelegate.swift */,
+				A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */,
 				098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */,
 				098E438A1D4721AE003D5455 /* Main.storyboard */,
 				098E439B1D47235F003D5455 /* APPDelegate */,
@@ -741,6 +744,7 @@
 				098E438F1D4721AE003D5455 /* XDSSwift.xcdatamodeld in Sources */,
 				098E442B1D472360003D5455 /* HTTPServer.m in Sources */,
 				098E43891D4721AE003D5455 /* XDSSwiftRootTableViewController.swift in Sources */,
+				A0D257DE1D56D76800302E1B /* XDSMainTabBarController.swift in Sources */,
 				098E440C1D472360003D5455 /* XDSThirdPartyService.swift in Sources */,
 				098E440A1D472360003D5455 /* XDSIPHelper.m in Sources */,
 				098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */,
@@ -883,12 +887,12 @@
 			baseConfigurationReference = 5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = XDSSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.laomoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
@@ -900,12 +904,12 @@
 			baseConfigurationReference = 3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = XDSSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.laomoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";

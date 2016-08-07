@@ -6,9 +6,10 @@ ARCHIVE_FILE_NAME="XDSSwift_AdHoc"
 CONFIGURATION="Release"
 BUILD_PATH="build_AdHoc"
 
+#clean
 rm -rf build
 rm -rf "${BUILD_PATH}"
-xcodebuild clean -configuration "$CONFIGURATION" -alltargets
+xcodebuild clean -configuration "${CONFIGURATION}" -alltargets
 #app-store, ad-hoc, package, enterprise, development, and developer-id
 
 #签名只需修改CODE_SIGN_IDENTITY即可，系统会根据CODE_SIGN_IDENTITY与工程中的bundle identifier自动匹配PROVISIONING_PROFILE
@@ -28,8 +29,9 @@ xcodebuild clean -configuration "$CONFIGURATION" -alltargets
 
 
 CODE_SIGN_IDENTITY="iPhone Developer: mu he (FX98SJ5KRZ)"
-PROVISIONING_PROFILE="2db1df01-36ed-43f2-94d0-e810b6acc521"
+#PROVISIONING_PROFILE="2db1df01-36ed-43f2-94d0-e810b6acc521"
 XCARCHIVE_PATH="${BUILD_PATH}/${ARCHIVE_FILE_NAME}.xcarchive"
+
 xcodebuild -workspace "$WORKSPACE_NAME" -scheme "$SCHEME_NAME" -configuration "$CONFIGURATION"  -archivePath "$XCARCHIVE_PATH" CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" archive
 
 EXPORT_OPTIONS_PLIST_PATH="BuildScript/AdHocExportOptions.plist"
@@ -37,7 +39,10 @@ IPA_PATH="${BUILD_PATH}"
 xcodebuild -exportArchive -archivePath "$XCARCHIVE_PATH" -exportPath "$IPA_PATH" -exportOptionsPlist "$EXPORT_OPTIONS_PLIST_PATH"
 #CODE_SIGN_IDENTITY="$CODE_SIGN_IDENTITY" PROVISIONING_PROFILE="$PROVISIONING_PROFILE"
 
+###################################
+#发布到fim.im
+###################################
+
 #firApiToken="a29be0d51c2bfb85b53d1f6cf67fb2e5"
 #fir publish "${IPA_PATH}/${SCHEME_NAME}.ipa" -T "$firApiToken"
 #osascript -e 'display notification "Release To Fir.im" with title "Upload Complete!"'
-
