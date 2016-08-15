@@ -1,0 +1,20 @@
+//
+//  INCPrefixHeader.pch
+//  iNews
+//
+//  Created by zhengda on 16/8/15.
+//  Copyright © 2016年 zhengda. All rights reserved.
+//
+
+#ifndef INCPrefixHeader_pch
+#define INCPrefixHeader_pch
+
+
+#import "INSGlobalDefinitions.h"
+#import "INSThirdPartyHeader.h"
+#import "INSHeader.h"
+
+
+
+
+#endif /* INCPrefixHeader_pch */

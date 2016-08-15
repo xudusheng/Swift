@@ -20,6 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
+    
+//    //MARK: - UI相关
+//    func createSwiftRootTableViewControllerUI(){
+//    }
+//    
+//    //MARK: - 代理方法
+//    
+//    //MARK: - 网络请求
+//    
+//    //MARK: - 事件响应处理
+//    
+//    //MARK: - 其他私有方法
+//    
+//    //MARK: - 内存管理相关
+//    func swiftRootTableViewControllerDataInit(){
+//    }
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
