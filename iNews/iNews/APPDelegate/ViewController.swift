@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        INSRequestHelper.fetchHomePage();
+        INSRequestHelper.fetchHomePage(1, page: 1);
     }
 
     //MARK: - UI相关

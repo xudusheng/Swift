@@ -11,6 +11,5 @@
 @interface INSRequestHelper : NSObject
 
 
-+ (void)fetchHomePage;
-
++ (void)fetchHomePage:(NSInteger)type page:(NSInteger)page;
 @end

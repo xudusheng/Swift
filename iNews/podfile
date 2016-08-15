@@ -4,3 +4,5 @@
 pod 'AFNetworking'
 pod 'GDataXML-HTML', '~> 1.3.0'
 pod 'hpple'
+
+pod 'CWFoundation', :git => 'https://github.com/guojiubo/CWFoundation.git', :commit => '2352449291499091f4e4a82877ec57c9070ced35'

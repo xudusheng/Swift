@@ -10,6 +10,6 @@
 #define INSHeader_h
 
 #import "INSRequestHelper.h"
-
+#import "INSModelsHead.h"
 
 #endif /* INSHeader_h */

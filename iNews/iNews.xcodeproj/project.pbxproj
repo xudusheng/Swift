@@ -16,6 +16,7 @@
 		09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC5F1D61B142008ED4B9 /* AppDelegate.swift */; };
 		09BFFC621D61B142008ED4B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC601D61B142008ED4B9 /* ViewController.swift */; };
 		09BFFC6A1D61BA88008ED4B9 /* INSRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC691D61BA88008ED4B9 /* INSRequestHelper.m */; };
+		A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A057C04B1D62067400D3DB52 /* INSArticleModel.m */; };
 		FEDEB2835B195A5E3045A22D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D880CA22DB9DCC354311DB03 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,9 @@
 		09CD49BC1D61BE340001DA9C /* iNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iNews-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A58AF8C8D52D4EF44D2428F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		72618388FA8AE15329F4EED5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A057C04A1D62067400D3DB52 /* INSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSArticleModel.h; sourceTree = "<group>"; };
+		A057C04B1D62067400D3DB52 /* INSArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSArticleModel.m; sourceTree = "<group>"; };
+		A057C04D1D6206D100D3DB52 /* INSModelsHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INSModelsHead.h; sourceTree = "<group>"; };
 		D880CA22DB9DCC354311DB03 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,7 +85,7 @@
 				09BFFBAF1D61B125008ED4B9 /* Helpers */,
 				09BFFBA01D61B125008ED4B9 /* Categories */,
 				09BFFBB91D61B125008ED4B9 /* Macro */,
-				09BFFBBD1D61B125008ED4B9 /* Models */,
+				A057C0491D62066B00D3DB52 /* Models */,
 				09BFFBD01D61B125008ED4B9 /* Vendors */,
 				09BFFBBE1D61B125008ED4B9 /* Resources */,
 				09BFFB8E1D61B0F8008ED4B9 /* Main.storyboard */,
@@ -180,13 +184,6 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
-		09BFFBBD1D61B125008ED4B9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		09BFFBBE1D61B125008ED4B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +231,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A057C0491D62066B00D3DB52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A057C04D1D6206D100D3DB52 /* INSModelsHead.h */,
+				A057C04A1D62067400D3DB52 /* INSArticleModel.h */,
+				A057C04B1D62067400D3DB52 /* INSArticleModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +276,7 @@
 				TargetAttributes = {
 					09BFFB861D61B0F8008ED4B9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TUBUWPLD5H;
 					};
 				};
 			};
@@ -360,6 +368,7 @@
 				09BFFB931D61B0F8008ED4B9 /* iNews.xcdatamodeld in Sources */,
 				09BFFC621D61B142008ED4B9 /* ViewController.swift in Sources */,
 				09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */,
+				A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */,
 				09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */,
 				09BFFC2B1D61B126008ED4B9 /* SSKeychain.m in Sources */,
 			);
@@ -477,6 +486,7 @@
 			baseConfigurationReference = 5A58AF8C8D52D4EF44D2428F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNews/INCPrefixHeader.pch;
 				INFOPLIST_FILE = iNews/Info.plist;
@@ -485,8 +495,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iNews/Vendors/MobiSageSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.iNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.inews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
 				SWIFT_OBJC_BRIDGING_HEADER = "iNews/iNews-Bridging-Header.h";
 			};
 			name = Debug;
@@ -496,6 +507,7 @@
 			baseConfigurationReference = 72618388FA8AE15329F4EED5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNews/INCPrefixHeader.pch;
 				INFOPLIST_FILE = iNews/Info.plist;
@@ -504,8 +516,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iNews/Vendors/MobiSageSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.iNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.inews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
 				SWIFT_OBJC_BRIDGING_HEADER = "iNews/iNews-Bridging-Header.h";
 			};
 			name = Release;
