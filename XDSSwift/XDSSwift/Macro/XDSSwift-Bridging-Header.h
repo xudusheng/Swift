@@ -11,5 +11,8 @@
 
 #import "LSImageMap.h"
 #import "LSImageView.h"
-
+#import "MobiSageManager.h"
+#import "MobiSageBanner.h"
+#import "MobiSageFactory.h"
+#import "MobiSageNative.h"
 #endif /* XDSSwift_Bridging_Header_h */

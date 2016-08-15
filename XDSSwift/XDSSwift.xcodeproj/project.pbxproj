@@ -68,6 +68,14 @@
 		09BEA8BA1D4873360043499F /* lostgarden@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09BEA8B61D4873360043499F /* lostgarden@2x.png */; };
 		09BF643B1D4EE71C00CA1792 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BF643A1D4EE71C00CA1792 /* GLKit.framework */; };
 		09BF643D1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF643C1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift */; };
+		09BFFB691D6182F1008ED4B9 /* XDSAdsageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFB681D6182F1008ED4B9 /* XDSAdsageViewController.swift */; };
+		09BFFB711D61834D008ED4B9 /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB6B1D61834D008ED4B9 /* libMobiSage.a */; };
+		09BFFB731D61836E008ED4B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB721D61836E008ED4B9 /* CoreLocation.framework */; };
+		09BFFB751D61837D008ED4B9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB741D61837D008ED4B9 /* CoreTelephony.framework */; };
+		09BFFB771D618382008ED4B9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB761D618382008ED4B9 /* AdSupport.framework */; };
+		09BFFB791D61838E008ED4B9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB781D61838E008ED4B9 /* StoreKit.framework */; };
+		09BFFB7B1D618397008ED4B9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB7A1D618397008ED4B9 /* SystemConfiguration.framework */; };
+		09BFFB7D1D6183A0008ED4B9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BFFB7C1D6183A0008ED4B9 /* JavaScriptCore.framework */; };
 		09FAE7EA1D4732EF00281F83 /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */; };
 		09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */; };
 		09FAE7F11D47686500281F83 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F01D47686500281F83 /* snowman.png */; };
@@ -174,6 +182,19 @@
 		09BEA8B61D4873360043499F /* lostgarden@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lostgarden@2x.png"; sourceTree = "<group>"; };
 		09BF643A1D4EE71C00CA1792 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		09BF643C1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSCoreAnimationViewController4.swift; sourceTree = "<group>"; };
+		09BFFB681D6182F1008ED4B9 /* XDSAdsageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSAdsageViewController.swift; sourceTree = "<group>"; };
+		09BFFB6B1D61834D008ED4B9 /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
+		09BFFB6C1D61834D008ED4B9 /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
+		09BFFB6D1D61834D008ED4B9 /* MobiSageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageFactory.h; sourceTree = "<group>"; };
+		09BFFB6E1D61834D008ED4B9 /* MobiSageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageManager.h; sourceTree = "<group>"; };
+		09BFFB6F1D61834D008ED4B9 /* MobiSageNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageNative.h; sourceTree = "<group>"; };
+		09BFFB701D61834D008ED4B9 /* MobiSagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSagePoster.h; sourceTree = "<group>"; };
+		09BFFB721D61836E008ED4B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		09BFFB741D61837D008ED4B9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		09BFFB761D618382008ED4B9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		09BFFB781D61838E008ED4B9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		09BFFB7A1D618397008ED4B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		09BFFB7C1D6183A0008ED4B9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		09FAE7E91D4732EF00281F83 /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
 		09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSRootViewController.swift; sourceTree = "<group>"; };
 		09FAE7F01D47686500281F83 /* snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowman.png; sourceTree = "<group>"; };
@@ -189,7 +210,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BFFB7D1D6183A0008ED4B9 /* JavaScriptCore.framework in Frameworks */,
+				09BFFB7B1D618397008ED4B9 /* SystemConfiguration.framework in Frameworks */,
+				09BFFB791D61838E008ED4B9 /* StoreKit.framework in Frameworks */,
+				09BFFB771D618382008ED4B9 /* AdSupport.framework in Frameworks */,
+				09BFFB751D61837D008ED4B9 /* CoreTelephony.framework in Frameworks */,
+				09BFFB731D61836E008ED4B9 /* CoreLocation.framework in Frameworks */,
 				09BF643B1D4EE71C00CA1792 /* GLKit.framework in Frameworks */,
+				09BFFB711D61834D008ED4B9 /* libMobiSage.a in Frameworks */,
 				DEEB0D561A994E049213243E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +302,7 @@
 				09FAE7EB1D4733B100281F83 /* RootControllers */,
 				09FAE7E81D4732D400281F83 /* Core-Animation-Advanced-Techniques */,
 				09BEA8AA1D4871B10043499F /* LayerSprites */,
+				09BFFB671D618222008ED4B9 /* adsage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -384,6 +413,7 @@
 		098E43C21D472360003D5455 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				09BFFB6A1D61834D008ED4B9 /* MobiSageSDK */,
 				09BEA8991D4849620043499F /* LayerSprites */,
 				098E43C31D472360003D5455 /* SimpleFileUploadServer */,
 			);
@@ -551,6 +581,27 @@
 			path = LayerSprites;
 			sourceTree = "<group>";
 		};
+		09BFFB671D618222008ED4B9 /* adsage */ = {
+			isa = PBXGroup;
+			children = (
+				09BFFB681D6182F1008ED4B9 /* XDSAdsageViewController.swift */,
+			);
+			path = adsage;
+			sourceTree = "<group>";
+		};
+		09BFFB6A1D61834D008ED4B9 /* MobiSageSDK */ = {
+			isa = PBXGroup;
+			children = (
+				09BFFB6B1D61834D008ED4B9 /* libMobiSage.a */,
+				09BFFB6C1D61834D008ED4B9 /* MobiSageBanner.h */,
+				09BFFB6D1D61834D008ED4B9 /* MobiSageFactory.h */,
+				09BFFB6E1D61834D008ED4B9 /* MobiSageManager.h */,
+				09BFFB6F1D61834D008ED4B9 /* MobiSageNative.h */,
+				09BFFB701D61834D008ED4B9 /* MobiSagePoster.h */,
+			);
+			path = MobiSageSDK;
+			sourceTree = "<group>";
+		};
 		09FAE7E81D4732D400281F83 /* Core-Animation-Advanced-Techniques */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +633,12 @@
 		C487D4CECB8DC6E7A05E565B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09BFFB7C1D6183A0008ED4B9 /* JavaScriptCore.framework */,
+				09BFFB7A1D618397008ED4B9 /* SystemConfiguration.framework */,
+				09BFFB781D61838E008ED4B9 /* StoreKit.framework */,
+				09BFFB761D618382008ED4B9 /* AdSupport.framework */,
+				09BFFB741D61837D008ED4B9 /* CoreTelephony.framework */,
+				09BFFB721D61836E008ED4B9 /* CoreLocation.framework */,
 				09BF643A1D4EE71C00CA1792 /* GLKit.framework */,
 				AA704DD93B65A9E29F2A3500 /* Pods.framework */,
 			);
@@ -750,6 +807,7 @@
 				098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */,
 				098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */,
 				098E44351D472360003D5455 /* WebSocket.m in Sources */,
+				09BFFB691D6182F1008ED4B9 /* XDSAdsageViewController.swift in Sources */,
 				098E441D1D472360003D5455 /* DDAbstractDatabaseLogger.m in Sources */,
 				09BEA8A01D4849620043499F /* LSImage.m in Sources */,
 				098E44251D472360003D5455 /* DDData.m in Sources */,
@@ -892,7 +950,11 @@
 				INFOPLIST_FILE = XDSSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.laomoney;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XDSSwift/Vendors/MobiSageSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
@@ -909,7 +971,11 @@
 				INFOPLIST_FILE = XDSSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.laomoney;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XDSSwift/Vendors/MobiSageSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
