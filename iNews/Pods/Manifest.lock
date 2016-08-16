@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AspectsV1.4.2 (1.4.2)
   - CWFoundation (0.0.5):
     - CWFoundation/Foundation+CWAdditions (= 0.0.5)
     - CWFoundation/UIKit+CWAdditions (= 0.0.5)
@@ -22,29 +23,70 @@ PODS:
   - CWFoundation/UIKit+CWAdditions (0.0.5)
   - CWFoundation/Utilities (0.0.5):
     - CWFoundation/Foundation+CWAdditions
+  - CWStackController (0.0.3)
+  - dyci (0.1.6):
+    - dyci/Injections (= 0.1.6)
+  - dyci/Injections (0.1.6)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - GDataXML-HTML (1.3.0)
-  - hpple (0.2.0)
+  - IQKeyboardManager (3.3.7)
+  - JSONKit-NoWarning (1.2)
+  - Masonry (0.6.4)
+  - Reachability (3.2)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
 
 DEPENDENCIES:
   - AFNetworking
+  - AspectsV1.4.2 (~> 1.4.2)
   - CWFoundation (from `https://github.com/guojiubo/CWFoundation.git`, commit `2352449291499091f4e4a82877ec57c9070ced35`)
+  - CWStackController (from `https://github.com/guojiubo/CWStackController.git`, commit
+    `8ff182c2f4e6b4cc31b9357f2a31f6bde456ef87`)
+  - dyci (from `https://github.com/DyCI/dyci-main.git`)
+  - FMDB (~> 2.5)
   - GDataXML-HTML (~> 1.3.0)
-  - hpple
+  - IQKeyboardManager (~> 3.3.2)
+  - JSONKit-NoWarning (~> 1.2)
+  - Masonry (~> 0.6.3)
+  - Reachability (~> 3.2)
+  - SDWebImage (~> 3.7.3)
 
 EXTERNAL SOURCES:
   CWFoundation:
     :commit: 2352449291499091f4e4a82877ec57c9070ced35
     :git: https://github.com/guojiubo/CWFoundation.git
+  CWStackController:
+    :commit: 8ff182c2f4e6b4cc31b9357f2a31f6bde456ef87
+    :git: https://github.com/guojiubo/CWStackController.git
+  dyci:
+    :git: https://github.com/DyCI/dyci-main.git
 
 CHECKOUT OPTIONS:
   CWFoundation:
     :commit: 2352449291499091f4e4a82877ec57c9070ced35
     :git: https://github.com/guojiubo/CWFoundation.git
+  CWStackController:
+    :commit: 8ff182c2f4e6b4cc31b9357f2a31f6bde456ef87
+    :git: https://github.com/guojiubo/CWStackController.git
+  dyci:
+    :commit: 564b0c4579ab7cb5c30a26315fe857b02dd9a9c1
+    :git: https://github.com/DyCI/dyci-main.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AspectsV1.4.2: a8b168606776215f5ba4790b95ff315df336aca9
   CWFoundation: ac66e6b36df27d5f059568b1f2740b7b7730695c
+  CWStackController: 3ca7386728b4132ca65a1862a5ccfa76f35fdb10
+  dyci: bf5f4caa4a855a3ca567e2306a4cbba6d9da75e8
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GDataXML-HTML: 7adc03668cab35c288f1dbb8929a179f0fece898
-  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
 COCOAPODS: 0.39.0

@@ -33,9 +33,9 @@
                     GDataXMLElement * element_article_ul = [element_article elementsForName:@"ul"].firstObject;
                     NSArray * articles = [element_article_ul elementsForName:@"li"];
                     for (GDataXMLElement * anElement in articles) {
-                        NSLog(@"title = %@", [[anElement elementsForName:@"a"].firstObject stringValue]);
-                        NSLog(@"href = %@", [[[anElement elementsForName:@"a"].firstObject attributeForName:@"href"] stringValue]);
-                        NSLog(@"content = %@", [[[anElement elementsForName:@"a"].lastObject elementsForName:@"p"].firstObject stringValue]);
+//                        NSLog(@"title = %@", [[anElement elementsForName:@"a"].firstObject stringValue]);
+//                        NSLog(@"href = %@", [[[anElement elementsForName:@"a"].firstObject attributeForName:@"href"] stringValue]);
+//                        NSLog(@"content = %@", [[[anElement elementsForName:@"a"].lastObject elementsForName:@"p"].firstObject stringValue]);
                         GDataXMLElement * element_a = [anElement elementsForName:@"a"].firstObject;
                         GDataXMLElement * element_p = [[[anElement elementsForName:@"a"].lastObject elementsForName:@"p"]firstObject];
                         INSArticleModel * articleModel = [[INSArticleModel alloc]init];

@@ -37,7 +37,7 @@ static const NSUInteger kPageSize = 40;
     [super viewDidLoad];
     
     [self.refreshHeader setTitle:@"实时资讯"];
-        
+    
     UIView *menuView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
     PRAutoHamburgerButton *menuButton = [PRAutoHamburgerButton button];
     [menuButton addTarget:self action:@selector(menuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -204,8 +204,7 @@ static NSDateFormatter *sectionTitleFormatter = nil;
     return header;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *sectionTitle = self.sectionTitles[indexPath.section];
     PRArticle *article = self.sectionDict[sectionTitle][indexPath.row];
     [article setRead:@YES];

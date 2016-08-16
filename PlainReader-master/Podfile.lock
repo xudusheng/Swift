@@ -1,18 +1,24 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CocoaLumberjack (1.9.2):
     - CocoaLumberjack/Extensions (= 1.9.2)
@@ -28,13 +34,15 @@ PODS:
   - CWFoundation/Utilities (0.0.5):
     - CWFoundation/Foundation+CWAdditions
   - CWStackController (0.0.3)
-  - FLAnimatedImage (1.0.12)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
+  - FLAnimatedImage (1.0.8)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
   - hpple (0.2.0)
-  - JDStatusBarNotification (1.5.3)
-  - pop (1.0.9)
+  - JDStatusBarNotification (1.5.2)
+  - pop (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking
@@ -65,14 +73,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/guojiubo/CWStackController.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
   CWFoundation: ac66e6b36df27d5f059568b1f2740b7b7730695c
   CWStackController: 3ca7386728b4132ca65a1862a5ccfa76f35fdb10
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
-  JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  JDStatusBarNotification: a36d09ccbb047217572b074a61e7ca10dddc5f0a
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
 
 COCOAPODS: 0.39.0

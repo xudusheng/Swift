@@ -16,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let frame = UIScreen.mainScreen().bounds;
+        self.window = UIWindow(frame: frame);
+
+        let rootVC = XDSUtilities.getViewController("Main", instantiateViewControllerIdentifier:"INSRootViewController");
+        let stackController = CWStackController(rootViewController: rootVC);
+        self.window?.rootViewController = stackController;
+        
+        self.window?.makeKeyAndVisible();
         return true
     }
 

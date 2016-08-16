@@ -1150,9 +1150,9 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.guojiubo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.yyy;
 				PRODUCT_NAME = PlainReader;
-				PROVISIONING_PROFILE = "5ed84156-e4dd-48fb-830e-abd3a6ea250d";
+				PROVISIONING_PROFILE = "bc9cec41-0cf9-4e44-ad8e-5e2b107b4acc";
 				SWIFT_OBJC_BRIDGING_HEADER = "PlainReader/PlainReader-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1191,9 +1191,9 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.guojiubo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.yyy;
 				PRODUCT_NAME = PlainReader;
-				PROVISIONING_PROFILE = "5ed84156-e4dd-48fb-830e-abd3a6ea250d";
+				PROVISIONING_PROFILE = "bc9cec41-0cf9-4e44-ad8e-5e2b107b4acc";
 				SWIFT_OBJC_BRIDGING_HEADER = "PlainReader/PlainReader-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";

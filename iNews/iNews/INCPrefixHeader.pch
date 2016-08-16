@@ -10,11 +10,10 @@
 #define INCPrefixHeader_pch
 
 
-#import "INSGlobalDefinitions.h"
-#import "INSThirdPartyHeader.h"
-#import "INSHeader.h"
+#import "iNews-Bridging-Header.h"
+#import "iNews-Swift.h"
 
-
+//#import "iNews-Swift.h"
 
 
 #endif /* INCPrefixHeader_pch */

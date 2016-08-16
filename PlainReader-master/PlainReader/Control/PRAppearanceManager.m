@@ -61,7 +61,6 @@
         
         [[PRHamburgerButton appearance] setHamburgerColor:[UIColor whiteColor]];
         
-        
     }
     else {        
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];

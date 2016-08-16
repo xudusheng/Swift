@@ -224,10 +224,8 @@
     }
 }
 
-- (void)restore
-{
+- (void)restore{
     self.state = PRRefreshStatePulling;
-    
     [UIView animateWithDuration:.2 animations:^{
         [self.titleLabelBottomContstraint setConstant:0];
         [self layoutIfNeeded];

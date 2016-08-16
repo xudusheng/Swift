@@ -61,7 +61,7 @@ class LeftMenuViewController: UIViewController {
         switch item {
         case self.realtimeItem:
             let realtime = PRRealtimeViewController.cw_loadFromNibUsingClassName()
-            centerStackController.viewControllers = [realtime]
+            centerStackController.viewControllers = [realtime];
         case self.topCommentItem:
             let topComments = UIStoryboard(name: "TopComments", bundle: nil).instantiateInitialViewController() as! PRTopCommentsViewController
             centerStackController.viewControllers = [topComments]
