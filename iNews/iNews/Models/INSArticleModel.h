@@ -14,4 +14,8 @@
 @property (strong, nonatomic) NSString * href;
 @property (strong, nonatomic) NSString * content;
 
+@property (strong, nonatomic) NSString * articleType;
+@property (strong, nonatomic) NSString * articleId;
+@property (strong, nonatomic) NSString * publicDate;
+
 @end
