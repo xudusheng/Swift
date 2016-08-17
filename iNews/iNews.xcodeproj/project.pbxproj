@@ -18,9 +18,10 @@
 		09BFFC2B1D61B126008ED4B9 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFBB51D61B125008ED4B9 /* SSKeychain.m */; };
 		09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFBB71D61B125008ED4B9 /* XDSThirdPartyService.swift */; };
 		09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC5F1D61B142008ED4B9 /* AppDelegate.swift */; };
-		09BFFC621D61B142008ED4B9 /* INSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC601D61B142008ED4B9 /* INSRootViewController.swift */; };
 		09BFFC6A1D61BA88008ED4B9 /* INSRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC691D61BA88008ED4B9 /* INSRequestHelper.m */; };
 		A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A057C04B1D62067400D3DB52 /* INSArticleModel.m */; };
+		A0AE8AB11D635E3C00E73BD1 /* INSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */; };
+		A0AE8AB41D63686000E73BD1 /* INSDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE8AB31D63686000E73BD1 /* INSDataBase.swift */; };
 		FEDEB2835B195A5E3045A22D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D880CA22DB9DCC354311DB03 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +43,6 @@
 		09BFFBB51D61B125008ED4B9 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		09BFFBB71D61B125008ED4B9 /* XDSThirdPartyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSThirdPartyService.swift; sourceTree = "<group>"; };
 		09BFFC5F1D61B142008ED4B9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09BFFC601D61B142008ED4B9 /* INSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSRootViewController.swift; path = ../../APPDelegate/INSRootViewController.swift; sourceTree = "<group>"; };
 		09BFFC651D61B97B008ED4B9 /* INSGlobalDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INSGlobalDefinitions.h; sourceTree = "<group>"; };
 		09BFFC661D61B97B008ED4B9 /* INSThirdPartyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INSThirdPartyHeader.h; sourceTree = "<group>"; };
 		09BFFC681D61BA88008ED4B9 /* INSRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSRequestHelper.h; sourceTree = "<group>"; };
@@ -55,6 +55,8 @@
 		A057C04A1D62067400D3DB52 /* INSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSArticleModel.h; sourceTree = "<group>"; };
 		A057C04B1D62067400D3DB52 /* INSArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSArticleModel.m; sourceTree = "<group>"; };
 		A057C04D1D6206D100D3DB52 /* INSModelsHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INSModelsHead.h; sourceTree = "<group>"; };
+		A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSRootViewController.swift; sourceTree = "<group>"; };
+		A0AE8AB31D63686000E73BD1 /* INSDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSDataBase.swift; sourceTree = "<group>"; };
 		D880CA22DB9DCC354311DB03 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,7 +160,7 @@
 		09BFFBA31D61B125008ED4B9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				09BFFC601D61B142008ED4B9 /* INSRootViewController.swift */,
+				A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -166,6 +168,7 @@
 		09BFFBAF1D61B125008ED4B9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A0AE8AB21D63684000E73BD1 /* dataBase */,
 				09BFFC671D61BA5E008ED4B9 /* requestHelper */,
 				09BFFBB31D61B125008ED4B9 /* KeyChain */,
 				09BFFBB61D61B125008ED4B9 /* ThirdPartyService */,
@@ -265,6 +268,14 @@
 				A057C04B1D62067400D3DB52 /* INSArticleModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A0AE8AB21D63684000E73BD1 /* dataBase */ = {
+			isa = PBXGroup;
+			children = (
+				A0AE8AB31D63686000E73BD1 /* INSDataBase.swift */,
+			);
+			path = dataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,11 +404,12 @@
 				0929268C1D6301B500F76FB0 /* PRLoadMoreFooter.m in Sources */,
 				092926841D62F4B700F76FB0 /* XDSUtilities.swift in Sources */,
 				0929268D1D6301B500F76FB0 /* PRPullToRefreshViewController.m in Sources */,
+				A0AE8AB41D63686000E73BD1 /* INSDataBase.swift in Sources */,
 				0929268E1D6301B500F76FB0 /* PRRefreshHeader.m in Sources */,
 				09BFFC6A1D61BA88008ED4B9 /* INSRequestHelper.m in Sources */,
 				09BFFB931D61B0F8008ED4B9 /* iNews.xcdatamodeld in Sources */,
-				09BFFC621D61B142008ED4B9 /* INSRootViewController.swift in Sources */,
 				09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */,
+				A0AE8AB11D635E3C00E73BD1 /* INSRootViewController.swift in Sources */,
 				A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */,
 				09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */,
 				09BFFC2B1D61B126008ED4B9 /* SSKeychain.m in Sources */,

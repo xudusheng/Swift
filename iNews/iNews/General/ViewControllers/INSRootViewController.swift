@@ -16,38 +16,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         self.tableView = UITableView(frame: CGRectZero, style: .Grouped);
         self.tableView.translatesAutoresizingMaskIntoConstraints = false;
         self.view.addSubview(self.tableView);
-//        let top = NSLayoutConstraint(item: self.tableView,
-//                                     attribute: .Top,
-//                                     relatedBy: .Equal,
-//                                     toItem: self.view,
-//                                     attribute: .Top,
-//                                     multiplier: 1.0,
-//                                     constant: 0.0);
-//        let bottom = NSLayoutConstraint(item: self.tableView,
-//                                        attribute: .Bottom,
-//                                        relatedBy: .Equal,
-//                                        toItem: self.view,
-//                                        attribute: .Bottom,
-//                                        multiplier: 1.0,
-//                                        constant: 0.0);
-//        let left = NSLayoutConstraint(item: self.tableView,
-//                                      attribute: .Left,
-//                                      relatedBy: .Equal,
-//                                      toItem: self.view,
-//                                      attribute: .Left,
-//                                      multiplier: 1.0,
-//                                      constant: 0.0);
-//        let right = NSLayoutConstraint(item: self.tableView,
-//                                       attribute: .Right,
-//                                       relatedBy: .Equal,
-//                                       toItem: self.view,
-//                                       attribute: .Right,
-//                                       multiplier: 1.0,
-//                                       constant: 0.0);
-//        self.view.addConstraint(top);
-//        self.view.addConstraint(bottom);
-//        self.view.addConstraint(left);
-//        self.view.addConstraint(right);
+        
         let views = ["tableView":tableView];
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tableView]|", options: .AlignAllLeft, metrics: nil, views: views));
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[tableView]|", options: .AlignAllLeft, metrics: nil, views: views));
@@ -55,8 +24,6 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         self.tableView.dataSource = self;
         
         super.viewDidLoad();
-        NSLog("controllers = %@", self.childViewControllers);
-        INSRequestHelper.fetchHomePage(1, page: 1);
         self.rootViewControllerDataInit();
         self.createRootViewControllerUI();
     }
@@ -77,7 +44,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         return 1;
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return 20;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -90,8 +57,19 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         return cell!;
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("xxxxxxxxxxxxxxxxxxx");
+        INSDataBase.shareInstance();
+    }
     //MARK: - 网络请求
-    
+    override func refreshTriggered() {
+        INSRequestHelper.fetchHomePage(1, page: 1);
+        self.performSelector(#selector(self.refreshCompleted), withObject: nil, afterDelay: 2);
+    }
+    override func loadMoreTriggered() {
+        self.performSelector(#selector(self.loadMoreCompletedWithNoMore(_:)), withObject: nil, afterDelay: 2);
+
+    }
     //MARK: - 事件响应处理
     
     //MARK: - 其他私有方法
