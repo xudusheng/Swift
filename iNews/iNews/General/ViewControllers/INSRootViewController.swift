@@ -26,8 +26,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         super.viewDidLoad();
         self.rootViewControllerDataInit();
         self.createRootViewControllerUI();
-        
-        INSRequestHelper.fetchHomePage(1, page: 2);
+        self.refreshTriggered();
     }
 
     //MARK: - UI相关
@@ -60,16 +59,25 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        INSDataBase.shareInstance().fetchArticles(10);
+        INSDataBase.shareInstance().fetchArticles(40);
     }
     //MARK: - 网络请求
     override func refreshTriggered() {
-        INSRequestHelper.fetchHomePage(1, page: 1);
-        self.performSelector(#selector(self.refreshCompleted), withObject: nil, afterDelay: 2);
+        super.refreshTriggered();
+        INSRequestHelper().fetchHomePage(1, page: 1) { (requestHelper:INSRequestHelper!, error:NSError!) in
+            self.loadMoreCompletedWithNoMore(false);
+            self.refreshCompleted();
+            INSDataBase.shareInstance().fetchArticles(40);
+
+        };
     }
     override func loadMoreTriggered() {
-        self.performSelector(#selector(self.loadMoreCompletedWithNoMore(_:)), withObject: nil, afterDelay: 2);
+        super.loadMoreTriggered();
+        INSRequestHelper().fetchHomePage(1, page: 2) { (requestHelper:INSRequestHelper!, error:NSError!) in
+            self.loadMoreCompletedWithNoMore(false);
+            INSDataBase.shareInstance().fetchArticles(40);
 
+        };
     }
     //MARK: - 事件响应处理
     

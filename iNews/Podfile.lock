@@ -46,7 +46,7 @@ DEPENDENCIES:
   - CWStackController (from `https://github.com/guojiubo/CWStackController.git`, commit
     `8ff182c2f4e6b4cc31b9357f2a31f6bde456ef87`)
   - dyci (from `https://github.com/DyCI/dyci-main.git`)
-  - FMDB (~> 2.5)
+  - FMDB (~> 2.6.2)
   - GDataXML-HTML (~> 1.3.0)
   - IQKeyboardManager (~> 3.3.2)
   - JSONKit-NoWarning (~> 1.2)

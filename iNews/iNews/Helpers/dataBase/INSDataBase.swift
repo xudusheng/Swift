@@ -64,19 +64,27 @@ class INSDataBase: NSObject {
         self.daQueue.inDatabase { (db:FMDatabase!) in
             
             //                [db intForQuery:@"SELECT COUNT (id) FROM article WHERE id = ?", article.articleId];
+            let totalCount = db.intForQuery("select count (articleId) from \(INSDataBase.tableName) where articleId = ?", articleModel.articleId);
             
-            self.generateSQLForUpdatingArticle(articleModel) { (sql: NSString, arguments: NSArray) -> () in
-                
-            };
-            
-            
-            let insertSql = "insert into \(INSDataBase.tableName) (articleId, articleType, publicDate, title, summary, href, content) values (?, ?, ?, ?, ?, ?, ?)";
-            let argumentinArray = [articleModel.articleId, articleModel.articleType, articleModel.publicDate, articleModel.title, articleModel.summary, articleModel.href, articleModel.content]
-            let result = db.executeUpdate(insertSql, withArgumentsInArray: argumentinArray);
-            if result{
-                NSLog("数据插入成功");
+            if totalCount > 0 {
+                self.generateSQLForUpdatingArticle(articleModel, completion: { (sql:NSString, arguments:NSArray) in
+                    let result = db.executeUpdate(sql as String, withArgumentsInArray: arguments as [AnyObject]);
+
+                    if (result) {
+                        NSLog("数据更新替换成功");
+                    }else{
+                        NSLog("数据更新替换失败");
+                    }
+                })
             }else{
-                NSLog("数据插入失败");
+                let insertSql = "insert into \(INSDataBase.tableName) (articleId, articleType, publicDate, title, summary, href, content) values (?, ?, ?, ?, ?, ?, ?)";
+                let argumentinArray = [articleModel.articleId, articleModel.articleType, articleModel.publicDate, articleModel.title, articleModel.summary, articleModel.href, articleModel.content]
+                let result = db.executeUpdate(insertSql, withArgumentsInArray: argumentinArray);
+                if result{
+                    NSLog("数据插入成功");
+                }else{
+                    NSLog("数据插入失败");
+                }
             }
         };
     }
@@ -139,6 +147,8 @@ class INSDataBase: NSObject {
     }
     
     
-    
+    private func returnResultForQueryWithSelector(){
+        
+    }
     
 }

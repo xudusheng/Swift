@@ -20,6 +20,8 @@
 		09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC5F1D61B142008ED4B9 /* AppDelegate.swift */; };
 		09BFFC6A1D61BA88008ED4B9 /* INSRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC691D61BA88008ED4B9 /* INSRequestHelper.m */; };
 		A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A057C04B1D62067400D3DB52 /* INSArticleModel.m */; };
+		A0A885061D6B46EA0040E2BB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A885051D6B46EA0040E2BB /* libsqlite3.tbd */; };
+		A0A885081D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A885071D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift */; };
 		A0AE8AB11D635E3C00E73BD1 /* INSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */; };
 		A0AE8AB41D63686000E73BD1 /* INSDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE8AB31D63686000E73BD1 /* INSDataBase.swift */; };
 		FEDEB2835B195A5E3045A22D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D880CA22DB9DCC354311DB03 /* libPods.a */; };
@@ -55,6 +57,8 @@
 		A057C04A1D62067400D3DB52 /* INSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSArticleModel.h; sourceTree = "<group>"; };
 		A057C04B1D62067400D3DB52 /* INSArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSArticleModel.m; sourceTree = "<group>"; };
 		A057C04D1D6206D100D3DB52 /* INSModelsHead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INSModelsHead.h; sourceTree = "<group>"; };
+		A0A885051D6B46EA0040E2BB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A0A885071D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSRootViewController.swift; sourceTree = "<group>"; };
 		A0AE8AB31D63686000E73BD1 /* INSDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSDataBase.swift; sourceTree = "<group>"; };
 		D880CA22DB9DCC354311DB03 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A885061D6B46EA0040E2BB /* libsqlite3.tbd in Frameworks */,
 				FEDEB2835B195A5E3045A22D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +251,7 @@
 		8C8C9BE125724D3874E08780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0A885051D6B46EA0040E2BB /* libsqlite3.tbd */,
 				D880CA22DB9DCC354311DB03 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -274,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AE8AB31D63686000E73BD1 /* INSDataBase.swift */,
+				A0A885071D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift */,
 			);
 			path = dataBase;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 				A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */,
 				09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */,
 				09BFFC2B1D61B126008ED4B9 /* SSKeychain.m in Sources */,
+				A0A885081D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
