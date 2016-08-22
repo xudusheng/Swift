@@ -27,7 +27,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         self.rootViewControllerDataInit();
         self.createRootViewControllerUI();
         
-        INSRequestHelper.fetchHomePage(1, page: 1);
+        INSRequestHelper.fetchHomePage(1, page: 2);
     }
 
     //MARK: - UI相关
