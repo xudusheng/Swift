@@ -38,12 +38,20 @@
 //                        NSLog(@"content = %@", [[[anElement elementsForName:@"a"].lastObject elementsForName:@"p"].firstObject stringValue]);
                         GDataXMLElement * element_a = [anElement elementsForName:@"a"].firstObject;
                         GDataXMLElement * element_p = [[[anElement elementsForName:@"a"].lastObject elementsForName:@"p"]firstObject];
+                        GDataXMLElement * element_small = [anElement elementsForName:@"small"].firstObject;
                         INSArticleModel * articleModel = [[INSArticleModel alloc]init];
                         articleModel.title = [element_a stringValue];
                         articleModel.href = [[element_a attributeForName:@"href"] stringValue];
                         articleModel.summary = [element_p stringValue];
 
-//                        [[PRDatabase sharedDatabase] storeArticle:article];
+                        NSString *articleId = [[articleModel.href componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+                        NSString * articleType = [[articleModel.href componentsSeparatedByString:@"/"] objectAtIndex:1];
+                        NSString * publicDate = [[[element_small stringValue] componentsSeparatedByString:@" "]lastObject];
+                        articleModel.articleType = articleType;
+                        articleModel.articleId = articleId;
+                        articleModel.publicDate = publicDate;
+                        [[INSDataBase shareInstance] storeArticle:articleModel];
+//                        NSLog(@"article = %@", articleModel);
                     }
                 }
             });

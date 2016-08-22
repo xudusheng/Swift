@@ -26,6 +26,8 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         super.viewDidLoad();
         self.rootViewControllerDataInit();
         self.createRootViewControllerUI();
+        
+        INSRequestHelper.fetchHomePage(1, page: 1);
     }
 
     //MARK: - UI相关
@@ -58,8 +60,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("xxxxxxxxxxxxxxxxxxx");
-        INSDataBase.shareInstance();
+        INSDataBase.shareInstance().fetchArticles(10);
     }
     //MARK: - 网络请求
     override func refreshTriggered() {
