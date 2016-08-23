@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C3A8B4698C8FC191BBA7ADE4'
+               BlueprintIdentifier = '7BC5CC90EA73323CA7194D1D'
                BlueprintName = 'CWStackController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libCWStackController.a'>

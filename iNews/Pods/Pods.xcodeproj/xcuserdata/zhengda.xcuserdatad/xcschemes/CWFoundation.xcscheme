@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '08A07DCCB781C422330AEB00'
+               BlueprintIdentifier = '8622AC663B5B4FC4A9742223'
                BlueprintName = 'CWFoundation'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libCWFoundation.a'>

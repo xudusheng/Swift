@@ -18,4 +18,5 @@
 @property (strong, nonatomic) NSString * articleId;
 @property (strong, nonatomic) NSString * publicDate;
 
+- (NSString *)toHtmlString;
 @end

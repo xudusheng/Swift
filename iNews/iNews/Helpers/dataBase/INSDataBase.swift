@@ -129,17 +129,36 @@ class INSDataBase: NSObject {
     
     
     //TODO:查询
-    internal func fetchArticles(limit:UInt){
-        let sql = "SELECT * FROM \(INSDataBase.tableName) ORDER BY publicDate DESC LIMIT \(limit)";
-//        let sql = "SELECT * FROM \(INSDataBase.tableName)";
+    internal func fetchArticlesWithLastArticle(laseArticle:INSArticleModel?, limit:UInt) -> [INSArticleModel]{
+        var sql = "";
+        if laseArticle != nil {
+            sql = "select * from \(INSDataBase.tableName) where publicDate <= '\(laseArticle!.publicDate)' order by publicDate desc limit \(limit)";
+        }else{
+            sql = "select * from \(INSDataBase.tableName) where (publicDate is not null or  publicDate != '') order by publicDate desc limit \(limit)";
+        }
+        var resutls = [INSArticleModel]();
         self.daQueue.inDatabase { (db:FMDatabase!) in
-            let result = db.executeQuery(sql, withArgumentsInArray: []);
-            while result.next(){
-                NSLog("title = \(result.stringForColumn("title"))");
-                print("publicDate = \(result.stringForColumn("publicDate"))");
+            let set = db.executeQuery(sql, withArgumentsInArray: []);
+            while set.next(){
+                let article = self.transferFMResultSetToArticle(set);
+                resutls.append(article);
             }
         }
+        return resutls;
     }
+    
+    private func transferFMResultSetToArticle(set : FMResultSet) -> INSArticleModel{
+        let article = INSArticleModel();
+        article.title = set.stringForColumn("title");
+        article.summary = set.stringForColumn("summary");
+        article.href = set.stringForColumn("href");
+        article.content = set.stringForColumn("content");
+        article.articleType = set.stringForColumn("articleType");
+        article.articleId = set.stringForColumn("articleId");
+        article.publicDate = set.stringForColumn("publicDate");
+        return article;
+    }
+
     internal func deleteArticle() -> Void{
         self.daQueue.inDatabase { (db:FMDatabase!) in
             

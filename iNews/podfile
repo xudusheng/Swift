@@ -12,6 +12,8 @@ pod 'IQKeyboardManager', '~> 3.3.2'
 
 #AOP面向切面思想
 pod 'AspectsV1.4.2', '~> 1.4.2'
+pod 'hpple'
+pod 'JDStatusBarNotification'
 pod 'CWStackController', :git => 'https://github.com/guojiubo/CWStackController.git', :commit => '8ff182c2f4e6b4cc31b9357f2a31f6bde456ef87'
 pod 'CWFoundation', :git => 'https://github.com/guojiubo/CWFoundation.git', :commit => '2352449291499091f4e4a82877ec57c9070ced35'
 pod 'dyci', :git => 'https://github.com/DyCI/dyci-main.git'

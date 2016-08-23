@@ -11,6 +11,14 @@
 		0929268C1D6301B500F76FB0 /* PRLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092926871D6301B500F76FB0 /* PRLoadMoreFooter.m */; };
 		0929268D1D6301B500F76FB0 /* PRPullToRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */; };
 		0929268E1D6301B500F76FB0 /* PRRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929268B1D6301B500F76FB0 /* PRRefreshHeader.m */; };
+		09A5A1931D6C11F6007E614D /* INSArticleContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5A1921D6C11F6007E614D /* INSArticleContentViewController.swift */; };
+		09A5A1961D6C1443007E614D /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1951D6C1443007E614D /* article.html */; };
+		09A5A19C1D6C148C007E614D /* common.css in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1971D6C148C007E614D /* common.css */; };
+		09A5A19D1D6C148C007E614D /* day.css in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1981D6C148C007E614D /* day.css */; };
+		09A5A19E1D6C148C007E614D /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1991D6C148C007E614D /* night.css */; };
+		09A5A19F1D6C148C007E614D /* videohandler.js in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A19A1D6C148C007E614D /* videohandler.js */; };
+		09A5A1A01D6C148C007E614D /* imghandler.js in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A19B1D6C148C007E614D /* imghandler.js */; };
+		09A5A1A21D6C228C007E614D /* html.html in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1A11D6C228C007E614D /* html.html */; };
 		09BFFB901D61B0F8008ED4B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09BFFB8E1D61B0F8008ED4B9 /* Main.storyboard */; };
 		09BFFB931D61B0F8008ED4B9 /* iNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFB911D61B0F8008ED4B9 /* iNews.xcdatamodeld */; };
 		09BFFB951D61B0F8008ED4B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BFFB941D61B0F8008ED4B9 /* Assets.xcassets */; };
@@ -35,6 +43,14 @@
 		092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPullToRefreshViewController.m; sourceTree = "<group>"; };
 		0929268A1D6301B500F76FB0 /* PRRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRRefreshHeader.h; sourceTree = "<group>"; };
 		0929268B1D6301B500F76FB0 /* PRRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRRefreshHeader.m; sourceTree = "<group>"; };
+		09A5A1921D6C11F6007E614D /* INSArticleContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSArticleContentViewController.swift; sourceTree = "<group>"; };
+		09A5A1951D6C1443007E614D /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
+		09A5A1971D6C148C007E614D /* common.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = common.css; sourceTree = "<group>"; };
+		09A5A1981D6C148C007E614D /* day.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = day.css; sourceTree = "<group>"; };
+		09A5A1991D6C148C007E614D /* night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
+		09A5A19A1D6C148C007E614D /* videohandler.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = videohandler.js; sourceTree = "<group>"; };
+		09A5A19B1D6C148C007E614D /* imghandler.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = imghandler.js; sourceTree = "<group>"; };
+		09A5A1A11D6C228C007E614D /* html.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html.html; sourceTree = "<group>"; };
 		09BFFB871D61B0F8008ED4B9 /* iNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFFB8F1D61B0F8008ED4B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09BFFB921D61B0F8008ED4B9 /* iNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iNews.xcdatamodel; sourceTree = "<group>"; };
@@ -88,6 +104,19 @@
 				092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */,
 			);
 			path = PRPullToRefresh;
+			sourceTree = "<group>";
+		};
+		09A5A1941D6C143A007E614D /* html */ = {
+			isa = PBXGroup;
+			children = (
+				09A5A1951D6C1443007E614D /* article.html */,
+				09A5A1971D6C148C007E614D /* common.css */,
+				09A5A1981D6C148C007E614D /* day.css */,
+				09A5A1991D6C148C007E614D /* night.css */,
+				09A5A19A1D6C148C007E614D /* videohandler.js */,
+				09A5A19B1D6C148C007E614D /* imghandler.js */,
+			);
+			path = html;
 			sourceTree = "<group>";
 		};
 		09BFFB7E1D61B0F8008ED4B9 = {
@@ -166,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */,
+				09A5A1921D6C11F6007E614D /* INSArticleContentViewController.swift */,
+				09A5A1A11D6C228C007E614D /* html.html */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +252,7 @@
 		09BFFBBE1D61B125008ED4B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09A5A1941D6C143A007E614D /* html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,9 +379,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A5A19D1D6C148C007E614D /* day.css in Resources */,
+				09A5A1A21D6C228C007E614D /* html.html in Resources */,
 				09BFFB981D61B0F8008ED4B9 /* LaunchScreen.storyboard in Resources */,
 				09BFFB951D61B0F8008ED4B9 /* Assets.xcassets in Resources */,
 				09BFFB901D61B0F8008ED4B9 /* Main.storyboard in Resources */,
+				09A5A19E1D6C148C007E614D /* night.css in Resources */,
+				09A5A1961D6C1443007E614D /* article.html in Resources */,
+				09A5A19C1D6C148C007E614D /* common.css in Resources */,
+				09A5A1A01D6C148C007E614D /* imghandler.js in Resources */,
+				09A5A19F1D6C148C007E614D /* videohandler.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +449,7 @@
 			files = (
 				0929268C1D6301B500F76FB0 /* PRLoadMoreFooter.m in Sources */,
 				092926841D62F4B700F76FB0 /* XDSUtilities.swift in Sources */,
+				09A5A1931D6C11F6007E614D /* INSArticleContentViewController.swift in Sources */,
 				0929268D1D6301B500F76FB0 /* PRPullToRefreshViewController.m in Sources */,
 				A0AE8AB41D63686000E73BD1 /* INSDataBase.swift in Sources */,
 				0929268E1D6301B500F76FB0 /* PRRefreshHeader.m in Sources */,

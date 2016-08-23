@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "PRRefreshHeader.h"
 #import "PRLoadMoreFooter.h"
-//#import "PRViewController.h"
 
 @interface PRPullToRefreshViewController : UIViewController
 

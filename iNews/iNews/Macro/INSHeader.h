@@ -9,7 +9,7 @@
 #ifndef INSHeader_h
 #define INSHeader_h
 
-#import "INSRequestHelper.h"
 #import "INSModelsHead.h"
+#import "INSRequestHelper.h"
 
 #endif /* INSHeader_h */

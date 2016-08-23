@@ -11,10 +11,12 @@ import UIKit
 class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate, UITableViewDataSource{
 
     var tableView: UITableView!;
-    
+    var page = 1;
+    let fetchResults = NSMutableArray(capacity: 0);
     override func viewDidLoad() {
-        self.tableView = UITableView(frame: CGRectZero, style: .Grouped);
+        self.tableView = UITableView(frame: CGRectZero, style: .Plain);
         self.tableView.translatesAutoresizingMaskIntoConstraints = false;
+        self.tableView.rowHeight = 65;
         self.view.addSubview(self.tableView);
         
         let views = ["tableView":tableView];
@@ -45,7 +47,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         return 1;
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20;
+        return self.fetchResults.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -54,29 +56,41 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         if cell == nil {
             cell = UITableViewCell(style: .Subtitle, reuseIdentifier: identifier);
         }
-        cell?.textLabel?.text = identifier;
+        let article = self.fetchResults[indexPath.row] as! INSArticleModel;
+        cell?.textLabel?.text = article.title;
+        cell?.detailTextLabel?.numberOfLines = 2;
+        cell?.detailTextLabel?.text = article.summary;
         return cell!;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        INSDataBase.shareInstance().fetchArticles(40);
+        let article = self.fetchResults[indexPath.row] as! INSArticleModel;
+        let contentVC = INSArticleContentViewController();
+        contentVC.article = article;
+        self.stackController.pushViewController(contentVC, animated: true);
     }
     //MARK: - 网络请求
     override func refreshTriggered() {
         super.refreshTriggered();
-        INSRequestHelper().fetchHomePage(1, page: 1) { (requestHelper:INSRequestHelper!, error:NSError!) in
+        INSRequestHelper().fetchHomePage(1, page: 1) { (responseObject:AnyObject!, error:NSError!) in
             self.loadMoreCompletedWithNoMore(false);
             self.refreshCompleted();
-            INSDataBase.shareInstance().fetchArticles(40);
-
+            let resuls = INSDataBase.shareInstance().fetchArticlesWithLastArticle(nil, limit: 10);
+            self.page = 2;
+            self.fetchResults.removeAllObjects();
+            self.fetchResults.addObjectsFromArray(resuls);
+            self.tableView.reloadData();
         };
     }
     override func loadMoreTriggered() {
         super.loadMoreTriggered();
-        INSRequestHelper().fetchHomePage(1, page: 2) { (requestHelper:INSRequestHelper!, error:NSError!) in
+        INSRequestHelper().fetchHomePage(1, page: self.page) { (responseObject:AnyObject!, error:NSError!) in
             self.loadMoreCompletedWithNoMore(false);
-            INSDataBase.shareInstance().fetchArticles(40);
-
+            self.page += 1;
+            let lastArticle = self.fetchResults.lastObject as! INSArticleModel;
+            let resuls = INSDataBase.shareInstance().fetchArticlesWithLastArticle(lastArticle, limit: 10)
+            self.fetchResults.addObjectsFromArray(resuls);
+            self.tableView.reloadData();
         };
     }
     //MARK: - 事件响应处理

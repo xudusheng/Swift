@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let frame = UIScreen.mainScreen().bounds;
         self.window = UIWindow(frame: frame);
 
-        let rootVC = XDSUtilities.getViewController("Main", instantiateViewControllerIdentifier:"INSRootViewController");
+        let rootVC = INSRootViewController();
         let stackController = CWStackController(rootViewController: rootVC);
         self.window?.rootViewController = stackController;
         
