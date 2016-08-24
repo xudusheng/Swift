@@ -11,6 +11,13 @@
 		0929268C1D6301B500F76FB0 /* PRLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092926871D6301B500F76FB0 /* PRLoadMoreFooter.m */; };
 		0929268D1D6301B500F76FB0 /* PRPullToRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */; };
 		0929268E1D6301B500F76FB0 /* PRRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929268B1D6301B500F76FB0 /* PRRefreshHeader.m */; };
+		09A09F8F1D6D430A00EEE51C /* INSGlobleVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A09F8E1D6D430A00EEE51C /* INSGlobleVar.swift */; };
+		09A09F971D6D797800EEE51C /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F911D6D797800EEE51C /* libMobiSage.a */; };
+		09A09F991D6D7A3100EEE51C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F981D6D7A3100EEE51C /* CoreLocation.framework */; };
+		09A09F9B1D6D7A3B00EEE51C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F9A1D6D7A3B00EEE51C /* CoreTelephony.framework */; };
+		09A09F9D1D6D7A4400EEE51C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F9C1D6D7A4400EEE51C /* AdSupport.framework */; };
+		09A09F9F1D6D7A5100EEE51C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F9E1D6D7A5100EEE51C /* StoreKit.framework */; };
+		09A09FA11D6D7A5A00EEE51C /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09FA01D6D7A5A00EEE51C /* JavaScriptCore.framework */; };
 		09A5A1931D6C11F6007E614D /* INSArticleContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5A1921D6C11F6007E614D /* INSArticleContentViewController.swift */; };
 		09A5A1961D6C1443007E614D /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1951D6C1443007E614D /* article.html */; };
 		09A5A19C1D6C148C007E614D /* common.css in Resources */ = {isa = PBXBuildFile; fileRef = 09A5A1971D6C148C007E614D /* common.css */; };
@@ -43,6 +50,18 @@
 		092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPullToRefreshViewController.m; sourceTree = "<group>"; };
 		0929268A1D6301B500F76FB0 /* PRRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRRefreshHeader.h; sourceTree = "<group>"; };
 		0929268B1D6301B500F76FB0 /* PRRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRRefreshHeader.m; sourceTree = "<group>"; };
+		09A09F8E1D6D430A00EEE51C /* INSGlobleVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSGlobleVar.swift; sourceTree = "<group>"; };
+		09A09F911D6D797800EEE51C /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
+		09A09F921D6D797800EEE51C /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
+		09A09F931D6D797800EEE51C /* MobiSageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageFactory.h; sourceTree = "<group>"; };
+		09A09F941D6D797800EEE51C /* MobiSageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageManager.h; sourceTree = "<group>"; };
+		09A09F951D6D797800EEE51C /* MobiSageNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageNative.h; sourceTree = "<group>"; };
+		09A09F961D6D797800EEE51C /* MobiSagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSagePoster.h; sourceTree = "<group>"; };
+		09A09F981D6D7A3100EEE51C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		09A09F9A1D6D7A3B00EEE51C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		09A09F9C1D6D7A4400EEE51C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		09A09F9E1D6D7A5100EEE51C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		09A09FA01D6D7A5A00EEE51C /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		09A5A1921D6C11F6007E614D /* INSArticleContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSArticleContentViewController.swift; sourceTree = "<group>"; };
 		09A5A1951D6C1443007E614D /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		09A5A1971D6C148C007E614D /* common.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = common.css; sourceTree = "<group>"; };
@@ -85,7 +104,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A09FA11D6D7A5A00EEE51C /* JavaScriptCore.framework in Frameworks */,
+				09A09F9F1D6D7A5100EEE51C /* StoreKit.framework in Frameworks */,
+				09A09F9D1D6D7A4400EEE51C /* AdSupport.framework in Frameworks */,
+				09A09F9B1D6D7A3B00EEE51C /* CoreTelephony.framework in Frameworks */,
+				09A09F991D6D7A3100EEE51C /* CoreLocation.framework in Frameworks */,
 				A0A885061D6B46EA0040E2BB /* libsqlite3.tbd in Frameworks */,
+				09A09F971D6D797800EEE51C /* libMobiSage.a in Frameworks */,
 				FEDEB2835B195A5E3045A22D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +129,19 @@
 				092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */,
 			);
 			path = PRPullToRefresh;
+			sourceTree = "<group>";
+		};
+		09A09F901D6D797800EEE51C /* MobiSageSDK */ = {
+			isa = PBXGroup;
+			children = (
+				09A09F911D6D797800EEE51C /* libMobiSage.a */,
+				09A09F921D6D797800EEE51C /* MobiSageBanner.h */,
+				09A09F931D6D797800EEE51C /* MobiSageFactory.h */,
+				09A09F941D6D797800EEE51C /* MobiSageManager.h */,
+				09A09F951D6D797800EEE51C /* MobiSageNative.h */,
+				09A09F961D6D797800EEE51C /* MobiSagePoster.h */,
+			);
+			path = MobiSageSDK;
 			sourceTree = "<group>";
 		};
 		09A5A1941D6C143A007E614D /* html */ = {
@@ -241,6 +279,7 @@
 		09BFFBB91D61B125008ED4B9 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				09A09F8E1D6D430A00EEE51C /* INSGlobleVar.swift */,
 				09BFFC651D61B97B008ED4B9 /* INSGlobalDefinitions.h */,
 				09BFFC661D61B97B008ED4B9 /* INSThirdPartyHeader.h */,
 				09BFFC6E1D61BAD8008ED4B9 /* INSHeader.h */,
@@ -260,6 +299,7 @@
 		09BFFBD01D61B125008ED4B9 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				09A09F901D6D797800EEE51C /* MobiSageSDK */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -283,6 +323,11 @@
 		8C8C9BE125724D3874E08780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09A09FA01D6D7A5A00EEE51C /* JavaScriptCore.framework */,
+				09A09F9E1D6D7A5100EEE51C /* StoreKit.framework */,
+				09A09F9C1D6D7A4400EEE51C /* AdSupport.framework */,
+				09A09F9A1D6D7A3B00EEE51C /* CoreTelephony.framework */,
+				09A09F981D6D7A3100EEE51C /* CoreLocation.framework */,
 				A0A885051D6B46EA0040E2BB /* libsqlite3.tbd */,
 				D880CA22DB9DCC354311DB03 /* libPods.a */,
 			);
@@ -459,6 +504,7 @@
 				A0AE8AB11D635E3C00E73BD1 /* INSRootViewController.swift in Sources */,
 				A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */,
 				09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */,
+				09A09F8F1D6D430A00EEE51C /* INSGlobleVar.swift in Sources */,
 				09BFFC2B1D61B126008ED4B9 /* SSKeychain.m in Sources */,
 				A0A885081D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift in Sources */,
 			);
@@ -581,6 +627,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNews/INCPrefixHeader.pch;
 				INFOPLIST_FILE = iNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,6 +649,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iNews/INCPrefixHeader.pch;
 				INFOPLIST_FILE = iNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

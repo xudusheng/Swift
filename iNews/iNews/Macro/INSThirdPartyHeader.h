@@ -26,4 +26,10 @@
 #import "CWStackController.h"
 #import "PRPullToRefreshViewController.h"
 
+//广告
+#import "MobiSageManager.h"
+#import "MobiSageBanner.h"
+#import "MobiSageFactory.h"
+#import "MobiSageNative.h"
+
 #endif /* OCTThirdPartyHeader_h */

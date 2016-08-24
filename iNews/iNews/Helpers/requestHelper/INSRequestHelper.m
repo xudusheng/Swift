@@ -75,19 +75,11 @@
 
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//                NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
-//                NSString * result = [[NSString alloc]initWithData:responseObject encoding:enc];
-//                GDataXMLDocument * doc= [[GDataXMLDocument alloc]initWithHTMLString:result error:nil];
-//                GDataXMLElement*rootEle= [doc rootElement];//获得root根节点
-//                NSArray * elements = [rootEle nodesForXPath:@"//div[@class=\"article\"]" error:nil];
-//                GDataXMLElement * element_article = elements.firstObject;
-//                
-//                if (elements.count) {
-//                    NSString * xmlString = element_article.XMLString;
-//                    xmlString = [xmlString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-//                    self.respObject = xmlString;
-//                }
-                TFHpple *hpple = [TFHpple hppleWithHTMLData:responseObject];
+                NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
+                NSString * result = [[NSString alloc]initWithData:responseObject encoding:enc];
+                result = [result stringByReplacingOccurrencesOfString:@"charset=gb2312" withString:@"charset=utf-8"];
+                
+                TFHpple *hpple = [TFHpple hppleWithHTMLData:[result dataUsingEncoding:NSUTF8StringEncoding]];
                 NSArray * elements = [hpple searchWithXPathQuery:@"//div[@class=\"article\"]"];
                 if (elements.count) {
                     TFHppleElement *  article = elements.firstObject;
@@ -122,5 +114,18 @@
         block(self.respObject, self.error);
     });
 }
+
+
+//void MethodSwizzle(Class aClass, SEL orig_sel, SEL alt_sel) {
+//    Method orig_method = nil, alt_method = nil;
+//    orig_method = class_getInstanceMethod(aClass, orig_sel);
+//    alt_method = class_getInstanceMethod(aClass, alt_sel);
+//    if ((orig_method != nil) && (alt_method != nil))
+//    {
+//        IMP originIMP = method_getImplementation(orig_method);
+//        IMP altIMP = method_setImplementation(alt_method, originIMP);
+//        method_setImplementation(orig_method, altIMP);
+//    }
+//}
 
 @end

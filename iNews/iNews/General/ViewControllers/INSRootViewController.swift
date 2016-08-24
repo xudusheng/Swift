@@ -22,6 +22,8 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
         let views = ["tableView":tableView];
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tableView]|", options: .AlignAllLeft, metrics: nil, views: views));
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[tableView]|", options: .AlignAllLeft, metrics: nil, views: views));
+        
+        
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
