@@ -110,8 +110,8 @@ static CGFloat kToolbarHeight = 44.0f;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                            withAnimation:UIStatusBarAnimationSlide];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (void)fetchComments
@@ -160,7 +160,9 @@ static CGFloat kToolbarHeight = 44.0f;
     [[NSNotificationCenter defaultCenter] postNotificationName:ArticleViewControllerStarredNotification object:nil];
 }
 
-- (void)commentAction:(id)sender{
+- (void)commentAction:(id)sender
+{
+    
     [self.stackController pushViewController:[self nextViewController] animated:YES];
 }
 

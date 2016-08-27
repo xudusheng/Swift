@@ -1,0 +1,6 @@
+framework module CWFoundation {
+  umbrella header "CWFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}

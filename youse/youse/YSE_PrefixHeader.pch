@@ -1,0 +1,18 @@
+//
+//  YSE_PrefixHeader.pch
+//  youse
+//
+//  Created by xudosom on 16/8/27.
+//  Copyright © 2016年 上海优蜜科技有限公司. All rights reserved.
+//
+
+#ifndef YSE_PrefixHeader_pch
+#define YSE_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "YSE-Bridging-Header.h"
+#import "youse-Swift.h"
+
+#endif /* YSE_PrefixHeader_pch */
