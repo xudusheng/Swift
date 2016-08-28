@@ -15,8 +15,8 @@ class YSERequestFetcher: NSObject {
     var error : NSError?;
     
     
-    internal func p_fetchHomePage(category category:String!, page:Int!, complete:YSERequestComplete) -> Void {
-        let url = requestRootUrl + "/" + category;
+    internal func p_fetchHomePage(category:CategoryType!, page:Int!, complete:YSERequestComplete) -> Void {
+        let url = "\(requestRootUrl)/\(category.name)/list_\(category.type)_\(page).html" ;
         
         let manager = AFHTTPSessionManager();
         manager.responseSerializer = AFHTTPResponseSerializer();
@@ -27,23 +27,19 @@ class YSERequestFetcher: NSObject {
                 var result = NSString(data: respObject as! NSData, encoding: enc);
                 result = result?.stringByReplacingOccurrencesOfString("charset=gb2312", withString: "charset=utf-8");
                 
+                var recommendList : [YSEImageGroupModel]?;
                 let hptts = TFHpple.init(HTMLData: result?.dataUsingEncoding(NSUTF8StringEncoding));
-                let items = hptts.searchWithXPathQuery("//ul[@class=\"product03\"]//a");
-
-                var imageModels = [YSEImageGroupModel]();
-                for item in items{
-                    let element_a = item as! TFHppleElement;
-                    let info = self.separateElement(element_a);
-                    let model = YSEImageGroupModel();
-                    model.category = category;
-                    model.db_id = info.db_id;
-                    model.title = info.title;
-                    model.href = info.href;
-                    model.item_img_url = info.item_img_url;
-                    let newModel = YSEDataBase.shareInstance().storeOrUpdate(imageGroupModel: model);
-                    imageModels.append(newModel);
+                if page == 1{
+                    let recommendItems = hptts.searchWithXPathQuery("//ul[@class=\"product03\"]//a");
+                    recommendList = self.transferToModels(items: recommendItems, category: category);
                 }
-                self.responseObj = imageModels;
+                let items = hptts.searchWithXPathQuery("//ul[@class=\"product01\"]//a");
+                let imageModels = self.transferToModels(items: items, category: category);
+                if recommendList != nil{
+                    self.responseObj = [recommendList!, imageModels];
+                }else{
+                    self.responseObj = [imageModels];
+                }
                 self.safelyCallback(complete, error: nil);
             });
             
@@ -54,15 +50,32 @@ class YSERequestFetcher: NSObject {
         complete(requestFetcher: self);
     }
     
+    func transferToModels(items items:NSArray, category:CategoryType!) -> [YSEImageGroupModel] {
+        var imageModels = [YSEImageGroupModel]();
+        for item in items{
+            let element_a = item as! TFHppleElement;
+            let info = self.separateElement(element_a);
+            let model = YSEImageGroupModel();
+            model.category = category.name;
+            model.db_id = info.db_id;
+            model.title = info.title;
+            model.href = info.href;
+            model.item_img_url = info.item_img_url;
+            let newModel = YSEDataBase.shareInstance().storeOrUpdate(imageGroupModel: model);
+            imageModels.append(newModel);
+        }
+        return imageModels;
+    }
     //TODO:分离出id，href等
     func separateElement(element_a:TFHppleElement) -> (db_id:String!, title:String!, href:String!, item_img_url:String!) {
+
         let element_img = element_a.firstChildWithTagName("img");
         let element_p = element_a.firstChildWithTagName("p");
-        let href = element_a.objectForKey("href");
-        let imageUrl = element_img.objectForKey("src");
-        let title = element_p.text();
-        var db_id = "";
-        
+        var href = element_a.objectForKey("href");
+        var imageUrl = element_img.objectForKey("src");
+        var title = element_p.text();
+        var db_id : String?;
+
         var href_sep = href.componentsSeparatedByString("/");
         if href_sep.count > 2 {
             let html = href_sep.last;
@@ -74,6 +87,11 @@ class YSERequestFetcher: NSObject {
             let year = href_sep.last;
             db_id = year! + "/" + month! + "/" + id!;
         }
+        href = (href != nil) ? href : "";
+        imageUrl = (imageUrl != nil) ? imageUrl : "";
+        title = (title != nil) ? title : "";
+        db_id = (db_id != nil) ? db_id : "";
+        
         return (db_id, title, href, imageUrl);
     }
     

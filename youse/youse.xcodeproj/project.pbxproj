@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02B01DE1D73098400C7571E /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A02B01D81D73098400C7571E /* libMobiSage.a */; };
 		A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491BFA1D71148500238ED1 /* AppDelegate.swift */; };
 		A0491C021D71148500238ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0491C011D71148500238ED1 /* Assets.xcassets */; };
 		A0491C051D71148500238ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0491C031D71148500238ED1 /* LaunchScreen.storyboard */; };
@@ -23,6 +24,12 @@
 
 /* Begin PBXFileReference section */
 		56C2FED22BDF6F8EB630E2D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A02B01D81D73098400C7571E /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
+		A02B01D91D73098400C7571E /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
+		A02B01DA1D73098400C7571E /* MobiSageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageFactory.h; sourceTree = "<group>"; };
+		A02B01DB1D73098400C7571E /* MobiSageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageManager.h; sourceTree = "<group>"; };
+		A02B01DC1D73098400C7571E /* MobiSageNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageNative.h; sourceTree = "<group>"; };
+		A02B01DD1D73098400C7571E /* MobiSagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSagePoster.h; sourceTree = "<group>"; };
 		A0491BF71D71148500238ED1 /* youse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0491BFA1D71148500238ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0491C011D71148500238ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02B01DE1D73098400C7571E /* libMobiSage.a in Frameworks */,
 				BD0F63A6A989F731251ED2EB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +71,19 @@
 				56C2FED22BDF6F8EB630E2D0 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A02B01D71D73098400C7571E /* MobiSageSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A02B01D81D73098400C7571E /* libMobiSage.a */,
+				A02B01D91D73098400C7571E /* MobiSageBanner.h */,
+				A02B01DA1D73098400C7571E /* MobiSageFactory.h */,
+				A02B01DB1D73098400C7571E /* MobiSageManager.h */,
+				A02B01DC1D73098400C7571E /* MobiSageNative.h */,
+				A02B01DD1D73098400C7571E /* MobiSagePoster.h */,
+			);
+			path = MobiSageSDK;
 			sourceTree = "<group>";
 		};
 		A0491BEE1D71148500238ED1 = {
@@ -158,6 +179,7 @@
 		A0491C2B1D716DAD00238ED1 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				A02B01D71D73098400C7571E /* MobiSageSDK */,
 				A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */,
 			);
 			path = Vender;
@@ -419,7 +441,7 @@
 				INFOPLIST_FILE = youse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/youse/Vender/MobiSageSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
@@ -444,7 +466,7 @@
 				INFOPLIST_FILE = youse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/youse/Vender/MobiSageSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";

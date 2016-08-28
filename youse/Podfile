@@ -5,6 +5,7 @@ pod 'Reachability', '~> 3.2'
 pod 'JSONKit-NoWarning', '~> 1.2'
 pod 'FMDB', '~> 2.6.2'
 pod 'SDWebImage', '~> 3.7.3'
+pod 'MJRefresh', '~> 3.0.2'
 pod 'MWPhotoBrowser', '~> 2.1.2'
 
 #AOP面向切面思想

@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainVC = YSEMainViewController();
         let mainNC = UINavigationController(rootViewController: mainVC);
-        self.window?.rootViewController = mainNC;
+        let stackVC = CWStackController(rootViewController: mainNC);
+        self.window?.rootViewController = stackVC;
         
         self.window?.makeKeyAndVisible();
         return true

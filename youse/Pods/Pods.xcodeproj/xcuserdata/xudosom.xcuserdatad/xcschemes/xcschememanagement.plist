@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MWPhotoBrowser-MWPhotoBrowser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,11 +97,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E8DA264676E0E9576BA7BBE69726E7F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>14E6E2E2484806AB62B60CA2EAD41F9B</key>
 		<dict>
 			<key>primary</key>
@@ -127,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D248D24FDF39BC4B992C9CF6899549F</key>
+		<key>6847254D016329D4A531D34ED2B6DF81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>897FCFCD5FC0DF3479FF27C8621D8143</key>
+		<key>7708AE2889B98CAFD1352823FD8B68CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>790215C66191A57BB90E483447F27438</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7D248D24FDF39BC4B992C9CF6899549F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,7 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BF70CB1841571A03C27B733FA4CCEB7</key>
+		<key>955A637FF78723EBCD3B9B2976FEC7C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
