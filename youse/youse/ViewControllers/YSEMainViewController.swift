@@ -95,6 +95,7 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
             let img_url = "\(imageGroupModel.root_img_url)/\(i).\(imageGroupModel.imge_type)";
             let url = NSURL(string: img_url);
             let photo = MWPhoto(URL: url);
+            photo.caption = "  \n  ";
             self.photoes.append(photo);
         }
 //        for index in 1...total_image_count {
@@ -118,9 +119,7 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
         browser.enableSwipeToDismiss = true;
         browser.autoPlayOnAppear = autoPlayOnAppear;
         browser.setCurrentPhotoIndex(0);
-        let browserNC = UINavigationController(rootViewController: browser);
-        browserNC.modalTransitionStyle = .CrossDissolve;
-        self.navigationController?.presentViewController(browserNC, animated: true, completion: nil);
+        self.navigationController?.pushViewController(browser, animated: true);
     }
     
     
@@ -138,6 +137,14 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func photoBrowser(photoBrowser: MWPhotoBrowser!, didDisplayPhotoAtIndex index: UInt) {
         NSLog("didDisplayPhotoAtIndex");
+        let scrollView = photoBrowser.view.subviews.first as! UIScrollView;
+        let captionView = scrollView.subviews.last! as UIView;
+        if captionView.isKindOfClass(MWCaptionView) {
+            let view = UIView(frame: captionView.bounds);
+            view.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.2);
+            captionView.addSubview(view);
+            NSLog("views = %@", captionView.subviews);
+        }
     }
     func photoBrowserDidFinishModalPresentation(photoBrowser: MWPhotoBrowser!) {
         NSLog("Did finish modal presentation");
