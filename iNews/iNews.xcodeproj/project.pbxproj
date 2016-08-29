@@ -11,6 +11,8 @@
 		0929268C1D6301B500F76FB0 /* PRLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 092926871D6301B500F76FB0 /* PRLoadMoreFooter.m */; };
 		0929268D1D6301B500F76FB0 /* PRPullToRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */; };
 		0929268E1D6301B500F76FB0 /* PRRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0929268B1D6301B500F76FB0 /* PRRefreshHeader.m */; };
+		098BB0F61D6FD81500326CEC /* INSRootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BB0F51D6FD81500326CEC /* INSRootTableViewCell.swift */; };
+		098BB0F81D6FD88300326CEC /* INSArticleContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BB0F71D6FD88300326CEC /* INSArticleContentCell.swift */; };
 		09A09F8F1D6D430A00EEE51C /* INSGlobleVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A09F8E1D6D430A00EEE51C /* INSGlobleVar.swift */; };
 		09A09F971D6D797800EEE51C /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F911D6D797800EEE51C /* libMobiSage.a */; };
 		09A09F991D6D7A3100EEE51C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A09F981D6D7A3100EEE51C /* CoreLocation.framework */; };
@@ -34,6 +36,9 @@
 		09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFBB71D61B125008ED4B9 /* XDSThirdPartyService.swift */; };
 		09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC5F1D61B142008ED4B9 /* AppDelegate.swift */; };
 		09BFFC6A1D61BA88008ED4B9 /* INSRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BFFC691D61BA88008ED4B9 /* INSRequestHelper.m */; };
+		09DEB6AD1D6E7D4200C796A7 /* PRBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DEB6AB1D6E7D4200C796A7 /* PRBrowserViewController.m */; };
+		09DEB6AE1D6E7D4200C796A7 /* PRBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DEB6AC1D6E7D4200C796A7 /* PRBrowserViewController.xib */; };
+		09DEB6B31D6EC56500C796A7 /* INSToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEB6B21D6EC56500C796A7 /* INSToolBar.swift */; };
 		A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A057C04B1D62067400D3DB52 /* INSArticleModel.m */; };
 		A0A885061D6B46EA0040E2BB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A885051D6B46EA0040E2BB /* libsqlite3.tbd */; };
 		A0A885081D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A885071D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift */; };
@@ -50,6 +55,8 @@
 		092926891D6301B500F76FB0 /* PRPullToRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPullToRefreshViewController.m; sourceTree = "<group>"; };
 		0929268A1D6301B500F76FB0 /* PRRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRRefreshHeader.h; sourceTree = "<group>"; };
 		0929268B1D6301B500F76FB0 /* PRRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRRefreshHeader.m; sourceTree = "<group>"; };
+		098BB0F51D6FD81500326CEC /* INSRootTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSRootTableViewCell.swift; sourceTree = "<group>"; };
+		098BB0F71D6FD88300326CEC /* INSArticleContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSArticleContentCell.swift; sourceTree = "<group>"; };
 		09A09F8E1D6D430A00EEE51C /* INSGlobleVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSGlobleVar.swift; sourceTree = "<group>"; };
 		09A09F911D6D797800EEE51C /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
 		09A09F921D6D797800EEE51C /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
@@ -87,6 +94,10 @@
 		09BFFC6E1D61BAD8008ED4B9 /* INSHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INSHeader.h; sourceTree = "<group>"; };
 		09BFFC6F1D61BAF4008ED4B9 /* INCPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INCPrefixHeader.pch; sourceTree = "<group>"; };
 		09CD49BC1D61BE340001DA9C /* iNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iNews-Bridging-Header.h"; sourceTree = "<group>"; };
+		09DEB6AA1D6E7D4200C796A7 /* PRBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRBrowserViewController.h; sourceTree = "<group>"; };
+		09DEB6AB1D6E7D4200C796A7 /* PRBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRBrowserViewController.m; sourceTree = "<group>"; };
+		09DEB6AC1D6E7D4200C796A7 /* PRBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRBrowserViewController.xib; sourceTree = "<group>"; };
+		09DEB6B21D6EC56500C796A7 /* INSToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSToolBar.swift; sourceTree = "<group>"; };
 		5A58AF8C8D52D4EF44D2428F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		72618388FA8AE15329F4EED5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A057C04A1D62067400D3DB52 /* INSArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSArticleModel.h; sourceTree = "<group>"; };
@@ -224,6 +235,7 @@
 		09BFFBA21D61B125008ED4B9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				09DEB6B21D6EC56500C796A7 /* INSToolBar.swift */,
 				092926851D6301B500F76FB0 /* PRPullToRefresh */,
 			);
 			path = Components;
@@ -234,6 +246,11 @@
 			children = (
 				A0AE8AB01D635E3C00E73BD1 /* INSRootViewController.swift */,
 				09A5A1921D6C11F6007E614D /* INSArticleContentViewController.swift */,
+				098BB0F51D6FD81500326CEC /* INSRootTableViewCell.swift */,
+				098BB0F71D6FD88300326CEC /* INSArticleContentCell.swift */,
+				09DEB6AA1D6E7D4200C796A7 /* PRBrowserViewController.h */,
+				09DEB6AB1D6E7D4200C796A7 /* PRBrowserViewController.m */,
+				09DEB6AC1D6E7D4200C796A7 /* PRBrowserViewController.xib */,
 				09A5A1A11D6C228C007E614D /* html.html */,
 			);
 			path = ViewControllers;
@@ -430,6 +447,7 @@
 				09BFFB951D61B0F8008ED4B9 /* Assets.xcassets in Resources */,
 				09BFFB901D61B0F8008ED4B9 /* Main.storyboard in Resources */,
 				09A5A19E1D6C148C007E614D /* night.css in Resources */,
+				09DEB6AE1D6E7D4200C796A7 /* PRBrowserViewController.xib in Resources */,
 				09A5A1961D6C1443007E614D /* article.html in Resources */,
 				09A5A19C1D6C148C007E614D /* common.css in Resources */,
 				09A5A1A01D6C148C007E614D /* imghandler.js in Resources */,
@@ -498,14 +516,18 @@
 				0929268D1D6301B500F76FB0 /* PRPullToRefreshViewController.m in Sources */,
 				A0AE8AB41D63686000E73BD1 /* INSDataBase.swift in Sources */,
 				0929268E1D6301B500F76FB0 /* PRRefreshHeader.m in Sources */,
+				098BB0F61D6FD81500326CEC /* INSRootTableViewCell.swift in Sources */,
 				09BFFC6A1D61BA88008ED4B9 /* INSRequestHelper.m in Sources */,
 				09BFFB931D61B0F8008ED4B9 /* iNews.xcdatamodeld in Sources */,
 				09BFFC611D61B142008ED4B9 /* AppDelegate.swift in Sources */,
+				09DEB6AD1D6E7D4200C796A7 /* PRBrowserViewController.m in Sources */,
 				A0AE8AB11D635E3C00E73BD1 /* INSRootViewController.swift in Sources */,
 				A057C04C1D62067400D3DB52 /* INSArticleModel.m in Sources */,
 				09BFFC2C1D61B126008ED4B9 /* XDSThirdPartyService.swift in Sources */,
 				09A09F8F1D6D430A00EEE51C /* INSGlobleVar.swift in Sources */,
 				09BFFC2B1D61B126008ED4B9 /* SSKeychain.m in Sources */,
+				09DEB6B31D6EC56500C796A7 /* INSToolBar.swift in Sources */,
+				098BB0F81D6FD88300326CEC /* INSArticleContentCell.swift in Sources */,
 				A0A885081D6B48950040E2BB /* FMDatabaseAdditionsVariadic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

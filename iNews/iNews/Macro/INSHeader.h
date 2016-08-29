@@ -11,5 +11,5 @@
 
 #import "INSModelsHead.h"
 #import "INSRequestHelper.h"
-
+#import "PRBrowserViewController.h"
 #endif /* INSHeader_h */

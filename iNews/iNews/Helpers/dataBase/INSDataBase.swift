@@ -28,7 +28,7 @@ class INSDataBase: NSObject {
             self.daQueue.inDatabase({ (db:FMDatabase!) in
                 //创建表
                 if !db.tableExists(INSDataBase.tableName){
-                    let createSql = "create table if not exists \(INSDataBase.tableName) (articleId NOT NULL PRIMARY KEY, articleType TEXT, publicDate TEXT, title TEXT, summary TEXT, href TEXT, content TEXT)";
+                    let createSql = "create table if not exists \(INSDataBase.tableName) (articleId NOT NULL PRIMARY KEY, articleType, publicDate, title, summary, href, content, read, cacheStatus)";
                     let result = db.executeStatements(createSql);
                     if (result){
                         NSLog("创建表成功");
@@ -77,8 +77,8 @@ class INSDataBase: NSObject {
                     }
                 })
             }else{
-                let insertSql = "insert into \(INSDataBase.tableName) (articleId, articleType, publicDate, title, summary, href, content) values (?, ?, ?, ?, ?, ?, ?)";
-                let argumentinArray = [articleModel.articleId, articleModel.articleType, articleModel.publicDate, articleModel.title, articleModel.summary, articleModel.href, articleModel.content]
+                let insertSql = "insert into \(INSDataBase.tableName) (articleId, articleType, publicDate, title, summary, href, content, read, cacheStatus) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                let argumentinArray = [articleModel.articleId, articleModel.articleType, articleModel.publicDate, articleModel.title, articleModel.summary, articleModel.href, articleModel.content, articleModel.read, articleModel.cacheStatus];
                 let result = db.executeUpdate(insertSql, withArgumentsInArray: argumentinArray);
                 if result{
                     NSLog("数据插入成功");
@@ -122,7 +122,15 @@ class INSDataBase: NSObject {
             columns.addObject("content = ?");
             arguments.addObject(article.content);
         }
-
+        if article.read != nil {
+            columns.addObject("read = ?");
+            arguments.addObject(article.read);
+        }
+        if article.cacheStatus != nil {
+            columns.addObject("content = ?");
+            arguments.addObject(article.cacheStatus);
+        }
+        
         let sql = "update \(INSDataBase.tableName) set \(columns.componentsJoinedByString(",")) where articleId = \(article.articleId)";
         completion(sql: sql, arguments: arguments);
     }
@@ -156,9 +164,20 @@ class INSDataBase: NSObject {
         article.articleType = set.stringForColumn("articleType");
         article.articleId = set.stringForColumn("articleId");
         article.publicDate = set.stringForColumn("publicDate");
+        article.read = self.numberForColumnName("read", set: set);
+        article.cacheStatus = self.numberForColumnName("cacheStatus", set: set);
         return article;
     }
 
+    func numberForColumnName(name:String, set:FMResultSet) -> NSNumber? {
+        let result = set .objectForColumnName(name);
+        if result.isKindOfClass(NSNull.self) {
+            return nil;
+        }
+        return result as? NSNumber;
+    }
+
+    
     internal func deleteArticle() -> Void{
         self.daQueue.inDatabase { (db:FMDatabase!) in
             

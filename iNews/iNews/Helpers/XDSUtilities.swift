@@ -16,6 +16,17 @@ class XDSUtilities: NSObject {
         return instantiateViewController;
     }
 
-    
-    
+    static internal func labelWithFrame(frame frame:CGRect,
+                                              textAlignment:NSTextAlignment,
+                                              font:UIFont,
+                                              text:String,
+                                              textColor:UIColor) -> UILabel{
+        let label = UILabel(frame: frame);
+        label.text = text;
+        label.textAlignment = textAlignment;
+        label.font = font;
+        label.textColor = textColor;
+        return label;
+    }
+
 }

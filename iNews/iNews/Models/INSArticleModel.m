@@ -9,10 +9,6 @@
 #import "INSArticleModel.h"
 
 @implementation INSArticleModel
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"\ntitle = %@; \ncontent = %@;    \nsummary = %@;    \nhref = %@;    \narticleType = %@;    \narticleId = %@;   \npublicDate = %@\n\n\n", _title, _content, _summary, _href, _articleType, _articleId, _publicDate];
-}
 
 - (instancetype)init{
     if (self = [super init]) {
@@ -23,6 +19,8 @@
         _articleType = @"";
         _articleId = @"";
         _publicDate = @"";
+        _read = INSArticleReadStatusUnread;
+        _cacheStatus = INSArticleCacheStatusNone;
     }
     return self;
 }
@@ -100,7 +98,13 @@
     }
     
     NSString * rootUrl = @"http://www.wenzhaiwang.com";
-    html = [html stringByReplacingOccurrencesOfString:kOriginPlaceholder withString:[NSString stringWithFormat:@"%@%@.html", rootUrl, self.articleId]];
+    html = [html stringByReplacingOccurrencesOfString:kOriginPlaceholder withString:[NSString stringWithFormat:@"%@%@", rootUrl, self.href]];
     return html;
+}
+
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"\ntitle = %@; \ncontent = %@;    \nsummary = %@;    \nhref = %@;    \narticleType = %@;    \narticleId = %@;   \npublicDate = %@;   read = %@; cacheStatus = %@ \n\n\n", _title, _content, _summary, _href, _articleType, _articleId, _publicDate, _read, _cacheStatus];
 }
 @end

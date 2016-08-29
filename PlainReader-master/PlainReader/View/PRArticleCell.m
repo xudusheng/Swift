@@ -240,7 +240,9 @@
     self.queue = queue;
     
     NSString *api = [NSString stringWithFormat:@"http://www.cnbeta.com/articles/%@.htm", article.articleId];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:api] cachePolicy:0 timeoutInterval:15.0];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:api]
+                                             cachePolicy:0
+                                         timeoutInterval:15.0];
     
     AFHTTPRequestOperation *articleOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [articleOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {

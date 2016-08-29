@@ -13,10 +13,12 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
     var tableView: UITableView!;
     var page = 1;
     let fetchResults = NSMutableArray(capacity: 0);
+    let INSArticleContentCellIdentifier = "INSArticleContentCell";
     override func viewDidLoad() {
         self.tableView = UITableView(frame: CGRectZero, style: .Plain);
         self.tableView.translatesAutoresizingMaskIntoConstraints = false;
-        self.tableView.rowHeight = 65;
+        self.tableView.rowHeight = 90;
+        self.tableView.registerClass(INSArticleContentCell.self, forCellReuseIdentifier: INSArticleContentCellIdentifier);
         self.view.addSubview(self.tableView);
         
         let views = ["tableView":tableView];
@@ -53,16 +55,12 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let identifier = "xxxxx";
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier);
-        if cell == nil {
-            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: identifier);
-        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        let cell = tableView.dequeueReusableCellWithIdentifier(INSArticleContentCellIdentifier) as! INSArticleContentCell;
         let article = self.fetchResults[indexPath.row] as! INSArticleModel;
-        cell?.textLabel?.text = article.title;
-        cell?.detailTextLabel?.numberOfLines = 2;
-        cell?.detailTextLabel?.text = article.summary;
-        return cell!;
+        cell.dataObject = article;
+        cell.p_loadCell();
+        return cell;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -74,7 +72,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
     //MARK: - 网络请求
     override func refreshTriggered() {
         super.refreshTriggered();
-        INSRequestHelper().fetchHomePage(1, page: 1) { (responseObject:AnyObject!, error:NSError!) in
+        INSRequestHelper().fetchHomePage(1, page: 1) { (requestHelper : INSRequestHelper!) in
             self.loadMoreCompletedWithNoMore(false);
             self.refreshCompleted();
             let resuls = INSDataBase.shareInstance().fetchArticlesWithLastArticle(nil, limit: 10);
@@ -86,7 +84,7 @@ class INSRootViewController: PRPullToRefreshViewController, UITableViewDelegate,
     }
     override func loadMoreTriggered() {
         super.loadMoreTriggered();
-        INSRequestHelper().fetchHomePage(1, page: self.page) { (responseObject:AnyObject!, error:NSError!) in
+        INSRequestHelper().fetchHomePage(1, page: self.page) { (requestHelper : INSRequestHelper!) in
             self.loadMoreCompletedWithNoMore(false);
             self.page += 1;
             let lastArticle = self.fetchResults.lastObject as! INSArticleModel;
