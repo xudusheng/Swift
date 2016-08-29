@@ -19,6 +19,8 @@ class YSEImageGroupModel: NSObject {
     var title = "";//标题
     var db_id = "";//用于保存数据库的ID，格式：2016/0530/36107
     var item_img_url = "";//与标题一同显示的图片，格式：http://www.169bb.com/uploads/allimg/160520/1_0520135FG525.jpg
+    var item_img_width = "";
+    var item_img_height = "";
     var href = "";//内容图片的地址，格式：http://www.169bb.com/xingganmeinv/2016/0520/36043.html
     
     var total_page = "0";//总页数
@@ -37,6 +39,8 @@ class YSEImageGroupModel: NSObject {
             "category = \(self.category)" + "\n" +
             "title = \(self.title)" + "\n" +
             "item_img_url = \(self.item_img_url)" + "\n" +
+            "item_img_width = \(self.item_img_width)" + "\n" +
+            "item_img_height = \(self.item_img_height)" + "\n" +
             "href = \(self.href)" + "\n" +
             "total_page = \(self.total_page)" + "\n" +
             "total_image_count = \(self.total_image_count)" + "\n" +

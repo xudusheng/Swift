@@ -10,9 +10,11 @@ import UIKit
 
 typealias CategoryType = (name:String, type:Int);
 
-class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MWPhotoBrowserDelegate, MobiSageBannerAdDelegate{
+class YSEMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MWPhotoBrowserDelegate, MobiSageBannerAdDelegate{
     let YSEImageItemCellIdentifier = "YSEImageItemCell";
-    var tableView : UITableView!;
+    let INSImageItemCollectionViewCellIdentifier = "INSImageItemCollectionViewCell";
+    let gap = CGFloat(5);
+    var mainCollectionView : UICollectionView!;
     var page = 2;
     var imageGroupList = [[YSEImageGroupModel]]();
     var photoes = [MWPhoto]();
@@ -40,31 +42,42 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.createMainViewControllerUI();
         self.category = categoryList[0];
-        
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+        mainCollectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.bannerAd = self.fetchBannerAd();
             self.headerRequest();
         });
-        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+        mainCollectionView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
             self.footerRequest();
         });
-        
-        self.tableView.mj_header.beginRefreshing();
+        mainCollectionView.mj_header.beginRefreshing();
+//        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+//            self.bannerAd = self.fetchBannerAd();
+//            self.headerRequest();
+//        });
+//        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+//            self.footerRequest();
+//        });
+//        self.tableView.mj_header.beginRefreshing();
     }
     
     //MARK: - UI
     func createMainViewControllerUI(){
         self.view.backgroundColor = UIColor.brownColor();
-        self.tableView = UITableView(frame: CGRectZero, style: .Grouped);
-        self.tableView.translatesAutoresizingMaskIntoConstraints = false;
-        self.tableView.delegate = self;
-        self.tableView.dataSource = self;
-        self.tableView.registerClass(YSEImageItemCell.self, forCellReuseIdentifier: YSEImageItemCellIdentifier);
-        self.view.addSubview(tableView);
         
-        let viewsDict = ["tableView":tableView];
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tableView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[tableView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        let flowLayout = UICollectionViewFlowLayout();
+        flowLayout.minimumLineSpacing = gap;//纵向间距
+        flowLayout.minimumInteritemSpacing = CGFloat.min;//横向内边距
+        
+        self.mainCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout);
+        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false;
+        mainCollectionView.delegate = self;
+        mainCollectionView.dataSource = self;
+        self.mainCollectionView.registerClass(INSImageItemCollectionViewCell.self, forCellWithReuseIdentifier: INSImageItemCollectionViewCellIdentifier);
+        mainCollectionView.backgroundColor = UIColor.whiteColor();
+        self.view.addSubview(mainCollectionView);
+        let viewsDict = ["mainCollectionView":mainCollectionView];
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
     }
     
     //MARK: - Request
@@ -79,20 +92,21 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func headerRequest(){
         self.page = 2;
         YSERequestFetcher().p_fetchHomePage(self.category, page: 1) { (requestFetcher) in
-            self.tableView.mj_header.endRefreshing();
+            self.mainCollectionView.mj_header.endRefreshing();
+
             if requestFetcher.error != nil || requestFetcher.responseObj == nil{
                 return;
             }
             let list = requestFetcher.responseObj as! [[YSEImageGroupModel]];
             self.imageGroupList.removeAll();
             self.imageGroupList += list;
-            self.tableView.reloadData();
+            self.mainCollectionView.reloadData();
         }
     }
     
     private func footerRequest(){
         YSERequestFetcher().p_fetchHomePage(self.category, page: self.page) { (requestFetcher) in
-            self.tableView.mj_footer.endRefreshing();
+            self.mainCollectionView.mj_footer.endRefreshing();
             if requestFetcher.error != nil || requestFetcher.responseObj == nil{
                 return;
             }
@@ -104,51 +118,48 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
                 imageList += newImageList;
                 self.imageGroupList.removeLast();
                 self.imageGroupList.append(imageList);
-                self.tableView.reloadData();
+                self.mainCollectionView.reloadData();
             }else{
-                self.tableView.mj_footer.endRefreshingWithNoMoreData();
+                self.mainCollectionView.mj_footer.endRefreshingWithNoMoreData();
             }
         }
     }
     //MARK: - Delegate
-    //TODO:UITableViewDelegate, UITableViewDataSource
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    //TODO:UICollectionViewDelegate, UICollectionViewDataSource
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return self.imageGroupList.count;
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let imageList = self.imageGroupList[section];
         return imageList.count;
     }
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25;
-    }
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 && isBannerRequestSuccess && self.imageGroupList.count > 1{
-            return CGRectGetHeight((self.bannerAd?.frame)!);
-        }
-        return CGFloat.min;
-    }
-    
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 0 && isBannerRequestSuccess && self.imageGroupList.count > 1{
-            return self.bannerAd;
-        }
-        return nil;
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(YSEImageItemCellIdentifier) as? YSEImageItemCell;
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(INSImageItemCollectionViewCellIdentifier, forIndexPath: indexPath) as! INSImageItemCollectionViewCell;
         let model = self.imageGroupList[indexPath.section][indexPath.row];
-        cell?.contentData = model as AnyObject;
-        cell?.p_loadCell();
-        return cell!;
+        cell.imageModel = model;
+        cell.backgroundColor = UIColor.blueColor();
+        cell.p_loadCell();
+        return cell;
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true);
         let selectedModel = self.imageGroupList[indexPath.section][indexPath.row];
         self.showPhotoBrowser(selectedModel);
     }
+    //TODO:UICollectionViewDelegateFlowLayout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let model = imageGroupList[indexPath.section][indexPath.row];
+        let cellWidth  = (SWIFT_DEVICE_SCREEN_WIDTH - 3*gap)/2;
+        let cellHeight = self.getCellHeight(model, width: cellWidth);
+        return CGSizeMake(cellWidth, cellHeight);
+    }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(gap, gap, gap + 50, gap);
+    }
+
     //TODO:MWPhotoBrowserDelegate
     func numberOfPhotosInPhotoBrowser(photoBrowser: MWPhotoBrowser!) -> UInt {
         return UInt(self.photoes.count);
@@ -187,7 +198,7 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
     func mobiSageBannerAdSuccessToShowAd(adBanner: MobiSageBanner!) {
         if adBanner == self.bannerAd {
             self.isBannerRequestSuccess = true;
-            self.tableView.reloadData();
+            self.mainCollectionView.reloadData();
         }else if adBanner == self.footerAd{
             self.isFooterAdRequestSuccess = true;
         }
@@ -196,12 +207,18 @@ class YSEMainViewController: UIViewController, UITableViewDelegate, UITableViewD
     func mobiSageBannerLandingPageHided(adBanner: MobiSageBanner!) {
         if adBanner == self.bannerAd {
             self.isBannerRequestSuccess = false;
-            self.tableView.reloadData();
+            self.mainCollectionView.reloadData();
         }else if adBanner == self.footerAd{
             self.isFooterAdRequestSuccess = false;
         }
     }
     
+    //TODO:getCellHeight
+    private func getCellHeight(imageModel:YSEImageGroupModel, width:CGFloat) -> CGFloat{
+        let imageHeight = CGFloat(Float(imageModel.item_img_height)!);
+        let imageWidth = CGFloat(Float(imageModel.item_img_width)!);
+        return (imageHeight * width / imageWidth);
+    }
     //MARK: - web request
     
     //MARK: - handle touch

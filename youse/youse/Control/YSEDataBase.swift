@@ -27,7 +27,7 @@ class YSEDataBase: NSObject {
             self.daQueue.inDatabase({ (db:FMDatabase!) in
                 //创建表
                 if !db.tableExists(DB_TABLENAME){
-                    let createSql = "create table if not exists \(DB_TABLENAME) (db_id not null primary key, category, title, item_img_url, href, total_page, total_image_count, root_img_url, imge_type, has_get_total_page, is_ready_toshow)";
+                    let createSql = "create table if not exists \(DB_TABLENAME) (db_id not null primary key, category, title, item_img_url, item_img_width, item_img_height, href, total_page, total_image_count, root_img_url, imge_type, has_get_total_page, is_ready_toshow)";
                     let result = db.executeStatements(createSql);
                     if (result){
                         NSLog("创建表成功");
@@ -69,12 +69,14 @@ class YSEDataBase: NSObject {
                     }
                 })
             }else{
-                let insertSql = "insert into \(DB_TABLENAME) (db_id, category, title, item_img_url, href, total_page, total_image_count, root_img_url, imge_type, has_get_total_page, is_ready_toshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                let insertSql = "insert into \(DB_TABLENAME) (db_id, category, title, item_img_url, item_img_width, item_img_height, href, total_page, total_image_count, root_img_url, imge_type, has_get_total_page, is_ready_toshow) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 let argumentinArray = [
                     model.db_id,
                     model.category,
                     model.title,
                     model.item_img_url,
+                    model.item_img_width,
+                    model.item_img_height,
                     model.href,
                     model.total_page,
                     model.total_image_count,
@@ -136,6 +138,14 @@ class YSEDataBase: NSObject {
             columns.append("item_img_url = ?");
             arguments.append(model.item_img_url);
         }
+        if model.item_img_width.characters.count > 0 {
+            columns.append("item_img_width = ?");
+            arguments.append(model.item_img_width);
+        }
+        if model.item_img_height.characters.count > 0 {
+            columns.append("item_img_height = ?");
+            arguments.append(model.item_img_height);
+        }
         if model.href.characters.count > 0 {
             columns.append("href = ?");
             arguments.append(model.href);
@@ -180,6 +190,8 @@ class YSEDataBase: NSObject {
         model.title = set.stringForColumn("title");
         model.db_id = set.stringForColumn("db_id");
         model.item_img_url = set.stringForColumn("item_img_url");
+        model.href = set.stringForColumn("item_img_width");
+        model.href = set.stringForColumn("item_img_height");
         model.href = set.stringForColumn("href");
         model.total_page = set.stringForColumn("total_page");
         model.total_image_count = set.stringForColumn("total_image_count");

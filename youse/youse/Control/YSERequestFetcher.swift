@@ -61,18 +61,23 @@ class YSERequestFetcher: NSObject {
             model.title = info.title;
             model.href = info.href;
             model.item_img_url = info.item_img_url;
+            model.item_img_width = info.image_width;
+            model.item_img_height = info.image_height;
             let newModel = YSEDataBase.shareInstance().storeOrUpdate(imageGroupModel: model);
             imageModels.append(newModel);
         }
         return imageModels;
     }
     //TODO:分离出id，href等
-    func separateElement(element_a:TFHppleElement) -> (db_id:String!, title:String!, href:String!, item_img_url:String!) {
+    func separateElement(element_a:TFHppleElement) -> (db_id:String!, title:String!, href:String!, item_img_url:String!, image_width:String!, image_height:String!) {
 
         let element_img = element_a.firstChildWithTagName("img");
         let element_p = element_a.firstChildWithTagName("p");
         var href = element_a.objectForKey("href");
         var imageUrl = element_img.objectForKey("src");
+        var image_width = element_img.objectForKey("width");
+        var image_height = element_img.objectForKey("height");
+        
         var title = element_p.text();
         var db_id : String?;
 
@@ -91,8 +96,10 @@ class YSERequestFetcher: NSObject {
         imageUrl = (imageUrl != nil) ? imageUrl : "";
         title = (title != nil) ? title : "";
         db_id = (db_id != nil) ? db_id : "";
-        
-        return (db_id, title, href, imageUrl);
+        image_width = (image_width != nil) ? image_width : "";
+        image_height = (image_height != nil) ? image_height : "";
+
+        return (db_id, title, href, imageUrl, image_width, image_height);
     }
     
     
