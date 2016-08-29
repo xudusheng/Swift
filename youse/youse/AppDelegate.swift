@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let stackVC = CWStackController(rootViewController: mainNC);
         self.window?.rootViewController = stackVC;
         
+        YSESystemConfig.config();
+        
         self.window?.makeKeyAndVisible();
         return true
     }

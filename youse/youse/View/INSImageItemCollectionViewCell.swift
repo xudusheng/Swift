@@ -30,9 +30,12 @@ class INSImageItemCollectionViewCell: UICollectionViewCell {
     
     //MARK:UI
     private func createImageItemCollectionViewCellUI(){
+        bgImageView.backgroundColor = UIColor.lightGrayColor();
         bgImageView.translatesAutoresizingMaskIntoConstraints = false;
         titleLabel.translatesAutoresizingMaskIntoConstraints = false;
-        titleLabel.backgroundColor = UIColor.yellowColor();
+        titleLabel.font = UIFont.systemFontOfSize(12);
+        titleLabel.textColor = UIColor.whiteColor();
+        titleLabel.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4);
         self.contentView.addSubview(bgImageView);
         self.contentView.addSubview(titleLabel);
         
@@ -40,7 +43,10 @@ class INSImageItemCollectionViewCell: UICollectionViewCell {
         self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bgImageView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bgImageView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[titleLabel]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[titleLabel(30)]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[titleLabel(25)]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        
+        self.contentView.layer.cornerRadius = 10;
+        self.contentView.layer.masksToBounds = true;
     }
     
     

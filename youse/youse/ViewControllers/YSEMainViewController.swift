@@ -50,20 +50,12 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.footerRequest();
         });
         mainCollectionView.mj_header.beginRefreshing();
-//        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-//            self.bannerAd = self.fetchBannerAd();
-//            self.headerRequest();
-//        });
-//        self.tableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
-//            self.footerRequest();
-//        });
-//        self.tableView.mj_header.beginRefreshing();
     }
     
     //MARK: - UI
     func createMainViewControllerUI(){
         self.view.backgroundColor = UIColor.brownColor();
-        
+        self.title = "性感美女";
         let flowLayout = UICollectionViewFlowLayout();
         flowLayout.minimumLineSpacing = gap;//纵向间距
         flowLayout.minimumInteritemSpacing = CGFloat.min;//横向内边距
@@ -138,7 +130,6 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(INSImageItemCollectionViewCellIdentifier, forIndexPath: indexPath) as! INSImageItemCollectionViewCell;
         let model = self.imageGroupList[indexPath.section][indexPath.row];
         cell.imageModel = model;
-        cell.backgroundColor = UIColor.blueColor();
         cell.p_loadCell();
         return cell;
     }
@@ -157,7 +148,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(gap, gap, gap + 50, gap);
+        return UIEdgeInsetsMake(gap, gap, 0, gap);
     }
 
     //TODO:MWPhotoBrowserDelegate

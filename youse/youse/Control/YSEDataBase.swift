@@ -138,11 +138,12 @@ class YSEDataBase: NSObject {
             columns.append("item_img_url = ?");
             arguments.append(model.item_img_url);
         }
-        if model.item_img_width.characters.count > 0 {
+
+        if Float(model.item_img_width) > 0 {
             columns.append("item_img_width = ?");
             arguments.append(model.item_img_width);
         }
-        if model.item_img_height.characters.count > 0 {
+        if Float(model.item_img_height) > 1 {
             columns.append("item_img_height = ?");
             arguments.append(model.item_img_height);
         }
@@ -190,8 +191,8 @@ class YSEDataBase: NSObject {
         model.title = set.stringForColumn("title");
         model.db_id = set.stringForColumn("db_id");
         model.item_img_url = set.stringForColumn("item_img_url");
-        model.href = set.stringForColumn("item_img_width");
-        model.href = set.stringForColumn("item_img_height");
+        model.item_img_width = set.stringForColumn("item_img_width");
+        model.item_img_height = set.stringForColumn("item_img_height");
         model.href = set.stringForColumn("href");
         model.total_page = set.stringForColumn("total_page");
         model.total_image_count = set.stringForColumn("total_image_count");
