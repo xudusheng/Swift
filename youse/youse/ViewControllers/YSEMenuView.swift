@@ -44,11 +44,11 @@ class YSEMenuView: UIView, UITableViewDelegate, UITableViewDataSource{
     }
     
     internal func p_show(backView_finalFrame finalFrame:CGRect) {
+        self.frame = finalFrame;
         UIView.animateWithDuration(0.3, animations: {
             self.heightConstraint.constant = self.cellHeight * CGFloat(self.categoryList.count);
             self.layoutIfNeeded();
         }) { (finished:Bool) in
-            self.frame = finalFrame;
         }
     }
 
