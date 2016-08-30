@@ -74,7 +74,8 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         
-        let rightItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(YSEMainViewController.showMunuList));
+        let rightItem = UIBarButtonItem(title: "更多", style: .Done, target: self, action: #selector(YSEMainViewController.showMenuList));
+        rightItem.tintColor = UIColor.whiteColor();
         self.navigationItem.rightBarButtonItem = rightItem;
     }
     
@@ -268,7 +269,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     //TODO:showMenu
-    @objc private func showMunuList(){
+    @objc private func showMenuList(){
         
         if menuView == nil {
             self.menuView = YSEMenuView(frame: CGRectZero);
@@ -278,7 +279,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
                 self.category = category;
                 self.title = self.category!.chineseName;
                 self.mainCollectionView.mj_header.beginRefreshing();
-                self.showMunuList();
+                self.showMenuList();
             };
             self.view.addSubview(menuView!);
         }
