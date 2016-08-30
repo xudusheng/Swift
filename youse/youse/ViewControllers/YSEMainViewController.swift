@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias CategoryType = (name:String, type:Int);
+typealias CategoryType = (chineseName:String, englishName:String, type:Int);
 
 class YSEMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MWPhotoBrowserDelegate, MobiSageBannerAdDelegate{
     let YSEImageItemCellIdentifier = "YSEImageItemCell";
@@ -25,12 +25,14 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     var footerAd : MobiSageBanner?;
     var isFooterAdRequestSuccess = false;
     
+    var menuView : YSEMenuView?;
+    
     let categoryList:[CategoryType] = [
-        (name:"xingganmeinv", type:1),
-        (name:"wangyouzipai", type:2),
-        (name:"gaogensiwa", type:3),
-        (name:"xiyangmeinv", type:4),
-        (name:"guoneimeinv", type:5),
+        (chineseName:"性感美女", englishName:"xingganmeinv", type:1),
+        (chineseName:"网友自拍", englishName:"wangyouzipai", type:2),
+        (chineseName:"高跟丝袜", englishName:"gaogensiwa", type:3),
+        (chineseName:"外国美女", englishName:"xiyangmeinv", type:4),
+        (chineseName:"国内美女", englishName:"guoneimeinv", type:5),
         ];
     var category : CategoryType?;
     
@@ -40,8 +42,8 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.createMainViewControllerUI();
         self.category = categoryList[0];
+        self.createMainViewControllerUI();
         mainCollectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.bannerAd = self.fetchBannerAd();
             self.headerRequest();
@@ -55,7 +57,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     //MARK: - UI
     func createMainViewControllerUI(){
         self.view.backgroundColor = UIColor.brownColor();
-        self.title = "性感美女";
+        self.title = category?.chineseName;
         let flowLayout = UICollectionViewFlowLayout();
         flowLayout.minimumLineSpacing = gap;//纵向间距
         flowLayout.minimumInteritemSpacing = CGFloat.min;//横向内边距
@@ -67,9 +69,13 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.mainCollectionView.registerClass(INSImageItemCollectionViewCell.self, forCellWithReuseIdentifier: INSImageItemCollectionViewCellIdentifier);
         mainCollectionView.backgroundColor = UIColor.whiteColor();
         self.view.addSubview(mainCollectionView);
+        
         let viewsDict = ["mainCollectionView":mainCollectionView];
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        
+        let rightItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(YSEMainViewController.showMunuList));
+        self.navigationItem.rightBarButtonItem = rightItem;
     }
     
     //MARK: - Request
@@ -135,6 +141,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        NSLog("xxxxxxxxxxxxxxx");
         collectionView.deselectItemAtIndexPath(indexPath, animated: true);
         let selectedModel = self.imageGroupList[indexPath.section][indexPath.row];
         self.showPhotoBrowser(selectedModel);
@@ -171,14 +178,24 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     func photoBrowser(photoBrowser: MWPhotoBrowser!, didDisplayPhotoAtIndex index: UInt) {
         NSLog("didDisplayPhotoAtIndex");
         let scrollView = photoBrowser.view.subviews.first as! UIScrollView;
-        let captionView = scrollView.subviews.last! as UIView;
-        if captionView.isKindOfClass(MWCaptionView) && isFooterAdRequestSuccess{
+        let lasetView = scrollView.subviews.last! as UIView;
+        let adHeight = CGRectGetHeight(footerAd!.frame);
+        if isFooterAdRequestSuccess && adHeight > 1 && lasetView.isKindOfClass(MWCaptionView){
+            let captionView = lasetView as! MWCaptionView;
             captionView.userInteractionEnabled = true;
-            let view = UIView(frame: self.footerAd!.bounds);
-            view.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.2);
+            captionView.barTintColor = UIColor.clearColor();
+            captionView.tintColor = UIColor.clearColor();
+            captionView.setBackgroundImage(UIImage(named: "blankLine"), forToolbarPosition: .Any, barMetrics: .Default);
+            captionView.setShadowImage(UIImage(), forToolbarPosition: .Any);
+            
+            let captionViewHeight = CGRectGetHeight(captionView.frame);
+            let view = UIView(frame: self.footerAd!.frame);
+            var viewFrame = view.frame;
+            viewFrame.origin.y = captionViewHeight - adHeight;
+            view.frame = viewFrame;
             view.addSubview(self.footerAd!);
             captionView.addSubview(view);
-            NSLog("views = %@", captionView.subviews);
+            NSLog("frame = %@", NSStringFromCGRect(footerAd!.frame));
         }
     }
     func photoBrowserDidFinishModalPresentation(photoBrowser: MWPhotoBrowser!) {
@@ -188,10 +205,12 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     //TODO:MobiSageBannerAdDelegate
     func mobiSageBannerAdSuccessToShowAd(adBanner: MobiSageBanner!) {
         if adBanner == self.bannerAd {
-            self.isBannerRequestSuccess = true;
+            let adHeight = CGRectGetHeight(bannerAd!.frame);
+            self.isBannerRequestSuccess = (adHeight > 1);
             self.mainCollectionView.reloadData();
         }else if adBanner == self.footerAd{
-            self.isFooterAdRequestSuccess = true;
+            let adHeight = CGRectGetHeight(footerAd!.frame);
+            self.isFooterAdRequestSuccess =  (adHeight > 1);
         }
     }
 
@@ -225,22 +244,13 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         let autoPlayOnAppear = false;
         // Create browser
         self.photoes.removeAll();
-        let total_image_count = Int(imageGroupModel.total_image_count);
-        for var i=1; i <= total_image_count; i+=1{
-            let img_url = "\(imageGroupModel.root_img_url)/\(i).\(imageGroupModel.imge_type)";
+        let total_image_count = Int(imageGroupModel.total_image_count)!;
+        for index in 1...total_image_count {
+            let img_url = "\(imageGroupModel.root_img_url)/\(index).\(imageGroupModel.imge_type)";
             let url = NSURL(string: img_url);
             let photo = MWPhoto(URL: url);
             self.photoes.append(photo);
         }
-        //        for index in 1...total_image_count {
-        //            let img_url = "\(imageGroupModel.root_img_url)/\(index).\(imageGroupModel.imge_type)";
-        //            let url = NSURL(string: img_url);
-        //            let photo = MWPhoto(URL: url);
-        //            photoes.append(photo);
-        //        }
-        
-        let photo = MWPhoto();
-        self.photoes.append(photo);
         let browser = MWPhotoBrowser(photos: self.photoes);
         browser.delegate = self;
         browser.displayActionButton = displayActionButton;
@@ -254,13 +264,31 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         browser.autoPlayOnAppear = autoPlayOnAppear;
         browser.setCurrentPhotoIndex(0);
         self.navigationController?.pushViewController(browser, animated: true);
-//        self.stackController.pushViewController(browser, animated: true);
-//        self.stackController.panGestureRecognizer.direction = 0;
     }
     
     
-
-    
-    
-    
+    //TODO:showMenu
+    @objc private func showMunuList(){
+        
+        if menuView == nil {
+            self.menuView = YSEMenuView(frame: CGRectZero);
+            menuView!.categoryList = categoryList;
+            menuView?.callBack = {
+                (category : CategoryType) -> Void in
+                self.category = category;
+                self.title = self.category!.chineseName;
+                self.mainCollectionView.mj_header.beginRefreshing();
+                self.showMunuList();
+            };
+            self.view.addSubview(menuView!);
+        }
+        
+        let frame = mainCollectionView.frame
+        if CGRectGetHeight(menuView!.frame) < 1 {
+            menuView?.p_show(backView_finalFrame: frame);
+        }else{
+            let new_frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGFloat.min);
+            menuView?.p_hide(backView_finalFrame:new_frame);
+        }
+    }
 }

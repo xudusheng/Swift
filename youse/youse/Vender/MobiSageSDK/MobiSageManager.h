@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define MS_Test_PublishID        @"CgsK2WWehxA5PDNQjQ=="
-#define MS_Test_SlotToken_Banner @"VVRVhjrC2E9mY2wP0kRWaNlz"//横幅广告位
-#define MS_Test_SlotToken_Poster @"EhMSwX2FnwghwT5IlYHJL541"//全屏广告位
-#define MS_Test_SlotToken_Splash @"29rbCLRMVsHo7eKBXNrN5lf8"//开屏广告位
-#define MS_Test_SlotToken_Native @"8fDxIp5mfOvCx8irdubyzH3f"//信息流广告位
+#define MS_Test_PublishID        @"Pj8+7VGqsyQNnnpkuQ=="
+#define MS_Test_SlotToken_Banner @"rK2sf8M7IbafDOj2K+SvkSCK"//横幅广告位
+//#define MS_Test_SlotToken_Poster @"EhMSwX2FnwghwT5IlYHJL541"//全屏广告位
+//#define MS_Test_SlotToken_Splash @"29rbCLRMVsHo7eKBXNrN5lf8"//开屏广告位
+//#define MS_Test_SlotToken_Native @"8fDxIp5mfOvCx8irdubyzH3f"//信息流广告位
 #define MS_TEST_AUDIT_FLAG @"IOS_AppStore_V7.6.0"
 
 @interface MobiSageManager : NSObject

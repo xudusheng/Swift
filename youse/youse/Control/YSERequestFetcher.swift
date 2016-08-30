@@ -16,7 +16,7 @@ class YSERequestFetcher: NSObject {
     
     
     internal func p_fetchHomePage(category:CategoryType!, page:Int!, complete:YSERequestComplete) -> Void {
-        let url = "\(requestRootUrl)/\(category.name)/list_\(category.type)_\(page).html" ;
+        let url = "\(requestRootUrl)/\(category.englishName)/list_\(category.type)_\(page).html" ;
         
         let manager = AFHTTPSessionManager();
         manager.responseSerializer = AFHTTPResponseSerializer();
@@ -56,7 +56,7 @@ class YSERequestFetcher: NSObject {
             let element_a = item as! TFHppleElement;
             let info = self.separateElement(element_a);
             let model = YSEImageGroupModel();
-            model.category = category.name;
+            model.category = category.englishName;
             model.db_id = info.db_id;
             model.title = info.title;
             model.href = info.href;
