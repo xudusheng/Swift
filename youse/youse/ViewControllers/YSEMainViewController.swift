@@ -132,7 +132,6 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         let imageList = self.imageGroupList[section];
         return imageList.count;
     }
-
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(INSImageItemCollectionViewCellIdentifier, forIndexPath: indexPath) as! INSImageItemCollectionViewCell;
         let model = self.imageGroupList[indexPath.section][indexPath.row];
@@ -140,7 +139,6 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.p_loadCell();
         return cell;
     }
-
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         NSLog("xxxxxxxxxxxxxxx");
         collectionView.deselectItemAtIndexPath(indexPath, animated: true);
@@ -154,16 +152,13 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         let cellHeight = self.getCellHeight(model, width: cellWidth);
         return CGSizeMake(cellWidth, cellHeight);
     }
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(gap, gap, 0, gap);
     }
-
     //TODO:MWPhotoBrowserDelegate
     func numberOfPhotosInPhotoBrowser(photoBrowser: MWPhotoBrowser!) -> UInt {
         return UInt(self.photoes.count);
     }
-    
     func photoBrowser(photoBrowser: MWPhotoBrowser!, photoAtIndex index: UInt) -> MWPhotoProtocol! {
         let index_int = Int(index);
         if index_int < self.photoes.count {
@@ -175,7 +170,6 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         return nil;
     }
-    
     func photoBrowser(photoBrowser: MWPhotoBrowser!, didDisplayPhotoAtIndex index: UInt) {
         NSLog("didDisplayPhotoAtIndex");
         let scrollView = photoBrowser.view.subviews.first as! UIScrollView;
@@ -214,7 +208,6 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.isFooterAdRequestSuccess =  (adHeight > 1);
         }
     }
-
     func mobiSageBannerLandingPageHided(adBanner: MobiSageBanner!) {
         if adBanner == self.bannerAd {
             self.isBannerRequestSuccess = false;
