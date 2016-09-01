@@ -20,6 +20,10 @@ platform :ios, '8.0'
 use_frameworks!
 pod 'SnapKit', '~> 0.15.0'
 
+#ReactiveCocoa，函数式编程
+use_frameworks!
+pod 'ReactiveCocoa', '~> 4.2.1'
+
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
