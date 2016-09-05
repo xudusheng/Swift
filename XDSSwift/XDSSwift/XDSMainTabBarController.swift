@@ -12,7 +12,8 @@ class XDSMainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
     }
 
     
@@ -20,6 +21,7 @@ class XDSMainTabBarController: UITabBarController {
         let transition = CATransition();
         transition.type = kCATransitionFade;
         self.view.layer.addAnimation(transition, forKey: nil);
+        
     }
 
 }

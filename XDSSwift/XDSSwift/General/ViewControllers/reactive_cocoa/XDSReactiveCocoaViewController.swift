@@ -22,17 +22,17 @@ class XDSReactiveCocoaViewController: XDSRootViewController {
                 return 0;
             }
             NSLog("length = \(value.description)");
-            let value_new = toString(from: value);
+            let value_new = FromAnyObjectToString(from: value);
             return value_new.length();
             }.filter { (value:AnyObject!) -> Bool in
                 let value_new = value as! Int;
                 return (value_new > 3) ? true : false;
             }.subscribeNext {(value:AnyObject!) in
                 NSLog("value = \(value)");
+                "value".length();
         };
     
         RAC(self, "passwordTextField.text").assignSignal(userNameTextField.rac_textSignal());
-        
         self.passwordTextField.isEqual(self);
     }
 }

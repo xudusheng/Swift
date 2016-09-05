@@ -59,6 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        NSLog("\(url)");
+        return true;
+    }
+    
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {

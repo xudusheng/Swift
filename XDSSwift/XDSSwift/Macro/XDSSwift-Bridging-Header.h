@@ -15,4 +15,9 @@
 #import "MobiSageBanner.h"
 #import "MobiSageFactory.h"
 #import "MobiSageNative.h"
+
+#import "HTTPServer.h"
+#import "MyHTTPConnection.h"
+#import "XDSIPHelper.h"
+
 #endif /* XDSSwift_Bridging_Header_h */

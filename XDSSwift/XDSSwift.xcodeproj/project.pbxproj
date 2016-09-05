@@ -84,6 +84,7 @@
 		09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */; };
 		09FAE7F11D47686500281F83 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F01D47686500281F83 /* snowman.png */; };
 		09FAE7F31D476CEB00281F83 /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F21D476CEB00281F83 /* map.bmp */; };
+		A0385DBF1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */; };
 		A0D257DE1D56D76800302E1B /* XDSMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */; };
 		DEEB0D561A994E049213243E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA704DD93B65A9E29F2A3500 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -209,6 +210,7 @@
 		09FAE7F21D476CEB00281F83 /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
 		3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSWIFIFileTransferViewController.swift; sourceTree = "<group>"; };
 		A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSMainTabBarController.swift; sourceTree = "<group>"; };
 		AA704DD93B65A9E29F2A3500 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -314,6 +316,7 @@
 				09BEA8AA1D4871B10043499F /* LayerSprites */,
 				09BFFB671D618222008ED4B9 /* adsage */,
 				09D4DA031D7951BE00817962 /* reactive_cocoa */,
+				A0385DBD1D7DA905003D1925 /* wifi文件传输 */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -650,6 +653,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A0385DBD1D7DA905003D1925 /* wifi文件传输 */ = {
+			isa = PBXGroup;
+			children = (
+				A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */,
+			);
+			name = "wifi文件传输";
+			path = "adsage/wifi文件传输";
+			sourceTree = "<group>";
+		};
 		C487D4CECB8DC6E7A05E565B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,6 +843,7 @@
 				09BFFB691D6182F1008ED4B9 /* XDSAdsageViewController.swift in Sources */,
 				098E441D1D472360003D5455 /* DDAbstractDatabaseLogger.m in Sources */,
 				09BEA8A01D4849620043499F /* LSImage.m in Sources */,
+				A0385DBF1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift in Sources */,
 				098E44251D472360003D5455 /* DDData.m in Sources */,
 				09D4DA0B1D796BDC00817962 /* ReactionCocoa.swift in Sources */,
 				098E44321D472360003D5455 /* HTTPErrorResponse.m in Sources */,
@@ -980,7 +993,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
 			};
 			name = Debug;
@@ -1001,7 +1014,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
 			};
 			name = Release;

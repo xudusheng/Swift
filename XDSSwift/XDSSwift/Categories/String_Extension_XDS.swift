@@ -16,9 +16,7 @@ extension String{
     func length() -> Int {
         return self.characters.count;
     }
-    
-    public func toString() -> String {
-        return "\(self)";
-    }
 }
+
+
 

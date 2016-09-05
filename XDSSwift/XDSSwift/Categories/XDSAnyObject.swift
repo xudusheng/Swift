@@ -15,7 +15,7 @@ class XDSAnyObject{
     
 }
 
-internal func toString(from from:AnyObject?) -> String{
+internal func FromAnyObjectToString(from from:AnyObject?) -> String{
     if from is String {
         return from as! String;
     }
