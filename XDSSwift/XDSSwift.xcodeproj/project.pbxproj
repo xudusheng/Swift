@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095B546C1D8103F5009F7F96 /* OCRuntimeModel+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */; };
+		098DF2481D7FA99900E6D6B3 /* OCRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */; };
 		098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43861D4721AE003D5455 /* AppDelegate.swift */; };
 		098E43891D4721AE003D5455 /* XDSSwiftRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */; };
 		098E438C1D4721AE003D5455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098E438A1D4721AE003D5455 /* Main.storyboard */; };
@@ -59,6 +61,11 @@
 		098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 098E44031D472360003D5455 /* MyHTTPConnection.m */; };
 		098E44371D472360003D5455 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 098E44051D472360003D5455 /* index.html */; };
 		098E44381D472360003D5455 /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = 098E44061D472360003D5455 /* upload.html */; };
+		09911D051D7E9A7000A5554F /* XDSRuntimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09911D041D7E9A7000A5554F /* XDSRuntimeViewController.swift */; };
+		09911D081D7E9A9000A5554F /* OCRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09911D071D7E9A9000A5554F /* OCRuntimeViewController.m */; };
+		09911D0A1D7E9AA400A5554F /* SwiftRuntimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09911D091D7E9AA400A5554F /* SwiftRuntimeViewController.swift */; };
+		09911D0C1D7EB6E100A5554F /* SwiftUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09911D0B1D7EB6E100A5554F /* SwiftUtil.swift */; };
+		09B60E631D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B60E621D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.m */; };
 		09BEA8A01D4849620043499F /* LSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEA89B1D4849620043499F /* LSImage.m */; };
 		09BEA8A11D4849620043499F /* LSImageMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEA89D1D4849620043499F /* LSImageMap.m */; };
 		09BEA8A21D4849620043499F /* LSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BEA89F1D4849620043499F /* LSImageView.m */; };
@@ -90,6 +97,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095B546A1D8103F5009F7F96 /* OCRuntimeModel+Associated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCRuntimeModel+Associated.h"; sourceTree = "<group>"; };
+		095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCRuntimeModel+Associated.m"; sourceTree = "<group>"; };
+		098DF2421D7FA21300E6D6B3 /* OCFileHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFileHeader.h; sourceTree = "<group>"; };
+		098DF2461D7FA99900E6D6B3 /* OCRuntimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRuntimeModel.h; sourceTree = "<group>"; };
+		098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRuntimeModel.m; sourceTree = "<group>"; };
 		098E43831D4721AE003D5455 /* XDSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098E43861D4721AE003D5455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDSSwiftRootTableViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +186,15 @@
 		098E44031D472360003D5455 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
 		098E44051D472360003D5455 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		098E44061D472360003D5455 /* upload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = upload.html; sourceTree = "<group>"; };
+		09911D041D7E9A7000A5554F /* XDSRuntimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSRuntimeViewController.swift; sourceTree = "<group>"; };
+		09911D061D7E9A9000A5554F /* OCRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRuntimeViewController.h; sourceTree = "<group>"; };
+		09911D071D7E9A9000A5554F /* OCRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRuntimeViewController.m; sourceTree = "<group>"; };
+		09911D091D7E9AA400A5554F /* SwiftRuntimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRuntimeViewController.swift; sourceTree = "<group>"; };
+		09911D0B1D7EB6E100A5554F /* SwiftUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUtil.swift; sourceTree = "<group>"; };
+		09B60E5F1D811D9C00ADBB72 /* XDSThirdPartyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSThirdPartyHeader.h; sourceTree = "<group>"; };
+		09B60E601D81392C00ADBB72 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		09B60E611D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JDStatusBarNotification+PRStatusBar.h"; sourceTree = "<group>"; };
+		09B60E621D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JDStatusBarNotification+PRStatusBar.m"; sourceTree = "<group>"; };
 		09BEA89A1D4849620043499F /* LSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImage.h; sourceTree = "<group>"; };
 		09BEA89B1D4849620043499F /* LSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSImage.m; sourceTree = "<group>"; };
 		09BEA89C1D4849620043499F /* LSImageMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageMap.h; sourceTree = "<group>"; };
@@ -235,6 +256,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		098DF2431D7FA29700E6D6B3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09911D041D7E9A7000A5554F /* XDSRuntimeViewController.swift */,
+				09911D091D7E9AA400A5554F /* SwiftRuntimeViewController.swift */,
+				09911D061D7E9A9000A5554F /* OCRuntimeViewController.h */,
+				09911D071D7E9A9000A5554F /* OCRuntimeViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		098DF2441D7FA2AE00E6D6B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				098DF2461D7FA99900E6D6B3 /* OCRuntimeModel.h */,
+				098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */,
+				095B546A1D8103F5009F7F96 /* OCRuntimeModel+Associated.h */,
+				095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		098DF2451D7FA2B500E6D6B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		098E437A1D4721AE003D5455 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +322,7 @@
 				098E43921D4721AE003D5455 /* LaunchScreen.storyboard */,
 				098E43951D4721AE003D5455 /* Info.plist */,
 				098E438D1D4721AE003D5455 /* XDSSwift.xcdatamodeld */,
+				09B60E601D81392C00ADBB72 /* PrefixHeader.pch */,
 			);
 			path = XDSSwift;
 			sourceTree = "<group>";
@@ -286,6 +337,8 @@
 		098E439D1D472360003D5455 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				09B60E611D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.h */,
+				09B60E621D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.m */,
 				09D4DA061D79597000817962 /* String_Extension_XDS.swift */,
 				09D4DA0F1D7984C100817962 /* XDSAnyObject.swift */,
 			);
@@ -317,6 +370,7 @@
 				09BFFB671D618222008ED4B9 /* adsage */,
 				09D4DA031D7951BE00817962 /* reactive_cocoa */,
 				A0385DBD1D7DA905003D1925 /* wifi文件传输 */,
+				09911D031D7E99E100A5554F /* runtime */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,6 +382,7 @@
 				098E43A91D472360003D5455 /* KeyChain */,
 				098E43AC1D472360003D5455 /* ThirdPartyService */,
 				098E43AE1D472360003D5455 /* Tracker */,
+				09911D0B1D7EB6E100A5554F /* SwiftUtil.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -369,7 +424,9 @@
 			isa = PBXGroup;
 			children = (
 				09BEA8A71D484A180043499F /* XDSSwift-Bridging-Header.h */,
+				098DF2421D7FA21300E6D6B3 /* OCFileHeader.h */,
 				098E43B11D472360003D5455 /* SwiftHeaders */,
+				09B60E5F1D811D9C00ADBB72 /* XDSThirdPartyHeader.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -563,6 +620,17 @@
 				098E44061D472360003D5455 /* upload.html */,
 			);
 			path = web;
+			sourceTree = "<group>";
+		};
+		09911D031D7E99E100A5554F /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				098DF2431D7FA29700E6D6B3 /* ViewController */,
+				098DF2451D7FA2B500E6D6B3 /* View */,
+				098DF2441D7FA2AE00E6D6B3 /* Model */,
+			);
+			name = runtime;
+			path = adsage/runtime;
 			sourceTree = "<group>";
 		};
 		09BEA8991D4849620043499F /* LayerSprites */ = {
@@ -820,15 +888,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B60E631D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.m in Sources */,
+				09911D081D7E9A9000A5554F /* OCRuntimeViewController.m in Sources */,
 				098E441B1D472360003D5455 /* GCDAsyncSocket.m in Sources */,
 				098E44271D472360003D5455 /* DDRange.m in Sources */,
 				098E440B1D472360003D5455 /* SSKeychain.m in Sources */,
+				09911D0A1D7E9AA400A5554F /* SwiftRuntimeViewController.swift in Sources */,
 				09BF643D1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift in Sources */,
 				098E442F1D472360003D5455 /* HTTPAsyncFileResponse.m in Sources */,
 				098E44211D472360003D5455 /* DDTTYLogger.m in Sources */,
 				098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */,
 				098E442C1D472360003D5455 /* MultipartFormDataParser.m in Sources */,
 				098E44311D472360003D5455 /* HTTPDynamicFileResponse.m in Sources */,
+				095B546C1D8103F5009F7F96 /* OCRuntimeModel+Associated.m in Sources */,
 				098E441F1D472360003D5455 /* DDFileLogger.m in Sources */,
 				098E438F1D4721AE003D5455 /* XDSSwift.xcdatamodeld in Sources */,
 				098E442B1D472360003D5455 /* HTTPServer.m in Sources */,
@@ -840,7 +912,9 @@
 				098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */,
 				098E44351D472360003D5455 /* WebSocket.m in Sources */,
 				09D4DA101D7984C100817962 /* XDSAnyObject.swift in Sources */,
+				098DF2481D7FA99900E6D6B3 /* OCRuntimeModel.m in Sources */,
 				09BFFB691D6182F1008ED4B9 /* XDSAdsageViewController.swift in Sources */,
+				09911D0C1D7EB6E100A5554F /* SwiftUtil.swift in Sources */,
 				098E441D1D472360003D5455 /* DDAbstractDatabaseLogger.m in Sources */,
 				09BEA8A01D4849620043499F /* LSImage.m in Sources */,
 				A0385DBF1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift in Sources */,
@@ -863,6 +937,7 @@
 				098E44331D472360003D5455 /* HTTPFileResponse.m in Sources */,
 				09D4DA071D79597000817962 /* String_Extension_XDS.swift in Sources */,
 				09D4DA051D79522B00817962 /* XDSReactiveCocoaViewController.swift in Sources */,
+				09911D051D7E9A7000A5554F /* XDSRuntimeViewController.swift in Sources */,
 				09FAE7EA1D4732EF00281F83 /* CoreAnimationViewController.swift in Sources */,
 				098E44221D472360003D5455 /* ContextFilterLogFormatter.m in Sources */,
 				098E44341D472360003D5455 /* HTTPRedirectResponse.m in Sources */,
@@ -982,8 +1057,11 @@
 			baseConfigurationReference = 5C001D845F2F8E2AC477B9AF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PREFIX_HEADER = XDSSwift/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XDSSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -993,8 +1071,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -1003,8 +1082,11 @@
 			baseConfigurationReference = 3E06D4CAB058145F6E0EE787 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PREFIX_HEADER = XDSSwift/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = XDSSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1014,8 +1096,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

@@ -18,6 +18,8 @@ class XDSLayerSpritesViewController: XDSRootViewController {
 
     //MARK: - UI相关
     func createLayerSpritesViewControllerUI(){
+        self.title = "瓦片地图";
+
         let plistPath = NSBundle.mainBundle().pathForResource("lostgarden", ofType: "plist");
         let imageMap = LSImageMap(contentsOfFile: plistPath);
         let height:CGFloat = 80.0;

@@ -6,4 +6,17 @@ platform :ios, '8.0'
 use_frameworks!
 pod 'SnapKit', '~> 0.15.0'
 
+#AOP面向切面思想
+pod 'AspectsV1.4.2', '~> 1.4.2'
+
+#ReactiveCocoa，函数式编程
+use_frameworks!
 pod 'ReactiveCocoa', '~> 4.2.1'
+
+pod 'JDStatusBarNotification'
+pod 'AFNetworking'
+pod 'Reachability', '~> 3.2'
+pod 'JSONKit-NoWarning', '~> 1.2'
+pod 'FMDB', '~> 2.6.2'
+
+pod 'CWFoundation', :git => 'https://github.com/guojiubo/CWFoundation.git', :commit => '2352449291499091f4e4a82877ec57c9070ced35'

@@ -84,11 +84,25 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/AspectsV1_4_2.framework"
+  install_framework "Pods/CWFoundation.framework"
+  install_framework "Pods/FMDB.framework"
+  install_framework "Pods/JDStatusBarNotification.framework"
+  install_framework "Pods/JSONKit_NoWarning.framework"
+  install_framework "Pods/Reachability.framework"
   install_framework "Pods/ReactiveCocoa.framework"
   install_framework "Pods/Result.framework"
   install_framework "Pods/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/AspectsV1_4_2.framework"
+  install_framework "Pods/CWFoundation.framework"
+  install_framework "Pods/FMDB.framework"
+  install_framework "Pods/JDStatusBarNotification.framework"
+  install_framework "Pods/JSONKit_NoWarning.framework"
+  install_framework "Pods/Reachability.framework"
   install_framework "Pods/ReactiveCocoa.framework"
   install_framework "Pods/Result.framework"
   install_framework "Pods/SnapKit.framework"
