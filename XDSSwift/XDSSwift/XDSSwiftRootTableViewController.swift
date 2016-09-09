@@ -34,17 +34,11 @@ class XDSSwiftRootTableViewController: UITableViewController {
         self.swiftRootTableViewController();
         self.createSwiftRootTableViewControllerUI();
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
-        self.navigationController?.setNavigationBarHidden(false, animated: true);
-    }
+
 
     //MARK: - UI相关
     func createSwiftRootTableViewControllerUI(){
-        self.navigationController?.navigationBar.translucent = false;
-        self.navigationController?.navigationBar.tintColor = UIColor.redColor();
-        self.navigationController?.navigationBar.barTintColor = UIColor.redColor();
+        self.hidesTopBarWhenPushed = true;
     }
     
     //MARK: - 代理方法

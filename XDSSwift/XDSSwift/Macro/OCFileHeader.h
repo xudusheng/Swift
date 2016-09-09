@@ -21,6 +21,7 @@
 #import "XDSIPHelper.h"
 
 #import "XDSThirdPartyHeader.h"
+#import "UIViewController+HideNavigationBar.h"
 #import "JDStatusBarNotification+PRStatusBar.h"
 #import "OCRuntimeViewController.h"
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0954591D1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */; };
 		095B546C1D8103F5009F7F96 /* OCRuntimeModel+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */; };
 		098DF2481D7FA99900E6D6B3 /* OCRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */; };
 		098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43861D4721AE003D5455 /* AppDelegate.swift */; };
@@ -97,6 +98,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0954591B1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HideNavigationBar.h"; sourceTree = "<group>"; };
+		0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HideNavigationBar.m"; sourceTree = "<group>"; };
 		095B546A1D8103F5009F7F96 /* OCRuntimeModel+Associated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCRuntimeModel+Associated.h"; sourceTree = "<group>"; };
 		095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCRuntimeModel+Associated.m"; sourceTree = "<group>"; };
 		098DF2421D7FA21300E6D6B3 /* OCFileHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFileHeader.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 			children = (
 				09B60E611D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.h */,
 				09B60E621D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.m */,
+				0954591B1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.h */,
+				0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */,
 				09D4DA061D79597000817962 /* String_Extension_XDS.swift */,
 				09D4DA0F1D7984C100817962 /* XDSAnyObject.swift */,
 			);
@@ -925,6 +930,7 @@
 				098E44281D472360003D5455 /* HTTPAuthenticationRequest.m in Sources */,
 				09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */,
 				09BEA8AC1D4871C70043499F /* XDSLayerSpritesViewController.swift in Sources */,
+				0954591D1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m in Sources */,
 				098E44201D472360003D5455 /* DDLog.m in Sources */,
 				098E44301D472360003D5455 /* HTTPDataResponse.m in Sources */,
 				09BEA8A11D4849620043499F /* LSImageMap.m in Sources */,

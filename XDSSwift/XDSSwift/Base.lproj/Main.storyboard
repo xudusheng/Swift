@@ -236,7 +236,6 @@
             <objects>
                 <navigationController id="zgN-dM-0TQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="y4K-lS-0Xv"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J4c-fz-XLW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

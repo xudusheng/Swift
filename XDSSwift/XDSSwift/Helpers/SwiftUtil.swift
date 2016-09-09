@@ -31,8 +31,15 @@ class SwiftUtil: NSObject {
             })
             alertController.addAction(action);
         }
-        
         presentingController.presentViewController(alertController, animated: true, completion: nil);
     }
 
+    static internal func showSingleAlertView(title:String?,
+                                                            message:String?){
+        let alertView = UIAlertView(title: title,
+                                    message: message,
+                                    delegate: nil,
+                                    cancelButtonTitle: "确定");
+        alertView.show();
+    }
 }

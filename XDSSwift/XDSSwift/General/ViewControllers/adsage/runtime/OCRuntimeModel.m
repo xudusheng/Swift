@@ -17,11 +17,14 @@
 }
 @end
 @implementation OCRuntimeModel
-
 ////第一步：通过resolveInstanceMethod：方法决定是否动态添加方法。如果返回Yes则通过class_addMethod动态添加方法，消息得到处理，结束；如果返回No，则进入下一步；
-//- (BOOL)respondsToSelector:(SEL)aSelector{
-//    return NO;
-//}
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    if ([NSStringFromSelector(sel) isEqualToString:@"sing"]) {
+        class_addMethod(self, sel, (IMP)otherSimg, "v@:");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
+}
 //
 ////第二步：这步会进入forwardingTargetForSelector:方法，用于指定备选对象响应这个selector，不能指定为self。如果返回某个对象则会调用对象的方法，结束。如果返回nil，则进入第三部；
 //- (id)forwardingTargetForSelector:(SEL)aSelector{
@@ -56,6 +59,7 @@
             resultDict[name] = @"字典的key对于的value不能为nil";
         }
     }
+    free(properties);
     return resultDict;
 }
 - (NSDictionary *)allIvars{
@@ -77,6 +81,8 @@
         resultDict[@"type"] = type;
         
     }
+    
+    free(ivars);
     return resultDict;
 }
 - (NSDictionary *)allMethods{
@@ -92,11 +98,13 @@
         method_getReturnType(m, type, sizeof(type));
         resultDict[name] = [NSString stringWithUTF8String:type];
     }
+    free(methods);
     return resultDict;
 }
 
-- (int)count{
-    return 2;
+void otherSimg(id obj, SEL _cmd){
+    [SwiftUtil showSingleAlertView:nil
+                           message:@"没有sing方法，动态添加了sing方法"];
 }
 
 @end

@@ -19,6 +19,5 @@
 - (NSDictionary *)allIvars;
 - (NSDictionary *)allMethods;
 
-- (int)count;
-
+- (void)sing;
 @end
