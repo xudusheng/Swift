@@ -1,0 +1,6 @@
+framework module AspectsV1_4_2 {
+  umbrella header "AspectsV1.4.2-umbrella.h"
+
+  export *
+  module * { export * }
+}
