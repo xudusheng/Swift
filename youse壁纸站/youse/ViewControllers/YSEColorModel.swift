@@ -8,17 +8,6 @@
 
 import UIKit
 
-class YSEColorModel: NSObject {
-    private(set) var colorName:String?;
-    private(set) var href:String?;
-    
-    override init() {
-        super.init();
-        self.colorName = "";
-        self.href = "";
-    }
-    internal func p_setColorName(name:String?, href:String?){
-        self.colorName = name;
-        self.href = href;
-    }
+class YSEColorModel: YSEClassifyModel {
+
 }

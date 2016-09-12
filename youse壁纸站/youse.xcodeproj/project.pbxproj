@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C3C5791D864C2300AF70EF /* YSEClassifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */; };
 		09C40F5C1D75848B00A577E2 /* YSEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */; };
 		A02B01DE1D73098400C7571E /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A02B01D81D73098400C7571E /* libMobiSage.a */; };
 		A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491BFA1D71148500238ED1 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEClassifyModel.swift; sourceTree = "<group>"; };
 		09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMenuView.swift; sourceTree = "<group>"; };
 		56C2FED22BDF6F8EB630E2D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02B01D81D73098400C7571E /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
@@ -182,9 +184,10 @@
 		A08E36101D84D6610094682A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A08E36121D84D6A30094682A /* YSEImageModel.swift */,
+				09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */,
 				A08E36141D84D7290094682A /* YSECategoryModel.swift */,
 				A08E36161D84D73C0094682A /* YSEColorModel.swift */,
+				A08E36121D84D6A30094682A /* YSEImageModel.swift */,
 				A08E361E1D84E78C0094682A /* YSEImageGroupModel.swift */,
 			);
 			name = Model;
@@ -340,6 +343,7 @@
 				A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */,
 				A0491C111D71272400238ED1 /* YSEMainViewController.swift in Sources */,
 				09C40F5C1D75848B00A577E2 /* YSEMenuView.swift in Sources */,
+				09C3C5791D864C2300AF70EF /* YSEClassifyModel.swift in Sources */,
 				A08E361D1D84E1370094682A /* YSERootTableViewCell.swift in Sources */,
 				A08E36131D84D6A30094682A /* YSEImageModel.swift in Sources */,
 				A08E361F1D84E78C0094682A /* YSEImageGroupModel.swift in Sources */,
@@ -467,7 +471,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/youse/Vender/MobiSageSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
+				PROVISIONING_PROFILE = "bc9cec41-0cf9-4e44-ad8e-5e2b107b4acc";
 				SWIFT_OBJC_BRIDGING_HEADER = "youse/YSE-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -496,7 +500,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/youse/Vender/MobiSageSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1298bedb-99f7-42fa-aaf1-cc3de38eab37";
+				PROVISIONING_PROFILE = "bc9cec41-0cf9-4e44-ad8e-5e2b107b4acc";
 				SWIFT_OBJC_BRIDGING_HEADER = "youse/YSE-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";

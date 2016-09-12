@@ -8,17 +8,6 @@
 
 import UIKit
 
-class YSECategoryModel: NSObject {
-    private(set) var title:String?;
-    private(set) var href:String?;
-    
-    override init() {
-        super.init();
-        self.title = "";
-        self.href = "";
-    }
-    internal func p_setTitle(title:String?, href:String?){
-        self.title = title;
-        self.href = href;
-    }
+class YSECategoryModel: YSEClassifyModel {
+
 }

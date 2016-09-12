@@ -8,32 +8,28 @@
 
 import UIKit
 
-typealias CategoryType = (chineseName:String, englishName:String, type:Int);
-
 class YSEMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+
     let INSImageItemCollectionViewCellIdentifier = "INSImageItemCollectionViewCell";
     let gap = CGFloat(5);
     var mainCollectionView : UICollectionView!;
-    var page = 2;
     var imageList = [YSEImageModel]();
     
     var menuView : YSEMenuView?;
     
-    let categoryList:[CategoryType] = [
-        (chineseName:"性感美女", englishName:"xingganmeinv", type:1),
-        (chineseName:"网友自拍", englishName:"wangyouzipai", type:2),
-        (chineseName:"高跟丝袜", englishName:"gaogensiwa", type:3),
-        (chineseName:"外国美女", englishName:"xiyangmeinv", type:4),
-        (chineseName:"国内美女", englishName:"guoneimeinv", type:5),
-        ];
-    var category : CategoryType?;
+    var categoryList = [YSECategoryModel]();
+    var categoryClassifyButton : UIButton?;
+    var colorList = [YSEColorModel]();
+    var colorClassifyButton : UIButton?;
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated);
-    }
+    var selectedClassifyModel : YSEClassifyModel?;//第一页、当前被选中的分类model
+    var nextPageClassifyModel : YSEClassifyModel?;//下一页
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.category = categoryList[0];
+//        self.category = categoryList[0];
+        self.selectedClassifyModel = YSECategoryModel();
+        self.selectedClassifyModel?.p_setName("美女", href: "http://www.3gbizhi.com/lists-全部/");
         self.createMainViewControllerUI();
         mainCollectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.headerRequest();
@@ -47,7 +43,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     //MARK: - UI
     func createMainViewControllerUI(){
         self.view.backgroundColor = UIColor.brownColor();
-        self.title = category?.chineseName;
+        self.title = self.selectedClassifyModel?.name;
         let flowLayout = UICollectionViewFlowLayout();
         flowLayout.minimumLineSpacing = gap;//纵向间距
         flowLayout.minimumInteritemSpacing = CGFloat.min;//横向内边距
@@ -64,44 +60,112 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
         
-        let rightItem = UIBarButtonItem(title: "更多", style: .Done, target: self, action: #selector(YSEMainViewController.showMenuList));
-        rightItem.tintColor = UIColor.whiteColor();
-        self.navigationItem.rightBarButtonItem = rightItem;
+//        let rightItem = UIBarButtonItem(title: "更多", style: .Done, target: self, action: #selector(YSEMainViewController.showMenuList));
+//        rightItem.tintColor = UIColor.whiteColor();
+//        self.navigationItem.rightBarButtonItem = rightItem;
     }
     
+    
+    //TODO:addClassifyBarButtonItems
+    private func addClassifyBarButtonItems(){
+    
+        var barButtonArr = [UIBarButtonItem]();
+        if self.categoryList.count > 0 {
+            self.categoryClassifyButton = UIButton();
+            categoryClassifyButton?.frame = CGRectMake(0, 0, 40, 40);
+            categoryClassifyButton?.setTitle("分类", forState: .Normal);
+            categoryClassifyButton?.addTarget(self, action: #selector(self.showMenuList(_:)), forControlEvents: .TouchUpInside)
+            let categoryBarButtonItem = UIBarButtonItem(customView: categoryClassifyButton!);
+            categoryBarButtonItem.tintColor = UIColor.whiteColor();
+            barButtonArr.append(categoryBarButtonItem);
+        }
+        
+        if self.colorList.count > 0 {
+            self.colorClassifyButton = UIButton();
+            colorClassifyButton?.frame = CGRectMake(0, 0, 40, 40);
+            colorClassifyButton?.setTitle("颜色", forState: .Normal);
+            colorClassifyButton?.addTarget(self, action: #selector(self.showMenuList(_:)), forControlEvents: .TouchUpInside)
+            let colorBarButtonItem = UIBarButtonItem(customView: colorClassifyButton!);
+            colorClassifyButton?.tintColor = UIColor.whiteColor();
+            barButtonArr.append(colorBarButtonItem);
+        }
+        
+        if barButtonArr.count > 0 {
+            self.navigationItem.rightBarButtonItems = barButtonArr;
+        }
+        
+        self.resetBarButtonItems();
+    }
+    
+    private func resetBarButtonItems(){
+        if self.selectedClassifyModel is YSECategoryModel {
+            categoryClassifyButton?.setTitle(selectedClassifyModel?.name, forState: .Normal);
+            colorClassifyButton?.setTitle("颜色", forState: .Normal);
+        }else{
+            categoryClassifyButton?.setTitle("分类", forState: .Normal);
+            colorClassifyButton?.setTitle(selectedClassifyModel?.name, forState: .Normal);
+        }
+    }
     //MARK: - Request
     private func headerRequest(){
-        self.page = 2;
-
-        YSERequestFetcher().p_fetchHomePage(self.category, page: 1) { (responseTuple) in
+        YSERequestFetcher().p_fetchHomePage(classifyModel: self.selectedClassifyModel) { (responseTuple) in
             self.mainCollectionView.mj_header.endRefreshing();
-
+            
             if responseTuple.error != nil || responseTuple.responseObj == nil{
                 return;
             }
-            let result = responseTuple.responseObj as! [String:[AnyObject]];
+            let result = responseTuple.responseObj as! [String:AnyObject];
             let fetchedImageList = result[kImageListKey] as! [YSEImageModel];
             self.imageList.removeAll();
             self.imageList += fetchedImageList;
             self.mainCollectionView.reloadData();
+            self.saveNextPageInfo(nextPageHref: result[kNextPageHrefKey] as? String);
+
+            if self.categoryList.count <= 0 || self.colorList.count <= 0{
+                let fetchedCategoryList = result[kCategoryListKey] as! [YSECategoryModel];
+                self.categoryList += fetchedCategoryList;
+
+                let fetchedColorList = result[kColorListKey] as! [YSEColorModel];
+                self.colorList += fetchedColorList;
+                
+                self.addClassifyBarButtonItems();
+            }
+
         }
     }
     
     private func footerRequest(){
-        YSERequestFetcher().p_fetchHomePage(self.category, page: self.page) { (responseTuple) in
+        if nextPageClassifyModel == nil {
+            self.mainCollectionView.mj_footer.endRefreshing();
+            return;
+        }
+        YSERequestFetcher().p_fetchHomePage(classifyModel: self.nextPageClassifyModel) { (responseTuple) in
             self.mainCollectionView.mj_footer.endRefreshing();
             if responseTuple.error != nil || responseTuple.responseObj == nil{
                 return;
             }
-            let result = responseTuple.responseObj as! [String:[AnyObject]];
+            let result = responseTuple.responseObj as! [String:AnyObject];
             let fetchedImageList = result[kImageListKey] as! [YSEImageModel];
             if fetchedImageList.count > 0 {
-                self.page += 1;
                 self.imageList += fetchedImageList;
                 self.mainCollectionView.reloadData();
+                self.saveNextPageInfo(nextPageHref: result[kNextPageHrefKey] as? String);
+                let isLastPage = result[kIsLastPageKey] as! Bool;
+                if isLastPage{
+                    self.mainCollectionView.mj_footer.endRefreshingWithNoMoreData();
+                }
             }
         }
     }
+    //TODO:保存下一页的链接
+    private func saveNextPageInfo(nextPageHref nextPageHref:String?){
+        let subfix = nextPageHref?.componentsSeparatedByString("/").last;
+        let href = (self.selectedClassifyModel?.href)! + subfix!;
+        let nextPageModel = YSEClassifyModel();
+        nextPageModel.p_setName(self.selectedClassifyModel?.name, href: href);
+        self.nextPageClassifyModel = nextPageModel;
+    }
+    
     //MARK: - Delegate
     //TODO:UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -115,7 +179,6 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell;
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        NSLog("xxxxxxxxxxxxxxx");
         collectionView.deselectItemAtIndexPath(indexPath, animated: true);
         let selectedModel = self.imageList[indexPath.row];
         self.showPhotoBrowser(selectedModel);
@@ -174,20 +237,21 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     //TODO:showMenu
-    @objc private func showMenuList(){
-        
+    @objc private func showMenuList(button:UIButton?){
+        let list : [YSEClassifyModel] = (button == self.categoryClassifyButton) ? self.categoryList : self.colorList;
         if menuView == nil {
             self.menuView = YSEMenuView(frame: CGRectZero);
-            menuView!.categoryList = categoryList;
             menuView?.callBack = {
-                (category : CategoryType) -> Void in
-                self.category = category;
-                self.title = self.category!.chineseName;
+                (classifyModel : YSEClassifyModel) -> Void in
+                self.selectedClassifyModel = classifyModel;
+                self.title = self.selectedClassifyModel?.name;
                 self.mainCollectionView.mj_header.beginRefreshing();
-                self.showMenuList();
+                self.showMenuList(nil);
             };
             self.view.addSubview(menuView!);
         }
+        menuView!.categoryList = list;
+
         
         let frame = mainCollectionView.frame
         if CGRectGetHeight(menuView!.frame) < 1 {
@@ -196,5 +260,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
             let new_frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGFloat.min);
             menuView?.p_hide(backView_finalFrame:new_frame);
         }
+        
+        self.resetBarButtonItems();
     }
 }

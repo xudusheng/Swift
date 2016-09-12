@@ -13,17 +13,16 @@ typealias CompleteType = ResponseTuple->Void;
 let kCategoryListKey = "categoryList"
 let kColorListKey = "colorList";
 let kImageListKey = "imageList";
+let kNextPageHrefKey = "nextPageHref";
+let kIsLastPageKey = "isLastPage";
 
 class YSERequestFetcher: NSObject {
 
     private var responseObj : AnyObject?;
     private var error : NSError?;
 
-    internal func p_fetchHomePage(category:CategoryType!, page:Int!, complete:CompleteType) -> Void {
-        let mURL = "http://www.3gbizhi.com/wallMV/";
-        let pageSubfix = (page <= 1) ? "index.html" : "index_\(page).html";
-        let url = mURL + pageSubfix;
-        
+    internal func p_fetchHomePage(classifyModel classifyModel:YSEClassifyModel!, complete:CompleteType) -> Void {
+        let url = self.encodeEscapesURL(classifyModel.href!);
         let manager = AFHTTPSessionManager();
         manager.responseSerializer = AFHTTPResponseSerializer();
         manager.GET(url, parameters: nil, progress: nil, success: { (task:NSURLSessionDataTask, respObject:AnyObject?) in
@@ -40,7 +39,9 @@ class YSERequestFetcher: NSObject {
                 for categoryElement in categoryItems{
                     let element = categoryElement as! TFHppleElement;
                     let aModel = YSECategoryModel();
-                    aModel.p_setTitle(element.text(), href: element.objectForKey("href"));
+                    let name = element.text();
+                    let href = element.objectForKey("href");
+                    aModel.p_setName(name, href: href);
                     categoryList.append(aModel);
 //                    NSLog("===\(element.objectForKey("href")) === \(element.text())");
                 }
@@ -49,8 +50,10 @@ class YSERequestFetcher: NSObject {
                 let colorItems = hptts.searchWithXPathQuery("//div[@class=\"options eS hidden\"]//a[contains(@class, 'btcolor color')]");//模糊匹配
                 for colorElement in colorItems{
                     let element = colorElement as! TFHppleElement;
+                    let name = element.text();
+                    let href = element.objectForKey("href");
                     let colorModel = YSEColorModel();
-                    colorModel.p_setColorName(element.text(), href: element.objectForKey("href"));
+                    colorModel.p_setName(name, href: href);
                     colorList.append(colorModel);
 //                    NSLog("===\(element.objectForKey("href")) === \(element.text())");
                 }
@@ -65,10 +68,27 @@ class YSERequestFetcher: NSObject {
                     imageList.append(imageModel);
 //                    NSLog("===\(src) === \(element.objectForKey("alt"))");
                 }
+                
+                let xpath_a = "//div[@id=\"pageNum\"]//span//a";
+                let xpath_span = "//div[@id=\"pageNum\"]//span//span";
+                let pageNumItems = hptts.searchWithXPathQuery("\(xpath_a) | \(xpath_span)");
+                let lastPageElement = pageNumItems.last as! TFHppleElement;
+                let nextHref = lastPageElement.objectForKey("href");
+                
+                let spanElement = pageNumItems[pageNumItems.count-2]  as! TFHppleElement;
+                let isLastPage = (spanElement.tagName == "span");
+                
+//                for pageEle in pageNumItems{
+//                    let element = pageEle as! TFHppleElement;
+//                    NSLog("====nodeName = \(element.tagName) = \(element.text())");
+//                }
+                
                 let responseData = [
                     kCategoryListKey:categoryList,
                     kColorListKey:colorList,
-                    kImageListKey:imageList
+                    kImageListKey:imageList,
+                    kNextPageHrefKey:nextHref,
+                    kIsLastPageKey:isLastPage,
                 ];
                 self.responseObj = responseData;
                 self.safelyCallback(complete, error: nil);
@@ -92,4 +112,40 @@ class YSERequestFetcher: NSObject {
         }
     }
     
+    
+    func encodeEscapesURL(value:String) -> String {
+        let str:NSString = value
+        let originalString = str as CFStringRef
+        let charactersToBeEscaped = "!*'();:@&=+$,/?%#[]" as CFStringRef  //":/?&=;+!@#$()',*"    //转意符号
+        //let charactersToLeaveUnescaped = "[]." as CFStringRef  //保留的符号
+        let result = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                             originalString,
+                                                             charactersToBeEscaped,
+                                                             nil,
+                                                             CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) as NSString
+        
+        return result as String
+    }
+    
+    
+//    <div class="imgty" id="pageNum">
+//        <span>
+//                    <a class="a1">2811条</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/7.html" class="a1">上一页</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/">1</a>
+//                    ..
+//                    <a href="http://www.3gbizhi.com/lists-全部/4.html">4</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/5.html">5</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/6.html">6</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/7.html">7</a>
+//                    <span>8</span>
+//                    <a href="http://www.3gbizhi.com/lists-全部/9.html">9</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/10.html">10</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/11.html">11</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/12.html">12</a>
+//                    ..
+//                    <a href="http://www.3gbizhi.com/lists-全部/141.html">141</a>
+//                    <a href="http://www.3gbizhi.com/lists-全部/9.html" class="a1">下一页</a>
+//            </span>
+//    </div>
 }

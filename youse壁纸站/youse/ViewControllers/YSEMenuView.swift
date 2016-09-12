@@ -11,15 +11,19 @@ import UIKit
 class YSEMenuView: UIView, UITableViewDelegate, UITableViewDataSource{
     
     var menuTableView : UITableView!;
-    
-    var categoryList = [CategoryType]();
-    var callBack : (CategoryType  -> Void)?;
+    var categoryList : [YSEClassifyModel]!{
+        didSet{
+            self.menuTableView.reloadData();
+        }
+    }
+    var callBack : (YSEClassifyModel  -> Void)?;
     
     var heightConstraint : NSLayoutConstraint!;
     let cellHeight = CGFloat(44.0);
     
     override init(frame: CGRect) {
         super.init(frame: frame);
+        categoryList = [YSEClassifyModel]();
         self.createMenuUI();
     }
     
@@ -53,6 +57,7 @@ class YSEMenuView: UIView, UITableViewDelegate, UITableViewDataSource{
     }
 
     internal func p_hide(backView_finalFrame finalFrame:CGRect) {
+        
         UIView.animateWithDuration(0.3, animations: { 
             self.heightConstraint.constant = CGFloat.min;
             self.layoutIfNeeded();
@@ -77,7 +82,7 @@ class YSEMenuView: UIView, UITableViewDelegate, UITableViewDataSource{
             cell = UITableViewCell(style: .Default, reuseIdentifier: identifier);
         }
         let category = categoryList[indexPath.row];
-        cell?.textLabel?.text = category.chineseName;
+        cell?.textLabel?.text = category.name;
         return cell!;
     }
     
