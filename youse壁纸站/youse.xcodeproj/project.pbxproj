@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		09C3C5791D864C2300AF70EF /* YSEClassifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */; };
 		09C40F5C1D75848B00A577E2 /* YSEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */; };
-		A02B01DE1D73098400C7571E /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A02B01D81D73098400C7571E /* libMobiSage.a */; };
 		A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491BFA1D71148500238ED1 /* AppDelegate.swift */; };
 		A0491C051D71148500238ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0491C031D71148500238ED1 /* LaunchScreen.storyboard */; };
 		A0491C111D71272400238ED1 /* YSEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C101D71272400238ED1 /* YSEMainViewController.swift */; };
@@ -32,12 +31,6 @@
 		09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEClassifyModel.swift; sourceTree = "<group>"; };
 		09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMenuView.swift; sourceTree = "<group>"; };
 		56C2FED22BDF6F8EB630E2D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A02B01D81D73098400C7571E /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
-		A02B01D91D73098400C7571E /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
-		A02B01DA1D73098400C7571E /* MobiSageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageFactory.h; sourceTree = "<group>"; };
-		A02B01DB1D73098400C7571E /* MobiSageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageManager.h; sourceTree = "<group>"; };
-		A02B01DC1D73098400C7571E /* MobiSageNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageNative.h; sourceTree = "<group>"; };
-		A02B01DD1D73098400C7571E /* MobiSagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSagePoster.h; sourceTree = "<group>"; };
 		A0491BF71D71148500238ED1 /* youse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0491BFA1D71148500238ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0491C041D71148500238ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A02B01DE1D73098400C7571E /* libMobiSage.a in Frameworks */,
 				BD0F63A6A989F731251ED2EB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,19 +75,6 @@
 				56C2FED22BDF6F8EB630E2D0 /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A02B01D71D73098400C7571E /* MobiSageSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A02B01D81D73098400C7571E /* libMobiSage.a */,
-				A02B01D91D73098400C7571E /* MobiSageBanner.h */,
-				A02B01DA1D73098400C7571E /* MobiSageFactory.h */,
-				A02B01DB1D73098400C7571E /* MobiSageManager.h */,
-				A02B01DC1D73098400C7571E /* MobiSageNative.h */,
-				A02B01DD1D73098400C7571E /* MobiSagePoster.h */,
-			);
-			path = MobiSageSDK;
 			sourceTree = "<group>";
 		};
 		A0491BEE1D71148500238ED1 = {
@@ -175,7 +154,6 @@
 		A0491C2B1D716DAD00238ED1 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				A02B01D71D73098400C7571E /* MobiSageSDK */,
 				A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */,
 			);
 			path = Vender;
@@ -457,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: mu he (FX98SJ5KRZ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dosom xu (85W725W7AQ)";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = youse/YSE_PrefixHeader.h;
@@ -471,7 +449,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/youse/Vender/MobiSageSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc9cec41-0cf9-4e44-ad8e-5e2b107b4acc";
+				PROVISIONING_PROFILE = "790b5ab0-25dd-40d4-af22-4f8bd7e3293e";
 				SWIFT_OBJC_BRIDGING_HEADER = "youse/YSE-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -486,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: mu he (FX98SJ5KRZ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: dosom xu (85W725W7AQ)";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = youse/YSE_PrefixHeader.h;
@@ -500,7 +478,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/youse/Vender/MobiSageSDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc9cec41-0cf9-4e44-ad8e-5e2b107b4acc";
+				PROVISIONING_PROFILE = "790b5ab0-25dd-40d4-af22-4f8bd7e3293e";
 				SWIFT_OBJC_BRIDGING_HEADER = "youse/YSE-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";

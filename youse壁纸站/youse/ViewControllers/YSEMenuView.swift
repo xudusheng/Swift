@@ -20,7 +20,7 @@ class YSEMenuView: UIView, UITableViewDelegate, UITableViewDataSource{
     
     var heightConstraint : NSLayoutConstraint!;
     let cellHeight = CGFloat(44.0);
-    
+    let topHeight = 64;
     override init(frame: CGRect) {
         super.init(frame: frame);
         categoryList = [YSEClassifyModel]();
@@ -42,15 +42,19 @@ class YSEMenuView: UIView, UITableViewDelegate, UITableViewDataSource{
         
         let viewsDict = ["menuTableView":menuTableView];
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[menuTableView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-64-[menuTableView]", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-top-[menuTableView]", options: .AlignAllLeft, metrics: ["top":topHeight], views: viewsDict));
         self.heightConstraint = NSLayoutConstraint(item: menuTableView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGFloat.min);
         self.addConstraint(heightConstraint);
     }
     
     internal func p_show(backView_finalFrame finalFrame:CGRect) {
         self.frame = finalFrame;
+        var height = self.cellHeight * CGFloat(self.categoryList.count);
+        if height > SWIFT_DEVICE_SCREEN_HEIGHT/2 {
+            height = SWIFT_DEVICE_SCREEN_HEIGHT/2
+        }
         UIView.animateWithDuration(0.3, animations: {
-            self.heightConstraint.constant = self.cellHeight * CGFloat(self.categoryList.count);
+            self.heightConstraint.constant = height;
             self.layoutIfNeeded();
         }) { (finished:Bool) in
         }

@@ -28,11 +28,6 @@
 #import "MWPhoto.h"
 #import "MWPhotoBrowser.h"
 
-//广告
-#import "MobiSageManager.h"
-#import "MobiSageBanner.h"
-#import "MobiSageFactory.h"
-#import "MobiSageNative.h"
 
 
 #endif /* YSEThirdPartyHeader_h */

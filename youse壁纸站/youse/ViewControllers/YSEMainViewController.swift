@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YSEMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class YSEMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MWPhotoBrowserDelegate{
 
     let INSImageItemCollectionViewCellIdentifier = "INSImageItemCollectionViewCell";
     let gap = CGFloat(5);
@@ -29,12 +29,12 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
 //        self.category = categoryList[0];
         self.selectedClassifyModel = YSECategoryModel();
-        self.selectedClassifyModel?.p_setName("美女", href: "http://www.3gbizhi.com/lists-全部/");
+        self.selectedClassifyModel?.p_setName("全部", href: "http://www.3gbizhi.com/lists-全部/");
         self.createMainViewControllerUI();
         mainCollectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.headerRequest();
         });
-        mainCollectionView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+        mainCollectionView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.footerRequest();
         });
         mainCollectionView.mj_header.beginRefreshing();
@@ -119,7 +119,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.imageList.removeAll();
             self.imageList += fetchedImageList;
             self.mainCollectionView.reloadData();
-            self.saveNextPageInfo(nextPageHref: result[kNextPageHrefKey] as? String);
+            self.saveNextPageInfo(result:result);
 
             if self.categoryList.count <= 0 || self.colorList.count <= 0{
                 let fetchedCategoryList = result[kCategoryListKey] as! [YSECategoryModel];
@@ -149,21 +149,27 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
             if fetchedImageList.count > 0 {
                 self.imageList += fetchedImageList;
                 self.mainCollectionView.reloadData();
-                self.saveNextPageInfo(nextPageHref: result[kNextPageHrefKey] as? String);
-                let isLastPage = result[kIsLastPageKey] as! Bool;
-                if isLastPage{
-                    self.mainCollectionView.mj_footer.endRefreshingWithNoMoreData();
-                }
+                self.reloadPhotoBrowser();
+                self.saveNextPageInfo(result: result);
             }
         }
     }
     //TODO:保存下一页的链接
-    private func saveNextPageInfo(nextPageHref nextPageHref:String?){
+    private func saveNextPageInfo(result result:[String:AnyObject]){
+        let nextPageHref = result[kNextPageHrefKey];
         let subfix = nextPageHref?.componentsSeparatedByString("/").last;
         let href = (self.selectedClassifyModel?.href)! + subfix!;
         let nextPageModel = YSEClassifyModel();
         nextPageModel.p_setName(self.selectedClassifyModel?.name, href: href);
         self.nextPageClassifyModel = nextPageModel;
+        
+        let isLastPage = result[kIsLastPageKey] as! Bool;
+        if isLastPage{
+            self.mainCollectionView.mj_footer.endRefreshingWithNoMoreData();
+        }else{
+            self.mainCollectionView.mj_footer.resetNoMoreData();
+        }
+        
     }
     
     //MARK: - Delegate
@@ -180,9 +186,9 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true);
-        let selectedModel = self.imageList[indexPath.row];
-        self.showPhotoBrowser(selectedModel);
+        self.showPhotoBrowser(UInt(indexPath.row));
     }
+    
     //TODO:UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let model = imageList[indexPath.row];
@@ -194,6 +200,35 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         return UIEdgeInsetsMake(gap, gap, 0, gap);
     }
     
+    
+    //TODO:MWPhotoBrowserDelegate
+    func numberOfPhotosInPhotoBrowser(photoBrowser: MWPhotoBrowser!) -> UInt {
+        NSLog("xxxxxxxxxxxxx");
+        return UInt(self.imageList.count);
+    }
+    func photoBrowser(photoBrowser: MWPhotoBrowser!, photoAtIndex index: UInt) -> MWPhotoProtocol! {
+        let index_int = Int(index);
+        if index_int < self.imageList.endIndex {
+            let imageModel = self.imageList[index_int];
+            var img_url = imageModel.href!;
+            let suffix = ".jpg";
+            img_url = img_url.componentsSeparatedByString(suffix).first!;
+            img_url = img_url.stringByAppendingString(suffix);
+            
+            let url = NSURL(string: img_url);
+            let photo = MWPhoto(URL: url);
+            photo.caption = imageModel.title;
+            return photo;
+        }
+        return nil;
+    }
+    func photoBrowser(photoBrowser: MWPhotoBrowser!, didDisplayPhotoAtIndex index: UInt) {
+        if index == UInt(self.imageList.endIndex - 1) {
+//            self.mainCollectionView.mj_footer.beginRefreshing();
+            self.footerRequest();
+        }
+    }
+    
     //TODO:getCellHeight
     private func getCellHeight(imageModel:YSEImageModel, width:CGFloat) -> CGFloat{
         let imageHeight = CGFloat(Float(imageModel.height!)!);
@@ -203,8 +238,8 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     //MARK: - web request
     
     //MARK: - handle touch
-    private func showPhotoBrowser(imageModel:YSEImageModel){
-
+    //TODO: showPhotoBrowser
+    private func showPhotoBrowser(currentPhotoIndex:UInt){
         let displayActionButton = true;
         let displaySelectionButtons = false;
         let displayNavArrows = false;
@@ -212,16 +247,8 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         let startOnGrid = false;
         let autoPlayOnAppear = false;
         // Create browser
-
-        var img_url = imageModel.href!;
-        let suffix = ".jpg";
-        img_url = img_url.componentsSeparatedByString(suffix).first!;
-        img_url = img_url.stringByAppendingString(suffix);
-        
-        let url = NSURL(string: img_url);
-        let photo = MWPhoto(URL: url);
-        photo.caption = imageModel.title;
-        let browser = MWPhotoBrowser(photos: [photo]);
+        let browser = MWPhotoBrowser();
+        browser.delegate = self;
         browser.displayActionButton = displayActionButton;
         browser.displayNavArrows = displayNavArrows;
         browser.displaySelectionButtons = displaySelectionButtons;
@@ -231,10 +258,20 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         browser.startOnGrid = startOnGrid;
         browser.enableSwipeToDismiss = true;
         browser.autoPlayOnAppear = autoPlayOnAppear;
-        browser.setCurrentPhotoIndex(0);
+        browser.setCurrentPhotoIndex(currentPhotoIndex);
         self.navigationController?.pushViewController(browser, animated: true);
     }
     
+    //reload photoBrowser
+    private func reloadPhotoBrowser(){
+        if (self.navigationController?.viewControllers.count > 1) {
+            let photoBrowserVC = self.navigationController?.viewControllers.last;
+            if photoBrowserVC is MWPhotoBrowser {
+                let photoBrowser = photoBrowserVC as! MWPhotoBrowser;
+                photoBrowser.reloadData();
+            }
+        }
+    }
     
     //TODO:showMenu
     @objc private func showMenuList(button:UIButton?){
@@ -250,17 +287,15 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
             };
             self.view.addSubview(menuView!);
         }
-        menuView!.categoryList = list;
-
         
         let frame = mainCollectionView.frame
         if CGRectGetHeight(menuView!.frame) < 1 {
+            menuView!.categoryList = list;
             menuView?.p_show(backView_finalFrame: frame);
         }else{
             let new_frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGFloat.min);
             menuView?.p_hide(backView_finalFrame:new_frame);
         }
-        
         self.resetBarButtonItems();
     }
 }
