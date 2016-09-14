@@ -1,0 +1,25 @@
+{
+  "name": "XDSFoundation",
+  "version": "0.1.1",
+  "summary": "常用方法与宏封装",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/xudusheng/XDSFoundation",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "xudusheng": "597132100@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/xudusheng/XDSFoundation.git",
+    "tag": "0.1.1"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "XDSFoundation/Classes/**/*",
+  "public_header_files": "XDSFoundation/Classes/**/*.h",
+  "frameworks": "UIKit"
+}

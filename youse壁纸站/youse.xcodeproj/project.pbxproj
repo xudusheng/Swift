@@ -7,35 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09C3C5791D864C2300AF70EF /* YSEClassifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */; };
-		09C40F5C1D75848B00A577E2 /* YSEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */; };
+		09AD5E821D87E27F0064E4B6 /* YSEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E771D87E27F0064E4B6 /* YSEMainViewController.swift */; };
+		09AD5E831D87E27F0064E4B6 /* YSECategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E791D87E27F0064E4B6 /* YSECategoryModel.swift */; };
+		09AD5E841D87E27F0064E4B6 /* YSEClassifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E7A1D87E27F0064E4B6 /* YSEClassifyModel.swift */; };
+		09AD5E851D87E27F0064E4B6 /* YSEColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E7B1D87E27F0064E4B6 /* YSEColorModel.swift */; };
+		09AD5E861D87E27F0064E4B6 /* YSEImageGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E7C1D87E27F0064E4B6 /* YSEImageGroupModel.swift */; };
+		09AD5E871D87E27F0064E4B6 /* YSEImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E7D1D87E27F0064E4B6 /* YSEImageModel.swift */; };
+		09AD5E881D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E7F1D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift */; };
+		09AD5E891D87E27F0064E4B6 /* YSEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E801D87E27F0064E4B6 /* YSEMenuView.swift */; };
+		09AD5E8A1D87E27F0064E4B6 /* YSERootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E811D87E27F0064E4B6 /* YSERootTableViewCell.swift */; };
 		A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491BFA1D71148500238ED1 /* AppDelegate.swift */; };
 		A0491C051D71148500238ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0491C031D71148500238ED1 /* LaunchScreen.storyboard */; };
-		A0491C111D71272400238ED1 /* YSEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C101D71272400238ED1 /* YSEMainViewController.swift */; };
 		A0491C171D713BF800238ED1 /* YSEGlobleVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C141D713BF800238ED1 /* YSEGlobleVar.swift */; };
 		A0491C1E1D7143AC00238ED1 /* YSERequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C1D1D7143AC00238ED1 /* YSERequestFetcher.swift */; };
 		A0491C2A1D716AB700238ED1 /* YSEDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C291D716AB700238ED1 /* YSEDataBase.swift */; };
 		A0491C2D1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */; };
 		A08126091D7471AB00FFEF44 /* YSESystemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08126081D7471AB00FFEF44 /* YSESystemConfig.swift */; };
 		A081260B1D74827B00FFEF44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A081260A1D74827B00FFEF44 /* Images.xcassets */; };
-		A08E36131D84D6A30094682A /* YSEImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E36121D84D6A30094682A /* YSEImageModel.swift */; };
-		A08E36151D84D7290094682A /* YSECategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E36141D84D7290094682A /* YSECategoryModel.swift */; };
-		A08E36171D84D73C0094682A /* YSEColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E36161D84D73C0094682A /* YSEColorModel.swift */; };
-		A08E361B1D84E1370094682A /* INSImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E36181D84E1370094682A /* INSImageItemCollectionViewCell.swift */; };
-		A08E361D1D84E1370094682A /* YSERootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E361A1D84E1370094682A /* YSERootTableViewCell.swift */; };
-		A08E361F1D84E78C0094682A /* YSEImageGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E361E1D84E78C0094682A /* YSEImageGroupModel.swift */; };
 		BD0F63A6A989F731251ED2EB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C2FED22BDF6F8EB630E2D0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEClassifyModel.swift; sourceTree = "<group>"; };
-		09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMenuView.swift; sourceTree = "<group>"; };
+		09AD5E771D87E27F0064E4B6 /* YSEMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMainViewController.swift; sourceTree = "<group>"; };
+		09AD5E791D87E27F0064E4B6 /* YSECategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSECategoryModel.swift; sourceTree = "<group>"; };
+		09AD5E7A1D87E27F0064E4B6 /* YSEClassifyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEClassifyModel.swift; sourceTree = "<group>"; };
+		09AD5E7B1D87E27F0064E4B6 /* YSEColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEColorModel.swift; sourceTree = "<group>"; };
+		09AD5E7C1D87E27F0064E4B6 /* YSEImageGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEImageGroupModel.swift; sourceTree = "<group>"; };
+		09AD5E7D1D87E27F0064E4B6 /* YSEImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEImageModel.swift; sourceTree = "<group>"; };
+		09AD5E7F1D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		09AD5E801D87E27F0064E4B6 /* YSEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMenuView.swift; sourceTree = "<group>"; };
+		09AD5E811D87E27F0064E4B6 /* YSERootTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSERootTableViewCell.swift; sourceTree = "<group>"; };
 		56C2FED22BDF6F8EB630E2D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0491BF71D71148500238ED1 /* youse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0491BFA1D71148500238ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0491C041D71148500238ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0491C061D71148500238ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0491C101D71272400238ED1 /* YSEMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMainViewController.swift; sourceTree = "<group>"; };
 		A0491C131D713BF800238ED1 /* YSEGlobalDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEGlobalDefinitions.h; sourceTree = "<group>"; };
 		A0491C141D713BF800238ED1 /* YSEGlobleVar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEGlobleVar.swift; sourceTree = "<group>"; };
 		A0491C151D713BF800238ED1 /* YSEHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEHeader.h; sourceTree = "<group>"; };
@@ -47,12 +53,6 @@
 		A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		A08126081D7471AB00FFEF44 /* YSESystemConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSESystemConfig.swift; sourceTree = "<group>"; };
 		A081260A1D74827B00FFEF44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A08E36121D84D6A30094682A /* YSEImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEImageModel.swift; sourceTree = "<group>"; };
-		A08E36141D84D7290094682A /* YSECategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSECategoryModel.swift; sourceTree = "<group>"; };
-		A08E36161D84D73C0094682A /* YSEColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEColorModel.swift; sourceTree = "<group>"; };
-		A08E36181D84E1370094682A /* INSImageItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSImageItemCollectionViewCell.swift; sourceTree = "<group>"; };
-		A08E361A1D84E1370094682A /* YSERootTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSERootTableViewCell.swift; sourceTree = "<group>"; };
-		A08E361E1D84E78C0094682A /* YSEImageGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEImageGroupModel.swift; sourceTree = "<group>"; };
 		C89B61022019386613941D0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EF4ED1813C8A2C7780D575EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +69,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09AD5E731D87E1D20064E4B6 /* leftMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = leftMenu;
+			sourceTree = "<group>";
+		};
+		09AD5E751D87E27F0064E4B6 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				09AD5E761D87E27F0064E4B6 /* Controller */,
+				09AD5E781D87E27F0064E4B6 /* Model */,
+				09AD5E7E1D87E27F0064E4B6 /* View */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		09AD5E761D87E27F0064E4B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09AD5E771D87E27F0064E4B6 /* YSEMainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09AD5E781D87E27F0064E4B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09AD5E791D87E27F0064E4B6 /* YSECategoryModel.swift */,
+				09AD5E7A1D87E27F0064E4B6 /* YSEClassifyModel.swift */,
+				09AD5E7B1D87E27F0064E4B6 /* YSEColorModel.swift */,
+				09AD5E7C1D87E27F0064E4B6 /* YSEImageGroupModel.swift */,
+				09AD5E7D1D87E27F0064E4B6 /* YSEImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09AD5E7E1D87E27F0064E4B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09AD5E7F1D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift */,
+				09AD5E801D87E27F0064E4B6 /* YSEMenuView.swift */,
+				09AD5E811D87E27F0064E4B6 /* YSERootTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2F9C152EAD6FFB41445A2E8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,9 +180,8 @@
 		A0491C0F1D7126D100238ED1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0491C101D71272400238ED1 /* YSEMainViewController.swift */,
-				A08E36111D84D6760094682A /* View */,
-				A08E36101D84D6610094682A /* Model */,
+				09AD5E751D87E27F0064E4B6 /* main */,
+				09AD5E731D87E1D20064E4B6 /* leftMenu */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -157,28 +203,6 @@
 				A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */,
 			);
 			path = Vender;
-			sourceTree = "<group>";
-		};
-		A08E36101D84D6610094682A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				09C3C5781D864C2300AF70EF /* YSEClassifyModel.swift */,
-				A08E36141D84D7290094682A /* YSECategoryModel.swift */,
-				A08E36161D84D73C0094682A /* YSEColorModel.swift */,
-				A08E36121D84D6A30094682A /* YSEImageModel.swift */,
-				A08E361E1D84E78C0094682A /* YSEImageGroupModel.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		A08E36111D84D6760094682A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				09C40F5B1D75848B00A577E2 /* YSEMenuView.swift */,
-				A08E36181D84E1370094682A /* INSImageItemCollectionViewCell.swift */,
-				A08E361A1D84E1370094682A /* YSERootTableViewCell.swift */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		D13A7B0E4DDD3DB1CBDA0518 /* Pods */ = {
@@ -312,19 +336,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0491C2A1D716AB700238ED1 /* YSEDataBase.swift in Sources */,
-				A08E36151D84D7290094682A /* YSECategoryModel.swift in Sources */,
-				A08E361B1D84E1370094682A /* INSImageItemCollectionViewCell.swift in Sources */,
+				09AD5E841D87E27F0064E4B6 /* YSEClassifyModel.swift in Sources */,
 				A0491C2D1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				A0491C171D713BF800238ED1 /* YSEGlobleVar.swift in Sources */,
-				A08E36171D84D73C0094682A /* YSEColorModel.swift in Sources */,
+				09AD5E891D87E27F0064E4B6 /* YSEMenuView.swift in Sources */,
 				A0491C1E1D7143AC00238ED1 /* YSERequestFetcher.swift in Sources */,
 				A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */,
-				A0491C111D71272400238ED1 /* YSEMainViewController.swift in Sources */,
-				09C40F5C1D75848B00A577E2 /* YSEMenuView.swift in Sources */,
-				09C3C5791D864C2300AF70EF /* YSEClassifyModel.swift in Sources */,
-				A08E361D1D84E1370094682A /* YSERootTableViewCell.swift in Sources */,
-				A08E36131D84D6A30094682A /* YSEImageModel.swift in Sources */,
-				A08E361F1D84E78C0094682A /* YSEImageGroupModel.swift in Sources */,
+				09AD5E851D87E27F0064E4B6 /* YSEColorModel.swift in Sources */,
+				09AD5E881D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift in Sources */,
+				09AD5E861D87E27F0064E4B6 /* YSEImageGroupModel.swift in Sources */,
+				09AD5E821D87E27F0064E4B6 /* YSEMainViewController.swift in Sources */,
+				09AD5E871D87E27F0064E4B6 /* YSEImageModel.swift in Sources */,
+				09AD5E831D87E27F0064E4B6 /* YSECategoryModel.swift in Sources */,
+				09AD5E8A1D87E27F0064E4B6 /* YSERootTableViewCell.swift in Sources */,
 				A08126091D7471AB00FFEF44 /* YSESystemConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

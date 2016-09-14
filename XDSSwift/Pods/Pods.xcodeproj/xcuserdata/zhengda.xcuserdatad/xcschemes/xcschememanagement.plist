@@ -34,7 +34,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-XDSSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -59,15 +59,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XDSFoundation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C426BB759C0FA50F321AB2005EA5A99</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1950FA68C7ACC1253232484E19B3A2AD</key>
+		<key>09393CCA3C241E56797BCD4BDDC02481</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>24E19B9F01D14FD4F0BA6232ADEF58F7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3241EE752E88DCC57AE7396AD87381B9</key>
+		<key>25FA6B70A4F0ED6012FA78C0357BC568</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +92,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3631EC2D74BD72380F3CC89C178C489C</key>
+		<key>74B908382A7A50ECD9125A183A7C643A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89E998750171F1CAE1E099A50D8A0553</key>
+		<key>866172795B97F93BAAD166822543C612</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0721005E88DFE12891EE0C8D215FF05</key>
+		<key>8FC6F7C9C16A8A8380A20458602A3B46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0583D6D5AE7C1D1C3AA5BC88889B928</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C711C3B93A7A7196AA401E9BB305B509</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DCAA7FC458355B1037E5C760486A759D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
