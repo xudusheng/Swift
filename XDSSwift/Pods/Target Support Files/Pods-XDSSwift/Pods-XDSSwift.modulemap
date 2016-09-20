@@ -1,6 +1,0 @@
-framework module Pods_XDSSwift {
-  umbrella header "Pods-XDSSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}

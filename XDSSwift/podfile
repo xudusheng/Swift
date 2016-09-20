@@ -3,15 +3,15 @@ target “XDSSwift” do
 #wift版的自动布局
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
-use_frameworks!
-pod 'SnapKit', '~> 0.15.0'
+#use_frameworks!
+#pod 'SnapKit', '~> 0.15.0'
 
 #AOP面向切面思想
 pod 'AspectsV1.4.2', '~> 1.4.2'
 
 #ReactiveCocoa，函数式编程
-use_frameworks!
-pod 'ReactiveCocoa', '~> 4.2.1'
+#use_frameworks!
+#pod 'ReactiveCocoa', '~> 4.2.1'
 
 pod 'JDStatusBarNotification'
 pod 'AFNetworking'
@@ -21,6 +21,6 @@ pod 'FMDB', '~> 2.6.2'
 
 pod 'CWFoundation', :git => 'https://github.com/guojiubo/CWFoundation.git', :commit => '2352449291499091f4e4a82877ec57c9070ced35'
 
-pod 'XDSFoundation', :git => 'https://github.com/xudusheng/XDSFoundation.git'
+#pod 'XDSFoundation', :git => 'https://github.com/xudusheng/XDSFoundation.git'
 
 end

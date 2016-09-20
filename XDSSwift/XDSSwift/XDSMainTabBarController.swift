@@ -17,10 +17,10 @@ class XDSMainTabBarController: UITabBarController {
     }
 
     
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         let transition = CATransition();
         transition.type = kCATransitionFade;
-        self.view.layer.addAnimation(transition, forKey: nil);
+        self.view.layer.add(transition, forKey: nil);
         
     }
 

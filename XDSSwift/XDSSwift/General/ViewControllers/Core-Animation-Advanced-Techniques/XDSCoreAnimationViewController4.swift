@@ -27,29 +27,29 @@ class XDSCoreAnimationViewController4: XDSRootViewController {
     
     //TODO:随机改变图层颜色
     func createChangeColorLayer() -> Void {
-        containerView = UIView(frame: CGRectMake(0, 0, 300, 300));
+        containerView = UIView(frame: CGRect(x:0, y:0, width:300, height:300));
         containerView.center = self.view.center;
         containerView?.backgroundColor = UIColor(white: 0, alpha: 0.3);
         self.view.addSubview(containerView!);
         
         //create sublayer
         colorLayer = CALayer();
-        colorLayer.frame = CGRectMake(0, 0, 150.0, 150.0);
-        colorLayer.position = CGPointMake(CGRectGetWidth(containerView.frame)/2, CGRectGetHeight(containerView.frame)/2);
-        self.colorLayer.backgroundColor = UIColor.blueColor().CGColor;
+        colorLayer.frame = CGRect(x: 0, y: 0, width: 150.0, height: 150.0);
+        colorLayer.position = CGPoint(x: containerView.frame.width/2, y: containerView.frame.height/2);
+        self.colorLayer.backgroundColor = UIColor.blue.cgColor;
         //add it to our view
         containerView?.layer.addSublayer(colorLayer!);
         
-        let button = UIButton(type: .RoundedRect);
-        button.setTitle("Change Color", forState: .Normal);
-        button.addTarget(self, action: #selector(XDSCoreAnimationViewController4.changeColor), forControlEvents: .TouchUpInside);
+        let button = UIButton(type: .roundedRect);
+        button.setTitle("Change Color", for: .normal);
+        button.addTarget(self, action: #selector(XDSCoreAnimationViewController4.changeColor), for: .touchUpInside);
         containerView.addSubview(button);
-        button.snp_makeConstraints { (make) in
-            make.centerX.equalTo(containerView.snp_centerX);
-            make.bottom.equalTo(-20);
-            make.height.equalTo(35);
-            make.width.equalTo(100);
-        };
+//        button.snp_makeConstraints { (make) in
+//            make.centerX.equalTo(containerView.snp_centerX);
+//            make.bottom.equalTo(-20);
+//            make.height.equalTo(35);
+//            make.width.equalTo(100);
+//        };
         
     }
     
@@ -66,7 +66,7 @@ class XDSCoreAnimationViewController4: XDSRootViewController {
         let red = arc4random() / UInt32(Int32.max);
         let green = arc4random() / UInt32(Int32.max);
         let blue = arc4random() / UInt32(Int32.max);
-        self.colorLayer.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0).CGColor;
+        self.colorLayer.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0).cgColor;
         CATransaction.commit();
     }
     //MARK: - 其他私有方法

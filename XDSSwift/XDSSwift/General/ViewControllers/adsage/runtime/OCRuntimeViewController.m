@@ -129,13 +129,11 @@ void sayFunction(id obj, SEL _cmd, NSString * some, NSString * num){
     NSDictionary * dict = [model allProperties];
     NSLog(@"%@", dict);
 //    [JDStatusBarNotification showSuccess:dict.JSONData];
-    @weakify(self);
     [SwiftUtil showAlertViewWithPresentingController:self
                                                title:nil
                                              message:dict.description
                                         buttonTitles:@[@"确定"]
                                             selected:^(NSInteger index){
-                                                @strongify(self);
                                                 [self.navigationController popViewControllerAnimated:YES];
                                             }];
 }

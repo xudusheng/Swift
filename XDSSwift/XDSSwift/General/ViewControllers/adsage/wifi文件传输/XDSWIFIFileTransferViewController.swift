@@ -26,9 +26,9 @@ class XDSWIFIFileTransferViewController: UIViewController {
         self.WIFIFileTransferViewControllerDataInit();
         self.createWIFIFileTransferViewControllerUI();
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.receiveANewFileNotification(_:)), name: kGetContentLengthNotificationName, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.receiveDownloadProcessBodyDataNotification(_:)), name: kDownloadProcessBodyDataNotificationName, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.processStartOfPartWithHeaderNotificationName(_:)), name: kGetProcessStartOfPartWithHeaderNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.receiveANewFileNotification(notification:)), name: NSNotification.Name(rawValue: kGetContentLengthNotificationName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.receiveDownloadProcessBodyDataNotification(notification:)), name: NSNotification.Name(rawValue: kDownloadProcessBodyDataNotificationName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.processStartOfPartWithHeaderNotificationName(notification:)), name: NSNotification.Name(rawValue: kGetProcessStartOfPartWithHeaderNotificationName), object: nil)
 
     }
     
@@ -38,9 +38,9 @@ class XDSWIFIFileTransferViewController: UIViewController {
         httpServer.setType("_http._tcp.")
 
         // webPath是server搜寻HTML等文件的路径
-        let webPath = NSBundle.mainBundle().resourcePath;
+        let webPath = Bundle.main.resourcePath;
         httpServer.setDocumentRoot(webPath)
-        httpServer.setConnectionClass(MyHTTPConnection);
+        httpServer.setConnectionClass(MyHTTPConnection.self);
         NSLog("\(httpServer.connectionClass())")
 
         do{
@@ -59,19 +59,19 @@ class XDSWIFIFileTransferViewController: UIViewController {
     //MARK:事件响应
     func receiveANewFileNotification(notification:NSNotification) -> Void {
         _fileCount += 1;
-        _contentDownloadFileTotleLength = (notification.object?.integerValue)!;
+        _contentDownloadFileTotleLength = ((notification.object as AnyObject).integerValue)!;
         _downloadLength = 0
     }
     func receiveDownloadProcessBodyDataNotification(notification:NSNotification) -> Void {
-        _downloadLength += (notification.object?.integerValue)!
+        _downloadLength += ((notification.object as AnyObject).integerValue)!
         // 主线程执行
-        dispatch_async(dispatch_get_main_queue(),{
+        DispatchQueue.main.async {
             self.uploadProgressView.progress = Float(self._downloadLength)/Float(self._contentDownloadFileTotleLength);
             self.uploadProgressLabel!.text = "正在下载：\(self._curentDownloadFileName)"
-        })
+        }
     }
     func processStartOfPartWithHeaderNotificationName(notification:NSNotification) -> Void {
-        _curentDownloadFileName = String(notification.object!)
+        _curentDownloadFileName = String(describing: notification.object!)
         _curentDownloadFileCount += 1
     }
     

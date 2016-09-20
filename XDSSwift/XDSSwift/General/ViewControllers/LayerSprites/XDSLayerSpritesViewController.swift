@@ -20,22 +20,22 @@ class XDSLayerSpritesViewController: XDSRootViewController {
     func createLayerSpritesViewControllerUI(){
         self.title = "瓦片地图";
 
-        let plistPath = NSBundle.mainBundle().pathForResource("lostgarden", ofType: "plist");
-        let imageMap = LSImageMap(contentsOfFile: plistPath);
+        let plistPath = Bundle.main.path(forResource: "lostgarden", ofType: "plist");
+        let imageMap = LSImageMap(contentsOfFile: plistPath)!;
         let height:CGFloat = 80.0;
         let width:CGFloat = 80.0;
         let gap:CGFloat = 10.0;
-        for index in 0..<imageMap.imageCount() {
-            print("imageName = \(imageMap.imageNameAtIndex(index))");
-            let image = imageMap.imageAtIndex(index);
+        for index in 0 ..< imageMap.imageCount() {
+            print("imageName = \(imageMap.imageName(at: index))");
+            let image = imageMap.image(at: index);
             let originX = 30.0 + (width + gap) * (CGFloat(index%3));
             let originY = 80 + (height + gap) * (CGFloat(index/3));
             
-            let layerView = UIView(frame: CGRectMake(originX, originY, width, height));
-            layerView.layer.contents = image.CGImage;
-            layerView.layer.contentsScale = image.scale;
-            layerView.layer.contentsRect = image.contentsRect;
-            layerView.transform = image.transform;
+            let layerView = UIView(frame: CGRect(x:originX, y:originY, width:width, height:height));
+            layerView.layer.contents = image?.cgImage;
+            layerView.layer.contentsScale = (image?.scale)!;
+            layerView.layer.contentsRect = (image?.contentsRect)!;
+            layerView.transform = (image?.transform)!;
             self.view.addSubview(layerView);
         }
     }

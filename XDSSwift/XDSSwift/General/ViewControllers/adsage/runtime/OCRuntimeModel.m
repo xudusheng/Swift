@@ -103,8 +103,8 @@
 }
 
 void otherSimg(id obj, SEL _cmd){
-    [SwiftUtil showSingleAlertView:nil
-                           message:@"没有sing方法，动态添加了sing方法"];
+//    [SwiftUtil showSingleAlertView:nil
+//                           message:@"没有sing方法，动态添加了sing方法"];
 }
 
 @end

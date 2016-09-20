@@ -8,10 +8,9 @@
 
 import UIKit
 
+
 enum CellIndexPath:Int {
     case CoreAnimation
-    case Adsage
-    case ReactiveCocoa
     case Wifi
     case Runtime
     
@@ -21,10 +20,8 @@ enum CellIndexPath:Int {
 class XDSSwiftRootTableViewController: UITableViewController {
     let IndexPath_ : [String:CellIndexPath] = [
         "0,0" : .CoreAnimation,
-        "0,1" : .Adsage,
-        "0,2" : .ReactiveCocoa,
-        "0,3" : .Wifi,
-        "0,4" : .Runtime,
+        "0,1" : .Wifi,
+        "0,2" : .Runtime,
         
         "1,0" : .LayerSprite,
     ];
@@ -42,8 +39,8 @@ class XDSSwiftRootTableViewController: UITableViewController {
     }
     
     //MARK: - 代理方法
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true);
         var vc : UIViewController?;
         let indexPathKey = "\(indexPath.section),\(indexPath.row)";
         let index = IndexPath_[indexPathKey]! as CellIndexPath;
@@ -51,13 +48,6 @@ class XDSSwiftRootTableViewController: UITableViewController {
         case .CoreAnimation:
             vc = SwiftUtil.getViewController(storyboardName: "Main",
                                              instantiateViewControllerIdentifier: "XDSCoreAnimationTableViewController");
-            break;
-        case .Adsage:
-            vc = XDSAdsageViewController();
-            break;
-        case .ReactiveCocoa:
-            vc = SwiftUtil.getViewController(storyboardName: "Main",
-                                             instantiateViewControllerIdentifier: "XDSReactiveCocoaViewController");
             break;
         case .Wifi:
             vc = SwiftUtil.getViewController(storyboardName: "Main",
@@ -75,11 +65,13 @@ class XDSSwiftRootTableViewController: UITableViewController {
         }
         
         if vc != nil {
-            vc?.view.backgroundColor = UIColor.whiteColor();
+            vc?.view.backgroundColor = UIColor.white;
             vc?.hidesBottomBarWhenPushed = true;
             self.navigationController?.pushViewController(vc!, animated: true);
         }
+
     }
+
     //MARK: - 网络请求
     
     //MARK: - 事件响应处理
