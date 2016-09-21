@@ -10,20 +10,22 @@ import UIKit
 
 
 enum CellIndexPath:Int {
-    case CoreAnimation
-    case Wifi
-    case Runtime
+    case coreAnimation
+    case wifi
+    case runtime
     
-    case LayerSprite
+    case layerSprite
+    case keyboard
 }
 
 class XDSSwiftRootTableViewController: UITableViewController {
     let IndexPath_ : [String:CellIndexPath] = [
-        "0,0" : .CoreAnimation,
-        "0,1" : .Wifi,
-        "0,2" : .Runtime,
+        "0,0" : .coreAnimation,
+        "0,1" : .wifi,
+        "0,2" : .runtime,
         
-        "1,0" : .LayerSprite,
+        "1,0" : .layerSprite,
+        "1,1" : .keyboard,
     ];
     
     override func viewDidLoad() {
@@ -45,23 +47,25 @@ class XDSSwiftRootTableViewController: UITableViewController {
         let indexPathKey = "\(indexPath.section),\(indexPath.row)";
         let index = IndexPath_[indexPathKey]! as CellIndexPath;
         switch index {
-        case .CoreAnimation:
+        case .coreAnimation:
             vc = SwiftUtil.getViewController(storyboardName: "Main",
                                              instantiateViewControllerIdentifier: "XDSCoreAnimationTableViewController");
             break;
-        case .Wifi:
+        case .wifi:
             vc = SwiftUtil.getViewController(storyboardName: "Main",
                                              instantiateViewControllerIdentifier: "XDSWIFIFileTransferViewController");
             break;
-        case .Runtime:
+        case .runtime:
             let runtimeVC = OCRuntimeViewController();
             vc = runtimeVC;
             break;
             
-        case .LayerSprite:
+        case .layerSprite:
             vc = XDSLayerSpritesViewController();
             break;
-            
+        case .keyboard:
+            vc = XDSCustomKeyBoardViewController();
+            break;
         }
         
         if vc != nil {

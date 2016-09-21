@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0944D8CD1D92806800F703D4 /* XDSCustomKeyBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944D8CC1D92806800F703D4 /* XDSCustomKeyBoardViewController.swift */; };
+		0944D8CF1D92823900F703D4 /* SwiftGlobleConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944D8CE1D92823900F703D4 /* SwiftGlobleConst.swift */; };
+		0944D8D31D928E5500F703D4 /* XDSKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944D8D21D928E5500F703D4 /* XDSKeyBoard.swift */; };
+		0944D8D51D928E6000F703D4 /* XDSKeyBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0944D8D41D928E6000F703D4 /* XDSKeyBoard.xib */; };
 		0954591D1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */; };
 		095B546C1D8103F5009F7F96 /* OCRuntimeModel+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */; };
 		098DF2481D7FA99900E6D6B3 /* OCRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */; };
@@ -94,6 +98,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0944D8CC1D92806800F703D4 /* XDSCustomKeyBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSCustomKeyBoardViewController.swift; sourceTree = "<group>"; };
+		0944D8CE1D92823900F703D4 /* SwiftGlobleConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGlobleConst.swift; sourceTree = "<group>"; };
+		0944D8D21D928E5500F703D4 /* XDSKeyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSKeyBoard.swift; sourceTree = "<group>"; };
+		0944D8D41D928E6000F703D4 /* XDSKeyBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDSKeyBoard.xib; sourceTree = "<group>"; };
 		0954591B1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HideNavigationBar.h"; sourceTree = "<group>"; };
 		0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HideNavigationBar.m"; sourceTree = "<group>"; };
 		095B546A1D8103F5009F7F96 /* OCRuntimeModel+Associated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCRuntimeModel+Associated.h"; sourceTree = "<group>"; };
@@ -251,6 +259,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0944D8C81D927FA600F703D4 /* CustomKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				0944D8C91D927FB700F703D4 /* ViewContrller */,
+				0944D8CA1D927FCC00F703D4 /* View */,
+				0944D8CB1D927FD900F703D4 /* Model */,
+			);
+			name = CustomKeyBoard;
+			path = adsage/CustomKeyBoard;
+			sourceTree = "<group>";
+		};
+		0944D8C91D927FB700F703D4 /* ViewContrller */ = {
+			isa = PBXGroup;
+			children = (
+				0944D8CC1D92806800F703D4 /* XDSCustomKeyBoardViewController.swift */,
+			);
+			name = ViewContrller;
+			sourceTree = "<group>";
+		};
+		0944D8CA1D927FCC00F703D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0944D8D21D928E5500F703D4 /* XDSKeyBoard.swift */,
+				0944D8D41D928E6000F703D4 /* XDSKeyBoard.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0944D8CB1D927FD900F703D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		098DF2431D7FA29700E6D6B3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +409,7 @@
 				09BEA8AA1D4871B10043499F /* LayerSprites */,
 				A0385DBD1D7DA905003D1925 /* wifi文件传输 */,
 				09911D031D7E99E100A5554F /* runtime */,
+				0944D8C81D927FA600F703D4 /* CustomKeyBoard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -378,6 +422,7 @@
 				098E43AC1D472360003D5455 /* ThirdPartyService */,
 				098E43AE1D472360003D5455 /* Tracker */,
 				09911D0B1D7EB6E100A5554F /* SwiftUtil.swift */,
+				0944D8CE1D92823900F703D4 /* SwiftGlobleConst.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -812,6 +857,7 @@
 				098E44171D472360003D5455 /* 货币的教训：汇率与货币系列评论-周其仁 in Resources */,
 				098E44111D472360003D5455 /* 一开口就能找对话题-刘成 in Resources */,
 				09BEA8B91D4873360043499F /* lostgarden.png in Resources */,
+				0944D8D51D928E6000F703D4 /* XDSKeyBoard.xib in Resources */,
 				09FAE7F11D47686500281F83 /* snowman.png in Resources */,
 				098E44121D472360003D5455 /* 互联网思维-钟殿舟 in Resources */,
 				098E438C1D4721AE003D5455 /* Main.storyboard in Resources */,
@@ -882,9 +928,11 @@
 				09911D0A1D7E9AA400A5554F /* SwiftRuntimeViewController.swift in Sources */,
 				09BF643D1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift in Sources */,
 				098E442F1D472360003D5455 /* HTTPAsyncFileResponse.m in Sources */,
+				0944D8CD1D92806800F703D4 /* XDSCustomKeyBoardViewController.swift in Sources */,
 				098E44211D472360003D5455 /* DDTTYLogger.m in Sources */,
 				098E44361D472360003D5455 /* MyHTTPConnection.m in Sources */,
 				098E442C1D472360003D5455 /* MultipartFormDataParser.m in Sources */,
+				0944D8D31D928E5500F703D4 /* XDSKeyBoard.swift in Sources */,
 				098E44311D472360003D5455 /* HTTPDynamicFileResponse.m in Sources */,
 				095B546C1D8103F5009F7F96 /* OCRuntimeModel+Associated.m in Sources */,
 				098E441F1D472360003D5455 /* DDFileLogger.m in Sources */,
@@ -913,6 +961,7 @@
 				098E44201D472360003D5455 /* DDLog.m in Sources */,
 				098E44301D472360003D5455 /* HTTPDataResponse.m in Sources */,
 				09BEA8A11D4849620043499F /* LSImageMap.m in Sources */,
+				0944D8CF1D92823900F703D4 /* SwiftGlobleConst.swift in Sources */,
 				098E44291D472360003D5455 /* HTTPConnection.m in Sources */,
 				098E44261D472360003D5455 /* DDNumber.m in Sources */,
 				098E442E1D472360003D5455 /* MultipartMessageHeaderField.m in Sources */,
@@ -1060,6 +1109,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = LaoMoney_development;
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
@@ -1088,6 +1138,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = LaoMoney_development;
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
