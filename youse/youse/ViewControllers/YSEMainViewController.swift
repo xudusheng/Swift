@@ -71,8 +71,14 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.view.addSubview(mainCollectionView);
         
         let viewsDict = ["mainCollectionView":mainCollectionView];
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|",
+                                                                                options: .AlignAllLeft,
+                                                                                metrics: nil,
+                                                                                views: viewsDict));
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|",
+                                                                                options: .AlignAllLeft,
+                                                                                metrics: nil,
+                                                                                views: viewsDict));
         
         let rightItem = UIBarButtonItem(title: "更多", style: .Done, target: self, action: #selector(YSEMainViewController.showMenuList));
         rightItem.tintColor = UIColor.whiteColor();

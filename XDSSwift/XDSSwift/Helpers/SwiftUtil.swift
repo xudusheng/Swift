@@ -21,17 +21,17 @@ class SwiftUtil: NSObject {
                                                             message:String?,
                                                             buttonTitles:[String],
                                                             selected:((NSInteger)->Void)?){
-        //iOS8以上版本，使用新版UIAlertController代替UIAlertView
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert);
-        for index in 0 ..< buttonTitles.count {
-            let action = UIAlertAction(title: buttonTitles[index], style: .default, handler: { (act:UIAlertAction) in
-                if selected != nil{
-                    selected!(index);
-                }
-            })
-            alertController.addAction(action);
-        }
-        presentingController.present(alertController, animated: true, completion: nil);
+//        //iOS8以上版本，使用新版UIAlertController代替UIAlertView
+//        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert);
+//        for index in 0 ..< buttonTitles.count {
+//            let action = UIAlertAction(title: buttonTitles[index], style: .default, handler: { (act:UIAlertAction) in
+//                if selected != nil{
+//                    selected!(index);
+//                }
+//            })
+//            alertController.addAction(action);
+//        }
+//        presentingController.present(alertController, animated: true, completion: nil);
     }
 
     static internal func showSingleAlertView(title:String?,
