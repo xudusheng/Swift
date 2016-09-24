@@ -9,7 +9,9 @@
 import UIKit
 
 class XDSCustomKeyBoardViewController: XDSRootViewController {
-
+    deinit {
+        NSLog("XDSCustomKeyBoardViewController===> deinit")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +22,8 @@ class XDSCustomKeyBoardViewController: XDSRootViewController {
         self.view.addSubview(textField);
         
         let keyboard = XDSEnglishKeyboard();
-        textField.inputView = keyboard;
+//        textField.inputView = keyboard;
+        keyboard.set(inputView: textField);
         
         
         let systemTextField = UITextField(frame: CGRect.zero);
@@ -50,7 +53,9 @@ class XDSCustomKeyBoardViewController: XDSRootViewController {
     }
 
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
     
     @objc private func willKeyboardShow(notification:Notification){
         let info = notification.userInfo!;

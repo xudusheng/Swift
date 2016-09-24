@@ -25,9 +25,9 @@ class XDSEnglishKeyboardCell: UICollectionViewCell {
     private func createEnglishKeyboardCellUI() {
         titleLabel.font = UIFont.systemFont(ofSize: 20);
         titleLabel.translatesAutoresizingMaskIntoConstraints = false;
-        titleLabel.backgroundColor = UIColor.white;
+        titleLabel.backgroundColor = UIColor.clear;
         titleLabel.textAlignment = .center;
-        titleLabel.textColor = UIColor.blue;
+        titleLabel.textColor = UIColor.black;
         self.contentView.addSubview(titleLabel);
         
         let viewDict = ["titleLabel":titleLabel];
@@ -35,8 +35,22 @@ class XDSEnglishKeyboardCell: UICollectionViewCell {
         let constraints_v = NSLayoutConstraint.constraints(withVisualFormat: "V:|[titleLabel]|", options: .alignAllCenterY, metrics: nil, views: viewDict);
         self.contentView.addConstraints(constraints_h+constraints_v);
         
-        self.contentView.layer.cornerRadius = 6;
-        self.contentView.layer.masksToBounds = true;
+//        self.contentView.layer.cornerRadius = 6;
+//        self.contentView.layer.masksToBounds = true;
+        
+        
+        
+        let backView = UIView(frame: self.bounds);
+        backView.backgroundColor = UIColor.white;
+        backView.layer.cornerRadius = 6;
+        backView.layer.masksToBounds = true;
+        self.backgroundView = backView;
+        
+        let selectedBackgroundView = UIView(frame: self.bounds);
+        selectedBackgroundView.backgroundColor = UIColor.lightGray;
+        selectedBackgroundView.layer.cornerRadius = 6;
+        selectedBackgroundView.layer.masksToBounds = true;
+        self.selectedBackgroundView = selectedBackgroundView;
     }
     
     
