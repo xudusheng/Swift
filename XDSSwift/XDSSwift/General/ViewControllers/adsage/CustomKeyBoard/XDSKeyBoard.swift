@@ -11,13 +11,13 @@ import UIKit
 class XDSKeyBoard: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216));
-//        self.createEnglishKeyboard();
+        self.createEnglishKeyboard();
 //        self.createEnglishKeyboardWithAotoLayout();
     }
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216));
-//        self.createEnglishKeyboard();
+        self.createEnglishKeyboard();
 //        self.createEnglishKeyboardWithAotoLayout();
     }
     required init?(coder aDecoder: NSCoder) {

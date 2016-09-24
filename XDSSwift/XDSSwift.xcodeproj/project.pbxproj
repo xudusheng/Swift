@@ -92,6 +92,10 @@
 		09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */; };
 		09FAE7F11D47686500281F83 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F01D47686500281F83 /* snowman.png */; };
 		09FAE7F31D476CEB00281F83 /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 09FAE7F21D476CEB00281F83 /* map.bmp */; };
+		A02680F21D9602FC00939DA0 /* XDSEnglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02680F11D9602FC00939DA0 /* XDSEnglishKeyboard.swift */; };
+		A02680F41D96033100939DA0 /* XDSEnglishKeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02680F31D96033100939DA0 /* XDSEnglishKeyboardLayout.swift */; };
+		A02680F81D96049C00939DA0 /* XDSKeyboardConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02680F71D96049C00939DA0 /* XDSKeyboardConst.swift */; };
+		A02680FA1D96096800939DA0 /* XDSEnglishKeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02680F91D96096800939DA0 /* XDSEnglishKeyboardCell.swift */; };
 		A0385DBF1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */; };
 		A0D257DE1D56D76800302E1B /* XDSMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */; };
 		BEE5D462544CDEB2A4A81823 /* libPods-XDSSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF27891077847E7AC5013E /* libPods-XDSSwift.a */; };
@@ -232,6 +236,10 @@
 		09FAE7EC1D4733C200281F83 /* XDSRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSRootViewController.swift; sourceTree = "<group>"; };
 		09FAE7F01D47686500281F83 /* snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowman.png; sourceTree = "<group>"; };
 		09FAE7F21D476CEB00281F83 /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
+		A02680F11D9602FC00939DA0 /* XDSEnglishKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSEnglishKeyboard.swift; sourceTree = "<group>"; };
+		A02680F31D96033100939DA0 /* XDSEnglishKeyboardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSEnglishKeyboardLayout.swift; sourceTree = "<group>"; };
+		A02680F71D96049C00939DA0 /* XDSKeyboardConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSKeyboardConst.swift; sourceTree = "<group>"; };
+		A02680F91D96096800939DA0 /* XDSEnglishKeyboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSEnglishKeyboardCell.swift; sourceTree = "<group>"; };
 		A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSWIFIFileTransferViewController.swift; sourceTree = "<group>"; };
 		A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSMainTabBarController.swift; sourceTree = "<group>"; };
 		AA704DD93B65A9E29F2A3500 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +289,8 @@
 		0944D8CA1D927FCC00F703D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A02680F71D96049C00939DA0 /* XDSKeyboardConst.swift */,
+				A02680F01D9602FC00939DA0 /* EnglishKeyboard */,
 				0944D8D21D928E5500F703D4 /* XDSKeyBoard.swift */,
 			);
 			name = View;
@@ -744,6 +754,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A02680F01D9602FC00939DA0 /* EnglishKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A02680F11D9602FC00939DA0 /* XDSEnglishKeyboard.swift */,
+				A02680F31D96033100939DA0 /* XDSEnglishKeyboardLayout.swift */,
+				A02680F91D96096800939DA0 /* XDSEnglishKeyboardCell.swift */,
+			);
+			path = EnglishKeyboard;
+			sourceTree = "<group>";
+		};
 		A0385DBD1D7DA905003D1925 /* wifi文件传输 */ = {
 			isa = PBXGroup;
 			children = (
@@ -923,6 +943,7 @@
 				09911D081D7E9A9000A5554F /* OCRuntimeViewController.m in Sources */,
 				098E441B1D472360003D5455 /* GCDAsyncSocket.m in Sources */,
 				098E44271D472360003D5455 /* DDRange.m in Sources */,
+				A02680F21D9602FC00939DA0 /* XDSEnglishKeyboard.swift in Sources */,
 				098E440B1D472360003D5455 /* SSKeychain.m in Sources */,
 				09911D0A1D7E9AA400A5554F /* SwiftRuntimeViewController.swift in Sources */,
 				09BF643D1D4F222300CA1792 /* XDSCoreAnimationViewController4.swift in Sources */,
@@ -943,10 +964,12 @@
 				098E440A1D472360003D5455 /* XDSIPHelper.m in Sources */,
 				098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */,
 				098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */,
+				A02680FA1D96096800939DA0 /* XDSEnglishKeyboardCell.swift in Sources */,
 				098E44351D472360003D5455 /* WebSocket.m in Sources */,
 				09D4DA101D7984C100817962 /* XDSAnyObject.swift in Sources */,
 				098DF2481D7FA99900E6D6B3 /* OCRuntimeModel.m in Sources */,
 				09911D0C1D7EB6E100A5554F /* SwiftUtil.swift in Sources */,
+				A02680F81D96049C00939DA0 /* XDSKeyboardConst.swift in Sources */,
 				098E441D1D472360003D5455 /* DDAbstractDatabaseLogger.m in Sources */,
 				09BEA8A01D4849620043499F /* LSImage.m in Sources */,
 				A0385DBF1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift in Sources */,
@@ -967,6 +990,7 @@
 				098E442E1D472360003D5455 /* MultipartMessageHeaderField.m in Sources */,
 				098E441E1D472360003D5455 /* DDASLLogger.m in Sources */,
 				09BEA8A21D4849620043499F /* LSImageView.m in Sources */,
+				A02680F41D96033100939DA0 /* XDSEnglishKeyboardLayout.swift in Sources */,
 				098E442A1D472360003D5455 /* HTTPMessage.m in Sources */,
 				098E44331D472360003D5455 /* HTTPFileResponse.m in Sources */,
 				09D4DA071D79597000817962 /* String_Extension_XDS.swift in Sources */,
