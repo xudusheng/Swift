@@ -9,10 +9,6 @@
 import UIKit
 
 class XDSEnglishKeyboardViewAndModel: NSObject {
-//    static private let viewAndModel = XDSEnglishKeyboardViewAndModel();
-//    static internal func shareViewAndModel() -> XDSEnglishKeyboardViewAndModel{
-//        return viewAndModel;
-//    }
     
     private let xds_english_keyboard_lowercase_letters:[[String]] = [
         ["q","w","e","r","t","y","u","i","o","p"],

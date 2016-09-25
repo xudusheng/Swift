@@ -16,6 +16,7 @@ import Foundation
 let xds_title_shift = "shift";//shift按键
 let xds_title_delete = "delete";//delete按钮
 let xds_title_space = "space";//空格键
+let xds_title_english_switch = "abc";//切换到英文键盘
 let xds_title_digit_switch = "123";//切换到数字键盘
 let xds_title_sign_switch = "#+=";//切换到符号键盘
 

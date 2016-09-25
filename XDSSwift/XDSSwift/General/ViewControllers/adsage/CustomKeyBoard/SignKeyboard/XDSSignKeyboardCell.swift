@@ -1,20 +1,17 @@
 //
-//  XDSEnglishKeyboardCell.swift
+//  XDSSignKeyboardCell.swift
 //  XDSSwift
 //
-//  Created by xudosom on 16/9/24.
+//  Created by xudosom on 16/9/25.
 //  Copyright © 2016年 zhengda. All rights reserved.
 //
 
 import UIKit
-import ObjectiveC
+public let xds_signKeyboardCellIdentifier = "XDSSignKeyboardCell";
 
-public let xds_englishKeyboardCellIdentifier = "XDSEnglishKeyboardCell";
-
-class XDSEnglishKeyboardCell: UICollectionViewCell {
-
+class XDSSignKeyboardCell: UICollectionViewCell {
     private let titleLabel = UILabel();
-
+    
     deinit {
         NSLog("\(XDSEnglishKeyboardCell.self)===> deinit");
     }
@@ -40,10 +37,10 @@ class XDSEnglishKeyboardCell: UICollectionViewCell {
         let constraints_v = NSLayoutConstraint.constraints(withVisualFormat: "V:|[titleLabel]|", options: .alignAllCenterY, metrics: nil, views: viewDict);
         self.contentView.addConstraints(constraints_h+constraints_v);
         
-//        self.contentView.layer.cornerRadius = 6;
-//        self.contentView.layer.masksToBounds = true;
+        //        self.contentView.layer.cornerRadius = 6;
+        //        self.contentView.layer.masksToBounds = true;
         
-
+        
         let backView = UIView(frame: self.bounds);
         backView.backgroundColor = UIColor.white;
         backView.layer.cornerRadius = 6;
@@ -61,5 +58,5 @@ class XDSEnglishKeyboardCell: UICollectionViewCell {
     public func setTitle(text:String?){
         self.titleLabel.text = text;
     }
+    
 }
-
