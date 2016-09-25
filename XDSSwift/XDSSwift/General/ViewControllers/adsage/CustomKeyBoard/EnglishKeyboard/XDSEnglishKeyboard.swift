@@ -9,11 +9,12 @@
 import UIKit
 
 class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-    var collectionView : UICollectionView!;
-    var keyboardLayout = XDSEnglishKeyboardLayout();
-    let keyboardFrame = CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216);
-    
     weak var inputTextView:UITextInput?;
+
+    var collectionView : UICollectionView!;
+    var keyboardLayout : XDSEnglishKeyboardLayout?;
+    let keyboardFrame = CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216);
+    let keyboardVM = XDSEnglishKeyboardViewAndModel();
     
     deinit {
         NSLog("XDSEnglishKeyboard===> deinit")
@@ -32,7 +33,8 @@ class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDe
     }
     
     private func createEnglishKeyboardUI() {
-        self.collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: keyboardLayout);
+        self.keyboardLayout = XDSEnglishKeyboardLayout(viewAndModel: keyboardVM);
+        self.collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: keyboardLayout!);
         collectionView.backgroundColor = UIColor.orange;
         collectionView.showsVerticalScrollIndicator = false;
         collectionView.showsHorizontalScrollIndicator = false;
@@ -42,7 +44,8 @@ class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDe
         collectionView.delegate = self;
         collectionView.register(XDSEnglishKeyboardCell.self, forCellWithReuseIdentifier: xds_englishKeyboardCellIdentifier);
         self.addSubview(collectionView);
-        
+        keyboardVM.setCollectionView(collectionView);
+
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(XDSEnglishKeyboard.deviceOrientationDidChange(notification:)),
                                                name: NSNotification.Name.UIDeviceOrientationDidChange,
@@ -51,23 +54,23 @@ class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDe
     
     //MARK:UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return xds_english_keyboard_letters.count;
+        return keyboardVM.xds_english_keyboard_letters.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return xds_english_keyboard_letters[section].count;
+        return keyboardVM.xds_english_keyboard_letters[section].count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: xds_englishKeyboardCellIdentifier, for: indexPath) as! XDSEnglishKeyboardCell;
-        cell.setTitle(text: xds_english_keyboard_letters[indexPath.section][indexPath.row]);
+        cell.setTitle(text: keyboardVM.xds_english_keyboard_letters[indexPath.section][indexPath.row]);
         return cell;
     }
 
     //MARK:UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true);
-        let letter = xds_english_keyboard_letters[indexPath.section][indexPath.row];
+        let letter = keyboardVM.xds_english_keyboard_letters[indexPath.section][indexPath.row];
         self.clickLetterButton(letter: letter);
         NSLog("letter = \(letter)");
     }
@@ -93,7 +96,9 @@ class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDe
     //MARK:Click Letter Button
     private func clickLetterButton(letter:String!){
         if letter == xds_title_shift{//切换大小写
-            
+            keyboardVM.isUppercase ?
+                keyboardVM.transferToLower():
+                keyboardVM.transferToUpper();
         }else if letter == xds_title_digit_switch{//切换数字
             
         }else if letter == xds_title_sign_switch{//切换符号

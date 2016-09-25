@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import ObjectiveC
+
 public let xds_englishKeyboardCellIdentifier = "EnglishKeyboardCell";
 
 class XDSEnglishKeyboardCell: UICollectionViewCell {
 
     private let titleLabel = UILabel();
-    
+    var cellKey : String?;
     override init(frame: CGRect) {
         super.init(frame: frame);
         self.createEnglishKeyboardCellUI();
     }
     
+    deinit {
+        NSLog("\(XDSEnglishKeyboardCell.self)===> deinit");
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -56,5 +61,7 @@ class XDSEnglishKeyboardCell: UICollectionViewCell {
     
     public func setTitle(text:String?){
         self.titleLabel.text = text;
+        self.cellKey = text;
     }
 }
+

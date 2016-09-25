@@ -38,8 +38,11 @@ class YSERequestFetcher: NSObject {
                 let categoryItems = hptts.searchWithXPathQuery("//div[@class=\"options eS hidden\"]//a[@class=\"bt\"]");
                 for categoryElement in categoryItems{
                     let element = categoryElement as! TFHppleElement;
-                    let aModel = YSECategoryModel();
                     let name = element.text();
+                    if name == "动漫" || name == "卡通"{
+                        continue;
+                    }
+                    let aModel = YSECategoryModel();
                     let href = element.objectForKey("href");
                     aModel.p_setName(name, href: href);
                     categoryList.append(aModel);

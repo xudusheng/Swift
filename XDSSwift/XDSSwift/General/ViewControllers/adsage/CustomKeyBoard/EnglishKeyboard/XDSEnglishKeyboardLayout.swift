@@ -9,6 +9,21 @@
 import UIKit
 
 class XDSEnglishKeyboardLayout: UICollectionViewLayout {
+    weak var viewAndModel : XDSEnglishKeyboardViewAndModel?;
+    
+    deinit {
+        NSLog("\(XDSEnglishKeyboardLayout.self)===> deinit");
+    }
+    public init(viewAndModel:XDSEnglishKeyboardViewAndModel!) {
+        super.init();
+        self.viewAndModel = viewAndModel;
+    }
+    private override init() {
+        super.init();
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override var collectionViewContentSize: CGSize{
         return (self.collectionView?.frame.size)!;
@@ -27,7 +42,8 @@ class XDSEnglishKeyboardLayout: UICollectionViewLayout {
         var origin_x = leftBlankWidth + marginLeft + (cellWidth + horizontalGap) * indexPath.row.cgFloatValue();
         let origin_y = marginTop*3/4 + (cellHeight + marginTop) * indexPath.section.cgFloatValue();
         
-        let title = xds_english_keyboard_letters[indexPath.section][indexPath.row];
+        let title = viewAndModel?.xds_english_keyboard_letters[indexPath.section][indexPath.row];
+        
         if title == xds_title_shift {//shift键
             origin_x = marginLeft;
             cellWidth += leftBlankWidth;

@@ -98,6 +98,7 @@
 		A02680FA1D96096800939DA0 /* XDSEnglishKeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02680F91D96096800939DA0 /* XDSEnglishKeyboardCell.swift */; };
 		A0385DBF1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */; };
 		A0D257DE1D56D76800302E1B /* XDSMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */; };
+		A0D489521D9776880081995B /* XDSEnglishKeyboardViewAndModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D489511D9776880081995B /* XDSEnglishKeyboardViewAndModel.swift */; };
 		BEE5D462544CDEB2A4A81823 /* libPods-XDSSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF27891077847E7AC5013E /* libPods-XDSSwift.a */; };
 /* End PBXBuildFile section */
 
@@ -242,6 +243,7 @@
 		A02680F91D96096800939DA0 /* XDSEnglishKeyboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSEnglishKeyboardCell.swift; sourceTree = "<group>"; };
 		A0385DBE1D7DA905003D1925 /* XDSWIFIFileTransferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSWIFIFileTransferViewController.swift; sourceTree = "<group>"; };
 		A0D257DD1D56D76800302E1B /* XDSMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSMainTabBarController.swift; sourceTree = "<group>"; };
+		A0D489511D9776880081995B /* XDSEnglishKeyboardViewAndModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSEnglishKeyboardViewAndModel.swift; sourceTree = "<group>"; };
 		AA704DD93B65A9E29F2A3500 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B6D231EE431F2376A7FF2 /* Pods-XDSSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDSSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XDSSwift/Pods-XDSSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		C5AF27891077847E7AC5013E /* libPods-XDSSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XDSSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -757,6 +759,7 @@
 		A02680F01D9602FC00939DA0 /* EnglishKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				A0D489511D9776880081995B /* XDSEnglishKeyboardViewAndModel.swift */,
 				A02680F11D9602FC00939DA0 /* XDSEnglishKeyboard.swift */,
 				A02680F31D96033100939DA0 /* XDSEnglishKeyboardLayout.swift */,
 				A02680F91D96096800939DA0 /* XDSEnglishKeyboardCell.swift */,
@@ -964,6 +967,7 @@
 				098E440A1D472360003D5455 /* XDSIPHelper.m in Sources */,
 				098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */,
 				098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */,
+				A0D489521D9776880081995B /* XDSEnglishKeyboardViewAndModel.swift in Sources */,
 				A02680FA1D96096800939DA0 /* XDSEnglishKeyboardCell.swift in Sources */,
 				098E44351D472360003D5455 /* WebSocket.m in Sources */,
 				09D4DA101D7984C100817962 /* XDSAnyObject.swift in Sources */,
