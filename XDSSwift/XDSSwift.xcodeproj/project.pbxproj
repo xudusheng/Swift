@@ -12,6 +12,10 @@
 		0944D8CF1D92823900F703D4 /* SwiftGlobleConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944D8CE1D92823900F703D4 /* SwiftGlobleConst.swift */; };
 		0954591D1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */; };
 		095B546C1D8103F5009F7F96 /* OCRuntimeModel+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */; };
+		0966193B1D9B9ED800465DC7 /* QFContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 096619381D9B9ED800465DC7 /* QFContentView.m */; };
+		0966193C1D9B9ED800465DC7 /* QFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0966193A1D9B9ED800465DC7 /* QFScrollView.m */; };
+		0966193E1D9BA2C700465DC7 /* XDSKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966193D1D9BA2C700465DC7 /* XDSKeyboard.swift */; };
+		096619401D9BC72000465DC7 /* XDSRootKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966193F1D9BC72000465DC7 /* XDSRootKeyboard.swift */; };
 		098DF2481D7FA99900E6D6B3 /* OCRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */; };
 		098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43861D4721AE003D5455 /* AppDelegate.swift */; };
 		098E43891D4721AE003D5455 /* XDSSwiftRootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E43881D4721AE003D5455 /* XDSSwiftRootTableViewController.swift */; };
@@ -115,6 +119,12 @@
 		0954591C1D829AB700D9CBF5 /* UIViewController+HideNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HideNavigationBar.m"; sourceTree = "<group>"; };
 		095B546A1D8103F5009F7F96 /* OCRuntimeModel+Associated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCRuntimeModel+Associated.h"; sourceTree = "<group>"; };
 		095B546B1D8103F5009F7F96 /* OCRuntimeModel+Associated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCRuntimeModel+Associated.m"; sourceTree = "<group>"; };
+		096619371D9B9ED800465DC7 /* QFContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFContentView.h; sourceTree = "<group>"; };
+		096619381D9B9ED800465DC7 /* QFContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFContentView.m; sourceTree = "<group>"; };
+		096619391D9B9ED800465DC7 /* QFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFScrollView.h; sourceTree = "<group>"; };
+		0966193A1D9B9ED800465DC7 /* QFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFScrollView.m; sourceTree = "<group>"; };
+		0966193D1D9BA2C700465DC7 /* XDSKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSKeyboard.swift; sourceTree = "<group>"; };
+		0966193F1D9BC72000465DC7 /* XDSRootKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDSRootKeyboard.swift; sourceTree = "<group>"; };
 		098DF2421D7FA21300E6D6B3 /* OCFileHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFileHeader.h; sourceTree = "<group>"; };
 		098DF2461D7FA99900E6D6B3 /* OCRuntimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCRuntimeModel.h; sourceTree = "<group>"; };
 		098DF2471D7FA99900E6D6B3 /* OCRuntimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRuntimeModel.m; sourceTree = "<group>"; };
@@ -282,7 +292,7 @@
 		0944D8C81D927FA600F703D4 /* CustomKeyBoard */ = {
 			isa = PBXGroup;
 			children = (
-				0944D8C91D927FB700F703D4 /* ViewContrller */,
+				0944D8C91D927FB700F703D4 /* ViewController */,
 				0944D8CA1D927FCC00F703D4 /* View */,
 				0944D8CB1D927FD900F703D4 /* Model */,
 			);
@@ -290,18 +300,20 @@
 			path = adsage/CustomKeyBoard;
 			sourceTree = "<group>";
 		};
-		0944D8C91D927FB700F703D4 /* ViewContrller */ = {
+		0944D8C91D927FB700F703D4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				0944D8CC1D92806800F703D4 /* XDSCustomKeyBoardViewController.swift */,
 			);
-			name = ViewContrller;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		0944D8CA1D927FCC00F703D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A02680F71D96049C00939DA0 /* XDSKeyboardConst.swift */,
+				0966193D1D9BA2C700465DC7 /* XDSKeyboard.swift */,
+				0966193F1D9BC72000465DC7 /* XDSRootKeyboard.swift */,
 				A00FB35E1D9823C700BE6724 /* SignKeyboard */,
 				A00FB3551D98167500BE6724 /* DigitKeyboard */,
 				A02680F01D9602FC00939DA0 /* EnglishKeyboard */,
@@ -314,6 +326,17 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		096619361D9B9ED800465DC7 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				096619371D9B9ED800465DC7 /* QFContentView.h */,
+				096619381D9B9ED800465DC7 /* QFContentView.m */,
+				096619391D9B9ED800465DC7 /* QFScrollView.h */,
+				0966193A1D9B9ED800465DC7 /* QFScrollView.m */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		098DF2431D7FA29700E6D6B3 /* ViewController */ = {
@@ -411,17 +434,10 @@
 		098E439E1D472360003D5455 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				098E439F1D472360003D5455 /* Components */,
+				096619361D9B9ED800465DC7 /* Component */,
 				098E43A01D472360003D5455 /* ViewControllers */,
 			);
 			path = General;
-			sourceTree = "<group>";
-		};
-		098E439F1D472360003D5455 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		098E43A01D472360003D5455 /* ViewControllers */ = {
@@ -857,9 +873,9 @@
 				TargetAttributes = {
 					098E43821D4721AE003D5455 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = TUBUWPLD5H;
+						DevelopmentTeam = 5E6EZZ7JT4;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -997,6 +1013,7 @@
 				098E440C1D472360003D5455 /* XDSThirdPartyService.swift in Sources */,
 				098E440A1D472360003D5455 /* XDSIPHelper.m in Sources */,
 				098E44231D472360003D5455 /* DispatchQueueLogFormatter.m in Sources */,
+				096619401D9BC72000465DC7 /* XDSRootKeyboard.swift in Sources */,
 				098E43871D4721AE003D5455 /* AppDelegate.swift in Sources */,
 				A0D489521D9776880081995B /* XDSEnglishKeyboardViewAndModel.swift in Sources */,
 				A02680FA1D96096800939DA0 /* XDSEnglishKeyboardCell.swift in Sources */,
@@ -1015,6 +1032,8 @@
 				098E44321D472360003D5455 /* HTTPErrorResponse.m in Sources */,
 				098E440E1D472360003D5455 /* XDSSwiftHeaders.swift in Sources */,
 				098E44281D472360003D5455 /* HTTPAuthenticationRequest.m in Sources */,
+				0966193C1D9B9ED800465DC7 /* QFScrollView.m in Sources */,
+				0966193B1D9B9ED800465DC7 /* QFContentView.m in Sources */,
 				09FAE7ED1D4733C200281F83 /* XDSRootViewController.swift in Sources */,
 				09BEA8AC1D4871C70043499F /* XDSLayerSpritesViewController.swift in Sources */,
 				A00FB3621D98241900BE6724 /* XDSSignKeyboard.swift in Sources */,
@@ -1025,6 +1044,7 @@
 				0944D8CF1D92823900F703D4 /* SwiftGlobleConst.swift in Sources */,
 				098E44291D472360003D5455 /* HTTPConnection.m in Sources */,
 				098E44261D472360003D5455 /* DDNumber.m in Sources */,
+				0966193E1D9BA2C700465DC7 /* XDSKeyboard.swift in Sources */,
 				098E442E1D472360003D5455 /* MultipartMessageHeaderField.m in Sources */,
 				098E441E1D472360003D5455 /* DDASLLogger.m in Sources */,
 				09BEA8A21D4849620043499F /* LSImageView.m in Sources */,
@@ -1156,7 +1176,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: mu he (FX98SJ5KRZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = TUBUWPLD5H;
+				DEVELOPMENT_TEAM = 5E6EZZ7JT4;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = XDSSwift/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "";
@@ -1169,8 +1189,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.laomoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1a41a70c-a26e-4d3d-91bf-889445490895";
+				PROVISIONING_PROFILE_SPECIFIER = LaoMoney_development;
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1185,7 +1205,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: mu he (FX98SJ5KRZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = TUBUWPLD5H;
+				DEVELOPMENT_TEAM = 5E6EZZ7JT4;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = XDSSwift/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "";
@@ -1198,8 +1218,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.onlinecredit.laomoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "1a41a70c-a26e-4d3d-91bf-889445490895";
+				PROVISIONING_PROFILE_SPECIFIER = LaoMoney_development;
 				SWIFT_OBJC_BRIDGING_HEADER = "XDSSwift/Macro/XDSSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

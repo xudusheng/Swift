@@ -15,30 +15,35 @@ let xds_sign_keyboard_letters:[[String]] = [
     [xds_title_digit_switch, ",", ".", "<", ">", "€", "฿", "¥", xds_title_english_switch]
 ];
 
-class XDSSignKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
+class XDSSignKeyboard: XDSRootKeyboard, UICollectionViewDataSource, UICollectionViewDelegate {
     weak var inputTextView:UITextInput?;
+    
+    var signKeyboardCallback : xds_keyboardCallBack?;
     
     var collectionView : UICollectionView!;
     var keyboardLayout = XDSSignKeyboardLayout();
-    let keyboardFrame = CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216);
     
     deinit {
         NSLog("XDSEnglishKeyboard===> deinit")
     }
     
-    override init(frame: CGRect) {
+    internal init(callback:@escaping xds_keyboardCallBack){
         super.init(frame:keyboardFrame);
-        self.createEnglishKeyboardUI();
+        self.signKeyboardCallback = callback;
+        self.createSignKeyboardUI();
     }
-    init() {
+    
+    private override init(frame: CGRect) {
+        super.init(frame:keyboardFrame);
+    }
+    private init() {
         super.init(frame: keyboardFrame);
-        self.createEnglishKeyboardUI();
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createEnglishKeyboardUI() {
+    private func createSignKeyboardUI() {
         self.collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: keyboardLayout);
         collectionView.backgroundColor = UIColor.orange;
         collectionView.showsVerticalScrollIndicator = false;
@@ -75,8 +80,10 @@ class XDSSignKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true);
         let letter = xds_sign_keyboard_letters[indexPath.section][indexPath.row];
-        self.clickLetterButton(letter: letter);
         NSLog("letter = \(letter)");
+        if self.signKeyboardCallback != nil{
+            self.signKeyboardCallback!(letter);
+        }
     }
     
     //MARK:NSNotification.Name.UIDeviceOrientationDidChange
@@ -85,31 +92,4 @@ class XDSSignKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDeleg
         collectionView.reloadData();
     }
     
-    //MARK:setInputTextView
-    internal func set(inputView:UITextInput!){
-        self.inputTextView = inputView;
-        if inputView is UITextField {
-            let textField = self.inputTextView as! UITextField;
-            textField.inputView = self;
-        }else if inputView is UITextView{
-            let textView = self.inputTextView as! UITextView;
-            textView.inputView = self;
-        }
-    }
-    
-    //MARK:Click Letter Button
-    private func clickLetterButton(letter:String!){
-        if letter == xds_title_digit_switch{//切换数字
-            
-        }else if letter == xds_title_english_switch{//切换符号
-            
-        }else if letter == xds_title_delete {//删除
-            inputTextView?.deleteBackward();
-        }else{
-            inputTextView?.insertText(letter);//输入
-        }
-    }
-
-    
-
 }

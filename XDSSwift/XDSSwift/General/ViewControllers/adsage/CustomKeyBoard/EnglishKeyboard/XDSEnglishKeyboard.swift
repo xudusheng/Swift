@@ -8,25 +8,28 @@
 
 import UIKit
 
-class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-    weak var inputTextView:UITextInput?;
+class XDSEnglishKeyboard: XDSRootKeyboard, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var collectionView : UICollectionView!;
     var keyboardLayout : XDSEnglishKeyboardLayout?;
-    let keyboardFrame = CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216);
     let keyboardVM = XDSEnglishKeyboardViewAndModel();
-    
+    var englishKeyboardCallback : xds_keyboardCallBack?;
+
     deinit {
         NSLog("XDSEnglishKeyboard===> deinit")
     }
     
-    override init(frame: CGRect) {
+    internal init(callback:@escaping xds_keyboardCallBack){
         super.init(frame:keyboardFrame);
+        self.englishKeyboardCallback = callback;
         self.createEnglishKeyboardUI();
     }
-    init() {
+    
+    private override init(frame: CGRect) {
+        super.init(frame:frame);
+    }
+    private init() {
         super.init(frame: keyboardFrame);
-        self.createEnglishKeyboardUI();
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -71,44 +74,22 @@ class XDSEnglishKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true);
         let letter = keyboardVM.xds_english_keyboard_letters[indexPath.section][indexPath.row];
-        self.clickLetterButton(letter: letter);
-        NSLog("letter = \(letter)");
+        
+        if letter == xds_title_shift{
+            keyboardVM.isUppercase ?
+                keyboardVM.transferToLower():
+                keyboardVM.transferToUpper();
+            return;
+        }
+
+        if self.englishKeyboardCallback != nil {
+            self.englishKeyboardCallback!(letter);
+        }
     }
     
     //MARK:NSNotification.Name.UIDeviceOrientationDidChange
     @objc private func deviceOrientationDidChange(notification: Notification){
         collectionView.frame = self.bounds;
         collectionView.reloadData();
-    }
-    
-    //MARK:setInputTextView
-    internal func set(inputView:UITextInput!){
-        self.inputTextView = inputView;
-        if inputView is UITextField {
-            let textField = self.inputTextView as! UITextField;
-            textField.inputView = self;
-        }else if inputView is UITextView{
-            let textView = self.inputTextView as! UITextView;
-            textView.inputView = self;
-        }
-    }
-
-    //MARK:Click Letter Button
-    private func clickLetterButton(letter:String!){
-        if letter == xds_title_shift{//切换大小写
-            keyboardVM.isUppercase ?
-                keyboardVM.transferToLower():
-                keyboardVM.transferToUpper();
-        }else if letter == xds_title_digit_switch{//切换数字
-            
-        }else if letter == xds_title_sign_switch{//切换符号
-            
-        }else if letter == xds_title_delete {//删除
-            inputTextView?.deleteBackward();
-        }else if letter == xds_title_space{//输入空格
-            inputTextView?.insertText(" ");
-        }else{
-            inputTextView?.insertText(letter);//输入
-        }
     }
 }

@@ -11,12 +11,12 @@ import UIKit
 let xds_digit_title_key = "title";
 let xds_digit_subTitle_key = "subTitle";
 
-class XDSDigitKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-    weak var inputTextView:UITextInput?;
-    
+class XDSDigitKeyboard: XDSRootKeyboard, UICollectionViewDataSource, UICollectionViewDelegate {
     var collectionView : UICollectionView!;
     var keyboardLayout = XDSDigitKeyboardLayout();
-    let keyboardFrame = CGRect(x: 0, y: 0, width: SWIFT_DEVICE_SCREEN_WIDTH, height: 216);
+
+    var digitKeyboardCallback : xds_keyboardCallBack?;
+
     let xdsDigitKeyboardData = [
         [[xds_digit_title_key:"1", xds_digit_subTitle_key:""], [xds_digit_title_key:"2", xds_digit_subTitle_key:"ABC"], [xds_digit_title_key:"3", xds_digit_subTitle_key:"DEF"]],
         [[xds_digit_title_key:"4", xds_digit_subTitle_key:"GHI"], [xds_digit_title_key:"5", xds_digit_subTitle_key:"JKL"], [xds_digit_title_key:"6", xds_digit_subTitle_key:"MNO"]],
@@ -28,19 +28,23 @@ class XDSDigitKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDele
         NSLog("\(XDSDigitKeyboard.self)===> deinit");
     }
     
-    override init(frame: CGRect) {
+    internal init(callback:@escaping  xds_keyboardCallBack){
         super.init(frame:keyboardFrame);
-        self.createEnglishKeyboardUI();
+        self.digitKeyboardCallback = callback;
+        self.createDigitKeyboardUI();
     }
-    init() {
+    
+    private override init(frame: CGRect) {
+        super.init(frame:frame);
+    }
+    private init() {
         super.init(frame: keyboardFrame);
-        self.createEnglishKeyboardUI();
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createEnglishKeyboardUI() {
+    private func createDigitKeyboardUI() {
         self.collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: keyboardLayout);
         collectionView.backgroundColor = UIColor.orange;
         collectionView.showsVerticalScrollIndicator = false;
@@ -79,8 +83,10 @@ class XDSDigitKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDele
         collectionView.deselectItem(at: indexPath, animated: true);
         let dict = xdsDigitKeyboardData[indexPath.section][indexPath.row];
         let letter = dict[xds_digit_title_key];
-        self.clickLetterButton(letter: letter);
         NSLog("letter = \(letter)");
+        if self.digitKeyboardCallback != nil {
+            self.digitKeyboardCallback!(letter!);
+        }
     }
     
     //MARK:NSNotification.Name.UIDeviceOrientationDidChange
@@ -89,26 +95,6 @@ class XDSDigitKeyboard: UIView, UICollectionViewDataSource, UICollectionViewDele
         collectionView.reloadData();
     }
     
-    //MARK:setInputTextView
-    internal func set(inputView:UITextInput!){
-        self.inputTextView = inputView;
-        if inputView is UITextField {
-            let textField = self.inputTextView as! UITextField;
-            textField.inputView = self;
-        }else if inputView is UITextView{
-            let textView = self.inputTextView as! UITextView;
-            textView.inputView = self;
-        }
-    }
     
-    //MARK:Click Letter Button
-    private func clickLetterButton(letter:String!){
-        if letter == xds_title_english_switch{//切换英文
-            
-        }else if letter == xds_title_delete {//删除
-            inputTextView?.deleteBackward();
-        }else{
-            inputTextView?.insertText(letter);//输入
-        }
-    }
+
 }
