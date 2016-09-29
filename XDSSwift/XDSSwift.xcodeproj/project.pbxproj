@@ -217,6 +217,7 @@
 		09911D071D7E9A9000A5554F /* OCRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCRuntimeViewController.m; sourceTree = "<group>"; };
 		09911D091D7E9AA400A5554F /* SwiftRuntimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRuntimeViewController.swift; sourceTree = "<group>"; };
 		09911D0B1D7EB6E100A5554F /* SwiftUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUtil.swift; sourceTree = "<group>"; };
+		0993D7991D9CA370003CDCFF /* XDSSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = XDSSwiftPlayground.playground; sourceTree = "<group>"; };
 		09B60E5F1D811D9C00ADBB72 /* XDSThirdPartyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSThirdPartyHeader.h; sourceTree = "<group>"; };
 		09B60E601D81392C00ADBB72 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		09B60E611D813C5900ADBB72 /* JDStatusBarNotification+PRStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JDStatusBarNotification+PRStatusBar.h"; sourceTree = "<group>"; };
@@ -371,6 +372,7 @@
 		098E437A1D4721AE003D5455 = {
 			isa = PBXGroup;
 			children = (
+				0993D7991D9CA370003CDCFF /* XDSSwiftPlayground.playground */,
 				098E43851D4721AE003D5455 /* XDSSwift */,
 				098E43841D4721AE003D5455 /* Products */,
 				C487D4CECB8DC6E7A05E565B /* Frameworks */,
