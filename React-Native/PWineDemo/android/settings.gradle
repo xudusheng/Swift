@@ -1,0 +1,3 @@
+rootProject.name = 'PWineDemo'
+
+include ':app'
