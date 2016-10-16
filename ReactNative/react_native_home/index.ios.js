@@ -13,34 +13,43 @@ import {
     TextInput,
     Image,
     TouchableOpacity,
+    NavigatorIOS,
 } from 'react-native';
 
 //React Native UI练习
-var PTextInput = require('./demo_UI/p.textInput');
-var PTouchable = require('./demo_UI/p.touchable');
-var PScrollView = require('./demo_UI/p.scrollView');
-var PListView = require('./demo_UI/p.listView');
+var PTextInput = require('./demo_UI/p.1.textInput.js');
+var PTouchable = require('./demo_UI/p.2.touchable.js');
+var PScrollView = require('./demo_UI/p.3.scrollView.js');
+var PListViewPlain = require('./demo_UI/p.4.listView.singleGroup.js');
+var PListViewGroup = require('./demo_UI/p.5.listView.mulGroup.js');
+var PTabBar = require('./demo_UI/p.6.tabbar');
 
 //综合练习
 var PLoginView = require('./demo_loginView/p.loginView');
 var PBanner = require('./demo_banner/p.banner');
+var PNewsMain = require('./demo_news/component/p.news.main');
 
-export default class React_native_home extends Component {
+var React_native_home = React.createClass({
     render() {
         return (
             //React Native UI练习
             // <PTextInput/>
             // <PTouchable/>
             // <PScrollView/>
-            <PListView/>
+            //<PListViewPlain/>
+            //<PListViewGroup/>
+            // <PTabBar/>
+
 
             //综合练习
             //<PLoginView/>
             //<PBanner/>
-        )
-            ;
+            <PNewsMain/>
+
+        );
     }
-}
+});
+
 
 
 AppRegistry.registerComponent('react_native_home', () => React_native_home);
