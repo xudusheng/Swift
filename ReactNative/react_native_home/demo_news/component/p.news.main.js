@@ -10,6 +10,7 @@ import {
     Text,
     TabBarIOS,
     NavigatorIOS,
+    Navigator,
 } from 'react-native';
 
 

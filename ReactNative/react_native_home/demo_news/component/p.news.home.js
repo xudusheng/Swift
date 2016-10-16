@@ -12,26 +12,30 @@ import {
     ListView,
     AlertIOS,
     TouchableOpacity,
+    AsyncStorage,
 } from 'react-native';
 
+var LocalData = require('../resource/p.news.localData.json');
+var PNewsHomeCell = require('./p.news.home.cell');
+var pNewsDetail = require('./p.news.home.newsDetail');
 
 var PNewsHome = React.createClass({
-    getDefaultProps(){
+    getDefaultProps: function () {
         return {
             url_api: 'http://api.dagoogle.cn/news/get-news?tableNum=1&page=2&pagesize=20',
             key_word: 'data',
         };
     },
 
-    getInitialState(){
+    getInitialState: function () {
         var dataSource = new ListView.DataSource({rowHasChanged: (r1, r2)=>r1 != r2});
         return {
-            dataSource: dataSource.cloneWithRows([]),
+            dataSource: dataSource.cloneWithRows(LocalData[this.props.key_word]),
         }
     },
 
     //复杂的操作：数据请求  或者  异步操作(定时器)
-    componentDidMount(){
+    componentDidMount: function () {
         fetch(this.props.url_api)
             .then((response)=>response.json())
             .then((responseData)=> {
@@ -43,42 +47,59 @@ var PNewsHome = React.createClass({
             })
             .catch((error)=> {
                 if (error) {
-                    AlertIOS.alert(error);
+                    AlertIOS.alert('提示', "网络请求异常，请稍后重试！");
                 }
             })
     },
 
-
-    render(){
+    render: function () {
         return (
             <ListView
                 style={{flex: 1}}
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRow}
-                //{/*enableEmptySections:{true}*/}
+                renderHeader={this.renderHeader}
+                enableEmptySections={true}
             />
         );
     },
 
-    renderRow(rowData, sectionID, rowID, highlightRow){
+    renderHeader: function () {
+        return (
+            <View>
+                <Text>这是表头</Text>
+            </View>
+        );
+    },
+
+    renderRow: function (rowData, sectionID, rowID, highlightRow) {
         console.log(rowData);
         var view =
-            <TouchableOpacity
-                onPress={()=>this.pressCell(rowData)}
-            >
-                <View style={styles.cellContentViewStyle}>
-                    <Image source={{uri: rowData.top_image}} style={styles.imageStyle}/>
-                    <View style={styles.textViewStyle}>
-                        <Text style={styles.titleStyle}>{rowData.title}</Text>
-                        <Text style={styles.moneyStyle}>¥{rowData.digest}</Text>
-                    </View>
-                </View>
+            <TouchableOpacity onPress={()=>this.pushToDetail(rowData)}>
+
+                <PNewsHomeCell newsData={rowData}/>
+
             </TouchableOpacity>
         return view;
     },
 
-    pressCell (rowData){
-        AlertIOS.alert('提示', rowData.title);
+    pushToDetail: function (rowData) {
+        let jsonStringfy = JSON.stringify(rowData);
+        AsyncStorage.setItem('key', jsonStringfy, function(errs){
+            //TODO:错误处理
+            if (errs) {
+                console.log('存储错误');
+            }
+            if (!errs) {
+                console.log('存储无误');
+            }
+        });
+
+        this.props.navigator.push({
+           component:pNewsDetail,
+            title:rowData.title,
+            passProps:{rowData},
+        });
     },
 });
 
@@ -89,31 +110,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    cellContentViewStyle: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        borderBottomWidth: 0.7,
-        borderBottomColor: '#e8e8e8',
-    },
-
-    imageStyle: {
-        width: 60,
-        height: 40,
-        margin: 10,
-    },
-    textViewStyle: {
-        flex: 1,
-    },
-    titleStyle: {
-        marginBottom: 5,
-        marginTop: 10,
-        color: '#666666',
-    },
-
-    moneyStyle: {
-        marginBottom: 10,
-        color: '#999999',
-    }
 });
 
 module.exports = PNewsHome;
