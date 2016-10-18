@@ -6,6 +6,7 @@
 
 import {AppRegistry} from 'react-native';
 
-import Root from './src/root';
+import Root from './app/root';
 
 AppRegistry.registerComponent('ReduxDemo', () => Root);
+
