@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 
 import {Provider} from 'react-redux';
 
-import APP from './app';
+import Main from './pages/main/main';
 
 import configureStore from './store/config-store';
 
@@ -20,7 +20,7 @@ export default class Root extends Component {
 
         return (
             <Provider store={store}>
-                <APP/>
+                <Main/>
             </Provider>
         );
     };
