@@ -1,0 +1,3 @@
+rootProject.name = 'e_commerce'
+
+include ':app'

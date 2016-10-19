@@ -10,11 +10,14 @@ import APP from './app';
 
 import configureStore from './stores/config-store';
 
+import {AsyncStorage} from 'react-native';
+
 const store = configureStore();
 
 export default class Root extends Component {
 
     render() {
+
         return (
             <Provider store={store}>
                 <APP/>
