@@ -34,19 +34,18 @@ class Main extends Component {
 
         this.navigatorDataList = [
             {
-                title: '商家',
-                normalImage: 'icon_tabbar_merchant_normal',
-                selectedImage: 'icon_tabbar_merchant_selected',
-                component: Shop,
-            },
-
-            {
                 title: '首页',
                 normalImage: 'icon_tabbar_homepage',
                 selectedImage: 'icon_tabbar_homepage_selected',
                 component: Home,
             },
 
+            {
+                title: '商家',
+                normalImage: 'icon_tabbar_merchant_normal',
+                selectedImage: 'icon_tabbar_merchant_selected',
+                component: Shop,
+            },
 
             {
                 title: '我的',

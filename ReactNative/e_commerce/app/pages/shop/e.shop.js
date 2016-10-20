@@ -22,19 +22,18 @@ export default class Shop extends Component {
             <View style={styles.container}>
 
                 <NavigatiowView
-                    leftView={()=>this.leftView()}
-                    titleView={()=>this.leftView()}
-                    rightView={()=>this.leftView()}
+                    titleView={()=>this.titleView()}
                 />
 
-                <Text>商城路</Text>
+                <Text>商家</Text>
             </View>
         );
     };
 
-    leftView() {
+    //TODO:导航栏标题
+    titleView() {
         return (
-            <View style={{backgroundColor: 'black', width:60, height:30}}></View>
+            <Text style={{color: 'white', fontSize: 17}}>商家</Text>
         );
     }
 }

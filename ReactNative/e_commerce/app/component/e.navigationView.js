@@ -52,13 +52,13 @@ export default class NavigatiowView extends React.Component {
 const styles = StyleSheet.create({
     container:{
         height: 64,
-        backgroundColor: 'yellow',
+        backgroundColor: 'rgba(255, 96, 0, 1.0)',
     },
     NavigatorViewStyle: {
         marginTop:20,
         height: 44,
-        backgroundColor: 'red',
-        flexDirection:'row'
+        flexDirection:'row',
+        backgroundColor: 'rgba(255, 96, 0, 1.0)',
     },
 
     leftViewStyle: {
@@ -67,12 +67,10 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'flex-start',
-        backgroundColor: 'red',
 
     },
     titleViewStyle: {
         flex: 3,
-        backgroundColor: 'green',
         justifyContent:'center',
         alignItems:'center',
     },
@@ -82,6 +80,5 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'flex-end',
-        backgroundColor: 'blue',
     },
 });
