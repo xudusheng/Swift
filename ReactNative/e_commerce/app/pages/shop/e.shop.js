@@ -7,15 +7,34 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    StatusBar,
+    Navigator,
+
 } from 'react-native';
 
+import NavigatiowView from '../../component/e.navigationView';
+
 export default class Shop extends Component {
+
     render() {
         return (
             <View style={styles.container}>
-                <Text>商城</Text>
+
+                <NavigatiowView
+                    leftView={()=>this.leftView()}
+                    titleView={()=>this.leftView()}
+                    rightView={()=>this.leftView()}
+                />
+
+                <Text>商城路</Text>
             </View>
+        );
+    };
+
+    leftView() {
+        return (
+            <View style={{backgroundColor: 'black', width:60, height:30}}></View>
         );
     }
 }
@@ -23,8 +42,6 @@ export default class Shop extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: 'white',
     },
 });

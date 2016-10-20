@@ -8,6 +8,9 @@ import {
     View,
     Text,
     Image,
+    Navigator,
+    NavigatorIOS,
+    StatusBarIOS,
 } from 'react-native';
 
 import {connect} from 'react-redux';//将我们的页面和action链接起来
@@ -29,7 +32,36 @@ class Main extends Component {
             selectedItem: 0,
         };
 
+        this.navigatorDataList = [
+            {
+                title: '商家',
+                normalImage: 'icon_tabbar_merchant_normal',
+                selectedImage: 'icon_tabbar_merchant_selected',
+                component: Shop,
+            },
 
+            {
+                title: '首页',
+                normalImage: 'icon_tabbar_homepage',
+                selectedImage: 'icon_tabbar_homepage_selected',
+                component: Home,
+            },
+
+
+            {
+                title: '我的',
+                normalImage: 'icon_tabbar_mine',
+                selectedImage: 'icon_tabbar_mine_selected',
+                component: Mine,
+            },
+
+            {
+                title: '更多',
+                normalImage: 'icon_tabbar_misc',
+                selectedImage: 'icon_tabbar_misc_selected',
+                component: More,
+            },
+        ];
     }
 
 
@@ -41,74 +73,62 @@ class Main extends Component {
 
     };
 
+    configTabNavigatorItems() {
+        var itemList = [];
+        for (var i = 0; i < this.navigatorDataList.length; i++) {
+            let navigatorData = this.navigatorDataList[i];
+            let index = i;
+            let oneItem =
+                <TabNavigator.Item
+                    key={index}
+                    title={navigatorData.title}
+                    renderIcon={()=><Image source={{uri: navigatorData.normalImage}} style={styles.iconImageStyle}/>}
+                    renderSelectedIcon={()=><Image source={{uri: navigatorData.selectedImage}}
+                                                   style={styles.iconImageStyle}/>}
+                    onPress={()=> {
+                        this.setState({selectedItem: index})
+                    }}
+                    selected={this.state.selectedItem == index}
+
+                    selectedTitleStyle={styles.selectedTitleStyle}
+                >
+
+                    <Navigator
+                        initialRoute={{name: navigatorData.title, component: navigatorData.component}}
+                        configureScene={()=>Navigator.SceneConfigs.PushFromRight}
+                        renderScene={(route, navigator)=> {
+                            let Component = route.component;
+                            return <Component {...route.passProps} navigator={navigator}/>;
+                        }}
+                    />
+                </TabNavigator.Item>
+            itemList.push(oneItem);
+        }
+        return itemList;
+    };
+
     render() {
 
         console.log(this.props.info.user);
         return (
             <TabNavigator>
-                {/*--首页--*/}
-                <TabNavigator.Item
-                    title="首页"
-                    renderIcon={()=><Image source={{uri: 'icon_tabbar_homepage'}} style={styles.iconImageStyle}/>}
-                    renderSelectedIcon={()=><Image source={{uri: 'icon_tabbar_homepage_selected'}}
-                                                   style={styles.iconImageStyle}/>}
-                    onPress={()=>{this.setState({selectedItem:0})}}
-                    selected={this.state.selectedItem == 0}
-                >
-
-                    <Home />
-                </TabNavigator.Item>
-
-                {/*--商家--*/}
-                <TabNavigator.Item
-                    title="商家"
-                    renderIcon={()=><Image source={{uri: 'icon_tabbar_merchant_normal'}}
-                                           style={styles.iconImageStyle}/>}
-                    renderSelectedIcon={()=><Image source={{uri: 'icon_tabbar_merchant_selected'}}
-                                                   style={styles.iconImageStyle}/>}
-                    onPress={()=>{this.setState({selectedItem:1})}}
-                    selected={this.state.selectedItem == 1}
-                >
-                    <Shop/>
-                </TabNavigator.Item>
-
-                {/*--我的--*/}
-                <TabNavigator.Item
-                    title="我的"
-                    renderIcon={()=><Image source={{uri: 'icon_tabbar_mine'}} style={styles.iconImageStyle}/>}
-                    renderSelectedIcon={()=><Image source={{uri: 'icon_tabbar_mine_selected'}}
-                                                   style={styles.iconImageStyle}/>}
-                    onPress={()=>{this.setState({selectedItem:2})}}
-                    selected={this.state.selectedItem == 2}
-                >
-                    <Mine/>
-                </TabNavigator.Item>
-
-                {/*--更多--*/}
-                <TabNavigator.Item
-                    title="更多"
-                    renderIcon={()=><Image source={{uri: 'icon_tabbar_misc'}} style={styles.iconImageStyle}/>}
-                    renderSelectedIcon={()=><Image source={{uri: 'icon_tabbar_misc_selected'}}
-                                                   style={styles.iconImageStyle}/>}
-                    onPress={()=>{this.setState({selectedItem:3})}}
-                    selected={this.state.selectedItem == 3}
-                >
-                    <More/>
-                </TabNavigator.Item>
-
-
+                {this.configTabNavigatorItems()}
             </TabNavigator>
-
         );
     };
+
 }
-;
+
 
 const styles = StyleSheet.create({
 
         iconImageStyle: {
             width: 30,
             height: 30,
+        },
+
+        selectedTitleStyle: {
+            color: 'orange'
         },
     })
     ;
