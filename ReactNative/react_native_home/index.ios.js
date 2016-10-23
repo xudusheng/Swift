@@ -29,6 +29,8 @@ var PLoginView = require('./demo_loginView/p.loginView');
 var PBanner = require('./demo_banner/p.banner');
 var PNewsMain = require('./demo_news/component/p.news.main');
 
+import PJSView from './demo_interact_native/p.jsView';
+
 var React_native_home = React.createClass({
     render() {
         return (
@@ -44,8 +46,10 @@ var React_native_home = React.createClass({
             //综合练习
             //<PLoginView/>
             //<PBanner/>
-            <PNewsMain/>
+            //<PNewsMain/>
 
+            //React Native与原生之间的混编
+            <PJSView />
         );
     }
 });
