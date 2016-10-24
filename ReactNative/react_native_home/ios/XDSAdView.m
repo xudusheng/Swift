@@ -25,25 +25,25 @@
 
 //JOYConnectDelegate
 - (void)onConnectSuccess;{
-    NSLog(@"连接成功");
+    NSLog(@"===============================连接成功");
     [JOYConnect showBan:nil adSize:E_SIZE_414x70 showX:0 showY:20];
 }
 - (void)onConnectFailed:(NSString *)error;{
-    NSLog(@"连接失败:%@",error);
+    NSLog(@"===============================连接失败:%@",error);
 }
 
 
 - (void)onBannerShow{//仅第一次调用的时候通知
-    NSLog(@"广告条展示");
+    NSLog(@"===============================广告条展示");
 }
 - (void)onBannerShowFailed:(NSString *)error{
-    NSLog(@"广告条展示失败:%@",error);
+    NSLog(@"===============================广告条展示失败:%@",error);
 }
 - (void)onBannerClick{
-    NSLog(@"点击广告条");
+    NSLog(@"===============================点击广告条");
 }
 - (void)onBannerClose{
-    NSLog(@"关闭广告条");
+    NSLog(@"===============================关闭广告条");
 }
 
 

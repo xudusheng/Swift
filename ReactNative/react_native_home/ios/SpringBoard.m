@@ -22,10 +22,5 @@ RCT_EXPORT_METHOD(Login:(NSString *)name){
 
 }
 
-RCT_EXPORT_METHOD(addAdView){
-  CGFloat width = [UIScreen mainScreen].bounds.size.width;
-  XDSInMobiAdView * adView = [[XDSInMobiAdView alloc]initWithFrame:CGRectMake(0, 20, width, 50)];
-  NSLog(@"adView = %@", adView);
-}
 
 @end

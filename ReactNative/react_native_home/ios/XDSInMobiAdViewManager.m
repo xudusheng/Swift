@@ -14,7 +14,7 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view{
   CGFloat width = [UIScreen mainScreen].bounds.size.width;
-  XDSInMobiAdView * adView = [[XDSInMobiAdView alloc] initWithFrame:CGRectMake(0, 0, width, 50)];
+  XDSInMobiAdView * adView =[[XDSInMobiAdView alloc]initWithFrame:CGRectMake(0, 0, width, 50)];
   return adView;
 }
 

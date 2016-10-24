@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^bannerDidFinishLoadingBlock)();
 @interface XDSInMobiAdView : UIView
 
+@property (copy, nonatomic)bannerDidFinishLoadingBlock bannerDidFinishLoadingBlock;
 @end

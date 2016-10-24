@@ -13,12 +13,13 @@
 #import "RCTRootView.h"
 
 
+#import <InMobiSDK/InMobiSDK.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [IMSdk initWithAccountID:@"613007c98b034e8d833a0cd396bed393"];
 
-  
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
@@ -35,6 +36,7 @@
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
+  
   [self.window makeKeyAndVisible];
   return YES;
 }

@@ -18,22 +18,20 @@ import {
     requireNativeComponent
 } from 'react-native';
 
-var AdView = requireNativeComponent('XDSAdView', null);
-var InMobiAdView = requireNativeComponent('XDSInMobiAdView', null);
 
 var SpringBoard = NativeModules.SpringBoard;
+
+import InMobiView from './p.InMobi.Ad';
 
 export default class PJSView extends Component {
     render() {
         return (
             < View style={styles.container}>
-                <TouchableOpacity
-                    onPress={()=>{SpringBoard.addAdView();}
-                    }>
+                <TouchableOpacity>
                     <Text> 点击跳转到 =>原生页面 </ Text >
                 </TouchableOpacity>
 
-                {/*<InMobiAdView style={{width:414, height:55, backgroundColor:'red'}}></InMobiAdView>*/}
+                <InMobiView></InMobiView>
 
             </ View >
         );
