@@ -28,6 +28,11 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>example.cn</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>

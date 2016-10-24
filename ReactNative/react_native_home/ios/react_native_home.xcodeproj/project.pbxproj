@@ -13,6 +13,18 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* react_native_homeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* react_native_homeTests.m */; };
+		093E2BE21DBE2951006732D8 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 093E2BE11DBE2951006732D8 /* main.jsbundle */; };
+		09DF35C41DBDB52300B30071 /* apilib_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF35C21DBDB52300B30071 /* apilib_s.a */; };
+		09DF35C71DBDB53500B30071 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF35C61DBDB53500B30071 /* AdSupport.framework */; };
+		09DF35C91DBDB53D00B30071 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF35C81DBDB53D00B30071 /* CoreTelephony.framework */; };
+		09DF36051DBDC8CF00B30071 /* XDSAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF36011DBDC8CF00B30071 /* XDSAdView.m */; };
+		09DF360C1DBDCEA800B30071 /* XDSAdViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF360B1DBDCEA800B30071 /* XDSAdViewManager.m */; };
+		09DF361B1DBE0C0000B30071 /* XDSInMobiAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF361A1DBE0C0000B30071 /* XDSInMobiAdView.m */; };
+		09DF361D1DBE0C1000B30071 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF361C1DBE0C1000B30071 /* InMobiSDK.framework */; };
+		09DF361F1DBE0C2700B30071 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF361E1DBE0C2700B30071 /* libz.tbd */; };
+		09DF36211DBE0C3400B30071 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF36201DBE0C3400B30071 /* libsqlite3.0.tbd */; };
+		09DF36231DBE0C3A00B30071 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DF36221DBE0C3A00B30071 /* WebKit.framework */; };
+		09DF36261DBE0C6C00B30071 /* XDSInMobiAdViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DF36251DBE0C6C00B30071 /* XDSInMobiAdViewManager.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -107,7 +119,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -116,6 +127,23 @@
 		00E356EE1AD99517003FC87E /* react_native_homeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = react_native_homeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* react_native_homeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = react_native_homeTests.m; sourceTree = "<group>"; };
+		093E2BE11DBE2951006732D8 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		09DF35C21DBDB52300B30071 /* apilib_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = apilib_s.a; sourceTree = "<group>"; };
+		09DF35C31DBDB52300B30071 /* JOYConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYConnect.h; sourceTree = "<group>"; };
+		09DF35C61DBDB53500B30071 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		09DF35C81DBDB53D00B30071 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		09DF36001DBDC8CF00B30071 /* XDSAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSAdView.h; sourceTree = "<group>"; };
+		09DF36011DBDC8CF00B30071 /* XDSAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSAdView.m; sourceTree = "<group>"; };
+		09DF360A1DBDCEA800B30071 /* XDSAdViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSAdViewManager.h; sourceTree = "<group>"; };
+		09DF360B1DBDCEA800B30071 /* XDSAdViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSAdViewManager.m; sourceTree = "<group>"; };
+		09DF36191DBE0C0000B30071 /* XDSInMobiAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSInMobiAdView.h; sourceTree = "<group>"; };
+		09DF361A1DBE0C0000B30071 /* XDSInMobiAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSInMobiAdView.m; sourceTree = "<group>"; };
+		09DF361C1DBE0C1000B30071 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InMobiSDK.framework; sourceTree = "<group>"; };
+		09DF361E1DBE0C2700B30071 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		09DF36201DBE0C3400B30071 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		09DF36221DBE0C3A00B30071 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		09DF36241DBE0C6C00B30071 /* XDSInMobiAdViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSInMobiAdViewManager.h; sourceTree = "<group>"; };
+		09DF36251DBE0C6C00B30071 /* XDSInMobiAdViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSInMobiAdViewManager.m; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* react_native_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = react_native_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +173,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DF36231DBE0C3A00B30071 /* WebKit.framework in Frameworks */,
+				09DF36211DBE0C3400B30071 /* libsqlite3.0.tbd in Frameworks */,
+				09DF361F1DBE0C2700B30071 /* libz.tbd in Frameworks */,
+				09DF35C91DBDB53D00B30071 /* CoreTelephony.framework in Frameworks */,
+				09DF35C71DBDB53500B30071 /* AdSupport.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -155,6 +188,8 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				09DF35C41DBDB52300B30071 /* apilib_s.a in Frameworks */,
+				09DF361D1DBE0C1000B30071 /* InMobiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +253,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		09DF35C01DBDB51000B30071 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				09DF361C1DBE0C1000B30071 /* InMobiSDK.framework */,
+				09DF35C11DBDB52300B30071 /* libs_s */,
+			);
+			name = Ads;
+			path = react_native_home/Ads;
+			sourceTree = "<group>";
+		};
+		09DF35C11DBDB52300B30071 /* libs_s */ = {
+			isa = PBXGroup;
+			children = (
+				09DF35C21DBDB52300B30071 /* apilib_s.a */,
+				09DF35C31DBDB52300B30071 /* JOYConnect.h */,
+			);
+			path = libs_s;
+			sourceTree = "<group>";
+		};
+		09DF35C51DBDB53500B30071 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09DF36221DBE0C3A00B30071 /* WebKit.framework */,
+				09DF36201DBE0C3400B30071 /* libsqlite3.0.tbd */,
+				09DF361E1DBE0C2700B30071 /* libz.tbd */,
+				09DF35C81DBDB53D00B30071 /* CoreTelephony.framework */,
+				09DF35C61DBDB53500B30071 /* AdSupport.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,11 +303,20 @@
 		13B07FAE1A68108700A75B9A /* react_native_home */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				093E2BE11DBE2951006732D8 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				A0536C3F1DBC44FF002E5EAB /* SpringBoard.h */,
 				A0536C401DBC44FF002E5EAB /* SpringBoard.m */,
+				09DF36001DBDC8CF00B30071 /* XDSAdView.h */,
+				09DF36011DBDC8CF00B30071 /* XDSAdView.m */,
+				09DF360A1DBDCEA800B30071 /* XDSAdViewManager.h */,
+				09DF360B1DBDCEA800B30071 /* XDSAdViewManager.m */,
+				09DF36191DBE0C0000B30071 /* XDSInMobiAdView.h */,
+				09DF361A1DBE0C0000B30071 /* XDSInMobiAdView.m */,
+				09DF36241DBE0C6C00B30071 /* XDSInMobiAdViewManager.h */,
+				09DF36251DBE0C6C00B30071 /* XDSInMobiAdViewManager.m */,
+				09DF35C01DBDB51000B30071 /* Ads */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -298,6 +373,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* react_native_homeTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				09DF35C51DBDB53500B30071 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -362,7 +438,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 85W725W7AQ;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 85W725W7AQ;
 					};
 				};
 			};
@@ -512,6 +592,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093E2BE21DBE2951006732D8 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -550,8 +631,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				09DF360C1DBDCEA800B30071 /* XDSAdViewManager.m in Sources */,
 				A0536C411DBC44FF002E5EAB /* SpringBoard.m in Sources */,
+				09DF361B1DBE0C0000B30071 /* XDSInMobiAdView.m in Sources */,
+				09DF36261DBE0C6C00B30071 /* XDSInMobiAdViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				09DF36051DBDC8CF00B30071 /* XDSAdView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 85W725W7AQ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -599,6 +685,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 85W725W7AQ;
 				INFOPLIST_FILE = react_native_homeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -613,6 +700,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 85W725W7AQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/react_native_home/Ads",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -620,6 +712,10 @@
 				);
 				INFOPLIST_FILE = react_native_home/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/react_native_home/Ads/libs_s",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -635,6 +731,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85W725W7AQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/react_native_home/Ads",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -642,6 +743,10 @@
 				);
 				INFOPLIST_FILE = react_native_home/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/react_native_home/Ads/libs_s",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

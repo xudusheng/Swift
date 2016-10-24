@@ -14,12 +14,18 @@
 
 #import "RCTHotUpdate.h"
 
+#import "JOYConnect.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  //万普广告初始化
+  [JOYConnect getConnect:@"38114b15225bf7aa06eb8c4feca73677"
+                     pid:@"appstore"
+                  userID:nil];
+  
   NSURL *jsCodeLocation;
-
   //在线更新
 //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 

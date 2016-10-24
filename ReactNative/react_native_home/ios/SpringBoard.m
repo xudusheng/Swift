@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 
 #import "SpringBoard.h"
+#import "XDSInMobiAdView.h"
 
 @implementation SpringBoard
 RCT_EXPORT_MODULE();
@@ -17,12 +18,14 @@ RCT_EXPORT_MODULE();
 //  NSLog(@"%@, %@", name, password);
 //}
 
-RCT_EXPORT_METHOD(Login:(NSString *)name)
-{
-  UIViewController *controller = (UINavigationController*)[[[UIApplication sharedApplication] keyWindow] rootViewController];
-  UIViewController *loginVC = [[UIViewController alloc] init];
-  loginVC.view.backgroundColor = name.length? [UIColor redColor]:[UIColor yellowColor];
-  [controller presentViewController:loginVC animated:YES completion:nil];
+RCT_EXPORT_METHOD(Login:(NSString *)name){
+
+}
+
+RCT_EXPORT_METHOD(addAdView){
+  CGFloat width = [UIScreen mainScreen].bounds.size.width;
+  XDSInMobiAdView * adView = [[XDSInMobiAdView alloc]initWithFrame:CGRectMake(0, 20, width, 50)];
+  NSLog(@"adView = %@", adView);
 }
 
 @end
