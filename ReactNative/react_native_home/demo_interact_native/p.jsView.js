@@ -33,6 +33,11 @@ export default class PJSView extends Component {
 
                 <InMobiView></InMobiView>
 
+                <Text> 点我，点我，快点我 </ Text >
+                <Text> 点我，点我，快点我 </ Text >
+                <Text> 点我，点我，快点我 </ Text >
+                <Text> 点我，点我，快点我 </ Text >
+
             </ View >
         );
     }

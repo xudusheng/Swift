@@ -8,14 +8,22 @@
 
 #import "XDSInMobiAdViewManager.h"
 #import "XDSInMobiAdView.h"
-@implementation XDSInMobiAdViewManager
 
+@interface XDSInMobiAdViewManager()
+@property(strong, nonatomic) XDSInMobiAdView * adView;
+@end
+@implementation XDSInMobiAdViewManager
 RCT_EXPORT_MODULE()
 
 - (UIView *)view{
   CGFloat width = [UIScreen mainScreen].bounds.size.width;
-  XDSInMobiAdView * adView =[[XDSInMobiAdView alloc]initWithFrame:CGRectMake(0, 0, width, 50)];
-  return adView;
+  self.adView =[[XDSInMobiAdView alloc]initWithFrame:CGRectMake(0, 0, width, 50)];
+  NSLog(@"self = %@", self);
+  return _adView;
 }
+
+RCT_EXPORT_VIEW_PROPERTY(finishLoadingBlock, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(title, NSString);
+
 
 @end

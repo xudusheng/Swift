@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCTViewManager.h"
 
-typedef void(^bannerDidFinishLoadingBlock)();
+
 @interface XDSInMobiAdView : UIView
 
-@property (copy, nonatomic)bannerDidFinishLoadingBlock bannerDidFinishLoadingBlock;
+@property (copy, nonatomic)RCTBubblingEventBlock finishLoadingBlock;
+@property (copy, nonatomic)NSString * title;
+
 @end

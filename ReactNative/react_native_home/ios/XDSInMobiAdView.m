@@ -10,12 +10,15 @@
 #import <InMobiSDK/IMBanner.h>
 
 @interface XDSInMobiAdView()<IMBannerDelegate>
+@property(assign, nonatomic)CGRect finalFrame;
 @end
 
 @implementation XDSInMobiAdView
 
 - (instancetype)initWithFrame:(CGRect)frame{
-  if (self = [super initWithFrame:frame]) {
+  if (self = [super initWithFrame:CGRectMake(0, 0, frame.size.width, 0)]) {
+    self.finalFrame = frame;
+    self.clipsToBounds = YES;
     [self loadIMBanner];
   }
   return self;
@@ -26,7 +29,7 @@
 - (void)loadIMBanner{
   self.backgroundColor = [UIColor redColor];
   long long placementId = 1478274661195;
-  IMBanner * banner = [[IMBanner alloc]initWithFrame:self.bounds
+  IMBanner * banner = [[IMBanner alloc]initWithFrame:CGRectMake(0, 0, self.finalFrame.size.width, self.finalFrame.size.height)
                                          placementId: placementId
                                             delegate: self];
   banner.backgroundColor = [UIColor yellowColor];
@@ -39,10 +42,12 @@
 //IMBannerDelegate
 -(void)bannerDidFinishLoading:(IMBanner*)banner{
   NSLog(@"--------------------------------------------------------%s", __FUNCTION__);
-  if (self.bannerDidFinishLoadingBlock) {
-    self.bannerDidFinishLoadingBlock();
+  self.frame = self.finalFrame;
+  if (self.finishLoadingBlock) {
+    self.finishLoadingBlock(@{@"name":@"许杜生", @"address":@"福建莆田"});
   }
 }
+
 -(void)banner:(IMBanner*)banner didFailToLoadWithError:(IMRequestStatus*)error{
   NSLog(@"--------------------------------------------------------%s == %@", __FUNCTION__, error);
 }
