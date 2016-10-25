@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RCTViewManager.h"
 
-
 @interface XDSInMobiAdView : UIView
 
 @property (copy, nonatomic)RCTBubblingEventBlock finishLoadingBlock;

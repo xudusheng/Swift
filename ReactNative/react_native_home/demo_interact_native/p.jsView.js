@@ -21,7 +21,7 @@ import {
 
 var SpringBoard = NativeModules.SpringBoard;
 
-import InMobiView from './p.InMobi.Ad';
+import JSInMobAdView from './p.JSInMobi';
 
 export default class PJSView extends Component {
     render() {
@@ -31,7 +31,7 @@ export default class PJSView extends Component {
                     <Text> 点击跳转到 =>原生页面 </ Text >
                 </TouchableOpacity>
 
-                <InMobiView></InMobiView>
+                <JSInMobAdView></JSInMobAdView>
 
                 <Text> 点我，点我，快点我 </ Text >
                 <Text> 点我，点我，快点我 </ Text >
