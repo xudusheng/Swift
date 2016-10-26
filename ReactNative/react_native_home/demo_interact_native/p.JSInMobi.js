@@ -16,32 +16,17 @@ import {
 
 var InMobiAdView = requireNativeComponent('XDSInMobiAdView', null);
 
-InMobiAdView.PropTypes={
-    finishLoadingBlock:PropTypes.func.isRequired,
-    title:PropTypes.string,
-}
-// export default class JSInMobAdView extends Component {
-//     static propTypes = {
-//         finishLoadingBlock:PropTypes.func.isRequired
-//     }
-//
-//     render(){
-//         return (
-//             <InMobiAdView {...this.props}/>
-//         );
-//     }
-// }
-
 
 import Dimensions from 'Dimensions';
 let {width, height} = Dimensions.get('window');
 
-export default class InMobAdView extends Component {
+export default class JSInMobAdView extends Component {
     constructor() {
         super();
         this.state = {
             isBannerFinishLoading: false
         };
+
     }
 
     render() {
@@ -54,12 +39,8 @@ export default class InMobAdView extends Component {
 
                 <InMobiAdView
                     style={{width: width, height: bannerHeight}}
-                    finishLoadingBlock={(event) => {
-                        console.log('React事件' + event.nativeEvent.randomValue);
-                    }
-                    }
-
                     title='我只是一个标题'
+                    finishLoadingBlock={alert('广告加载成功')}
                 ></InMobiAdView>
 
                 <Text> 点击=>>广告加载完成 </ Text >
@@ -82,9 +63,11 @@ export default class InMobAdView extends Component {
         );
     }
 
-    updateView(){
+    updateView() {
+        console.log('收到一条广告更新')
         this.setState({
             isBannerFinishLoading: true
         })
     }
+
 }

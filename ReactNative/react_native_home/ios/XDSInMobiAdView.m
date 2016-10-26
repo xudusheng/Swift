@@ -46,6 +46,7 @@
   if (self.finishLoadingBlock) {
     self.finishLoadingBlock(@{@"name":@"许杜生", @"address":@"福建莆田"});
   }
+
 }
 
 -(void)banner:(IMBanner*)banner didFailToLoadWithError:(IMRequestStatus*)error{
