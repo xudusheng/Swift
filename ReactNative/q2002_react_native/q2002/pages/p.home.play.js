@@ -32,9 +32,7 @@ export default class QWebView extends Component {
 
 
     componentDidMount() {
-        let url = 'http://www.q2002.com/play/17325/1/1.html'
-        // let url = this.props.href;
-
+        let url = 'http://www.q2002/play/17325/1/1.html'
         fetch(url, {})
             .then((response)=> {
                 // console.log(response.text());

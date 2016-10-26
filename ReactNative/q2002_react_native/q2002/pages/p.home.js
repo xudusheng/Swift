@@ -175,7 +175,6 @@ export default class QHome extends Component {
 
     pressCell(rowData) {
         console.log(rowData);
-        alert(rowData.href);
         let href = rowData.href;
         this.props.navigator.push({
             component: QWebView,
