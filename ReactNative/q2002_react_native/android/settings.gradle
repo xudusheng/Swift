@@ -1,0 +1,3 @@
+rootProject.name = 'q2002_react_native'
+
+include ':app'
