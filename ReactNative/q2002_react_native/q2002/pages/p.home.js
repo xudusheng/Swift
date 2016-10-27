@@ -14,7 +14,7 @@ import {
     Navigator
 } from 'react-native';
 
-import QWebView from './p.home.detail';
+import QMovieInfo from './p.home.detailInfo';
 
 var DomParser = require('react-native-html-parser').DOMParser;
 
@@ -175,11 +175,11 @@ export default class QHome extends Component {
 
     pressCell(rowData) {
         console.log(rowData);
-        let href = rowData.href;
+        let movieInfo = rowData;
         this.props.navigator.push({
-            component: QWebView,
-            title: '详情',
-            passProps: {href}
+            component: QMovieInfo,
+            title: movieInfo.title,
+            passProps: {movieInfo}
         });
     }
 }
