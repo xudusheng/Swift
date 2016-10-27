@@ -8,35 +8,23 @@ import {
     StyleSheet,
     WebView,
     View,
+    Text,
+    Image,
+    TouchableOpacity,
 
 } from 'react-native';
 
+import * as GlobleConst from './p.const';
+import QWebView from './p.home.play'
 var DomParser = require('react-native-html-parser').DOMParser;
-
 
 export default class QMovieInfo extends Component {
     constructor() {
         super();
         this.state = {
-            moviesource: 'http://www.q2002.com/play/17325/1/1.html'
+            movieDetailInfo: null
         }
-
     }
-
-
-// {/*source={{uri: this.props.href}}*/}
-
-    render() {
-        console.log(this.props.navigator.props);
-        let headers = {
-            Referer: 'http://www.q2002.com/play/17325/1/1.html',
-        };
-
-        return (
-            <View />
-        );
-    }
-
 
     componentDidMount() {
         let href = this.props.movieInfo.href;
@@ -47,7 +35,7 @@ export default class QMovieInfo extends Component {
             })
             .then((detailData)=> {
                 console.log('================');
-                let detailDoc = new DomParser().parseFromString(detailData, 'text/html')
+                let detailDoc = new DomParser().parseFromString(detailData, 'text/html');
 
                 let containerElement = detailDoc.getElementsByClassName("container-fluid")[0];
                 let contentElement = containerElement.getElementsByClassName('row')[0];
@@ -84,45 +72,119 @@ export default class QMovieInfo extends Component {
 
 
                 //获取影片集数以及对应的播放地址
-
+                var resourceList = [];
                 let resourceElements = contentElement.getElementsByClassName('panel panel-default resource-list');
-
                 for (var i = 0; i < resourceElements.length; i++) {
                     let resorceIndex = i;
                     let resourceE = resourceElements[resorceIndex];
                     let headerE = resourceE.querySelect('div[class="panel-heading"] strong')[0];
-                    let listE = resourceE.getElementsByClassName('li[class="dslist-group-item"] a[href]');
+                    let listE = resourceE.querySelect('li[class="dslist-group-item"] a[href]');
+                    let helpE = resourceE.getElementsByClassName('panel-footer resource-help')[0];
 
                     let headerTitle = headerE.firstChild.nodeValue;
-                    console.log(headerTitle);
-                    console.log(listE);
 
+                    //集数按钮列表
                     var oneResourcList = [];
-                    for (var j = 0; j < listE.length; j ++){
+                    for (var j = 0; j < listE.length; j++) {
                         let oneIndex = j;
                         let oneResourceE = listE[oneIndex];
-                        console.log(oneResourceE);
-
+                        // console.log(oneResourceE);
+                        let href = oneResourceE.getAttribute('href');
+                        let btnTitle = oneResourceE.firstChild.nodeValue;
+                        oneResourcList.push({
+                            title: btnTitle,
+                            href: GlobleConst.FetchURL + href,
+                        });
                     }
 
+                    console.log(helpE.getElementsByTagName('strong')[0].firstChild.nodeValue);
+                    var helpContent = helpE.childNodes.toString();
+                    helpContent = helpContent.replace('<strong>', '');
+                    helpContent = helpContent.replace('</strong>', '');
+                    helpContent = helpContent.replace(/<br\/>/g, '');
+                    console.log(helpContent);
+
+
+                    resourceList.push({
+                        headerTitle: headerTitle,
+                        sourceList: oneResourcList,
+                        footerTitle: helpContent,
+                    });
                 }
 
                 containerInfo.title = title;
                 containerInfo.info = detailInfoArr;
                 containerInfo.sumary = sumaryValue;
+                containerInfo.resourceList = resourceList;
+                console.log(containerInfo);
 
-                // console.log(containerInfo);
+                this.setState({
+                    movieDetailInfo: containerInfo
+                });
 
             })
             .catch((error)=> {
                 alert(error);
             })
     }
+
+    render() {
+
+        if (this.state.movieDetailInfo) {
+            return (
+                this.createMovieDetailInfoView()
+            );
+
+        } else {
+            return (
+                <View />
+            );
+        }
+    }
+
+    createMovieDetailInfoView() {
+        // movieDetailInfo.title = title;
+        // movieDetailInfo.info = detailInfoArr;
+        // movieDetailInfo.sumary = sumaryValue;
+        // movieDetailInfo.resourceList = resourceList;
+        let title = this.state.movieDetailInfo.title;
+        let detailInfoArr = this.state.movieDetailInfo.detailInfoArr;
+        let sumary = this.state.movieDetailInfo.sumary;
+        let resourceList = this.state.movieDetailInfo.resourceList;
+
+        let containerView =
+            <View style={styles.container}>
+
+                <Text style={styles.titleStyle}>{title}</Text>
+                <View style={styles.movieDetailInfoViewStyle}>
+                </View>
+
+                <TouchableOpacity onPress={()=>{
+                    this.props.navigator.push({
+                        component: QWebView,
+                    });
+                }}>
+                    <Text style={styles.sumaryStyle}>{sumary}</Text>
+                </TouchableOpacity>
+
+                <View style={styles.resourceListViewStyle}>
+                </View>
+
+            </View>
+
+        return containerView;
+
+    }
 }
 
 
 const styles = StyleSheet.create({
-    webView: {
+    container: {
         flex: 1,
-    }
+    },
+    titleStyle: {},
+
+    movieDetailInfoViewStyle: {},
+    sumaryStyle: {},
+    resourceListViewStyle: {},
 });

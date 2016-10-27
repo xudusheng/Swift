@@ -18,6 +18,8 @@ import QMovieInfo from './p.home.detailInfo';
 
 var DomParser = require('react-native-html-parser').DOMParser;
 
+import * as GlobleConst from './p.const';
+
 export default class QHome extends Component {
 
     constructor() {
@@ -42,7 +44,7 @@ export default class QHome extends Component {
 
     //TODO:网络请求
     componentDidMount() {
-        let fetchurl = 'http://www.q2002.com';
+        let fetchurl = GlobleConst.FetchURL;
         fetch(fetchurl, {
             // method: 'GET'
         })

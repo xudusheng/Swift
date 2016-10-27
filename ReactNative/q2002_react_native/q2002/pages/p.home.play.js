@@ -11,8 +11,16 @@ import {
 
 } from 'react-native';
 
+var DomParser = require('react-native-html-parser').DOMParser;
+
 export default class QWebView extends Component {
 
+    constructor() {
+        super()
+        this.state = {
+            moviesource: null,
+        }
+    }
 
     render() {
         console.log(this.props.navigator.props);
@@ -20,17 +28,22 @@ export default class QWebView extends Component {
             Referer: 'http://www.q2002.com/play/17325/1/1.html',
         };
 
-        return (
-            <WebView
-                source={{uri: this.state.moviesource, headers: headers}}
-                automaticallyAdjustContentInsets={false}
-                style={styles.webView}
-                javaScriptEnabled={true}
-                domStorageEnabled={true}
-                decelerationRate="normal"
-                startInLoadingState={true}
-            />
-        );
+        if (this.state.moviesource) {
+            return (
+                <WebView
+                    source={{uri: this.state.moviesource, headers: headers}}
+                    automaticallyAdjustContentInsets={false}
+                    style={styles.webViewStyle}
+                    javaScriptEnabled={true}
+                    domStorageEnabled={true}
+                    decelerationRate="normal"
+                    startInLoadingState={true}
+                />
+            );
+        } else {
+            return (<View />);
+        }
+
     }
 
 
@@ -42,12 +55,11 @@ export default class QWebView extends Component {
             }
         })
             .then((response)=> {
-                // console.log(response.text());
                 return response.text();
             })
             .then((data)=> {
                 console.log('开始解析');
-                let doc = new DomParser().parseFromString(data, 'text/html')
+                let doc = new DomParser().parseFromString(data, 'text/html');
                 console.log('解析完成');
 
                 let playerNode = doc.querySelect('iframe[src]')[0];
@@ -70,7 +82,13 @@ export default class QWebView extends Component {
 
 
 const styles = StyleSheet.create({
-    webView: {
+    container: {
         flex: 1,
-    }
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    webViewStyle: {
+        flex: 1,
+        backgroundColor: 'yellow'
+    },
 });
