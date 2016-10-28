@@ -20,6 +20,8 @@ import NavigatiowView from '../component/navigationbar'
 
 import QMovieDetailInfoView from './q.home.detail.infoView';
 import QMovieSumaryView from './q.home.detail.sumaryView';
+import QResourceListView from './q.home.detail.resourceListView';
+
 var DomParser = require('react-native-html-parser').DOMParser;
 
 export default class QMovieInfo extends Component {
@@ -60,9 +62,6 @@ export default class QMovieInfo extends Component {
 
                 // let trElements = detailInfoElement.querySelect('div tbody tr');
                 var detailInfoArr = [];
-                console.log('xxxxxxxxxxxxxxxxxxxxx');
-                console.log(trElements);
-                console.log(tableE);
 
                 for (var i = 0; i < trElements.length; i++) {
                     let trIndex = i;
@@ -89,35 +88,41 @@ export default class QMovieInfo extends Component {
                 //获取影片集数以及对应的播放地址
                 var resourceList = [];
                 let resourceElements = contentElement.getElementsByClassName('panel panel-default resource-list');
+
                 for (var i = 0; i < resourceElements.length; i++) {
                     let resorceIndex = i;
                     let resourceE = resourceElements[resorceIndex];
-                    let headerE = resourceE.querySelect('div[class="panel-heading"] strong')[0];
-                    let listE = resourceE.querySelect('li[class="dslist-group-item"] a[href]');
-                    let helpE = resourceE.getElementsByClassName('panel-footer resource-help')[0];
+                    let panel_heading = resourceE.getElementsByClassName('panel-heading')[0];
+                    let dslist_group = resourceE.getElementsByClassName('dslist-group-item')[0];
+                    let panel_footer = resourceE.getElementsByClassName('panel-footer resource-help')[0];
 
+
+                    let headerE = panel_heading.getElementsByTagName('strong')[0];
                     let headerTitle = headerE.firstChild.nodeValue;
+
 
                     //集数按钮列表
                     var oneResourcList = [];
+                    let listE = dslist_group.getElementsByTagName('a');
+
+
                     for (var j = 0; j < listE.length; j++) {
                         let oneIndex = j;
                         let oneResourceE = listE[oneIndex];
-                        // console.log(oneResourceE);
                         let href = oneResourceE.getAttribute('href');
                         let btnTitle = oneResourceE.firstChild.nodeValue;
+
+
                         oneResourcList.push({
                             title: btnTitle,
                             href: GlobleConst.FetchURL + href,
                         });
                     }
 
-                    console.log(helpE.getElementsByTagName('strong')[0].firstChild.nodeValue);
-                    var helpContent = helpE.childNodes.toString();
+                    var helpContent = panel_footer.childNodes.toString();
                     helpContent = helpContent.replace('<strong>', '');
                     helpContent = helpContent.replace('</strong>', '');
                     helpContent = helpContent.replace(/<br\/>/g, '');
-                    console.log(helpContent);
 
 
                     resourceList.push({
@@ -127,12 +132,12 @@ export default class QMovieInfo extends Component {
                     });
                 }
 
+
                 containerInfo.title = title;
                 containerInfo.image = imageHref;
                 containerInfo.info = detailInfoArr;
                 containerInfo.sumary = sumaryValue;
                 containerInfo.resourceList = resourceList;
-                console.log(containerInfo);
 
                 this.setState({
                     movieDetailInfo: containerInfo
@@ -175,27 +180,24 @@ export default class QMovieInfo extends Component {
                     titleView={()=>this.titleView()}
                 />
                 <ScrollView>
+                    {/*//TODO:电影信息*/}
+                    <QMovieDetailInfoView imageurl={image} title={title} infoList={detailInfoArr}/>
 
-                    <QMovieDetailInfoView
-                        imageurl={image}
-                        title={title}
-                        infoList={detailInfoArr}
-                    />
+                    {/*//TODO:电影简介*/}
+                    <QMovieSumaryView title={title} sumary={sumary}/>
 
-
-                    <TouchableOpacity onPress={()=> {
-                        this.props.navigator.push({
-                            component: QWebView,
-                        });
-                    }}>
-                        <QMovieSumaryView
-                            title={title}
-                            sumary={sumary}
-                        />
-                    </TouchableOpacity>
-
-                    <View style={styles.resourceListViewStyle}>
-                    </View>
+                    {/*//TODO:集数列表*/}
+                    <QResourceListView resourceList={resourceList} style={styles.resourceListViewStyle}
+                                       onClickButton={(href)=> {
+                                           let playInfo = {
+                                               href: href,
+                                               movieDetailInfo: this.state.movieDetailInfo
+                                           };
+                                           this.props.navigator.push({
+                                               component: QWebView,
+                                               passProps: {playInfo},
+                                           });
+                                       }}/>
                 </ScrollView>
 
             </View>

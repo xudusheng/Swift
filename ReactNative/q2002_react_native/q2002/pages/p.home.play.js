@@ -14,6 +14,14 @@ import {
 var DomParser = require('react-native-html-parser').DOMParser;
 
 export default class QWebView extends Component {
+    static defaultProps = {
+        playInfo: {},
+    }
+
+    static propTypes = {
+        playInfo: React.PropTypes.object.isRequired,
+    }
+
 
     constructor() {
         super()
@@ -23,16 +31,12 @@ export default class QWebView extends Component {
     }
 
     render() {
-        console.log(this.props.navigator.props);
-        let headers = {
-            Referer: 'http://www.q2002.com/play/17325/1/1.html',
-        };
 
         if (this.state.moviesource) {
+            let headers = {Referer: this.props.playInfo.href};
             return (
                 <WebView
                     source={{uri: this.state.moviesource, headers: headers}}
-                    automaticallyAdjustContentInsets={false}
                     style={styles.webViewStyle}
                     javaScriptEnabled={true}
                     domStorageEnabled={true}
@@ -48,12 +52,8 @@ export default class QWebView extends Component {
 
 
     componentDidMount() {
-        let url = 'http://www.q2002.com/play/17325/1/1.html';
-        fetch(url, {
-            headers: {
-                Referer: 'http://www.q2002.com/play/17340.html',
-            }
-        })
+        let url = this.props.playInfo.href;
+        fetch(url)
             .then((response)=> {
                 return response.text();
             })
@@ -68,7 +68,6 @@ export default class QWebView extends Component {
                 let src = playerNode.getAttribute('src');
 
                 console.log(src);
-
 
                 this.setState({
                     moviesource: src
@@ -88,7 +87,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     webViewStyle: {
-        flex: 1,
+        flex:1,
         backgroundColor: 'yellow'
     },
 });
