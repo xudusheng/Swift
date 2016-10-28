@@ -11,11 +11,15 @@ import {
     Text,
     Image,
     TouchableOpacity,
-
+    ScrollView,
 } from 'react-native';
 
 import * as GlobleConst from './p.const';
 import QWebView from './p.home.play'
+import NavigatiowView from '../component/navigationbar'
+
+import QMovieDetailInfoView from './q.home.detail.infoView';
+import QMovieSumaryView from './q.home.detail.sumaryView';
 var DomParser = require('react-native-html-parser').DOMParser;
 
 export default class QMovieInfo extends Component {
@@ -26,6 +30,7 @@ export default class QMovieInfo extends Component {
         }
     }
 
+    //TODO:网络请求
     componentDidMount() {
         let href = this.props.movieInfo.href;
         var containerInfo = {};
@@ -34,7 +39,6 @@ export default class QMovieInfo extends Component {
                 return response.text();
             })
             .then((detailData)=> {
-                console.log('================');
                 let detailDoc = new DomParser().parseFromString(detailData, 'text/html');
 
                 let containerElement = detailDoc.getElementsByClassName("container-fluid")[0];
@@ -43,12 +47,23 @@ export default class QMovieInfo extends Component {
                 //获取标题
                 let titleNode = contentElement.getElementsByClassName('movie-title')[0];
                 let title = titleNode.firstChild.nodeValue;
+                //获取标题图片
+                let imageNode = contentElement.getElementsByClassName('img-thumbnail')[0];
+                let imageHref = imageNode.getAttribute('src')
+
 
                 //获取影片信息
                 let detailInfoElement = contentElement.getElementsByClassName('row')[0];
 
-                let trElements = detailInfoElement.querySelect('div table tr');
+                let tableE = detailInfoElement.getElementsByTagName('table')[0];
+                let trElements = tableE.getElementsByTagName('tr');
+
+                // let trElements = detailInfoElement.querySelect('div tbody tr');
                 var detailInfoArr = [];
+                console.log('xxxxxxxxxxxxxxxxxxxxx');
+                console.log(trElements);
+                console.log(tableE);
+
                 for (var i = 0; i < trElements.length; i++) {
                     let trIndex = i;
                     let trElement = trElements[trIndex];
@@ -113,6 +128,7 @@ export default class QMovieInfo extends Component {
                 }
 
                 containerInfo.title = title;
+                containerInfo.image = imageHref;
                 containerInfo.info = detailInfoArr;
                 containerInfo.sumary = sumaryValue;
                 containerInfo.resourceList = resourceList;
@@ -129,7 +145,6 @@ export default class QMovieInfo extends Component {
     }
 
     render() {
-
         if (this.state.movieDetailInfo) {
             return (
                 this.createMovieDetailInfoView()
@@ -142,39 +157,60 @@ export default class QMovieInfo extends Component {
         }
     }
 
+
     createMovieDetailInfoView() {
         // movieDetailInfo.title = title;
         // movieDetailInfo.info = detailInfoArr;
         // movieDetailInfo.sumary = sumaryValue;
         // movieDetailInfo.resourceList = resourceList;
         let title = this.state.movieDetailInfo.title;
-        let detailInfoArr = this.state.movieDetailInfo.detailInfoArr;
+        let image = this.state.movieDetailInfo.image;
+        let detailInfoArr = this.state.movieDetailInfo.info;
         let sumary = this.state.movieDetailInfo.sumary;
         let resourceList = this.state.movieDetailInfo.resourceList;
 
         let containerView =
             <View style={styles.container}>
+                <NavigatiowView
+                    titleView={()=>this.titleView()}
+                />
+                <ScrollView>
 
-                <Text style={styles.titleStyle}>{title}</Text>
-                <View style={styles.movieDetailInfoViewStyle}>
-                </View>
+                    <QMovieDetailInfoView
+                        imageurl={image}
+                        title={title}
+                        infoList={detailInfoArr}
+                    />
 
-                <TouchableOpacity onPress={()=>{
-                    this.props.navigator.push({
-                        component: QWebView,
-                    });
-                }}>
-                    <Text style={styles.sumaryStyle}>{sumary}</Text>
-                </TouchableOpacity>
 
-                <View style={styles.resourceListViewStyle}>
-                </View>
+                    <TouchableOpacity onPress={()=> {
+                        this.props.navigator.push({
+                            component: QWebView,
+                        });
+                    }}>
+                        <QMovieSumaryView
+                            title={title}
+                            sumary={sumary}
+                        />
+                    </TouchableOpacity>
+
+                    <View style={styles.resourceListViewStyle}>
+                    </View>
+                </ScrollView>
 
             </View>
 
         return containerView;
-
     }
+
+    //TODO:导航栏标题
+    titleView() {
+        return (
+            <Text style={{color: 'white', fontSize: 16}}>{this.props.movieInfo.title}</Text>
+        );
+    }
+
+
 }
 
 

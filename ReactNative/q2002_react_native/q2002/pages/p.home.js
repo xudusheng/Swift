@@ -14,11 +14,13 @@ import {
     Navigator
 } from 'react-native';
 
-import QMovieInfo from './p.home.detailInfo';
+import QMovieInfo from './q.home.detailInfo';
+
+import NavigatiowView from '../component/navigationbar'
+import * as GlobleConst from './p.const';
 
 var DomParser = require('react-native-html-parser').DOMParser;
 
-import * as GlobleConst from './p.const';
 
 export default class QHome extends Component {
 
@@ -140,15 +142,38 @@ export default class QHome extends Component {
     render() {
         console.log('xxxxxxxxxxxxxxxxx');
         return (
-            <ListView
-                style={styles.listViewStyle}
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow.bind(this)}
-                renderSectionHeader={this.renderSectionHeader.bind(this)}
-            />
+            <View style={styles.containerStyle}>
+                <NavigatiowView
+                    titleView={()=>this.titleView()}
+                    rightView={()=>this.rightView()}
+                />
+                <ListView
+                    style={styles.listViewStyle}
+                    dataSource={this.state.dataSource}
+                    renderRow={this.renderRow.bind(this)}
+                    renderSectionHeader={this.renderSectionHeader.bind(this)}
+                />
+            </View>
         );
     }
 
+    //TODO:导航栏标题
+    titleView() {
+        return (
+            <Text style={{color: 'white', fontSize: 16}}>推荐</Text>
+        );
+    }
+
+    //TODO:导航栏设置按钮
+    rightView() {
+        return (
+            <TouchableOpacity onPress={()=>alert('前往设置页面')}>
+                <Text style={{color: 'white', fontSize: 16}}>设置</Text>
+            </TouchableOpacity>
+        );
+    }
+
+    //TODO:ListViewCell
     renderRow(rowData, sectionID, rowID, highlightRow) {
         var view =
             <TouchableOpacity
@@ -165,7 +190,7 @@ export default class QHome extends Component {
         return view;
     }
 
-    //每一组的数据
+    //TODO:ListViewHeader
     renderSectionHeader(sectionData, sectionID) {
         console.log(sectionData);
         return (
@@ -176,7 +201,12 @@ export default class QHome extends Component {
     }
 
     pressCell(rowData) {
-        console.log(rowData);
+        // title: title,
+        // href: href,
+        // imageurl: imageurl,
+        // updateDate: updateDate,
+        // markTitle: markTitle
+
         let movieInfo = rowData;
         this.props.navigator.push({
             component: QMovieInfo,
@@ -188,9 +218,14 @@ export default class QHome extends Component {
 
 
 const styles = StyleSheet.create({
+    containerStyle: {
+        flex:1,
+    },
     listViewStyle: {
         flex: 1,
-        marginTop: 20,
+    },
+    sectionHeaderViewStyle:{
+      backgroundColor:'#eeeeee'
     },
     cellContentViewStyle: {
         flexDirection: 'row',
