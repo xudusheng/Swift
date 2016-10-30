@@ -152,6 +152,7 @@ export default class QHome extends Component {
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
+                    contentContainerStyle={styles.listViewContentContainerStyle}
                 />
             </View>
         );
@@ -178,13 +179,12 @@ export default class QHome extends Component {
         var view =
             <TouchableOpacity
                 onPress={()=>this.pressCell(rowData)}
+                style={styles.cellContentViewStyle}
             >
-                <View style={styles.cellContentViewStyle}>
-                    <Image source={{uri: rowData.imageurl}} style={styles.imageStyle}/>
-                    <View style={styles.textViewStyle}>
-                        <Text style={styles.titleStyle}>{rowData.title}</Text>
-                        <Text style={styles.moneyStyle}>¥{rowData.updateDate}</Text>
-                    </View>
+                <Image source={{uri: rowData.imageurl}} style={styles.imageStyle}/>
+                <View style={styles.textViewStyle}>
+                    <Text style={styles.titleStyle}>{rowData.title}</Text>
+                    <Text style={styles.moneyStyle}>¥{rowData.updateDate}</Text>
                 </View>
             </TouchableOpacity>
         return view;
@@ -195,7 +195,7 @@ export default class QHome extends Component {
         console.log(sectionData);
         return (
             <View style={styles.sectionHeaderViewStyle}>
-                <Text style={{marginLeft: 10, color: 'red'}}>{sectionData.sectionTitle}</Text>
+                <Text style={styles.sectionHeaderTitleStyle}>{sectionData.sectionTitle}</Text>
             </View>
         );
     }
@@ -216,42 +216,60 @@ export default class QHome extends Component {
     }
 }
 
-
+let col = 3;//列数
+let margin_gap = 15;//间距
+import Dimensions from 'Dimensions';
+let screenWidth = Dimensions.get('window').width;
+let cellWidth = (screenWidth - margin_gap * (col + 1)) / col;
+let cellHeight = cellWidth / 0.6;
 const styles = StyleSheet.create({
     containerStyle: {
-        flex:1,
+        flex: 1,
     },
     listViewStyle: {
         flex: 1,
     },
-    sectionHeaderViewStyle:{
-      backgroundColor:'#eeeeee'
+    listViewContentContainerStyle: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
+    sectionHeaderViewStyle: {
+        backgroundColor: '#eeeeee',
+        width: screenWidth,
+        height: 30,
+        justifyContent: 'center',
+    },
+    sectionHeaderTitleStyle: {
+        marginLeft: margin_gap,
+        color: 'red',
     },
     cellContentViewStyle: {
-        flexDirection: 'row',
-        // justifyContent:'center',
-        borderBottomWidth: 0.5,
-        borderBottomColor: 'gray',
+        justifyContent: 'center',
         alignItems: 'center',
-    },
-    imageStyle: {
-        width: 60,
-        height: 60,
-        marginTop: 10,
+        width: cellWidth,
+        height: cellHeight,
         marginBottom: 10,
-        marginLeft: 15,
-        marginRight: 10,
+        marginLeft: margin_gap,
+    },
+
+    imageStyle: {
+        width: cellWidth,
+        height: cellHeight,
+
     },
     textViewStyle: {
-        flex: 1,
         justifyContent: 'center',
-        height: 60,
+        position: 'absolute',
+        backgroundColor: 'yellow',
+        bottom: 0,
+        left: 0,
+        right: 0,
     },
     titleStyle: {
-        marginRight: 10,
-        marginBottom: 5,
+        flex: 1,
     },
     moneyStyle: {
+        flex: 1,
         color: 'red',
     },
 })
