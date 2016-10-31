@@ -41,7 +41,51 @@ export default class QHome extends Component {
                 rowHasChanged: (r1, r2) => r1 !== r2,
                 sectionHeaderHasChanged: (s1, s2) => s1 != s2,
             }),
-        }
+        };
+
+        this.typeList = [
+            {
+                typeId: 0,
+                typeName: '推荐',
+                typeHref: 'http://www.q2002.com',
+            },
+
+            {
+                typeId: 1,
+                typeName: '电影',
+                typeHref: 'http://www.q2002.com/type/1.html',
+            },
+
+            {
+                typeId: 2,
+                typeName: '电视剧',
+                typeHref: 'http://www.q2002.com/type/2.html',
+            },
+
+            {
+                typeId: 3,
+                typeName: '动漫',
+                typeHref: 'http://www.q2002.com/type/7.html',
+            },
+
+            {
+                typeId: 4,
+                typeName: '音乐',
+                typeHref: 'http://www.q2002.com/type/6.html',
+            },
+
+            {
+                typeId: 5,
+                typeName: '综艺',
+                typeHref: 'http://www.q2002.com/type/4.html',
+            },
+
+            {
+                typeId: 6,
+                typeName: '写真',
+                typeHref: 'http://www.q2002.com/type/19.html',
+            },
+        ];
     }
 
     componentDidMount() {
@@ -52,119 +96,7 @@ export default class QHome extends Component {
     //TODO:网络请求
     fetchMovieList_home(fetchurl, typeId) {
         this.props.actions.fetchMovieList(fetchurl, typeId, 0);
-        return;
 
-        let rooturl = GlobleConst.FetchURL;
-        let isHomePage = (segmentPage == 0);
-
-        fetch(fetchurl, {
-            // method: 'GET'
-        })
-            .then((response)=> {
-                // console.log(response.text());
-                return response.text();
-            })
-            .then((data)=> {
-                var movieList = [];
-                data = data.replace(/&raquo;/g, '');
-                data = data.replace(/<\/footer><\/div>/g, '<\/footer>');
-                data = data.replace(/<\/div><\/ul>/g, '<\/div>');
-                console.log('开始解析');
-                let doc = new DomParser().parseFromString(data, 'text/html');
-                console.log('解析完成');
-
-                //定义一下变量
-                var dataBlob = {},
-                    sectionIDs = [],
-                    rowIDs = [];
-
-                let movie_sections = doc.querySelect('div[class="row"]');
-
-                console.log(movie_sections);
-                console.log(movie_sections.length);
-
-                for (var section = 0; section < movie_sections.length; section++) {
-                    let sectionIndex = section;
-                    let sectionNode = movie_sections[sectionIndex];
-
-                    let movie_rows_test = sectionNode.getElementsByClassName('movie-item');
-
-                    if (movie_rows_test.length < 1) {
-                        continue;
-                    }
-
-                    //获取头信息==>即大的分类信息
-                    let sectionTitle = "";
-                    let sectionHref = "";
-                    let sectionSubTitle = "";
-                    if (isHomePage) {//如果是首页
-                        let sectionHeaderNode = sectionNode.querySelect('span a[href]')[0];
-                        sectionTitle = sectionHeaderNode.getAttribute('title');
-                        sectionHref = sectionHeaderNode.getAttribute('href');
-                        sectionSubTitle = sectionHeaderNode.firstChild.nodeValue;
-                    } else {//其他分类（电影，电视，动漫等）
-                        sectionTitle = "";
-                        sectionHref = "";
-                        sectionSubTitle = "";
-                    }
-
-                    let sectionInfo = {
-                        sectionTitle: sectionTitle,
-                        sectionSubTitle: sectionSubTitle,
-                        sectionHref: rooturl + sectionHref
-                    };
-
-                    //1、把组号放入sectionIDs数组中
-                    sectionIDs.push(sectionIndex);
-
-                    //2、把表头数据放入sectionInfo中
-                    dataBlob[sectionIndex] = sectionInfo;
-
-                    let movie_rows = sectionNode.getElementsByClassName('movie-item');
-
-                    var rowIdsInCurrentSection = [];
-
-                    for (var row = 0; row < movie_rows.length; row++) {
-                        let rowIndex = row;
-                        let rowElement = movie_rows[rowIndex];
-
-                        let aNode = rowElement.querySelect('a[href]')[0];
-                        let imageNode = aNode.querySelect('img')[0];
-                        let buttonNode = aNode.querySelect('button[class="hdtag"]')[0];
-                        let updateNode = rowElement.querySelect('span')[0];
-
-                        let title = aNode.getAttribute('title');
-                        let href = fetchurl + aNode.getAttribute('href');
-                        let imageurl = imageNode.getAttribute('src');
-                        let updateDate = updateNode.firstChild.nodeValue;
-                        let markTitle = buttonNode.firstChild.nodeValue;
-
-                        let oneItemInfo = {
-                            title: title,
-                            href: href,
-                            imageurl: imageurl,
-                            updateDate: updateDate,
-                            markTitle: markTitle
-                        };
-
-                        //把行号放入rowIdsInCurrentSection
-                        rowIdsInCurrentSection.push(rowIndex);
-                        dataBlob[sectionIndex + ':' + rowIndex] = oneItemInfo;
-
-                        movieList.push(oneItemInfo);
-                    }
-                    rowIDs.push(rowIdsInCurrentSection);
-                }
-
-                //更新状态
-                this.setState({
-                    dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs),
-                });
-
-            })
-            .catch((error)=> {
-                console.log('error = ' + error);
-            });
     }
 
     //TODO:UI界面
@@ -177,7 +109,7 @@ export default class QHome extends Component {
         let dataBlob = {};
         let sectionIDs = [];
         let rowIDs = [];
-        if (movie != undefined){
+        if (movie != undefined) {
             dataBlob = movie.dataBlob;
             sectionIDs = movie.sectionIDs;
             rowIDs = movie.rowIDs;
@@ -189,14 +121,48 @@ export default class QHome extends Component {
                     titleView={()=>this.titleView()}
                     rightView={()=>this.rightView()}
                 />
-                <ListView
-                    style={styles.listViewStyle}
-                    initialListSize={3}
-                    dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}
-                    renderRow={this.renderRow.bind(this)}
-                    renderSectionHeader={this.renderSectionHeader.bind(this)}
-                    contentContainerStyle={styles.listViewContentContainerStyle}
-                />
+                {/*<ListView*/}
+                {/*style={styles.listViewStyle}*/}
+                {/*initialListSize={3}*/}
+                {/*dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}*/}
+                {/*renderRow={this.renderRow.bind(this)}*/}
+                {/*renderSectionHeader={this.renderSectionHeader.bind(this)}*/}
+                {/*contentContainerStyle={styles.listViewContentContainerStyle}*/}
+                {/*/>*/}
+
+                <ScrollableTabView
+                    renderTabBar={() =>
+                        <DefaultTabBar
+                            tabStyle={styles.tab}
+                            textStyle={styles.tabText}
+                        />
+                    }
+                    tabBarBackgroundColor="#fcfcfc"
+                    tabBarUnderlineStyle={styles.tabBarUnderline}
+                    tabBarActiveTextColor="#3e9ce9"
+                    tabBarInactiveTextColor="#aaaaaa"
+                >
+                    {()=> {
+                        var views = [];
+                        for (let i = 0; i < this.typeList.length; i++) {
+                            let viewInfo = this.typeList[i];
+                            let view =
+                                <View key={i} style={{
+                                    flex: 1,
+                                    backgroundColor: 'red',
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }} tabLabel={viewInfo.typeName}><Text>{viewInfo.typeName}</Text></View>
+                            view.push(view);
+                        }
+                        return views;
+                    }}
+                    {/*<View style={{flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center'}}*/}
+                          {/*tabLabel='段子手'><Text>段子手</Text></View>*/}
+
+                </ScrollableTabView>
+
+
             </View>
         );
     }

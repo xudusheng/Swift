@@ -16,18 +16,18 @@ var DomParser = require('react-native-html-parser').DOMParser;
 export default class QWebView extends Component {
     static defaultProps = {
         playInfo: {},
-    }
+    };
 
     static propTypes = {
         playInfo: React.PropTypes.object.isRequired,
-    }
+    };
 
 
     constructor() {
-        super()
+        super();
         this.state = {
             moviesource: null,
-        }
+        };
     }
 
     render() {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     webViewStyle: {
-        flex:1,
+        flex: 1,
         backgroundColor: 'yellow'
     },
 });
