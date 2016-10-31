@@ -17,8 +17,6 @@ class APP extends Component {
         // login();
 
         login();
-
-
     }
 
     render() {

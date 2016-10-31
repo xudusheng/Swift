@@ -1,0 +1,135 @@
+/**
+ * Created by zhengda on 16/10/31.
+ */
+var DomParser = require('react-native-html-parser').DOMParser;
+import * as TYPES from './types';
+import * as GlobleConst from '../pages/p.const';
+
+export function fetchMovieList(fetchurl, typeId = 0, page = 0) {
+    let isLoadMore = (page > 0);
+    return ((dispatch)=> {
+        dispatch({'type': TYPES.FETCH_DOING});
+
+        fetch(fetchurl, {
+            // method: 'GET'
+        })
+            .then((response)=> {
+                // console.log(response.text());
+                return response.text();
+            })
+            .then((data)=> {
+                let result = dealXMLString(typeId,data);
+                dispatch({'type': TYPES.FETCH_DONE, typeId: typeId, movieList: result, isLoadMore:{isLoadMore}});
+
+            })
+            .catch((error)=> {
+                //登陆失败
+                alert(error.message);
+                dispatch({'type': TYPES.FETCH_ERROE, error: error});
+            });
+    });
+}
+
+
+let dealXMLString = (typeId, data)=> {
+    let rooturl = GlobleConst.FetchURL;
+    let isHomePage = (typeId == 0);
+
+    var movieList = [];
+    data = data.replace(/&raquo;/g, '');
+    data = data.replace(/<\/footer><\/div>/g, '<\/footer>');
+    data = data.replace(/<\/div><\/ul>/g, '<\/div>');
+    console.log('开始解析');
+    let doc = new DomParser().parseFromString(data, 'text/html');
+    console.log('解析完成');
+
+    //定义一下变量
+    var dataBlob = {},
+        sectionIDs = [],
+        rowIDs = [];
+
+    let movie_sections = doc.querySelect('div[class="row"]');
+
+    console.log(movie_sections);
+    console.log(movie_sections.length);
+
+    for (var section = 0; section < movie_sections.length; section++) {
+        let sectionIndex = section;
+        let sectionNode = movie_sections[sectionIndex];
+
+        let movie_rows_test = sectionNode.getElementsByClassName('movie-item');
+
+        if (movie_rows_test.length < 1) {
+            continue;
+        }
+
+        //获取头信息==>即大的分类信息
+        let sectionTitle = "";
+        let sectionHref = "";
+        let sectionSubTitle = "";
+        if (isHomePage) {//如果是首页
+            let sectionHeaderNode = sectionNode.querySelect('span a[href]')[0];
+            sectionTitle = sectionHeaderNode.getAttribute('title');
+            sectionHref = sectionHeaderNode.getAttribute('href');
+            sectionSubTitle = sectionHeaderNode.firstChild.nodeValue;
+        } else {//其他分类（电影，电视，动漫等）
+            sectionTitle = "";
+            sectionHref = "";
+            sectionSubTitle = "";
+        }
+
+        let sectionInfo = {
+            sectionTitle: sectionTitle,
+            sectionSubTitle: sectionSubTitle,
+            sectionHref: rooturl + sectionHref
+        };
+
+        //1、把组号放入sectionIDs数组中
+        sectionIDs.push(sectionIndex);
+
+        //2、把表头数据放入sectionInfo中
+        dataBlob[sectionIndex] = sectionInfo;
+
+        let movie_rows = sectionNode.getElementsByClassName('movie-item');
+
+        var rowIdsInCurrentSection = [];
+
+        for (var row = 0; row < movie_rows.length; row++) {
+            let rowIndex = row;
+            let rowElement = movie_rows[rowIndex];
+
+            let aNode = rowElement.querySelect('a[href]')[0];
+            let imageNode = aNode.querySelect('img')[0];
+            let buttonNode = aNode.querySelect('button[class="hdtag"]')[0];
+            let updateNode = rowElement.querySelect('span')[0];
+
+            let title = aNode.getAttribute('title');
+            let href = rooturl + aNode.getAttribute('href');
+            let imageurl = imageNode.getAttribute('src');
+            let updateDate = updateNode.firstChild.nodeValue;
+            let markTitle = buttonNode.firstChild.nodeValue;
+
+            let oneItemInfo = {
+                title: title,
+                href: href,
+                imageurl: imageurl,
+                updateDate: updateDate,
+                markTitle: markTitle
+            };
+
+            //把行号放入rowIdsInCurrentSection
+            rowIdsInCurrentSection.push(rowIndex);
+            dataBlob[sectionIndex + ':' + rowIndex] = oneItemInfo;
+
+            movieList.push(oneItemInfo);
+        }
+        rowIDs.push(rowIdsInCurrentSection);
+    }
+
+    return {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
+    //更新状态
+    // this.setState({
+    //     dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs),
+    // });
+
+}

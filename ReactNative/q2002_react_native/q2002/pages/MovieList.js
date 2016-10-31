@@ -44,9 +44,19 @@ export default class QHome extends Component {
         }
     }
 
-    //TODO:网络请求
     componentDidMount() {
         let fetchurl = GlobleConst.FetchURL;
+        this.fetchMovieList_home(fetchurl, 0);
+    }
+
+    //TODO:网络请求
+    fetchMovieList_home(fetchurl, typeId) {
+        this.props.actions.fetchMovieList(fetchurl, typeId, 0);
+        return;
+
+        let rooturl = GlobleConst.FetchURL;
+        let isHomePage = (segmentPage == 0);
+
         fetch(fetchurl, {
             // method: 'GET'
         })
@@ -58,8 +68,9 @@ export default class QHome extends Component {
                 var movieList = [];
                 data = data.replace(/&raquo;/g, '');
                 data = data.replace(/<\/footer><\/div>/g, '<\/footer>');
+                data = data.replace(/<\/div><\/ul>/g, '<\/div>');
                 console.log('开始解析');
-                let doc = new DomParser().parseFromString(data, 'text/html')
+                let doc = new DomParser().parseFromString(data, 'text/html');
                 console.log('解析完成');
 
                 //定义一下变量
@@ -68,20 +79,39 @@ export default class QHome extends Component {
                     rowIDs = [];
 
                 let movie_sections = doc.querySelect('div[class="row"]');
+
+                console.log(movie_sections);
                 console.log(movie_sections.length);
+
                 for (var section = 0; section < movie_sections.length; section++) {
                     let sectionIndex = section;
                     let sectionNode = movie_sections[sectionIndex];
 
+                    let movie_rows_test = sectionNode.getElementsByClassName('movie-item');
+
+                    if (movie_rows_test.length < 1) {
+                        continue;
+                    }
+
                     //获取头信息==>即大的分类信息
-                    let sectionHeaderNode = sectionNode.querySelect('span a[href]')[0];
-                    let sectionTitle = sectionHeaderNode.getAttribute('title');
-                    let sectionHref = sectionHeaderNode.getAttribute('href');
-                    let sectionSubTitle = sectionHeaderNode.firstChild.nodeValue;
+                    let sectionTitle = "";
+                    let sectionHref = "";
+                    let sectionSubTitle = "";
+                    if (isHomePage) {//如果是首页
+                        let sectionHeaderNode = sectionNode.querySelect('span a[href]')[0];
+                        sectionTitle = sectionHeaderNode.getAttribute('title');
+                        sectionHref = sectionHeaderNode.getAttribute('href');
+                        sectionSubTitle = sectionHeaderNode.firstChild.nodeValue;
+                    } else {//其他分类（电影，电视，动漫等）
+                        sectionTitle = "";
+                        sectionHref = "";
+                        sectionSubTitle = "";
+                    }
+
                     let sectionInfo = {
                         sectionTitle: sectionTitle,
                         sectionSubTitle: sectionSubTitle,
-                        sectionHref: fetchurl + sectionHref
+                        sectionHref: rooturl + sectionHref
                     };
 
                     //1、把组号放入sectionIDs数组中
@@ -134,13 +164,25 @@ export default class QHome extends Component {
             })
             .catch((error)=> {
                 console.log('error = ' + error);
-
             });
     }
 
     //TODO:UI界面
     render() {
+        let movie = this.props.movie.movieList[0];
         console.log('xxxxxxxxxxxxxxxxx');
+        console.log(movie);
+
+        // {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
+        let dataBlob = {};
+        let sectionIDs = [];
+        let rowIDs = [];
+        if (movie != undefined){
+            dataBlob = movie.dataBlob;
+            sectionIDs = movie.sectionIDs;
+            rowIDs = movie.rowIDs;
+        }
+
         return (
             <View style={styles.containerStyle}>
                 <NavigatiowView
@@ -149,7 +191,8 @@ export default class QHome extends Component {
                 />
                 <ListView
                     style={styles.listViewStyle}
-                    dataSource={this.state.dataSource}
+                    initialListSize={3}
+                    dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}
                     renderRow={this.renderRow.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
                     contentContainerStyle={styles.listViewContentContainerStyle}
@@ -194,7 +237,7 @@ export default class QHome extends Component {
     renderSectionHeader(sectionData, sectionID) {
         console.log(sectionData);
         return (
-            <View style={styles.sectionHeaderViewStyle}>
+            <View style={[styles.sectionHeaderViewStyle, {height: sectionData.sectionTitle.length ? 30 : 0,}]}>
                 <Text style={styles.sectionHeaderTitleStyle}>{sectionData.sectionTitle}</Text>
             </View>
         );
@@ -236,7 +279,6 @@ const styles = StyleSheet.create({
     sectionHeaderViewStyle: {
         backgroundColor: '#eeeeee',
         width: screenWidth,
-        height: 30,
         justifyContent: 'center',
     },
     sectionHeaderTitleStyle: {
@@ -272,4 +314,4 @@ const styles = StyleSheet.create({
         flex: 1,
         color: 'red',
     },
-})
+});

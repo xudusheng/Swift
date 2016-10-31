@@ -6,7 +6,9 @@
 
 import { AppRegistry } from 'react-native';
 
-import Home from './q2002/pages/p.home';
+import Home from './q2002/pages/MovieList';
 import QRoot from './q2002/root';
+
+import QScrollableTabView from './Demo';
 
 AppRegistry.registerComponent('q2002_react_native', () => QRoot);
