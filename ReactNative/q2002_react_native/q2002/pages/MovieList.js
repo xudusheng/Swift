@@ -18,6 +18,7 @@ import QMovieInfo from './q.home.detailInfo';
 
 import NavigatiowView from '../component/navigationbar'
 import * as GlobleConst from './p.const';
+import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 
 var DomParser = require('react-native-html-parser').DOMParser;
 
@@ -121,50 +122,55 @@ export default class QHome extends Component {
                     titleView={()=>this.titleView()}
                     rightView={()=>this.rightView()}
                 />
-                {/*<ListView*/}
-                {/*style={styles.listViewStyle}*/}
-                {/*initialListSize={3}*/}
-                {/*dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}*/}
-                {/*renderRow={this.renderRow.bind(this)}*/}
-                {/*renderSectionHeader={this.renderSectionHeader.bind(this)}*/}
-                {/*contentContainerStyle={styles.listViewContentContainerStyle}*/}
+                <ListView
+                    style={styles.listViewStyle}
+                    initialListSize={3}
+                    dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}
+                    renderRow={this.renderRow.bind(this)}
+                    renderSectionHeader={this.renderSectionHeader.bind(this)}
+                    contentContainerStyle={styles.listViewContentContainerStyle}
+                />
+
+                {/*<ScrollableTabView*/}
+                {/*renderTabBar={() =>*/}
+                {/*<DefaultTabBar*/}
+                {/*tabStyle={styles.tab}*/}
+                {/*textStyle={styles.tabText}*/}
                 {/*/>*/}
+                {/*}*/}
+                {/*tabBarBackgroundColor="#fcfcfc"*/}
+                {/*tabBarUnderlineStyle={styles.tabBarUnderline}*/}
+                {/*tabBarActiveTextColor="#3e9ce9"*/}
+                {/*tabBarInactiveTextColor="#aaaaaa"*/}
+                {/*>*/}
+                {/*{this.configContentViews()}*/}
 
-                <ScrollableTabView
-                    renderTabBar={() =>
-                        <DefaultTabBar
-                            tabStyle={styles.tab}
-                            textStyle={styles.tabText}
-                        />
-                    }
-                    tabBarBackgroundColor="#fcfcfc"
-                    tabBarUnderlineStyle={styles.tabBarUnderline}
-                    tabBarActiveTextColor="#3e9ce9"
-                    tabBarInactiveTextColor="#aaaaaa"
-                >
-                    {()=> {
-                        var views = [];
-                        for (let i = 0; i < this.typeList.length; i++) {
-                            let viewInfo = this.typeList[i];
-                            let view =
-                                <View key={i} style={{
-                                    flex: 1,
-                                    backgroundColor: 'red',
-                                    justifyContent: 'center',
-                                    alignItems: 'center'
-                                }} tabLabel={viewInfo.typeName}><Text>{viewInfo.typeName}</Text></View>
-                            view.push(view);
-                        }
-                        return views;
-                    }}
-                    {/*<View style={{flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center'}}*/}
-                          {/*tabLabel='段子手'><Text>段子手</Text></View>*/}
-
-                </ScrollableTabView>
+                {/*</ScrollableTabView>*/}
 
 
             </View>
         );
+    }
+
+    configContentViews() {
+        var views = [];
+        for (var i = 0; i < this.typeList.length; i++) {
+            let viewIndex = i;
+            let viewInfo = this.typeList[viewIndex];
+            let view =
+                <View key={viewIndex} style={{
+                    flex: 1,
+                    backgroundColor: 'red',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }} tabLabel={viewInfo.typeName}>
+
+                    <Text>{viewInfo.typeName}</Text>
+
+                </View>;
+            views.push(view);
+        }
+        return views;
     }
 
     //TODO:导航栏标题
