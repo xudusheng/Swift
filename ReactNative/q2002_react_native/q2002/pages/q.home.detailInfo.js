@@ -34,6 +34,7 @@ export default class QMovieInfo extends Component {
 
     //TODO:网络请求
     componentDidMount() {
+
         let href = this.props.movieInfo.href;
         var containerInfo = {};
         fetch(href, {})
@@ -219,6 +220,7 @@ export default class QMovieInfo extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: 'white',
     },
     titleStyle: {},
 
