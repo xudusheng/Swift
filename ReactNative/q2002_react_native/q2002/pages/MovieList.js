@@ -11,7 +11,8 @@ import {
     Image,
     ListView,
     TouchableOpacity,
-    Navigator
+    Navigator,
+    InteractionManager
 } from 'react-native';
 
 import QMovieInfo from './q.home.detailInfo';
@@ -90,8 +91,16 @@ export default class QHome extends Component {
     }
 
     componentDidMount() {
-        let fetchurl = GlobleConst.FetchURL;
-        this.fetchMovieList_home(fetchurl, 0);
+        // let fetchurl = GlobleConst.FetchURL;
+        // this.fetchMovieList_home(fetchurl, 0);
+        InteractionManager.runAfterInteractions(() => {
+            this.typeList.forEach((oneType)=> {
+                let fetchurl = oneType.typeHref;
+                let typeId = oneType.typeId;
+                this.fetchMovieList_home(fetchurl, typeId);
+            });
+        });
+
     }
 
     //TODO:网络请求
@@ -102,19 +111,9 @@ export default class QHome extends Component {
 
     //TODO:UI界面
     render() {
-        let movie = this.props.movie.movieList[0];
         console.log('xxxxxxxxxxxxxxxxx');
-        console.log(movie);
 
         // {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
-        let dataBlob = {};
-        let sectionIDs = [];
-        let rowIDs = [];
-        if (movie != undefined) {
-            dataBlob = movie.dataBlob;
-            sectionIDs = movie.sectionIDs;
-            rowIDs = movie.rowIDs;
-        }
 
         return (
             <View style={styles.containerStyle}>
@@ -122,30 +121,22 @@ export default class QHome extends Component {
                     titleView={()=>this.titleView()}
                     rightView={()=>this.rightView()}
                 />
-                <ListView
-                    style={styles.listViewStyle}
-                    initialListSize={3}
-                    dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}
-                    renderRow={this.renderRow.bind(this)}
-                    renderSectionHeader={this.renderSectionHeader.bind(this)}
-                    contentContainerStyle={styles.listViewContentContainerStyle}
-                />
 
-                {/*<ScrollableTabView*/}
-                {/*renderTabBar={() =>*/}
-                {/*<DefaultTabBar*/}
-                {/*tabStyle={styles.tab}*/}
-                {/*textStyle={styles.tabText}*/}
-                {/*/>*/}
-                {/*}*/}
-                {/*tabBarBackgroundColor="#fcfcfc"*/}
-                {/*tabBarUnderlineStyle={styles.tabBarUnderline}*/}
-                {/*tabBarActiveTextColor="#3e9ce9"*/}
-                {/*tabBarInactiveTextColor="#aaaaaa"*/}
-                {/*>*/}
-                {/*{this.configContentViews()}*/}
+                <ScrollableTabView
+                    renderTabBar={() =>
+                        <DefaultTabBar
+                            tabStyle={styles.tab}
+                            textStyle={styles.tabText}
+                        />
+                    }
+                    tabBarBackgroundColor="#fcfcfc"
+                    tabBarUnderlineStyle={styles.tabBarUnderline}
+                    tabBarActiveTextColor="#3e9ce9"
+                    tabBarInactiveTextColor="#aaaaaa"
+                >
+                    {this.configContentViews()}
 
-                {/*</ScrollableTabView>*/}
+                </ScrollableTabView>
 
 
             </View>
@@ -157,17 +148,30 @@ export default class QHome extends Component {
         for (var i = 0; i < this.typeList.length; i++) {
             let viewIndex = i;
             let viewInfo = this.typeList[viewIndex];
+
+            let typeId = viewInfo.typeId;
+            let movie = this.props.movie.movieList[typeId];
+            let dataBlob = {};
+            let sectionIDs = [];
+            let rowIDs = [];
+            if (movie != undefined) {
+                dataBlob = movie.dataBlob;
+                sectionIDs = movie.sectionIDs;
+                rowIDs = movie.rowIDs;
+            }
+
             let view =
-                <View key={viewIndex} style={{
-                    flex: 1,
-                    backgroundColor: 'red',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }} tabLabel={viewInfo.typeName}>
 
-                    <Text>{viewInfo.typeName}</Text>
-
-                </View>;
+                <ListView
+                    key={viewIndex}
+                    tabLabel={viewInfo.typeName}
+                    style={styles.listViewStyle}
+                    initialListSize={10}
+                    dataSource={this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs)}
+                    renderRow={this.renderRow.bind(this)}
+                    renderSectionHeader={this.renderSectionHeader.bind(this)}
+                    contentContainerStyle={styles.listViewContentContainerStyle}
+                />;
             views.push(view);
         }
         return views;
@@ -285,5 +289,17 @@ const styles = StyleSheet.create({
     moneyStyle: {
         flex: 1,
         color: 'red',
+    },
+
+
+    tab: {
+        paddingBottom: 0
+    },
+    tabText: {
+        fontSize: 16
+    },
+    tabBarUnderline: {
+        backgroundColor: '#3e9ce9',
+        height: 1.5,
     },
 });

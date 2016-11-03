@@ -50,8 +50,6 @@ let dealXMLString = (typeId, data)=> {
 
     let movie_sections = doc.querySelect('div[class="row"]');
 
-    console.log(movie_sections);
-    console.log(movie_sections.length);
 
     for (var section = 0; section < movie_sections.length; section++) {
         let sectionIndex = section;

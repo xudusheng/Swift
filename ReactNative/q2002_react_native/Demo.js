@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
     },
     tabBarUnderline: {
         backgroundColor: '#3e9ce9',
-        height: 2
+        height: 1,
     }
 });
