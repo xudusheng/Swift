@@ -12,7 +12,9 @@ import {
     ListView,
     TouchableOpacity,
     Navigator,
-    InteractionManager
+    InteractionManager,
+    RecyclerViewBackedScrollView,
+    RefreshControl,
 } from 'react-native';
 
 import QMovieInfo from './q.home.detailInfo';
@@ -97,17 +99,12 @@ export default class QHome extends Component {
             this.typeList.forEach((oneType)=> {
                 let fetchurl = oneType.typeHref;
                 let typeId = oneType.typeId;
-                this.fetchMovieList_home(fetchurl, typeId);
+                this.onRefresh(fetchurl, typeId);
             });
         });
 
     }
 
-    //TODO:网络请求
-    fetchMovieList_home(fetchurl, typeId) {
-        this.props.actions.fetchMovieList(fetchurl, typeId, 0);
-
-    }
 
     //TODO:UI界面
     render() {
@@ -150,14 +147,18 @@ export default class QHome extends Component {
             let viewInfo = this.typeList[viewIndex];
 
             let typeId = viewInfo.typeId;
-            let movie = this.props.movie.movieList[typeId];
+            let typeHref = viewInfo.typeHref;
+
+            let movie = this.props.movie;
+            let movieData = movie.movieList[typeId];
+
             let dataBlob = {};
             let sectionIDs = [];
             let rowIDs = [];
-            if (movie != undefined) {
-                dataBlob = movie.dataBlob;
-                sectionIDs = movie.sectionIDs;
-                rowIDs = movie.rowIDs;
+            if (movieData != undefined) {
+                dataBlob = movieData.dataBlob;
+                sectionIDs = movieData.sectionIDs;
+                rowIDs = movieData.rowIDs;
             }
 
             let view =
@@ -171,6 +172,19 @@ export default class QHome extends Component {
                     renderRow={this.renderRow.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
                     contentContainerStyle={styles.listViewContentContainerStyle}
+                    onEndReached={() => this.onEndReached(typeHref, typeId)}
+                    onEndReachedThreshold={10}
+                    //onScroll={this.onScroll}
+                    //renderFooter={this.renderFooter}
+                    renderScrollComponent={props => <RecyclerViewBackedScrollView {...props} />}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={movie.isRefreshing}
+                            onRefresh={() => this.onRefresh(typeHref, typeId)}
+                            title="Loading..."
+                            colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}
+                        />
+                    }
                 />;
             views.push(view);
         }
@@ -232,6 +246,20 @@ export default class QHome extends Component {
             title: movieInfo.title,
             passProps: {movieInfo}
         });
+    }
+
+    //TODO:网络请求
+    //TODO:下拉刷新
+    onRefresh(fetchurl, typeId) {
+        this.props.actions.fetchMovieList(fetchurl, typeId, 0);
+    }
+
+    //TODO:上拉刷新
+    onEndReached(fetchurl, typeId) {
+
+        if (typeId !== 0){//单个组的时候才存在上拉刷新
+            this.props.actions.fetchMovieList(fetchurl, typeId, 1);
+        }
     }
 }
 

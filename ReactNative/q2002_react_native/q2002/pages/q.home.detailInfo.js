@@ -52,7 +52,7 @@ export default class QMovieInfo extends Component {
                 let title = titleNode.firstChild.nodeValue;
                 //获取标题图片
                 let imageNode = contentElement.getElementsByClassName('img-thumbnail')[0];
-                let imageHref = imageNode.getAttribute('src')
+                let imageHref = imageNode.getAttribute('src');
 
 
                 //获取影片信息
@@ -89,7 +89,6 @@ export default class QMovieInfo extends Component {
                 //获取影片集数以及对应的播放地址
                 var resourceList = [];
                 let resourceElements = contentElement.getElementsByClassName('panel panel-default resource-list');
-
                 for (var i = 0; i < resourceElements.length; i++) {
                     let resorceIndex = i;
                     let resourceE = resourceElements[resorceIndex];
@@ -105,7 +104,8 @@ export default class QMovieInfo extends Component {
                     //集数按钮列表
                     var oneResourcList = [];
                     let listE = dslist_group.getElementsByTagName('a');
-
+                    console.log(dslist_group);
+                    console.log(listE);
 
                     for (var j = 0; j < listE.length; j++) {
                         let oneIndex = j;

@@ -7,8 +7,10 @@ import * as GlobleConst from '../pages/p.const';
 
 export function fetchMovieList(fetchurl, typeId = 0, page = 0) {
     let isLoadMore = (page > 0);
+    let isRefreshing = !isLoadMore;
+
     return ((dispatch)=> {
-        dispatch({'type': TYPES.FETCH_DOING});
+        dispatch({'type': TYPES.FETCH_DOING, isLoadMore:isLoadMore, isRefreshing:isRefreshing});
 
         fetch(fetchurl, {
             // method: 'GET'
@@ -19,7 +21,7 @@ export function fetchMovieList(fetchurl, typeId = 0, page = 0) {
             })
             .then((data)=> {
                 let result = dealXMLString(typeId,data);
-                dispatch({'type': TYPES.FETCH_DONE, typeId: typeId, movieList: result, isLoadMore:{isLoadMore}});
+                dispatch({'type': TYPES.FETCH_DONE, typeId: typeId, movieList: result, isLoadMore:isLoadMore});
 
             })
             .catch((error)=> {
