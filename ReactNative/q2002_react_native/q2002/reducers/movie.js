@@ -9,7 +9,7 @@ const initialState = {
     loading: false,//是否正在加载
     isLoadMore: false,//是否是上拉加载更多
     noMore: false,//已加载全部
-    movieList: {},//元素：{dataBlob:{}, sectionIDs:[], rowIDs:[]}
+    movieList: {},//元素：{dataBlob:{}, sectionIDs:[], rowIDs:[], nextPage:1}
 };
 
 export default function movie(state = initialState, action) {
@@ -50,12 +50,7 @@ function loadMore(state, action) {
     var dataBlob = movieData.dataBlob;
     let sectionIDs = movieData.sectionIDs;
     let rowIDs = movieData.rowIDs;
-
-    // return {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
-
-
-    console.log('//////////////////////////////////');
-    console.log(movieData);
+    let currentPage = movieData.nextPage;
 
     if (sectionIDs.length == 1) {//只有单组时才有下拉刷新功能，这里的数据结构有待优化，太不好处理了
 
@@ -63,8 +58,6 @@ function loadMore(state, action) {
         let new_sectionIDs = action.movieList.sectionIDs;
         let new_rowIDs = action.movieList.rowIDs[0];
 
-        console.log('//////////////////////////////////');
-        console.log(action.movieList);
         let sectionnum = sectionIDs[0];
         var singleSection_RowIDs = rowIDs[0];
         let rowsCount = singleSection_RowIDs.length;
@@ -75,16 +68,25 @@ function loadMore(state, action) {
             singleSection_RowIDs.push(rowsCount + index);
             console.log(index);
         }
-        let new_movieList = {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: [singleSection_RowIDs]};
-        state.movieList[action.typeId] = new_movieList;
 
-        console.log('//////////////////////////////////');
-        console.log(new_movieList);
+        var nextPage = currentPage;
+        if (new_rowIDs.length >= 15) {
+            nextPage += 1;
+        }
+        let new_movieList = {
+            dataBlob: dataBlob,
+            sectionIDs: sectionIDs,
+            rowIDs: [singleSection_RowIDs],
+            nextPage: nextPage,
+        };
+        state.movieList[action.typeId] = new_movieList;
     }
     return state.movieList;
 }
 
 function combine(state, action) {
-    state.movieList[action.typeId] = action.movieList;
+    var movieList = action.movieList;
+    movieList.nextPage = 2;
+    state.movieList[action.typeId] = movieList;
     return state.movieList;
 }

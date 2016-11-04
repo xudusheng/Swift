@@ -67,25 +67,25 @@ export default class QHome extends Component {
             },
 
             {
-                typeId: 3,
+                typeId: 7,
                 typeName: '动漫',
                 typeHref: 'http://www.q2002.com/type/7.html',
             },
 
             {
-                typeId: 4,
+                typeId: 6,
                 typeName: '音乐',
                 typeHref: 'http://www.q2002.com/type/6.html',
             },
 
             {
-                typeId: 5,
+                typeId: 4,
                 typeName: '综艺',
                 typeHref: 'http://www.q2002.com/type/4.html',
             },
 
             {
-                typeId: 6,
+                typeId: 19,
                 typeName: '写真',
                 typeHref: 'http://www.q2002.com/type/19.html',
             },
@@ -97,9 +97,8 @@ export default class QHome extends Component {
         // this.fetchMovieList_home(fetchurl, 0);
         InteractionManager.runAfterInteractions(() => {
             this.typeList.forEach((oneType)=> {
-                let fetchurl = oneType.typeHref;
                 let typeId = oneType.typeId;
-                this.onRefresh(fetchurl, typeId);
+                this.onRefresh(typeId);
             });
         });
 
@@ -152,17 +151,18 @@ export default class QHome extends Component {
             let movie = this.props.movie;
             let movieData = movie.movieList[typeId];
 
+            let nextPage = 1;
             let dataBlob = {};
             let sectionIDs = [];
             let rowIDs = [];
             if (movieData != undefined) {
+                nextPage = movieData.nextPage;
                 dataBlob = movieData.dataBlob;
                 sectionIDs = movieData.sectionIDs;
                 rowIDs = movieData.rowIDs;
             }
 
             let view =
-
                 <ListView
                     key={viewIndex}
                     tabLabel={viewInfo.typeName}
@@ -172,7 +172,7 @@ export default class QHome extends Component {
                     renderRow={this.renderRow.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
                     contentContainerStyle={styles.listViewContentContainerStyle}
-                    onEndReached={() => this.onEndReached(typeHref, typeId)}
+                    onEndReached={() => this.onEndReached(typeId, nextPage)}
                     onEndReachedThreshold={10}
                     //onScroll={this.onScroll}
                     //renderFooter={this.renderFooter}
@@ -180,7 +180,7 @@ export default class QHome extends Component {
                     refreshControl={
                         <RefreshControl
                             refreshing={movie.isRefreshing}
-                            onRefresh={() => this.onRefresh(typeHref, typeId)}
+                            onRefresh={() => this.onRefresh(typeId)}
                             title="Loading..."
                             colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}
                         />
@@ -250,15 +250,15 @@ export default class QHome extends Component {
 
     //TODO:网络请求
     //TODO:下拉刷新
-    onRefresh(fetchurl, typeId) {
-        this.props.actions.fetchMovieList(fetchurl, typeId, 0);
+    onRefresh(typeId) {
+        this.props.actions.fetchMovieList(typeId, 1);
     }
 
     //TODO:上拉刷新
-    onEndReached(fetchurl, typeId) {
-
-        if (typeId !== 0){//单个组的时候才存在上拉刷新
-            this.props.actions.fetchMovieList(fetchurl, typeId, 1);
+    onEndReached(typeId, page) {
+        console.log(typeId + ' xxxxx ' + page);
+        if (typeId !== 0) {//单个组的时候才存在上拉刷新
+            this.props.actions.fetchMovieList(typeId, page);
         }
     }
 }

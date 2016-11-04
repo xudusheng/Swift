@@ -72,7 +72,7 @@ export default class QResourceListView extends Component {
 
     createButtonLise(sourceList) {
         var buttonList = [];
-        for (var i = sourceList.length-1; i >= 0; i--) {
+        for (var i = 0; i < sourceList.length; i++) {
             let buttonIndex = i;
             let oneSource = sourceList[buttonIndex];
 

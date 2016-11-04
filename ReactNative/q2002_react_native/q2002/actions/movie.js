@@ -5,12 +5,19 @@ var DomParser = require('react-native-html-parser').DOMParser;
 import * as TYPES from './types';
 import * as GlobleConst from '../pages/p.const';
 
-export function fetchMovieList(fetchurl, typeId = 0, page = 0) {
-    let isLoadMore = (page > 0);
+export function fetchMovieList(typeId = 0, page = 1) {
+    let isLoadMore = (page > 1);
     let isRefreshing = !isLoadMore;
 
+    var fetchurl = GlobleConst.FetchURL;
+    if (typeId > 0) {
+        // http://www.q2002.com/type/1/2.html
+        fetchurl = fetchurl + 'type/' + typeId + '/' + page + '.html';
+    }
+
+    console.log(fetchurl);
     return ((dispatch)=> {
-        dispatch({'type': TYPES.FETCH_DOING, isLoadMore:isLoadMore, isRefreshing:isRefreshing});
+        dispatch({'type': TYPES.FETCH_DOING, isLoadMore: isLoadMore, isRefreshing: isRefreshing});
 
         fetch(fetchurl, {
             // method: 'GET'
@@ -20,8 +27,8 @@ export function fetchMovieList(fetchurl, typeId = 0, page = 0) {
                 return response.text();
             })
             .then((data)=> {
-                let result = dealXMLString(typeId,data);
-                dispatch({'type': TYPES.FETCH_DONE, typeId: typeId, movieList: result, isLoadMore:isLoadMore});
+                let result = dealXMLString(typeId, data);
+                dispatch({'type': TYPES.FETCH_DONE, typeId: typeId, movieList: result, isLoadMore: isLoadMore});
 
             })
             .catch((error)=> {

@@ -93,7 +93,7 @@ export default class QMovieInfo extends Component {
                     let resorceIndex = i;
                     let resourceE = resourceElements[resorceIndex];
                     let panel_heading = resourceE.getElementsByClassName('panel-heading')[0];
-                    let dslist_group = resourceE.getElementsByClassName('dslist-group-item')[0];
+                    let dslist_group = resourceE.getElementsByClassName('dslist-group')[0];
                     let panel_footer = resourceE.getElementsByClassName('panel-footer resource-help')[0];
 
 
@@ -104,8 +104,6 @@ export default class QMovieInfo extends Component {
                     //集数按钮列表
                     var oneResourcList = [];
                     let listE = dslist_group.getElementsByTagName('a');
-                    console.log(dslist_group);
-                    console.log(listE);
 
                     for (var j = 0; j < listE.length; j++) {
                         let oneIndex = j;
@@ -139,7 +137,8 @@ export default class QMovieInfo extends Component {
                 containerInfo.info = detailInfoArr;
                 containerInfo.sumary = sumaryValue;
                 containerInfo.resourceList = resourceList;
-
+                console.log('!!!!!!!!!!!!!!!!!!!!!1');
+                console.log(containerInfo);
                 this.setState({
                     movieDetailInfo: containerInfo
                 });
