@@ -8,7 +8,6 @@ import { AppRegistry } from 'react-native';
 
 import Home from './q2002/pages/MovieList';
 import QRoot from './q2002/root';
-
-import QScrollableTabView from './Demo';
+import QSearchView from './q2002/pages/q.search';
 
 AppRegistry.registerComponent('q2002_react_native', () => QRoot);

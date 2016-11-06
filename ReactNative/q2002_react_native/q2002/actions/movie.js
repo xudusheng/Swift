@@ -6,16 +6,29 @@ import * as TYPES from './types';
 import * as GlobleConst from '../pages/p.const';
 
 export function fetchMovieList(typeId = 0, page = 1) {
-    let isLoadMore = (page > 1);
-    let isRefreshing = !isLoadMore;
-
     var fetchurl = GlobleConst.FetchURL;
     if (typeId > 0) {
         // http://www.q2002.com/type/1/2.html
         fetchurl = fetchurl + 'type/' + typeId + '/' + page + '.html';
     }
 
-    console.log(fetchurl);
+    return htmlRequest(fetchurl, typeId, page);
+}
+
+export function searchMovieList(key, page = 1) {//搜索  这里规定typeId = -1
+    // http://www.q2002.com/search?wd=风花雪月;
+    var fetchurl = GlobleConst.FetchURL;
+    let searchTypeId = GlobleConst.SearchTypeId;
+    fetchurl += ('search?wd=' + key);
+    return htmlRequest(fetchurl, searchTypeId, page);//
+}
+
+//TODO:网络请求
+
+let htmlRequest = (fetchurl, typeId, page)=> {
+    let isLoadMore = (page > 1);
+    let isRefreshing = !isLoadMore;
+
     return ((dispatch)=> {
         dispatch({'type': TYPES.FETCH_DOING, isLoadMore: isLoadMore, isRefreshing: isRefreshing});
 
@@ -37,9 +50,9 @@ export function fetchMovieList(typeId = 0, page = 1) {
                 dispatch({'type': TYPES.FETCH_ERROE, error: error});
             });
     });
-}
+};
 
-
+//TODO:XML解析
 let dealXMLString = (typeId, data)=> {
     let rooturl = GlobleConst.FetchURL;
     let isHomePage = (typeId == 0);

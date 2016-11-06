@@ -3,3 +3,4 @@
  */
 
 export const FetchURL = 'http://www.q2002.com/';
+export const SearchTypeId = -1;

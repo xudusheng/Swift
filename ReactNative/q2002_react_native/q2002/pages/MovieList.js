@@ -18,13 +18,13 @@ import {
 } from 'react-native';
 
 import QMovieInfo from './q.home.detailInfo';
+import QSearchView from './q.search';
 
 import NavigatiowView from '../component/navigationbar'
 import * as GlobleConst from './p.const';
 import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 
 var DomParser = require('react-native-html-parser').DOMParser;
-
 
 export default class QHome extends Component {
 
@@ -201,7 +201,12 @@ export default class QHome extends Component {
     //TODO:导航栏设置按钮
     rightView() {
         return (
-            <TouchableOpacity onPress={()=>alert('前往设置页面')}>
+            <TouchableOpacity onPress={()=>{
+                this.props.navigator.push({
+                    component: QSearchView,
+                    title: '搜索',
+                });
+            }}>
                 <Text style={{color: 'white', fontSize: 16}}>设置</Text>
             </TouchableOpacity>
         );
@@ -219,7 +224,7 @@ export default class QHome extends Component {
                     <Text style={styles.titleStyle}>{rowData.title}</Text>
                     <Text style={styles.moneyStyle}>¥{rowData.updateDate}</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableOpacity>;
         return view;
     }
 
