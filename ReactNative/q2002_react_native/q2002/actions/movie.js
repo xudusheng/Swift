@@ -146,10 +146,28 @@ let dealXMLString = (typeId, data)=> {
         rowIDs.push(rowIdsInCurrentSection);
     }
 
-    return {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
-    //更新状态
-    // this.setState({
-    //     dataSource: this.state.dataSource.cloneWithRowsAndSections(dataBlob, sectionIDs, rowIDs),
-    // });
 
-}
+    // let container_divs = doc.getElementsByClassName('container');
+    // if (container_divs.length > 0) {
+    //     let containerEl = container_divs[container_divs.length - 1];
+    //     var div_Els = null;
+    //     console.log('==============================');
+    //     console.log(containerEl);
+    //
+    //     var containerEl_childNodes = containerEl.childNodes;
+    //
+    //     var divList = [];
+    //     for (var nodeIndex = 0; nodeIndex = containerEl_childNodes.length; nodeIndex++) {
+    //         let oneChildNode = containerEl_childNodes[nodeIndex];
+    //         console.log(oneChildNode);
+    //         // if (oneChildNode.hasAttributes()) {
+    //         //     divList.push(oneChildNode);
+    //         // }
+    //     }
+    //
+    //     console.log(divList);
+    //
+    // }
+
+    return {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
+};
