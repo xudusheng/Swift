@@ -8,7 +8,7 @@ import {
 }from 'react-native';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import QHome from '../pages/MovieList';
+import QHome from '../pages/q.movieList';
 import * as movieCreators from '../actions/movie';
 
 class MovieListContainer extends React.Component {

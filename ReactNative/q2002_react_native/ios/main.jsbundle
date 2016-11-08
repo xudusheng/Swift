@@ -82114,7 +82114,7 @@ handleElement(debugID,element);
 
 module.exports=ReactDOMNullInputValuePropHook;
 }, "react/lib/ReactDOMNullInputValuePropHook.js");
-__d(652 /* q2002_react_native/q2002/pages/MovieList.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
+__d(652 /* q2002_react_native/q2002/pages/q.movieList.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 
 
@@ -82401,7 +82401,7 @@ flex:1},
 moneyStyle:{
 flex:1,
 color:'red'}});
-}, "q2002_react_native/q2002/pages/MovieList.js");
+}, "q2002_react_native/q2002/pages/q.movieList.js");
 __d(653 /* q2002_react_native/q2002/pages/q.home.detailInfo.js */, function(global, require, module, exports) {Object.defineProperty(exports,"__esModule",{value:true});
 
 

@@ -6,7 +6,7 @@
 
 import { AppRegistry } from 'react-native';
 
-import Home from './q2002/pages/MovieList';
+import Home from './q2002/pages/q.movieList';
 import QRoot from './q2002/root';
 import QSearchView from './q2002/pages/q.search';
 

@@ -11,7 +11,6 @@ export function fetchMovieList(typeId = 0, page = 1) {
         // http://www.q2002.com/type/1/2.html
         fetchurl = fetchurl + 'type/' + typeId + '/' + page + '.html';
     }
-
     return htmlRequest(fetchurl, typeId, page);
 }
 
@@ -19,9 +18,18 @@ export function searchMovieList(key, page = 1) {//搜索  这里规定typeId = -
     // http://www.q2002.com/search?wd=风花雪月;
     var fetchurl = GlobleConst.FetchURL;
     let searchTypeId = GlobleConst.SearchTypeId;
-    fetchurl += ('search?wd=' + key);
+    // fetchurl += ('search?wd=' + key);
+
+    // http://www.q2002.com/s/%E8%8B%B1%E9%9B%84/2.html
+    fetchurl +=  ('/s/'+ key + '/' + page + '.html');
     return htmlRequest(fetchurl, searchTypeId, page);//
 }
+export function clearSearchResult() {//清空搜索结果
+    return ((dispatch) => {
+        dispatch({'type': TYPES.CLEAR_SEARCH_RESULT});
+    });
+}
+
 
 //TODO:网络请求
 

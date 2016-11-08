@@ -151,6 +151,7 @@ export default class QHome extends Component {
             let movie = this.props.movie;
             let movieData = movie.movieList[typeId];
 
+            let loadAll = false;
             let nextPage = 1;
             let dataBlob = {};
             let sectionIDs = [];
@@ -160,6 +161,7 @@ export default class QHome extends Component {
                 dataBlob = movieData.dataBlob;
                 sectionIDs = movieData.sectionIDs;
                 rowIDs = movieData.rowIDs;
+                loadAll = movieData.loadAll;
             }
 
             let view =
@@ -172,7 +174,7 @@ export default class QHome extends Component {
                     renderRow={this.renderRow.bind(this)}
                     renderSectionHeader={this.renderSectionHeader.bind(this)}
                     contentContainerStyle={styles.listViewContentContainerStyle}
-                    onEndReached={() => this.onEndReached(typeId, nextPage)}
+                    onEndReached={() => this.onEndReached(typeId, nextPage, loadAll)}
                     onEndReachedThreshold={10}
                     //onScroll={this.onScroll}
                     //renderFooter={this.renderFooter}
@@ -260,9 +262,12 @@ export default class QHome extends Component {
     }
 
     //TODO:上拉刷新
-    onEndReached(typeId, page) {
-        console.log(typeId + ' xxxxx ' + page);
-        if (typeId !== 0) {//单个组的时候才存在上拉刷新
+    onEndReached(typeId, page, loadAll) {
+        if (loadAll == undefined){
+            return;
+        }
+
+        if (typeId !== 0 && !loadAll) {//单个组的时候才存在上拉刷新
             this.props.actions.fetchMovieList(typeId, page);
         }
     }
@@ -299,7 +304,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: cellWidth,
         height: cellHeight,
-        marginBottom: 10,
+        marginTop: 10,
         marginLeft: margin_gap,
     },
 

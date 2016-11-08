@@ -51,6 +51,9 @@ class QSearchView extends Component {
 
     }
 
+    componentWillUnmount() {
+        this.props.actions.clearSearchResult();
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -69,11 +72,13 @@ class QSearchView extends Component {
         let movie = this.props.movie;
         let movieData = movie.movieList[searchTypeId];
 
+        let loadAll = false;
         let nextPage = 1;
         let dataBlob = {};
         let sectionIDs = [];
         let rowIDs = [];
         if (movieData != undefined) {
+            loadAll = movieData.loadAll;
             nextPage = movieData.nextPage;
             dataBlob = movieData.dataBlob;
             sectionIDs = movieData.sectionIDs;
@@ -88,7 +93,7 @@ class QSearchView extends Component {
                 renderRow={this.renderRow.bind(this)}
                 renderSectionHeader={this.renderSectionHeader.bind(this)}
                 contentContainerStyle={styles.listViewContentContainerStyle}
-                onEndReached={() => this.onEndReached(nextPage)}
+                onEndReached={() => this.onEndReached(nextPage, loadAll)}
                 onEndReachedThreshold={10}
                 //onScroll={this.onScroll}
                 //renderFooter={this.renderFooter}
@@ -146,9 +151,11 @@ class QSearchView extends Component {
                 style={styles.TextInputStyle}
                 placeholder="请输入搜索内容"
                 textAlign='center'
+                autoFocus={true}
                 onChangeText={(text)=> {
                     searchText = text;
                 }}
+
             />
         );
     }
@@ -171,8 +178,11 @@ class QSearchView extends Component {
         this.props.actions.searchMovieList(searchingText, 1);
     }
 
-    onEndReached(page){
-        if(searchingText.length < 1){
+    onEndReached(page, loadAll){
+        if (loadAll == undefined){
+            return;
+        }
+        if(searchingText.length < 1 || loadAll){
             return;
         }
         this.props.actions.searchMovieList(searchingText, page);
@@ -192,6 +202,7 @@ const styles = StyleSheet.create({
     },
     TextInputStyle: {
         fontSize: 16,
+        color:'white',
         width: 200,
         height: 35,
     },
@@ -229,7 +240,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: cellWidth,
         height: cellHeight,
-        marginBottom: 10,
+        marginTop: 10,
         marginLeft: margin_gap,
     },
 

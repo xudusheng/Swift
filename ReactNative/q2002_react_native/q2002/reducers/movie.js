@@ -3,13 +3,13 @@
  */
 
 import * as TYPES from '../actions/types';
+import * as GlobleConst from '../pages/p.const';
 
 const initialState = {
     isRefreshing: false,//是否下拉刷新
     loading: false,//是否正在加载
     isLoadMore: false,//是否是上拉加载更多
-    noMore: false,//已加载全部
-    movieList: {},//元素：{dataBlob:{}, sectionIDs:[], rowIDs:[], nextPage:1}
+    movieList: {},//元素：{dataBlob:{}, sectionIDs:[], rowIDs:[], nextPage:1, loadAll:true}
 };
 
 export default function movie(state = initialState, action) {
@@ -21,7 +21,6 @@ export default function movie(state = initialState, action) {
                 isRefreshing: action.isRefreshing,
                 loading: true,
                 isLoadMore: action.isLoadMore,
-                noMore: false,
             };
 
         case TYPES.FETCH_DONE:
@@ -30,7 +29,6 @@ export default function movie(state = initialState, action) {
                 isRefreshing: false,
                 loading: false,
                 movieList: action.isLoadMore ? loadMore(state, action) : combine(state, action),
-                noMore: action.movieList.length == 0,
             };
 
         case TYPES.FETCH_ERROE:
@@ -40,6 +38,15 @@ export default function movie(state = initialState, action) {
                 loading: false,
                 isLoadMore: false,
             };
+        case TYPES.CLEAR_SEARCH_RESULT: {
+            return {
+                ...state,
+                isRefreshing: false,
+                loading: false,
+                isLoadMore: false,
+                movieList: clearSearchResult(state),
+            }
+        }
         default:
             return state;
     }
@@ -70,14 +77,18 @@ function loadMore(state, action) {
         }
 
         var nextPage = currentPage;
+        var loadAll = false;
         if (new_rowIDs.length >= 15) {
             nextPage += 1;
+        } else {
+            loadAll = true;
         }
         let new_movieList = {
             dataBlob: dataBlob,
             sectionIDs: sectionIDs,
             rowIDs: [singleSection_RowIDs],
             nextPage: nextPage,
+            loadAll: loadAll,
         };
         state.movieList[action.typeId] = new_movieList;
     }
@@ -87,6 +98,22 @@ function loadMore(state, action) {
 function combine(state, action) {
     var movieList = action.movieList;
     movieList.nextPage = 2;
+
+    let sectionIDs = action.movieList.sectionIDs;
+    var loadAll = false;
+    if (sectionIDs.length == 1) {//只有单组时才有下拉刷新功能，这里的数据结构有待优化，太不好处理了
+        let new_rowIDs = action.movieList.rowIDs[0];
+        if (new_rowIDs.length < 15) {
+            loadAll = true;
+        }
+    }
+
+    movieList.loadAll = loadAll;
     state.movieList[action.typeId] = movieList;
+    return state.movieList;
+}
+
+function clearSearchResult(state) {
+    state.movieList[GlobleConst.SearchTypeId] = undefined;
     return state.movieList;
 }
