@@ -12,6 +12,7 @@ import {
     Image,
     TouchableOpacity,
     ScrollView,
+    requireNativeComponent,
 } from 'react-native';
 
 import * as GlobleConst from './p.const';
@@ -21,6 +22,8 @@ import NavigatiowView from '../component/navigationbar'
 import QMovieDetailInfoView from './q.home.detail.infoView';
 import QMovieSumaryView from './q.home.detail.sumaryView';
 import QResourceListView from './q.home.detail.resourceListView';
+
+var InMobiAdView = requireNativeComponent('XDSInMobiAdView', null);
 
 var DomParser = require('react-native-html-parser').DOMParser;
 
@@ -137,8 +140,6 @@ export default class QMovieInfo extends Component {
                 containerInfo.info = detailInfoArr;
                 containerInfo.sumary = sumaryValue;
                 containerInfo.resourceList = resourceList;
-                console.log('!!!!!!!!!!!!!!!!!!!!!1');
-                console.log(containerInfo);
                 this.setState({
                     movieDetailInfo: containerInfo
                 });
@@ -179,12 +180,15 @@ export default class QMovieInfo extends Component {
                 <NavigatiowView
                     titleView={()=>this.titleView()}
                 />
+
                 <ScrollView>
                     {/*//TODO:电影信息*/}
                     <QMovieDetailInfoView imageurl={image} title={title} infoList={detailInfoArr}/>
 
                     {/*//TODO:电影简介*/}
                     <QMovieSumaryView title={title} sumary={sumary}/>
+
+                    <InMobiAdView style={styles.inMobViewStyle}/>
 
                     {/*//TODO:集数列表*/}
                     <QResourceListView resourceList={resourceList} style={styles.resourceListViewStyle}
@@ -200,7 +204,7 @@ export default class QMovieInfo extends Component {
                                        }}/>
                 </ScrollView>
 
-            </View>
+            </View>;
 
         return containerView;
     }
@@ -215,15 +219,17 @@ export default class QMovieInfo extends Component {
 
 }
 
-
+import Dimensions from 'Dimensions';
+let screenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
     },
-    titleStyle: {},
 
-    movieDetailInfoViewStyle: {},
-    sumaryStyle: {},
     resourceListViewStyle: {},
+    inMobViewStyle: {
+        width: screenWidth,
+        height: 50,
+    },
 });

@@ -107,7 +107,6 @@ export default class QHome extends Component {
 
     //TODO:UI界面
     render() {
-        console.log('xxxxxxxxxxxxxxxxx');
 
         // {dataBlob: dataBlob, sectionIDs: sectionIDs, rowIDs: rowIDs};
 
@@ -232,7 +231,6 @@ export default class QHome extends Component {
 
     //TODO:ListViewHeader
     renderSectionHeader(sectionData, sectionID) {
-        console.log(sectionData);
         return (
             <View style={[styles.sectionHeaderViewStyle, {height: sectionData.sectionTitle.length ? 30 : 0,}]}>
                 <Text style={styles.sectionHeaderTitleStyle}>{sectionData.sectionTitle}</Text>
@@ -297,6 +295,7 @@ const styles = StyleSheet.create({
     },
     sectionHeaderTitleStyle: {
         marginLeft: margin_gap,
+        width:screenWidth,
         color: 'red',
     },
     cellContentViewStyle: {

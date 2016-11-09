@@ -14,7 +14,8 @@ import {
 export default class QResourceListView extends Component {
     static defaultProps = {
         resourceList: [],
-        onClickButton:()=>{},
+        onClickButton: ()=> {
+        },
     };
     static propTypes = {
         //object
@@ -22,11 +23,10 @@ export default class QResourceListView extends Component {
         //sourceList: sourceList
         //footerTitle: footerTitle
         resourceList: PropTypes.array.isRequired,
-        onClickButton:PropTypes.func,
+        onClickButton: PropTypes.func,
     };
 
     render() {
-        console.log(this.props.resourceList);
         return (
             <View style={styles.resourceListViewContainerStyle}>
                 {this.createResourceListView()}
@@ -42,7 +42,7 @@ export default class QResourceListView extends Component {
             let resouceIndex = i;
             var oneResouce = this.props.resourceList[resouceIndex];
 
-            resourceListViews.push(<View key={-(resouceIndex+1)} style={{height: 30}}/>);//头部添加30高度的空白部分
+            // resourceListViews.push(<View key={-(resouceIndex + 1)} style={{height: 30}}/>);//头部添加30高度的空白部分
 
 
             let title = oneResouce.headerTitle;
@@ -82,9 +82,10 @@ export default class QResourceListView extends Component {
             let href = oneSource.href;
 
             let button =
-                <TouchableOpacity key={buttonIndex} onPress={()=>this.props.onClickButton(href)} style={styles.buttonViewStyle}>
-                        <Text style={styles.buttonTitleStyle}>{title}</Text>
-                </TouchableOpacity>
+                <TouchableOpacity key={buttonIndex} onPress={()=>this.props.onClickButton(href)}
+                                  style={styles.buttonViewStyle}>
+                    <Text style={styles.buttonTitleStyle}>{title}</Text>
+                </TouchableOpacity>;
             buttonList.push(button);
         }
         return buttonList;
@@ -96,18 +97,20 @@ export default class QResourceListView extends Component {
 const styles = StyleSheet.create({
     resourceListViewContainerStyle: {
         backgroundColor: 'white',
-
     },
     oneResouceContainerViewStyle: {
         backgroundColor: '#eeeeee',
-        borderTopWidth: 0.5,
-        borderTopColor: '#bbbbbb',
-        borderBottomWidth: 0.5,
-        borderBottomColor: '#bbbbbb',
+        borderTopWidth: 0.7,
+        borderTopColor: '#dddddd',
+        borderBottomWidth: 0.7,
+        borderBottomColor: '#dddddd',
     },
 
-    headerViewStyle: {},
-    headerTextStyle: {},
+    headerViewStyle: {
+        margin: 5,
+    },
+    headerTextStyle: {
+    },
 
     footerViewStyle: {},
     footerTextStyle: {},
@@ -117,19 +120,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         backgroundColor: 'white',
-        borderTopWidth: 0.5,
-        borderTopColor: '#bbbbbb',
-        borderBottomWidth: 0.5,
-        borderBottomColor: '#bbbbbb',
+
     },
 
     buttonViewStyle: {
-        width: 60,
-        height: 25,
+        height: 30,
         justifyContent: 'center',
         alignItems: 'center',
         margin: 5,
-        backgroundColor: '#999999',
+        borderRadius: 3,
+        borderWidth: 0.7,
+        borderColor: '#666666',
     },
-    buttonTitleStyle: {},
+    buttonTitleStyle: {
+        marginLeft: 10,
+        marginRight: 10,
+        color: '#666666',
+    },
 });

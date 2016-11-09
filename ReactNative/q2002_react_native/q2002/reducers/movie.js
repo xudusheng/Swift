@@ -13,7 +13,6 @@ const initialState = {
 };
 
 export default function movie(state = initialState, action) {
-    console.log('reducer = ' + action.typeId, action.movieList);
     switch (action.type) {
         case TYPES.FETCH_DOING:
             return {
@@ -73,7 +72,6 @@ function loadMore(state, action) {
             let new_rowData = new_dataBlob[sectionnum + ':' + index];
             dataBlob[sectionnum + ':' + (rowsCount + index)] = new_rowData;
             singleSection_RowIDs.push(rowsCount + index);
-            console.log(index);
         }
 
         var nextPage = currentPage;

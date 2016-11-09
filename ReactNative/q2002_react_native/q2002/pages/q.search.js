@@ -121,7 +121,6 @@ class QSearchView extends Component {
 
     //TODO:ListViewHeader
     renderSectionHeader(sectionData, sectionID) {
-        console.log(sectionData);
         return (
             <View style={[styles.sectionHeaderViewStyle, {height: sectionData.sectionTitle.length ? 30 : 0,}]}>
                 <Text style={styles.sectionHeaderTitleStyle}>{sectionData.sectionTitle}</Text>

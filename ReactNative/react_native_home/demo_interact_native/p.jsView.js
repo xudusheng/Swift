@@ -21,7 +21,7 @@ import {
 
 var SpringBoard = NativeModules.SpringBoard;
 
-import JSInMobAdView from './p.JSInMobi';
+import JSInMobAdView from './p.jsInMobi';
 
 export default class PJSView extends Component {
     render() {
