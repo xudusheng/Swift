@@ -9,5 +9,5 @@ import { AppRegistry } from 'react-native';
 import QRoot from './q2002/root';
 import PJSView from './inMod/p.jsView';
 import QScrollableTabView from './Demo'
-
-AppRegistry.registerComponent('q2002_react_native', () => QScrollableTabView);
+import PNewsPage from './x_news/p.news'
+AppRegistry.registerComponent('q2002_react_native', () => PNewsPage);
