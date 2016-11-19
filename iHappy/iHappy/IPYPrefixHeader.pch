@@ -1,0 +1,25 @@
+//
+//  JRBPrefixHeader.pch
+//  Jurongbao
+//
+//  Created by wangrongchao on 15/10/17.
+//  Copyright © 2015年 truly. All rights reserved.
+//
+
+#ifndef JRBPrefixHeader_pch
+#define JRBPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "IPYHeaderFile.h"
+
+#ifdef DEBUG
+# define NSLog(...) NSLog(__VA_ARGS__)
+#else
+# define NSLog(...) {}
+#endif
+
+#endif /* JRBPrefixHeader_pch */
+
