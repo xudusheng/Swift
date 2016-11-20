@@ -105,8 +105,16 @@ typedef NS_ENUM(NSInteger, CalculateType){
     CalculateTypeDividing,//除
 };
 //高精度的加减乘除
-+ (NSString *)calculateWithFirstValue:(NSString *)firstValue secondValue:(NSString *)secondValue type:(CalculateType)type;
++ (NSString *)calculateWithFirstValue:(NSString *)firstValue
+                          secondValue:(NSString *)secondValue
+                                 type:(CalculateType)type;
 
-//根据银行编码获取对应的图片
-+ (NSString *)imageWithBankCode:(NSString *)bankCode;
+//获取字符串的宽度
++ (CGFloat)widthForString:(NSString *)value
+              limitHeight:(CGFloat)limitHeight
+                     font:(UIFont *)font;
+//获得字符串的高度
++ (CGFloat)heightForString:(NSString *)value
+                limitWidth:(CGFloat)limitWidth
+                      font:(UIFont *)font;
 @end

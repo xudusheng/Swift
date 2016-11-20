@@ -9,19 +9,19 @@
 #import "XDSHttpRequest.h"
 
 @interface XDSHttpRequest()
-    @property (strong, nonatomic) NSURLSessionDataTask * sessionDataTask;
-    @property (weak, nonatomic) UIViewController * hudController;
-    @end
+@property (strong, nonatomic) NSURLSessionDataTask * sessionDataTask;
+@property (weak, nonatomic) UIViewController * hudController;
+@end
 
 @implementation XDSHttpRequest
 #pragma mark 网络请求的错误信息显示
-    NSString *const kConnectWebFailed = @"无法连接网络，请连接网络重试";//网络连接失败
-    NSString *const kAnalysisFailed = @"数据解析出错";//数据解析出错
-    NSString *const kLoadFailed = @"请求失败，请稍后重试"; //请求失败
-    NSString *const kTimeCallOut = @"网络链接超时，请稍后重试";//链接超时
-    
-    NSString *const key = @"huidaibao";
-    
+NSString *const kConnectWebFailed = @"无法连接网络，请连接网络重试";//网络连接失败
+NSString *const kAnalysisFailed = @"数据解析出错";//数据解析出错
+NSString *const kLoadFailed = @"请求失败，请稍后重试"; //请求失败
+NSString *const kTimeCallOut = @"网络链接超时，请稍后重试";//链接超时
+
+NSString *const key = @"huidaibao";
+
 - (void)GETWithURLString:(NSString *)urlString
                 reqParam:(NSDictionary *)reqParam
            hudController:(UIViewController *)hudController
@@ -87,9 +87,9 @@
     
     [_sessionDataTask resume];
 }
-    
-    
-    
+
+
+
 - (void)htmlRequestWithHref:(NSString *)htmlHref
               hudController:(UIViewController *)hudController
                     showHUD:(BOOL)showHUD
@@ -110,74 +110,75 @@
         self.hudController = hudController;
     }
     
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        NSString* url = [htmlHref stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//        NSString* xml = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil];
-//        
-//        NSError * error = nil;
-//        NSData * xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:NSDataReadingMappedIfSafe error:&error];
-//        if (!error) {
-//            NSLog(@" ============ %@", [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding]);
-//        }else{
-//            NSLog(@"error = %@", error);
-//        }
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [XDSUtilities hideHud:hudController.view];
-//
-//        });
-//    });
-//
-//    return;
-
+    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //        NSString* url = [htmlHref stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    //        NSString* xml = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil];
+    //
+    //        NSError * error = nil;
+    //        NSData * xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:NSDataReadingMappedIfSafe error:&error];
+    //        if (!error) {
+    //            NSLog(@" ============ %@", [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding]);
+    //        }else{
+    //            NSLog(@"error = %@", error);
+    //        }
+    //
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            [XDSUtilities hideHud:hudController.view];
+    //
+    //        });
+    //    });
+    //
+    //    return;
+    
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];//使用这个将得到的是NSData
-//    manager.responseSerializer = [AFJSONResponseSerializer serializer];//使用这个将得到的是JSON
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];//使用这个将得到的是NSData
+    //    manager.responseSerializer = [AFJSONResponseSerializer serializer];//使用这个将得到的是JSON
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain",nil];
-
+    
     self.sessionDataTask = [manager GET:htmlHref parameters:@{}
-                                                      progress:^(NSProgress * _Nonnull downloadProgress) {
-                                                          
-                                                      } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                                          [XDSUtilities hideHud:hudController.view];
-                                                          if (responseObject && success) {
-                                                              success(YES, responseObject);
-                                                          }
-                                                          
-                                                          
-                                                      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                                          
-                                                          [XDSUtilities hideHud:hudController.view];
-                                                          NSString *errorDetail = [error localizedDescription];
-                                                          NSLog(@"error = %@", errorDetail);
-                                                          NSRange range_0 = [errorDetail rangeOfString:@"The request timed out."];
-                                                          NSRange range_1 = [errorDetail rangeOfString:@"请求超时"];
-                                                          if (range_0.location != NSNotFound || range_1.location != NSNotFound) {
-                                                              [self showFailedHUD:showFailedHUD Failed:kTimeCallOut rootView:hudController.view];
-                                                              errorDetail = kTimeCallOut;
-                                                          }else{
-                                                              [self showFailedHUD:showFailedHUD Failed:kLoadFailed rootView:hudController.view];
-                                                              errorDetail = kLoadFailed;
-                                                          }
-                                                          
-                                                          failed(errorDetail);
-                                                          
-                                                      }];
+                               progress:^(NSProgress * _Nonnull downloadProgress) {
+                                   
+                               } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                   [XDSUtilities hideHud:hudController.view];
+                                   if (responseObject && success) {
+                                       success(YES, responseObject);
+                                   }
+                                   
+                                   
+                               } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                   
+                                   [XDSUtilities hideHud:hudController.view];
+                                   NSString *errorDetail = [error localizedDescription];
+                                   NSLog(@"error = %@", errorDetail);
+                                   NSRange range_0 = [errorDetail rangeOfString:@"The request timed out."];
+                                   NSRange range_1 = [errorDetail rangeOfString:@"请求超时"];
+                                   if (range_0.location != NSNotFound || range_1.location != NSNotFound) {
+                                       [self showFailedHUD:showFailedHUD Failed:kTimeCallOut rootView:hudController.view];
+                                       errorDetail = kTimeCallOut;
+                                   }else{
+                                       [self showFailedHUD:showFailedHUD Failed:kLoadFailed rootView:hudController.view];
+                                       errorDetail = kLoadFailed;
+                                   }
+                                   
+                                   failed(errorDetail);
+                                   
+                               }];
     
     [_sessionDataTask resume];
     
     
     
 }
-    
+
 - (void)showFailedHUD:(BOOL)showFailedHUD Failed:(NSString *)failed rootView:(UIView *)rootView{
     if (showFailedHUD) {
         UIWindow * window = [UIApplication sharedApplication].delegate.window;
         [XDSUtilities showHudFailed:failed rootView:window imageName:nil];
     }
 }
-    
-    
+
+
 #pragma mark - 取消请求
 - (void)cancelRequest{
     if (_hudController) {
@@ -187,8 +188,8 @@
         [_sessionDataTask cancel];
     }
 }
-    
-    
+
+
 - (BOOL)isWebAvailible{//判断网络是否可用
     Reachability * reach = [Reachability reachabilityForInternetConnection];
     switch ([reach currentReachabilityStatus]){
@@ -198,5 +199,5 @@
     }
     return YES;
 }
-    
-    @end
+
+@end

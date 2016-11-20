@@ -34,6 +34,7 @@
 #import "TFHpple.h"
 
 #import "XDSCategoryHeader.h"
+#import "XDSRootModel.h"
 #import "XDSHttpRequest.h"
 #import "XDSUtilities.h"
 #import "XDSRootControllerHeader.h"

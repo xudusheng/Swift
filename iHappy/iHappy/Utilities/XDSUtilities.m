@@ -521,43 +521,20 @@
     return sumNumber.stringValue;
 }
 
-//根据银行编码获取对应的图片
-+ (NSString *)imageWithBankCode:(NSString *)bankCode{
-    if (!bankCode || !bankCode.length) {
-        return @"jjjjj";
-    }
-    if ([bankCode isEqualToString:@"03050000"]) {
-        return @"3_ico_minsheng";
-    }else if ([bankCode isEqualToString:@"03060000"]) {
-        return @"3_ico_guangfa";
-    }else if ([bankCode isEqualToString:@"03090000"]) {
-        return @"3_ico_xingye";
-    }else if ([bankCode isEqualToString:@"03020000"]) {
-        return @"3_ico_zhongxin";
-    }else if ([bankCode isEqualToString:@"03080000"]) {
-        return @"3_ico_zhaohang";
-    }else if ([bankCode isEqualToString:@"03100000"]) {
-        return @"3_ico_pufa";
-    }else if ([bankCode isEqualToString:@"03070000"]) {
-        return @"3_ico_pingan";
-    }else if ([bankCode isEqualToString:@"03040000"]) {
-        return @"3_ico_huaxia";
-    }else if ([bankCode isEqualToString:@"03030000"]) {
-        return @"3_ico_guangda";
-    }else if ([bankCode isEqualToString:@"01050000"]) {
-        return @"3_ico_jianhang";
-    }else if ([bankCode isEqualToString:@"01040000"]) {
-        return @"3_ico_zhonghang";
-    }else if ([bankCode isEqualToString:@"01030000"]) {
-        return @"3_ico_nonghang";
-    }else if ([bankCode isEqualToString:@"01020000"]) {
-        return @"3_ico_gonghang";
-    }else if ([bankCode isEqualToString:@"03010000"]) {
-        return @"3_ico_jiaotong";
-    }else if([bankCode isEqualToString:@"01000000"]){
-        return @"3_ico_youchu";
-    }else{
-        return @"3_ico_bank";
-    }
+//获取字符串的宽度
++ (CGFloat)widthForString:(NSString *)value limitHeight:(CGFloat)limitHeight font:(UIFont *)font{
+    
+    CGSize infoSize = CGSizeMake(CGFLOAT_MAX, limitHeight);
+    NSDictionary *dic = @{NSFontAttributeName : font};
+    CGSize size = [value boundingRectWithSize:infoSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
+    return size.width;
 }
+//获得字符串的高度
++ (CGFloat)heightForString:(NSString *)value limitWidth:(CGFloat)limitWidth font:(UIFont *)font{
+    CGSize infoSize = CGSizeMake(limitWidth, CGFLOAT_MAX);
+    NSDictionary *dic = @{NSFontAttributeName : font};
+    CGSize size = [value boundingRectWithSize:infoSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
+    return size.height;
+}
+
 @end
