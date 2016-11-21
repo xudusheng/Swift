@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)showQ2002;
+
+- (void)showNews;
 
 @end
 

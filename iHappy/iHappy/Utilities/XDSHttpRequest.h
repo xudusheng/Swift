@@ -27,7 +27,16 @@
            showFailedHUD:(BOOL)showFailedHUD
                  success:(void(^)(BOOL success, NSData * htmlData))success
                   failed:(void(^)(NSString * errorDescription))failed;
-    
+
+
+- (void)queryInitialInfoWithUrlString:(NSString *)urlString
+                             reqParam:(NSDictionary *)reqParam
+                        hudController:(UIViewController *)hudController
+                              showHUD:(BOOL)showHUD
+                              HUDText:(NSString *)HUDText
+                        showFailedHUD:(BOOL)showFailedHUD
+                              success:(void(^)(BOOL success, NSDictionary * successResult))success
+                               failed:(void(^)(NSString * errorDescription))failed;
 #pragma mark - 取消请求
 - (void)cancelRequest;
     @end

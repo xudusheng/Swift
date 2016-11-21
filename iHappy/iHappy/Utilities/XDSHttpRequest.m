@@ -44,6 +44,10 @@ NSString *const key = @"huidaibao";
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];//使用这个将得到的是JSON
+
+    [manager.requestSerializer setValue:@"40623ab568c9f719af56d75a499926b0" forHTTPHeaderField:@"X-Bmob-Application-Id"];
+    [manager.requestSerializer setValue:@"b02905ffe9915574dc16200df988aa80" forHTTPHeaderField:@"X-Bmob-REST-API-Key"];
+    
     self.sessionDataTask = [manager GET:urlString parameters:reqParam?reqParam:@{}
                                                       progress:^(NSProgress * _Nonnull downloadProgress) {
                                                           
@@ -117,47 +121,7 @@ NSString *const key = @"huidaibao";
         [XDSUtilities showHud:hudController.view text:HUDText];
         self.hudController = hudController;
     }
-    
 
-    
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//            NSString* url = [htmlHref stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//            NSString* xml = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil];
-//    
-//            NSError * error = nil;
-//            NSData * xmlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url] options:NSDataReadingMappedIfSafe error:&error];
-//            if (!error) {
-//                NSLog(@" ============ %@", [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding]);
-//                [XDSUtilities hideHud:hudController.view];
-//                if (xmlData && success) {
-//                    success(YES, xmlData);
-//                }
-//            }else{
-//                NSLog(@"error = %@", error);
-//                [XDSUtilities hideHud:hudController.view];
-//                NSString *errorDetail = [error localizedDescription];
-//                NSLog(@"error = %@", errorDetail);
-//                NSRange range_0 = [errorDetail rangeOfString:@"The request timed out."];
-//                NSRange range_1 = [errorDetail rangeOfString:@"请求超时"];
-//                if (range_0.location != NSNotFound || range_1.location != NSNotFound) {
-//                    [self showFailedHUD:showFailedHUD Failed:kTimeCallOut rootView:hudController.view];
-//                    errorDetail = kTimeCallOut;
-//                }else{
-//                    [self showFailedHUD:showFailedHUD Failed:kLoadFailed rootView:hudController.view];
-//                    errorDetail = kLoadFailed;
-//                }
-//                
-//                failed(errorDetail);
-//            }
-//    
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [XDSUtilities hideHud:hudController.view];
-//    
-//            });
-//        });
-//    
-//        return;
-    
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
@@ -300,4 +264,82 @@ NSString *const key = @"huidaibao";
     return md;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+- (void)queryInitialInfoWithUrlString:(NSString *)urlString
+                reqParam:(NSDictionary *)reqParam
+           hudController:(UIViewController *)hudController
+                 showHUD:(BOOL)showHUD
+                 HUDText:(NSString *)HUDText
+           showFailedHUD:(BOOL)showFailedHUD
+                 success:(void(^)(BOOL success, NSDictionary * successResult))success
+                  failed:(void(^)(NSString * errorDescription))failed{
+    if (![self isWebAvailible]) {
+        failed(kConnectWebFailed);
+        [self showFailedHUD:showFailedHUD Failed:kConnectWebFailed rootView:hudController.view];
+        return;
+    }
+    
+    
+    if (showHUD) {//显示HUD
+        [XDSUtilities showHud:hudController.view text:HUDText];
+        self.hudController = hudController;
+    }
+    
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];//使用这个将得到的是JSON
+    
+    [manager.requestSerializer setValue:@"40623ab568c9f719af56d75a499926b0" forHTTPHeaderField:@"X-Bmob-Application-Id"];
+    [manager.requestSerializer setValue:@"b02905ffe9915574dc16200df988aa80" forHTTPHeaderField:@"X-Bmob-REST-API-Key"];
+    
+    self.sessionDataTask = [manager GET:urlString parameters:reqParam?reqParam:@{}
+                               progress:^(NSProgress * _Nonnull downloadProgress) {
+                                   
+                               } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                   NSLog(@" ============ %@", responseObject);
+                                   [XDSUtilities hideHud:hudController.view];
+                                   id result = responseObject;
+                                   if (result && [result isKindOfClass:[NSDictionary class]]) {
+                                       NSString * error_code = [XDSUtilities stringFromidString:result[@"error_code"]];
+                                       if ([error_code isEqualToString:@""]) {
+                                           success(YES, result);
+                                       }else{
+                                           [self showFailedHUD:showFailedHUD Failed:@"初始化数据请求失败" rootView:hudController.view];
+                                           failed(@"初始化数据请求失败");
+                                       }
+                                   }else{
+                                       [self showFailedHUD:showFailedHUD Failed:kAnalysisFailed rootView:hudController.view];
+                                       failed(kAnalysisFailed);
+                                   }
+                                   
+                               } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                   
+                                   [XDSUtilities hideHud:hudController.view];
+                                   NSString *errorDetail = [error localizedDescription];
+                                   NSLog(@"error = %@", errorDetail);
+                                   NSRange range_0 = [errorDetail rangeOfString:@"The request timed out."];
+                                   NSRange range_1 = [errorDetail rangeOfString:@"请求超时"];
+                                   if (range_0.location != NSNotFound || range_1.location != NSNotFound) {
+                                       [self showFailedHUD:showFailedHUD Failed:kTimeCallOut rootView:hudController.view];
+                                       errorDetail = kTimeCallOut;
+                                   }else{
+                                       [self showFailedHUD:showFailedHUD Failed:kLoadFailed rootView:hudController.view];
+                                       errorDetail = kLoadFailed;
+                                   }
+                                   
+                                   failed(errorDetail);
+                                   
+                               }];
+    
+    [_sessionDataTask resume];
+}
 @end

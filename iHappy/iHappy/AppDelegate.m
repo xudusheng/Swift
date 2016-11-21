@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "IHYMainViewController.h"
 #import "IHYNewsMainViewController.h"
-
+#import "IHYInitialViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,8 +21,12 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
-    [self showQ2002];
+//    [self showQ2002];
 //    [self showNews];
+    
+    IHYInitialViewController * initialVC = [[IHYInitialViewController alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:initialVC];
+    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     
