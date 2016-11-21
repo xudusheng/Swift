@@ -16,7 +16,7 @@
                  showHUD:(BOOL)showHUD
                  HUDText:(NSString *)HUDText
            showFailedHUD:(BOOL)showFailedHUD
-                 success:(void(^)(NSDictionary * successResult, NSInteger status, NSString * tipMsg))success
+                 success:(void(^)(BOOL success, NSDictionary * successResult))success
                   failed:(void(^)(NSString * errorDescription))failed;
     
     

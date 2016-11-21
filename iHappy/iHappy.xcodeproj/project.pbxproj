@@ -7,14 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A01579F01DE1759F00CD7DDB /* IHYMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01579EF1DE1759F00CD7DDB /* IHYMoviePlayerViewController.m */; };
+		092CAEFA1DE28620008127DA /* IHYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAED71DE2861F008127DA /* IHYMainViewController.m */; };
+		092CAEFB1DE28620008127DA /* IHYViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAED91DE28620008127DA /* IHYViewControllerModel.m */; };
+		092CAEFC1DE28620008127DA /* IHYMovieInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEDD1DE28620008127DA /* IHYMovieInfoModel.m */; };
+		092CAEFD1DE28620008127DA /* IHYMoviePlayButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEDF1DE28620008127DA /* IHYMoviePlayButtonModel.m */; };
+		092CAEFE1DE28620008127DA /* IHYMovieDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEE21DE28620008127DA /* IHYMovieDetailInfoView.m */; };
+		092CAEFF1DE28620008127DA /* IHYMovieDetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092CAEE31DE28620008127DA /* IHYMovieDetailInfoView.xib */; };
+		092CAF001DE28620008127DA /* IHYMovieInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEE51DE28620008127DA /* IHYMovieInfoHeaderView.m */; };
+		092CAF011DE28620008127DA /* IHYMoviePlayButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEE71DE28620008127DA /* IHYMoviePlayButtonCell.m */; };
+		092CAF021DE28620008127DA /* IHYMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEEA1DE28620008127DA /* IHYMovieDetailViewController.m */; };
+		092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEEE1DE28620008127DA /* IHYMovieModel.m */; };
+		092CAF041DE28620008127DA /* IHPMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEF11DE28620008127DA /* IHPMovieCell.m */; };
+		092CAF051DE28620008127DA /* IHPMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092CAEF21DE28620008127DA /* IHPMovieCell.xib */; };
+		092CAF061DE28620008127DA /* IHYMovieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEF51DE28620008127DA /* IHYMovieListViewController.m */; };
+		092CAF071DE28620008127DA /* IHYMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAEF91DE28620008127DA /* IHYMoviePlayerViewController.m */; };
+		092CAF0E1DE28D23008127DA /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAF0A1DE28D23008127DA /* UIView+Extension.m */; };
+		092CAF0F1DE28D23008127DA /* UIViewController+HideNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAF0D1DE28D23008127DA /* UIViewController+HideNavigationBar.m */; };
+		092CAF131DE28D56008127DA /* OCTKeyboardObserverHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAF121DE28D56008127DA /* OCTKeyboardObserverHelper.m */; };
+		092CAF211DE2B1A7008127DA /* IHYNewsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAF201DE2B1A7008127DA /* IHYNewsMainViewController.m */; };
+		092CAF2E1DE2B20F008127DA /* IHYNewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAF291DE2B20F008127DA /* IHYNewsListCell.m */; };
+		092CAF2F1DE2B20F008127DA /* IHYNewsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092CAF2A1DE2B20F008127DA /* IHYNewsListCell.xib */; };
+		092CAF301DE2B20F008127DA /* IHYNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092CAF2D1DE2B20F008127DA /* IHYNewsListViewController.m */; };
+		09F90D6D1DE2BD8600542684 /* IHYNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D6C1DE2BD8600542684 /* IHYNewsModel.m */; };
+		09F90D741DE2C06000542684 /* XDSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D711DE2C06000542684 /* XDSWebViewController.m */; };
+		09F90D751DE2C06000542684 /* XDSWebProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D731DE2C06000542684 /* XDSWebProgressView.m */; };
+		09F90D791DE2D2F600542684 /* IHYNewsMultableImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D771DE2D2F600542684 /* IHYNewsMultableImageCell.m */; };
+		09F90D7A1DE2D2F600542684 /* IHYNewsMultableImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F90D781DE2D2F600542684 /* IHYNewsMultableImageCell.xib */; };
+		09F90D7D1DE2E22200542684 /* IHYInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */; };
 		A01579F31DE1776C00CD7DDB /* ico_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A01579F11DE1776C00CD7DDB /* ico_back@2x.png */; };
 		A01579F41DE1776C00CD7DDB /* ico_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A01579F21DE1776C00CD7DDB /* ico_back@3x.png */; };
-		A01A2E6D1DE1322B005D7096 /* IHYMovieDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A2E6C1DE1322B005D7096 /* IHYMovieDetailInfoView.m */; };
-		A01A2E6F1DE13246005D7096 /* IHYMovieDetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01A2E6E1DE13246005D7096 /* IHYMovieDetailInfoView.xib */; };
-		A01A2E721DE149FC005D7096 /* IHYMovieInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A2E711DE149FC005D7096 /* IHYMovieInfoHeaderView.m */; };
-		A01A2E751DE151A0005D7096 /* IHYMoviePlayButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A2E741DE151A0005D7096 /* IHYMoviePlayButtonModel.m */; };
-		A01A2E781DE1555C005D7096 /* IHYMoviePlayButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01A2E771DE1555C005D7096 /* IHYMoviePlayButtonCell.m */; };
 		A05EB8EB1DE0244300148A5B /* OCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB8D81DE0244300148A5B /* OCAlertView.m */; };
 		A05EB8EC1DE0244300148A5B /* OCControlAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB8DA1DE0244300148A5B /* OCControlAlertView.m */; };
 		A05EB8ED1DE0244300148A5B /* XDSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB8DC1DE0244300148A5B /* XDSKeychain.m */; };
@@ -26,8 +47,6 @@
 		A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB8FD1DE0277E00148A5B /* NSString+Tony.m */; };
 		A05EB9041DE0281D00148A5B /* XDSUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9031DE0281D00148A5B /* XDSUtilities.m */; };
 		A05EB9071DE02D6700148A5B /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9061DE02D6700148A5B /* UIColor+Hex.m */; };
-		A05EB90B1DE035D500148A5B /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB90A1DE035D500148A5B /* RedViewController.m */; };
-		A05EB90E1DE0360D00148A5B /* GreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB90D1DE0360D00148A5B /* GreenViewController.m */; };
 		A05EB91A1DE03B2500148A5B /* XDSRootRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9131DE03B2500148A5B /* XDSRootRequestTableViewController.m */; };
 		A05EB91B1DE03B2500148A5B /* XDSRootRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9151DE03B2500148A5B /* XDSRootRequestViewController.m */; };
 		A05EB91C1DE03B2500148A5B /* XDSRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9171DE03B2500148A5B /* XDSRootTableViewController.m */; };
@@ -36,17 +55,8 @@
 		A05EB9241DE04EF400148A5B /* icon_jiazai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A05EB9221DE04EF400148A5B /* icon_jiazai@2x.png */; };
 		A05EB9251DE04EF400148A5B /* icon_jiazai@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A05EB9231DE04EF400148A5B /* icon_jiazai@3x.png */; };
 		A05EB92B1DE0880000148A5B /* XDSRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB92A1DE0880000148A5B /* XDSRootModel.m */; };
-		A05EB9381DE0896500148A5B /* IHYMovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9371DE0896500148A5B /* IHYMovieModel.m */; };
-		A05EB93C1DE08A3500148A5B /* IHYMovieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB93A1DE08A3500148A5B /* IHYMovieListViewController.m */; };
-		A05EB9411DE08E5400148A5B /* IHPMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB93F1DE08E5400148A5B /* IHPMovieCell.m */; };
-		A05EB9421DE08E5400148A5B /* IHPMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05EB9401DE08E5400148A5B /* IHPMovieCell.xib */; };
-		A05EB9451DE0A79200148A5B /* IHYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9441DE0A79200148A5B /* IHYMainViewController.m */; };
-		A05EB9481DE0A7C800148A5B /* IHYViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9471DE0A7C800148A5B /* IHYViewControllerModel.m */; };
-		A05EB95A1DE0B32F00148A5B /* IHYMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB9591DE0B32F00148A5B /* IHYMovieDetailViewController.m */; };
-		A05EB95D1DE0B38500148A5B /* IHYMovieInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB95C1DE0B38500148A5B /* IHYMovieInfoModel.m */; };
 		A0D46B7B1DE0173500637681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D46B7A1DE0173500637681 /* main.m */; };
 		A0D46B7E1DE0173500637681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D46B7D1DE0173500637681 /* AppDelegate.m */; };
-		A0D46B811DE0173500637681 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D46B801DE0173500637681 /* ViewController.m */; };
 		A0D46B841DE0173500637681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B821DE0173500637681 /* Main.storyboard */; };
 		A0D46B861DE0173500637681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B851DE0173500637681 /* Assets.xcassets */; };
 		A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B871DE0173500637681 /* LaunchScreen.storyboard */; };
@@ -55,20 +65,59 @@
 
 /* Begin PBXFileReference section */
 		02BBD5EB2CAC1F6C99464E60 /* Pods-iHappy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHappy.release.xcconfig"; path = "Pods/Target Support Files/Pods-iHappy/Pods-iHappy.release.xcconfig"; sourceTree = "<group>"; };
+		092CAED61DE2861F008127DA /* IHYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMainViewController.h; sourceTree = "<group>"; };
+		092CAED71DE2861F008127DA /* IHYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMainViewController.m; sourceTree = "<group>"; };
+		092CAED81DE2861F008127DA /* IHYViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYViewControllerModel.h; sourceTree = "<group>"; };
+		092CAED91DE28620008127DA /* IHYViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYViewControllerModel.m; sourceTree = "<group>"; };
+		092CAEDC1DE28620008127DA /* IHYMovieInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieInfoModel.h; sourceTree = "<group>"; };
+		092CAEDD1DE28620008127DA /* IHYMovieInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieInfoModel.m; sourceTree = "<group>"; };
+		092CAEDE1DE28620008127DA /* IHYMoviePlayButtonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMoviePlayButtonModel.h; sourceTree = "<group>"; };
+		092CAEDF1DE28620008127DA /* IHYMoviePlayButtonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMoviePlayButtonModel.m; sourceTree = "<group>"; };
+		092CAEE11DE28620008127DA /* IHYMovieDetailInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieDetailInfoView.h; sourceTree = "<group>"; };
+		092CAEE21DE28620008127DA /* IHYMovieDetailInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieDetailInfoView.m; sourceTree = "<group>"; };
+		092CAEE31DE28620008127DA /* IHYMovieDetailInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHYMovieDetailInfoView.xib; sourceTree = "<group>"; };
+		092CAEE41DE28620008127DA /* IHYMovieInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieInfoHeaderView.h; sourceTree = "<group>"; };
+		092CAEE51DE28620008127DA /* IHYMovieInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieInfoHeaderView.m; sourceTree = "<group>"; };
+		092CAEE61DE28620008127DA /* IHYMoviePlayButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMoviePlayButtonCell.h; sourceTree = "<group>"; };
+		092CAEE71DE28620008127DA /* IHYMoviePlayButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMoviePlayButtonCell.m; sourceTree = "<group>"; };
+		092CAEE91DE28620008127DA /* IHYMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieDetailViewController.h; sourceTree = "<group>"; };
+		092CAEEA1DE28620008127DA /* IHYMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieDetailViewController.m; sourceTree = "<group>"; };
+		092CAEED1DE28620008127DA /* IHYMovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieModel.h; sourceTree = "<group>"; };
+		092CAEEE1DE28620008127DA /* IHYMovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieModel.m; sourceTree = "<group>"; };
+		092CAEF01DE28620008127DA /* IHPMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPMovieCell.h; sourceTree = "<group>"; };
+		092CAEF11DE28620008127DA /* IHPMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPMovieCell.m; sourceTree = "<group>"; };
+		092CAEF21DE28620008127DA /* IHPMovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPMovieCell.xib; sourceTree = "<group>"; };
+		092CAEF41DE28620008127DA /* IHYMovieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieListViewController.h; sourceTree = "<group>"; };
+		092CAEF51DE28620008127DA /* IHYMovieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieListViewController.m; sourceTree = "<group>"; };
+		092CAEF81DE28620008127DA /* IHYMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMoviePlayerViewController.h; sourceTree = "<group>"; };
+		092CAEF91DE28620008127DA /* IHYMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMoviePlayerViewController.m; sourceTree = "<group>"; };
+		092CAF091DE28D23008127DA /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		092CAF0A1DE28D23008127DA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		092CAF0C1DE28D23008127DA /* UIViewController+HideNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HideNavigationBar.h"; sourceTree = "<group>"; };
+		092CAF0D1DE28D23008127DA /* UIViewController+HideNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HideNavigationBar.m"; sourceTree = "<group>"; };
+		092CAF111DE28D56008127DA /* OCTKeyboardObserverHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTKeyboardObserverHelper.h; sourceTree = "<group>"; };
+		092CAF121DE28D56008127DA /* OCTKeyboardObserverHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTKeyboardObserverHelper.m; sourceTree = "<group>"; };
+		092CAF1F1DE2B1A7008127DA /* IHYNewsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYNewsMainViewController.h; sourceTree = "<group>"; };
+		092CAF201DE2B1A7008127DA /* IHYNewsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYNewsMainViewController.m; sourceTree = "<group>"; };
+		092CAF281DE2B20F008127DA /* IHYNewsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYNewsListCell.h; sourceTree = "<group>"; };
+		092CAF291DE2B20F008127DA /* IHYNewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYNewsListCell.m; sourceTree = "<group>"; };
+		092CAF2A1DE2B20F008127DA /* IHYNewsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHYNewsListCell.xib; sourceTree = "<group>"; };
+		092CAF2C1DE2B20F008127DA /* IHYNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYNewsListViewController.h; sourceTree = "<group>"; };
+		092CAF2D1DE2B20F008127DA /* IHYNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYNewsListViewController.m; sourceTree = "<group>"; };
+		09F90D6B1DE2BD8600542684 /* IHYNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYNewsModel.h; sourceTree = "<group>"; };
+		09F90D6C1DE2BD8600542684 /* IHYNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYNewsModel.m; sourceTree = "<group>"; };
+		09F90D701DE2C06000542684 /* XDSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSWebViewController.h; sourceTree = "<group>"; };
+		09F90D711DE2C06000542684 /* XDSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSWebViewController.m; sourceTree = "<group>"; };
+		09F90D721DE2C06000542684 /* XDSWebProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSWebProgressView.h; sourceTree = "<group>"; };
+		09F90D731DE2C06000542684 /* XDSWebProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSWebProgressView.m; sourceTree = "<group>"; };
+		09F90D761DE2D2F600542684 /* IHYNewsMultableImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYNewsMultableImageCell.h; sourceTree = "<group>"; };
+		09F90D771DE2D2F600542684 /* IHYNewsMultableImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYNewsMultableImageCell.m; sourceTree = "<group>"; };
+		09F90D781DE2D2F600542684 /* IHYNewsMultableImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHYNewsMultableImageCell.xib; sourceTree = "<group>"; };
+		09F90D7B1DE2E22200542684 /* IHYInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYInitialViewController.h; sourceTree = "<group>"; };
+		09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYInitialViewController.m; sourceTree = "<group>"; };
 		6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHappy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A01579EE1DE1759F00CD7DDB /* IHYMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMoviePlayerViewController.h; sourceTree = "<group>"; };
-		A01579EF1DE1759F00CD7DDB /* IHYMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMoviePlayerViewController.m; sourceTree = "<group>"; };
 		A01579F11DE1776C00CD7DDB /* ico_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_back@2x.png"; sourceTree = "<group>"; };
 		A01579F21DE1776C00CD7DDB /* ico_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_back@3x.png"; sourceTree = "<group>"; };
-		A01A2E6B1DE1322B005D7096 /* IHYMovieDetailInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieDetailInfoView.h; sourceTree = "<group>"; };
-		A01A2E6C1DE1322B005D7096 /* IHYMovieDetailInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieDetailInfoView.m; sourceTree = "<group>"; };
-		A01A2E6E1DE13246005D7096 /* IHYMovieDetailInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHYMovieDetailInfoView.xib; sourceTree = "<group>"; };
-		A01A2E701DE149FC005D7096 /* IHYMovieInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieInfoHeaderView.h; sourceTree = "<group>"; };
-		A01A2E711DE149FC005D7096 /* IHYMovieInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieInfoHeaderView.m; sourceTree = "<group>"; };
-		A01A2E731DE151A0005D7096 /* IHYMoviePlayButtonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMoviePlayButtonModel.h; sourceTree = "<group>"; };
-		A01A2E741DE151A0005D7096 /* IHYMoviePlayButtonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMoviePlayButtonModel.m; sourceTree = "<group>"; };
-		A01A2E761DE1555C005D7096 /* IHYMoviePlayButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMoviePlayButtonCell.h; sourceTree = "<group>"; };
-		A01A2E771DE1555C005D7096 /* IHYMoviePlayButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMoviePlayButtonCell.m; sourceTree = "<group>"; };
 		A05EB8D71DE0244300148A5B /* OCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAlertView.h; sourceTree = "<group>"; };
 		A05EB8D81DE0244300148A5B /* OCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAlertView.m; sourceTree = "<group>"; };
 		A05EB8D91DE0244300148A5B /* OCControlAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCControlAlertView.h; sourceTree = "<group>"; };
@@ -94,10 +143,6 @@
 		A05EB9051DE02D6700148A5B /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		A05EB9061DE02D6700148A5B /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		A05EB9081DE02ED900148A5B /* XDSCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSCategoryHeader.h; sourceTree = "<group>"; };
-		A05EB9091DE035D500148A5B /* RedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedViewController.h; sourceTree = "<group>"; };
-		A05EB90A1DE035D500148A5B /* RedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedViewController.m; sourceTree = "<group>"; };
-		A05EB90C1DE0360D00148A5B /* GreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenViewController.h; sourceTree = "<group>"; };
-		A05EB90D1DE0360D00148A5B /* GreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenViewController.m; sourceTree = "<group>"; };
 		A05EB9121DE03B2500148A5B /* XDSRootRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSRootRequestTableViewController.h; sourceTree = "<group>"; };
 		A05EB9131DE03B2500148A5B /* XDSRootRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSRootRequestTableViewController.m; sourceTree = "<group>"; };
 		A05EB9141DE03B2500148A5B /* XDSRootRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSRootRequestViewController.h; sourceTree = "<group>"; };
@@ -113,27 +158,10 @@
 		A05EB9231DE04EF400148A5B /* icon_jiazai@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_jiazai@3x.png"; sourceTree = "<group>"; };
 		A05EB9291DE0880000148A5B /* XDSRootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSRootModel.h; sourceTree = "<group>"; };
 		A05EB92A1DE0880000148A5B /* XDSRootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSRootModel.m; sourceTree = "<group>"; };
-		A05EB9361DE0896500148A5B /* IHYMovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieModel.h; sourceTree = "<group>"; };
-		A05EB9371DE0896500148A5B /* IHYMovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieModel.m; sourceTree = "<group>"; };
-		A05EB9391DE08A3500148A5B /* IHYMovieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieListViewController.h; sourceTree = "<group>"; };
-		A05EB93A1DE08A3500148A5B /* IHYMovieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieListViewController.m; sourceTree = "<group>"; };
-		A05EB93E1DE08E5400148A5B /* IHPMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPMovieCell.h; sourceTree = "<group>"; };
-		A05EB93F1DE08E5400148A5B /* IHPMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPMovieCell.m; sourceTree = "<group>"; };
-		A05EB9401DE08E5400148A5B /* IHPMovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPMovieCell.xib; sourceTree = "<group>"; };
-		A05EB9431DE0A79200148A5B /* IHYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMainViewController.h; sourceTree = "<group>"; };
-		A05EB9441DE0A79200148A5B /* IHYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMainViewController.m; sourceTree = "<group>"; };
-		A05EB9461DE0A7C800148A5B /* IHYViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYViewControllerModel.h; sourceTree = "<group>"; };
-		A05EB9471DE0A7C800148A5B /* IHYViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYViewControllerModel.m; sourceTree = "<group>"; };
-		A05EB9581DE0B32F00148A5B /* IHYMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieDetailViewController.h; sourceTree = "<group>"; };
-		A05EB9591DE0B32F00148A5B /* IHYMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieDetailViewController.m; sourceTree = "<group>"; };
-		A05EB95B1DE0B38500148A5B /* IHYMovieInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYMovieInfoModel.h; sourceTree = "<group>"; };
-		A05EB95C1DE0B38500148A5B /* IHYMovieInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYMovieInfoModel.m; sourceTree = "<group>"; };
 		A0D46B761DE0173500637681 /* iHappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iHappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D46B7A1DE0173500637681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D46B7C1DE0173500637681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0D46B7D1DE0173500637681 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0D46B7F1DE0173500637681 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0D46B801DE0173500637681 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A0D46B831DE0173500637681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0D46B851DE0173500637681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D46B881DE0173500637681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,42 +181,210 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A01579DF1DE1756B00CD7DDB /* movieplayer */ = {
+		092CAED51DE2861F008127DA /* Q2002 */ = {
 			isa = PBXGroup;
 			children = (
-				A01579E01DE1756B00CD7DDB /* model */,
-				A01579E31DE1756B00CD7DDB /* view */,
-				A01579E71DE1756B00CD7DDB /* viewController */,
+				092CAED61DE2861F008127DA /* IHYMainViewController.h */,
+				092CAED71DE2861F008127DA /* IHYMainViewController.m */,
+				092CAED81DE2861F008127DA /* IHYViewControllerModel.h */,
+				092CAED91DE28620008127DA /* IHYViewControllerModel.m */,
+				092CAEEB1DE28620008127DA /* movielist */,
+				092CAEDA1DE28620008127DA /* moviedetail */,
+				092CAEF61DE28620008127DA /* movieplayer */,
 			);
-			path = movieplayer;
+			path = Q2002;
 			sourceTree = "<group>";
 		};
-		A01579E01DE1756B00CD7DDB /* model */ = {
+		092CAEDA1DE28620008127DA /* moviedetail */ = {
 			isa = PBXGroup;
 			children = (
+				092CAEDB1DE28620008127DA /* model */,
+				092CAEE01DE28620008127DA /* view */,
+				092CAEE81DE28620008127DA /* viewController */,
+			);
+			path = moviedetail;
+			sourceTree = "<group>";
+		};
+		092CAEDB1DE28620008127DA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEDC1DE28620008127DA /* IHYMovieInfoModel.h */,
+				092CAEDD1DE28620008127DA /* IHYMovieInfoModel.m */,
+				092CAEDE1DE28620008127DA /* IHYMoviePlayButtonModel.h */,
+				092CAEDF1DE28620008127DA /* IHYMoviePlayButtonModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		A01579E31DE1756B00CD7DDB /* view */ = {
+		092CAEE01DE28620008127DA /* view */ = {
 			isa = PBXGroup;
 			children = (
+				092CAEE11DE28620008127DA /* IHYMovieDetailInfoView.h */,
+				092CAEE21DE28620008127DA /* IHYMovieDetailInfoView.m */,
+				092CAEE31DE28620008127DA /* IHYMovieDetailInfoView.xib */,
+				092CAEE41DE28620008127DA /* IHYMovieInfoHeaderView.h */,
+				092CAEE51DE28620008127DA /* IHYMovieInfoHeaderView.m */,
+				092CAEE61DE28620008127DA /* IHYMoviePlayButtonCell.h */,
+				092CAEE71DE28620008127DA /* IHYMoviePlayButtonCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
 		};
-		A01579E71DE1756B00CD7DDB /* viewController */ = {
+		092CAEE81DE28620008127DA /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				A01579EE1DE1759F00CD7DDB /* IHYMoviePlayerViewController.h */,
-				A01579EF1DE1759F00CD7DDB /* IHYMoviePlayerViewController.m */,
+				092CAEE91DE28620008127DA /* IHYMovieDetailViewController.h */,
+				092CAEEA1DE28620008127DA /* IHYMovieDetailViewController.m */,
 			);
 			path = viewController;
+			sourceTree = "<group>";
+		};
+		092CAEEB1DE28620008127DA /* movielist */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEEC1DE28620008127DA /* model */,
+				092CAEEF1DE28620008127DA /* view */,
+				092CAEF31DE28620008127DA /* viewController */,
+			);
+			path = movielist;
+			sourceTree = "<group>";
+		};
+		092CAEEC1DE28620008127DA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEED1DE28620008127DA /* IHYMovieModel.h */,
+				092CAEEE1DE28620008127DA /* IHYMovieModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		092CAEEF1DE28620008127DA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEF01DE28620008127DA /* IHPMovieCell.h */,
+				092CAEF11DE28620008127DA /* IHPMovieCell.m */,
+				092CAEF21DE28620008127DA /* IHPMovieCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		092CAEF31DE28620008127DA /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEF41DE28620008127DA /* IHYMovieListViewController.h */,
+				092CAEF51DE28620008127DA /* IHYMovieListViewController.m */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		092CAEF61DE28620008127DA /* movieplayer */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEF71DE28620008127DA /* viewController */,
+			);
+			path = movieplayer;
+			sourceTree = "<group>";
+		};
+		092CAEF71DE28620008127DA /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				092CAEF81DE28620008127DA /* IHYMoviePlayerViewController.h */,
+				092CAEF91DE28620008127DA /* IHYMoviePlayerViewController.m */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		092CAF081DE28D23008127DA /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				092CAF091DE28D23008127DA /* UIView+Extension.h */,
+				092CAF0A1DE28D23008127DA /* UIView+Extension.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		092CAF0B1DE28D23008127DA /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				092CAF0C1DE28D23008127DA /* UIViewController+HideNavigationBar.h */,
+				092CAF0D1DE28D23008127DA /* UIViewController+HideNavigationBar.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		092CAF101DE28D56008127DA /* KeyboardObserverHelper */ = {
+			isa = PBXGroup;
+			children = (
+				092CAF111DE28D56008127DA /* OCTKeyboardObserverHelper.h */,
+				092CAF121DE28D56008127DA /* OCTKeyboardObserverHelper.m */,
+			);
+			path = KeyboardObserverHelper;
+			sourceTree = "<group>";
+		};
+		092CAF251DE2B20F008127DA /* Newslist */ = {
+			isa = PBXGroup;
+			children = (
+				092CAF261DE2B20F008127DA /* Model */,
+				092CAF271DE2B20F008127DA /* View */,
+				092CAF2B1DE2B20F008127DA /* ViewController */,
+			);
+			path = Newslist;
+			sourceTree = "<group>";
+		};
+		092CAF261DE2B20F008127DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09F90D6B1DE2BD8600542684 /* IHYNewsModel.h */,
+				09F90D6C1DE2BD8600542684 /* IHYNewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		092CAF271DE2B20F008127DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				092CAF281DE2B20F008127DA /* IHYNewsListCell.h */,
+				092CAF291DE2B20F008127DA /* IHYNewsListCell.m */,
+				092CAF2A1DE2B20F008127DA /* IHYNewsListCell.xib */,
+				09F90D761DE2D2F600542684 /* IHYNewsMultableImageCell.h */,
+				09F90D771DE2D2F600542684 /* IHYNewsMultableImageCell.m */,
+				09F90D781DE2D2F600542684 /* IHYNewsMultableImageCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		092CAF2B1DE2B20F008127DA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				092CAF2C1DE2B20F008127DA /* IHYNewsListViewController.h */,
+				092CAF2D1DE2B20F008127DA /* IHYNewsListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		09F90D6E1DE2BF2A00542684 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				09F90D6F1DE2C06000542684 /* WebViewController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		09F90D6F1DE2C06000542684 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09F90D701DE2C06000542684 /* XDSWebViewController.h */,
+				09F90D711DE2C06000542684 /* XDSWebViewController.m */,
+				09F90D721DE2C06000542684 /* XDSWebProgressView.h */,
+				09F90D731DE2C06000542684 /* XDSWebProgressView.m */,
+			);
+			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		A05EB8C61DE0244300148A5B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				092CAF101DE28D56008127DA /* KeyboardObserverHelper */,
 				A05EB9291DE0880000148A5B /* XDSRootModel.h */,
 				A05EB92A1DE0880000148A5B /* XDSRootModel.m */,
 				A05EB8F11DE0256900148A5B /* IPYHeaderFile.h */,
@@ -224,6 +420,8 @@
 		A05EB8F51DE0277E00148A5B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				092CAF081DE28D23008127DA /* UIView */,
+				092CAF0B1DE28D23008127DA /* UIViewController */,
 				A05EB9081DE02ED900148A5B /* XDSCategoryHeader.h */,
 				A05EB8F61DE0277E00148A5B /* CALayer+Addition.h */,
 				A05EB8F71DE0277E00148A5B /* CALayer+Addition.m */,
@@ -242,22 +440,11 @@
 		A05EB90F1DE039D200148A5B /* iNews */ = {
 			isa = PBXGroup;
 			children = (
-				A01579DF1DE1756B00CD7DDB /* movieplayer */,
-				A05EB9491DE0B2C500148A5B /* moviedetail */,
-				A05EB92F1DE0893F00148A5B /* movielist */,
-				A05EB9431DE0A79200148A5B /* IHYMainViewController.h */,
-				A05EB9441DE0A79200148A5B /* IHYMainViewController.m */,
-				A05EB9461DE0A7C800148A5B /* IHYViewControllerModel.h */,
-				A05EB9471DE0A7C800148A5B /* IHYViewControllerModel.m */,
+				092CAF1F1DE2B1A7008127DA /* IHYNewsMainViewController.h */,
+				092CAF201DE2B1A7008127DA /* IHYNewsMainViewController.m */,
+				092CAF251DE2B20F008127DA /* Newslist */,
 			);
 			path = iNews;
-			sourceTree = "<group>";
-		};
-		A05EB9101DE039D200148A5B /* Q2002 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Q2002;
 			sourceTree = "<group>";
 		};
 		A05EB9111DE03B2500148A5B /* XDSRootViewControllers */ = {
@@ -276,88 +463,6 @@
 				A05EB9191DE03B2500148A5B /* XDSRootViewController.m */,
 			);
 			path = XDSRootViewControllers;
-			sourceTree = "<group>";
-		};
-		A05EB92F1DE0893F00148A5B /* movielist */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB9301DE0893F00148A5B /* model */,
-				A05EB9311DE0893F00148A5B /* view */,
-				A05EB9321DE0893F00148A5B /* viewController */,
-			);
-			path = movielist;
-			sourceTree = "<group>";
-		};
-		A05EB9301DE0893F00148A5B /* model */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB9361DE0896500148A5B /* IHYMovieModel.h */,
-				A05EB9371DE0896500148A5B /* IHYMovieModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		A05EB9311DE0893F00148A5B /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB93E1DE08E5400148A5B /* IHPMovieCell.h */,
-				A05EB93F1DE08E5400148A5B /* IHPMovieCell.m */,
-				A05EB9401DE08E5400148A5B /* IHPMovieCell.xib */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		A05EB9321DE0893F00148A5B /* viewController */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB9391DE08A3500148A5B /* IHYMovieListViewController.h */,
-				A05EB93A1DE08A3500148A5B /* IHYMovieListViewController.m */,
-			);
-			path = viewController;
-			sourceTree = "<group>";
-		};
-		A05EB9491DE0B2C500148A5B /* moviedetail */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB94A1DE0B2C500148A5B /* model */,
-				A05EB94D1DE0B2C500148A5B /* view */,
-				A05EB9511DE0B2C500148A5B /* viewController */,
-			);
-			path = moviedetail;
-			sourceTree = "<group>";
-		};
-		A05EB94A1DE0B2C500148A5B /* model */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB95B1DE0B38500148A5B /* IHYMovieInfoModel.h */,
-				A05EB95C1DE0B38500148A5B /* IHYMovieInfoModel.m */,
-				A01A2E731DE151A0005D7096 /* IHYMoviePlayButtonModel.h */,
-				A01A2E741DE151A0005D7096 /* IHYMoviePlayButtonModel.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		A05EB94D1DE0B2C500148A5B /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A01A2E6B1DE1322B005D7096 /* IHYMovieDetailInfoView.h */,
-				A01A2E6C1DE1322B005D7096 /* IHYMovieDetailInfoView.m */,
-				A01A2E6E1DE13246005D7096 /* IHYMovieDetailInfoView.xib */,
-				A01A2E701DE149FC005D7096 /* IHYMovieInfoHeaderView.h */,
-				A01A2E711DE149FC005D7096 /* IHYMovieInfoHeaderView.m */,
-				A01A2E761DE1555C005D7096 /* IHYMoviePlayButtonCell.h */,
-				A01A2E771DE1555C005D7096 /* IHYMoviePlayButtonCell.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		A05EB9511DE0B2C500148A5B /* viewController */ = {
-			isa = PBXGroup;
-			children = (
-				A05EB9581DE0B32F00148A5B /* IHYMovieDetailViewController.h */,
-				A05EB9591DE0B32F00148A5B /* IHYMovieDetailViewController.m */,
-			);
-			path = viewController;
 			sourceTree = "<group>";
 		};
 		A0D46B6D1DE0173500637681 = {
@@ -381,18 +486,15 @@
 		A0D46B781DE0173500637681 /* iHappy */ = {
 			isa = PBXGroup;
 			children = (
+				09F90D6E1DE2BF2A00542684 /* Components */,
 				A05EB8F51DE0277E00148A5B /* Category */,
 				A05EB8C61DE0244300148A5B /* Utilities */,
 				A0D46B7C1DE0173500637681 /* AppDelegate.h */,
 				A0D46B7D1DE0173500637681 /* AppDelegate.m */,
-				A0D46B7F1DE0173500637681 /* ViewController.h */,
-				A0D46B801DE0173500637681 /* ViewController.m */,
-				A05EB9091DE035D500148A5B /* RedViewController.h */,
-				A05EB90A1DE035D500148A5B /* RedViewController.m */,
-				A05EB90C1DE0360D00148A5B /* GreenViewController.h */,
-				A05EB90D1DE0360D00148A5B /* GreenViewController.m */,
+				09F90D7B1DE2E22200542684 /* IHYInitialViewController.h */,
+				09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */,
+				092CAED51DE2861F008127DA /* Q2002 */,
 				A05EB90F1DE039D200148A5B /* iNews */,
-				A05EB9101DE039D200148A5B /* Q2002 */,
 				A0D46B821DE0173500637681 /* Main.storyboard */,
 				A0D46B851DE0173500637681 /* Assets.xcassets */,
 				A0D46B871DE0173500637681 /* LaunchScreen.storyboard */,
@@ -490,15 +592,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092CAF051DE28620008127DA /* IHPMovieCell.xib in Resources */,
 				A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */,
 				A05EB9251DE04EF400148A5B /* icon_jiazai@3x.png in Resources */,
 				A0D46B861DE0173500637681 /* Assets.xcassets in Resources */,
-				A01A2E6F1DE13246005D7096 /* IHYMovieDetailInfoView.xib in Resources */,
 				A0D46B841DE0173500637681 /* Main.storyboard in Resources */,
-				A05EB9421DE08E5400148A5B /* IHPMovieCell.xib in Resources */,
 				A05EB9241DE04EF400148A5B /* icon_jiazai@2x.png in Resources */,
+				092CAEFF1DE28620008127DA /* IHYMovieDetailInfoView.xib in Resources */,
 				A01579F41DE1776C00CD7DDB /* ico_back@3x.png in Resources */,
+				092CAF2F1DE2B20F008127DA /* IHYNewsListCell.xib in Resources */,
 				A01579F31DE1776C00CD7DDB /* ico_back@2x.png in Resources */,
+				09F90D7A1DE2D2F600542684 /* IHYNewsMultableImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,39 +661,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05EB90E1DE0360D00148A5B /* GreenViewController.m in Sources */,
-				A01A2E751DE151A0005D7096 /* IHYMoviePlayButtonModel.m in Sources */,
+				092CAF301DE2B20F008127DA /* IHYNewsListViewController.m in Sources */,
+				092CAEFA1DE28620008127DA /* IHYMainViewController.m in Sources */,
+				092CAF071DE28620008127DA /* IHYMoviePlayerViewController.m in Sources */,
+				092CAF041DE28620008127DA /* IHPMovieCell.m in Sources */,
+				092CAF131DE28D56008127DA /* OCTKeyboardObserverHelper.m in Sources */,
+				092CAF001DE28620008127DA /* IHYMovieInfoHeaderView.m in Sources */,
+				092CAF0F1DE28D23008127DA /* UIViewController+HideNavigationBar.m in Sources */,
+				092CAEFD1DE28620008127DA /* IHYMoviePlayButtonModel.m in Sources */,
+				092CAEFE1DE28620008127DA /* IHYMovieDetailInfoView.m in Sources */,
 				A05EB9041DE0281D00148A5B /* XDSUtilities.m in Sources */,
-				A05EB9411DE08E5400148A5B /* IHPMovieCell.m in Sources */,
 				A05EB8FF1DE0277E00148A5B /* ForbidTextField.m in Sources */,
 				A05EB8EF1DE0244300148A5B /* ZDProgressHUD.m in Sources */,
 				A05EB9211DE03CA000148A5B /* XDSHttpRequest.m in Sources */,
-				A05EB9381DE0896500148A5B /* IHYMovieModel.m in Sources */,
 				A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */,
-				A05EB90B1DE035D500148A5B /* RedViewController.m in Sources */,
-				A01A2E6D1DE1322B005D7096 /* IHYMovieDetailInfoView.m in Sources */,
-				A0D46B811DE0173500637681 /* ViewController.m in Sources */,
-				A05EB9451DE0A79200148A5B /* IHYMainViewController.m in Sources */,
+				092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */,
+				09F90D6D1DE2BD8600542684 /* IHYNewsModel.m in Sources */,
 				A05EB91D1DE03B2500148A5B /* XDSRootViewController.m in Sources */,
 				A05EB8EB1DE0244300148A5B /* OCAlertView.m in Sources */,
+				092CAF0E1DE28D23008127DA /* UIView+Extension.m in Sources */,
+				09F90D741DE2C06000542684 /* XDSWebViewController.m in Sources */,
+				092CAF061DE28620008127DA /* IHYMovieListViewController.m in Sources */,
+				092CAEFC1DE28620008127DA /* IHYMovieInfoModel.m in Sources */,
 				A05EB8ED1DE0244300148A5B /* XDSKeychain.m in Sources */,
-				A05EB93C1DE08A3500148A5B /* IHYMovieListViewController.m in Sources */,
 				A05EB8FE1DE0277E00148A5B /* CALayer+Addition.m in Sources */,
 				A05EB91C1DE03B2500148A5B /* XDSRootTableViewController.m in Sources */,
-				A01A2E781DE1555C005D7096 /* IHYMoviePlayButtonCell.m in Sources */,
 				A0D46B7E1DE0173500637681 /* AppDelegate.m in Sources */,
 				A05EB8EE1DE0244300148A5B /* ZDLoadFailView.m in Sources */,
+				092CAEFB1DE28620008127DA /* IHYViewControllerModel.m in Sources */,
+				09F90D791DE2D2F600542684 /* IHYNewsMultableImageCell.m in Sources */,
+				092CAF021DE28620008127DA /* IHYMovieDetailViewController.m in Sources */,
+				09F90D7D1DE2E22200542684 /* IHYInitialViewController.m in Sources */,
 				A05EB8EC1DE0244300148A5B /* OCControlAlertView.m in Sources */,
+				09F90D751DE2C06000542684 /* XDSWebProgressView.m in Sources */,
 				A05EB91B1DE03B2500148A5B /* XDSRootRequestViewController.m in Sources */,
-				A01A2E721DE149FC005D7096 /* IHYMovieInfoHeaderView.m in Sources */,
-				A05EB95D1DE0B38500148A5B /* IHYMovieInfoModel.m in Sources */,
-				A05EB9481DE0A7C800148A5B /* IHYViewControllerModel.m in Sources */,
+				092CAF211DE2B1A7008127DA /* IHYNewsMainViewController.m in Sources */,
+				092CAF011DE28620008127DA /* IHYMoviePlayButtonCell.m in Sources */,
 				A05EB9071DE02D6700148A5B /* UIColor+Hex.m in Sources */,
 				A0D46B7B1DE0173500637681 /* main.m in Sources */,
-				A01579F01DE1759F00CD7DDB /* IHYMoviePlayerViewController.m in Sources */,
 				A05EB91A1DE03B2500148A5B /* XDSRootRequestTableViewController.m in Sources */,
-				A05EB95A1DE0B32F00148A5B /* IHYMovieDetailViewController.m in Sources */,
 				A05EB92B1DE0880000148A5B /* XDSRootModel.m in Sources */,
+				092CAF2E1DE2B20F008127DA /* IHYNewsListCell.m in Sources */,
 				A05EB9001DE0277E00148A5B /* NSString+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

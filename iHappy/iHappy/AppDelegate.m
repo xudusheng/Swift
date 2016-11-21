@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "IHYMainViewController.h"
-
+#import "IHYNewsMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +18,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+
+    [self showQ2002];
+//    [self showNews];
     
+    [self.window makeKeyAndVisible];
     
+    return YES;
+}
+
+
+- (void)showQ2002{
     NSArray * arr = @[
                       @{@"title":@"电影", @"firstPageURL":@"http://www.q2002.com/type/1.html", @"type":@"0"},
                       @{@"title":@"电视剧", @"firstPageURL":@"http://www.q2002.com/type/2.html", @"type":@"0"},
@@ -38,16 +47,40 @@
         [controllerModels addObject:model];
     }
     
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     IHYMainViewController * mainController = [[IHYMainViewController alloc] init];
     mainController.controllerModels = controllerModels;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainController];
     self.window.rootViewController = nav;
-    [self.window makeKeyAndVisible];
-    
-    return YES;
 }
 
+- (void)showNews{
+//    类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
+//    http://v.juhe.cn/toutiao/index?type=top&key=APPKEY
+//    http://v.juhe.cn/toutiao/index?type=top&key=f2b9c5a8243bc824253119ba09f7759a
+    
+    NSArray * arr = @[
+                      @{@"title":@"头条", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=top&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"社会", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=shehui&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"国内", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=guonei&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"国际", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=guoji&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"娱乐", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=yule&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"体育", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=tiyu&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"军事", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=junshi&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"财经", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=caijing&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      @{@"title":@"时尚", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=shishang&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
+                      ];
+    NSMutableArray * controllerModels = [NSMutableArray arrayWithCapacity:0];
+    for (NSDictionary * dic in arr) {
+        IHYViewControllerModel * model = [[IHYViewControllerModel alloc] init];
+        [model setValuesForKeysWithDictionary:dic];
+        [controllerModels addObject:model];
+    }
+    
+    IHYNewsMainViewController * newsMainVC = [[IHYNewsMainViewController alloc] init];
+    newsMainVC.controllerModels = controllerModels;
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:newsMainVC];
+    self.window.rootViewController = nav;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

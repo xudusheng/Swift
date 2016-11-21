@@ -38,6 +38,34 @@
 #import "XDSHttpRequest.h"
 #import "XDSUtilities.h"
 #import "XDSRootControllerHeader.h"
+#import "XDSWebViewController.h"
+
+
+/**
+ *  单例宏
+ \ 代表下一行也属于宏
+ ## 是分隔符
+ */
+
+#define OCT_SYNTHESIZE_SINGLETON_FOR_CLASS(__class_name__) \
+static __class_name__ *_instance; \
+\
++ (__class_name__ *)shared##__class_name__ \
+{ \
+if (_instance == nil) { \
+_instance = [[self alloc] init]; \
+} \
+return _instance; \
+} \
+\
++ (id)allocWithZone:(NSZone *)zone \
+{ \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+_instance = [super allocWithZone:zone]; \
+}); \
+return _instance; \
+}
 
 
 #endif /* XDSHeaderFile_h */
