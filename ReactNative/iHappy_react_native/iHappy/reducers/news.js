@@ -9,6 +9,7 @@ const initialState = {
     loading: false,//是否正在加载
     newsArray: {},
 };
+
 export default function news(state = initialState, action) {
 
     switch (action.type) {

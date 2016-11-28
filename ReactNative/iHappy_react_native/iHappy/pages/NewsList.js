@@ -13,6 +13,7 @@ import {
     RecyclerViewBackedScrollView,
     Navigator,
     TouchableOpacity,
+    InteractionManager
 } from 'react-native';
 
 import Load from "react-native-loading-gif";
@@ -51,11 +52,12 @@ export default class NewsListView extends Component {
     }
 
     //TODO:事件
-    showDetail() {
+    showDetail(oneNews) {
         this.props.navigator.push({
-            component: View,
+            component: NewsDetailView,
             title: '新闻详情',
-        })
+            passProps: {newsModel: oneNews},
+        });
     }
 
     //TODO:网络请求
@@ -64,7 +66,6 @@ export default class NewsListView extends Component {
         this.setState({
             isClassifyLoading: true,
         });
-        let newsAction = this.props.actions;
 
         console.log('11111111111111111111');
         this.refs.Load.OpenLoad();//显示HUD
@@ -95,7 +96,9 @@ export default class NewsListView extends Component {
 
     //TODO:下拉刷新
     onRefresh(id) {
-        this.props.actions.fetchNewsList('http://www.tngou.net/api/top/list', id);
+        let newsAction = this.props.actions;
+
+        newsAction.fetchNewsList('http://www.tngou.net/api/top/list', id);
 
     }
 
@@ -136,7 +139,6 @@ export default class NewsListView extends Component {
                         <RefreshControl
                             refreshing={news.isRefreshing}
                             onRefresh={() => this.onRefresh(newsID)}
-                            title="Loading..."
                             colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}
                         />
                     }
@@ -172,22 +174,24 @@ export default class NewsListView extends Component {
         let fromname = rowData.fromname;
 
         var view =
-            <View style={styles.cellContentViewStyle}>
+            <TouchableOpacity onPress={()=>this.showDetail(rowData)}>
+                <View style={styles.cellContentViewStyle}>
 
-                <Image source={{uri: img}} style={styles.imageStyle}/>
-                <View style={styles.textViewStyle}>
-                    <Text style={styles.titleStyle}>{title}</Text>
-                    <View style={styles.publishViewStyle}>
-                        <Text style={styles.publishTextStyle}>发布时间：{time}</Text>
-                        <Text style={styles.publishTextStyle}>{fromname}</Text>
+                    <Image source={{uri: img}} style={styles.imageStyle}/>
+                    <View style={styles.textViewStyle}>
+                        <Text style={styles.titleStyle}>{title}</Text>
+                        <View style={styles.publishViewStyle}>
+                            <Text style={styles.publishTextStyle}>发布时间：{time}</Text>
+                            <Text style={styles.publishTextStyle}>{fromname}</Text>
 
+                        </View>
                     </View>
+
                 </View>
-
-            </View>
-
+            </TouchableOpacity>
         return view;
     }
+
 
     render() {
 
@@ -261,7 +265,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'yellow',
         justifyContent: 'space-between',
     },
-    publishTextStyle:{
+    publishTextStyle: {
         color: '#666666',
         fontSize: 12,
 

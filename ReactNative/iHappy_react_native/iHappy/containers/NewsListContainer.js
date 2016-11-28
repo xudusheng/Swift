@@ -7,7 +7,20 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import NewsListView from '../pages/NewsList';
+
 import * as NewsCreators from '../actions/news';
+
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    ListView,
+    RefreshControl,
+    RecyclerViewBackedScrollView,
+    Navigator,
+    TouchableOpacity,
+} from 'react-native';
 
 class NewsListContainer extends Component {
     componentDidMount() {
@@ -15,9 +28,10 @@ class NewsListContainer extends Component {
 
     }
 
-    render(){
+    render() {
+
+        //容器接收action和state，并将这两个参数传递给NewsListView
         return (
-            //容器接收action和state，并将这两个参数传递给NewsListView
             <NewsListView {...this.props}/>
         );
     }
@@ -29,7 +43,7 @@ class NewsListContainer extends Component {
 function mapStateToProps(state) {
     return {
         // movieReducer在reducer/index.js中定义
-        news: state.news,
+        news: state.newsReducer,
     };
 }
 
