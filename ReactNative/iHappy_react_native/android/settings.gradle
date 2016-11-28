@@ -1,0 +1,3 @@
+rootProject.name = 'iHappy_react_native'
+
+include ':app'

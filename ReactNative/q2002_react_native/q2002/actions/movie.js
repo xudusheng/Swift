@@ -32,7 +32,6 @@ export function clearSearchResult() {//清空搜索结果
 
 
 //TODO:网络请求
-
 let htmlRequest = (fetchurl, typeId, page)=> {
     let isLoadMore = (page > 1);
     let isRefreshing = !isLoadMore;
