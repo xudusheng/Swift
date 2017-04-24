@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2208DC81EAE354B0035F08E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2208DC71EAE354B0035F08E /* main.m */; };
+		A2208DCB1EAE354B0035F08E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2208DCA1EAE354B0035F08E /* AppDelegate.m */; };
+		A2208DD11EAE354B0035F08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2208DCF1EAE354B0035F08E /* Main.storyboard */; };
+		A2208DD31EAE354B0035F08E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2208DD21EAE354B0035F08E /* Assets.xcassets */; };
+		A2208DDC1EAE37050035F08E /* PKGMasterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2208DDB1EAE37050035F08E /* PKGMasterCollectionViewController.m */; };
+		A2208DE31EAE37BE0035F08E /* PKGCommontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2208DE11EAE37BE0035F08E /* PKGCommontCell.m */; };
+		A2208DE61EAE40D00035F08E /* PKGCommontCellInfoOn.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2208DE51EAE40D00035F08E /* PKGCommontCellInfoOn.xib */; };
+		A2208DE81EAE40FC0035F08E /* PKGCommontCellInfoRight.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2208DE71EAE40FC0035F08E /* PKGCommontCellInfoRight.xib */; };
+		A2208DEA1EAE41330035F08E /* PKGCommontCellInfoBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2208DE91EAE41330035F08E /* PKGCommontCellInfoBottom.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2208DC31EAE354B0035F08E /* AppleTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2208DC71EAE354B0035F08E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2208DC91EAE354B0035F08E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A2208DCA1EAE354B0035F08E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A2208DD01EAE354B0035F08E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2208DD21EAE354B0035F08E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2208DD41EAE354B0035F08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2208DDA1EAE37050035F08E /* PKGMasterCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKGMasterCollectionViewController.h; sourceTree = "<group>"; };
+		A2208DDB1EAE37050035F08E /* PKGMasterCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKGMasterCollectionViewController.m; sourceTree = "<group>"; };
+		A2208DE01EAE37BE0035F08E /* PKGCommontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKGCommontCell.h; sourceTree = "<group>"; };
+		A2208DE11EAE37BE0035F08E /* PKGCommontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKGCommontCell.m; sourceTree = "<group>"; };
+		A2208DE51EAE40D00035F08E /* PKGCommontCellInfoOn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKGCommontCellInfoOn.xib; sourceTree = "<group>"; };
+		A2208DE71EAE40FC0035F08E /* PKGCommontCellInfoRight.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKGCommontCellInfoRight.xib; sourceTree = "<group>"; };
+		A2208DE91EAE41330035F08E /* PKGCommontCellInfoBottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKGCommontCellInfoBottom.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2208DC01EAE354A0035F08E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2208DBA1EAE354A0035F08E = {
+			isa = PBXGroup;
+			children = (
+				A2208DC51EAE354B0035F08E /* AppleTV */,
+				A2208DC41EAE354B0035F08E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2208DC41EAE354B0035F08E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2208DC31EAE354B0035F08E /* AppleTV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2208DC51EAE354B0035F08E /* AppleTV */ = {
+			isa = PBXGroup;
+			children = (
+				A2208DC91EAE354B0035F08E /* AppDelegate.h */,
+				A2208DCA1EAE354B0035F08E /* AppDelegate.m */,
+				A2208DDA1EAE37050035F08E /* PKGMasterCollectionViewController.h */,
+				A2208DDB1EAE37050035F08E /* PKGMasterCollectionViewController.m */,
+				A2208DE01EAE37BE0035F08E /* PKGCommontCell.h */,
+				A2208DE11EAE37BE0035F08E /* PKGCommontCell.m */,
+				A2208DE51EAE40D00035F08E /* PKGCommontCellInfoOn.xib */,
+				A2208DE71EAE40FC0035F08E /* PKGCommontCellInfoRight.xib */,
+				A2208DE91EAE41330035F08E /* PKGCommontCellInfoBottom.xib */,
+				A2208DCF1EAE354B0035F08E /* Main.storyboard */,
+				A2208DD21EAE354B0035F08E /* Assets.xcassets */,
+				A2208DD41EAE354B0035F08E /* Info.plist */,
+				A2208DC61EAE354B0035F08E /* Supporting Files */,
+			);
+			path = AppleTV;
+			sourceTree = "<group>";
+		};
+		A2208DC61EAE354B0035F08E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2208DC71EAE354B0035F08E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2208DC21EAE354A0035F08E /* AppleTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2208DD71EAE354B0035F08E /* Build configuration list for PBXNativeTarget "AppleTV" */;
+			buildPhases = (
+				A2208DBF1EAE354A0035F08E /* Sources */,
+				A2208DC01EAE354A0035F08E /* Frameworks */,
+				A2208DC11EAE354A0035F08E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleTV;
+			productName = AppleTV;
+			productReference = A2208DC31EAE354B0035F08E /* AppleTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2208DBB1EAE354A0035F08E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Hmily;
+				TargetAttributes = {
+					A2208DC21EAE354A0035F08E = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A2208DBE1EAE354A0035F08E /* Build configuration list for PBXProject "AppleTV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A2208DBA1EAE354A0035F08E;
+			productRefGroup = A2208DC41EAE354B0035F08E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2208DC21EAE354A0035F08E /* AppleTV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2208DC11EAE354A0035F08E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2208DD31EAE354B0035F08E /* Assets.xcassets in Resources */,
+				A2208DEA1EAE41330035F08E /* PKGCommontCellInfoBottom.xib in Resources */,
+				A2208DE61EAE40D00035F08E /* PKGCommontCellInfoOn.xib in Resources */,
+				A2208DE81EAE40FC0035F08E /* PKGCommontCellInfoRight.xib in Resources */,
+				A2208DD11EAE354B0035F08E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2208DBF1EAE354A0035F08E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2208DDC1EAE37050035F08E /* PKGMasterCollectionViewController.m in Sources */,
+				A2208DCB1EAE354B0035F08E /* AppDelegate.m in Sources */,
+				A2208DE31EAE37BE0035F08E /* PKGCommontCell.m in Sources */,
+				A2208DC81EAE354B0035F08E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A2208DCF1EAE354B0035F08E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2208DD01EAE354B0035F08E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A2208DD51EAE354B0035F08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		A2208DD61EAE354B0035F08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A2208DD81EAE354B0035F08E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = AppleTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.AppleTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A2208DD91EAE354B0035F08E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = AppleTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.AppleTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2208DBE1EAE354A0035F08E /* Build configuration list for PBXProject "AppleTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2208DD51EAE354B0035F08E /* Debug */,
+				A2208DD61EAE354B0035F08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2208DD71EAE354B0035F08E /* Build configuration list for PBXNativeTarget "AppleTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2208DD81EAE354B0035F08E /* Debug */,
+				A2208DD91EAE354B0035F08E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2208DBB1EAE354A0035F08E /* Project object */;
+}
