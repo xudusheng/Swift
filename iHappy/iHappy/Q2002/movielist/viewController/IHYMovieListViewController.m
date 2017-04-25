@@ -29,6 +29,7 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
     [self createMovieListViewControllerUI];
 }
 
+
 #pragma mark - UI相关
 - (void)createMovieListViewControllerUI{
     self.view.backgroundColor = [UIColor whiteColor];
@@ -57,6 +58,7 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
     _movieCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchMovieListTop)];
     _movieCollectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     [_movieCollectionView.mj_header beginRefreshing];
+    
 }
 
 #pragma mark - 网络请求

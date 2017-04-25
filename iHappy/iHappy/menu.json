@@ -1,5 +1,9 @@
 {
     "rooturl":"http://www.q2002.com/",
+    "forceUpdate":{
+        "enable":false,
+        "isForce":false,
+    },
     "menus":[
              {
              "title":"首页",

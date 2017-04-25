@@ -11,7 +11,7 @@
 #import "IHYNewsMainViewController.h"
 #import "IHYInitialViewController.h"
 #import "IHPConfigManager.h"
-
+#import "IHPConfigModel.h"
 @interface AppDelegate ()
 
 @end
@@ -60,14 +60,11 @@
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"menu" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-    
     NSError* err = nil;
-
-    IHPConfigManager *manager = [[IHPConfigManager alloc] initWithDictionary:dict error:&err];
-//    IHPMenuModel *menuModel = [[IHPMenuModel alloc] initWithDictionary:dict error:&err];
-    
-    NSLog(@"dict = %@", dict);
+    IHPConfigModel *configModel = [[IHPConfigModel alloc] initWithData:data error:&err];
+    if (!err) {
+        [[IHPConfigManager shareManager] setConfigModel:configModel];
+    }
 }
 
 - (void)showNews{

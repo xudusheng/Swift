@@ -8,12 +8,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IHPMenuModel.h"
-@protocol IHPMenuModel;
+#import "IHPConfigModel.h"
+@class IHPMenuModel;
 
 @interface IHPConfigManager : JSONModel
 
-@property (copy, nonatomic) NSString *rooturl;
-@property (strong, nonatomic) NSArray<IHPMenuModel> *menus;
++ (instancetype)shareManager;
+- (void)setConfigModel:(IHPConfigModel *)configModel;
+
+@property (copy, nonatomic, readonly) NSString *rooturl;
+@property (strong, nonatomic, readonly) IHPForceUpdateModel *forceUpdate;
+@property (strong, nonatomic, readonly) NSArray<IHPMenuModel *> *menus;
 
 @end

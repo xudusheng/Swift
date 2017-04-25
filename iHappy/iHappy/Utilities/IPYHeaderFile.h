@@ -41,6 +41,7 @@
 #import "XDSRootControllerHeader.h"
 #import "XDSWebViewController.h"
 
+#import "IHPConfigManager.h"
 
 /**
  *  单例宏
