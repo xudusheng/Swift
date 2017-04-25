@@ -10,6 +10,8 @@
 #import "IHYMainViewController.h"
 #import "IHYNewsMainViewController.h"
 #import "IHYInitialViewController.h"
+#import "IHPConfigManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,12 +23,12 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
-//    [self showQ2002];
+    [self showQ2002];
 //    [self showNews];
     
-    IHYInitialViewController * initialVC = [[IHYInitialViewController alloc] init];
-    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:initialVC];
-    self.window.rootViewController = nav;
+//    IHYInitialViewController * initialVC = [[IHYInitialViewController alloc] init];
+//    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:initialVC];
+//    self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
     
@@ -55,6 +57,17 @@
     mainController.controllerModels = controllerModels;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainController];
     self.window.rootViewController = nav;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"menu" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSError* err = nil;
+
+    IHPConfigManager *manager = [[IHPConfigManager alloc] initWithDictionary:dict error:&err];
+//    IHPMenuModel *menuModel = [[IHPMenuModel alloc] initWithDictionary:dict error:&err];
+    
+    NSLog(@"dict = %@", dict);
 }
 
 - (void)showNews{

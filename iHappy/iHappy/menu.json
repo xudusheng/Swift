@@ -1,0 +1,36 @@
+{
+    "rooturl":"http://www.q2002.com/",
+    "menus":[
+             {
+             "title":"首页",
+             "subMenus":[
+                         {"title":"电影", "url":"/type/1.html", "type":"0"},
+                         {"title":"电视剧", "url":"/type/2.html", "type":"0"},
+                         {"title":"动漫", "url":"/type/7.html", "type":"0"},
+                         {"title":"音乐", "url":"/type/6.html", "type":"0"},
+                         {"title":"综艺", "url":"/type/4.html", "type":"0"},
+                         {"title":"福利", "url":"/type/3.html", "type":"0"},
+                         {"title":"美图", "url":"/type/20.html", "type":"1"},
+                         ],
+             },
+             
+             {
+             "title":"排行榜",
+             "subMenus":[
+                         {"title":"电影", "url":"/hot.html", "type":"0"},
+                         {"title":"电视剧", "url":"/hot/tv.html", "type":"0"},
+                         {"title":"动漫", "url":"/hot/dm.html", "type":"0"},
+                         {"title":"福利", "url":"/hot/fl.html", "type":"0"},
+                         {"title":"恐怖", "url":"/hot/kb.html", "type":"0"}
+                         ],
+             
+             },
+             
+             {
+             "title":"新片",
+             "subMenus":[
+                         {"title":"新片", "url":"new.html", "type":"0"},
+                         ],
+             
+             }]
+}

@@ -24,6 +24,7 @@
 
 
 #pragma mark - 第三方库
+#import "JSONModelLib.h"
 #import "Masonry.h"
 #import "JSONKit.h"
 #import "Reachability.h"

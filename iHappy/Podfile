@@ -10,7 +10,8 @@ pod 'MJRefresh', '~> 3.0.2'
 pod 'Masonry', '~> 0.6.3'
 pod 'IQKeyboardManager', '~> 3.3.2'
 pod 'MWPhotoBrowser', '~> 2.1.2'
-
+pod 'YYModel', '~> 1.0.4'
+pod 'JSONModel'
 pod 'WMPageController'
 
 

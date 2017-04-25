@@ -61,6 +61,11 @@
 		A0D46B861DE0173500637681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B851DE0173500637681 /* Assets.xcassets */; };
 		A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B871DE0173500637681 /* LaunchScreen.storyboard */; };
 		E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */; };
+		FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1A8C2C1EAC1FD900E66FF8 /* menu.json */; };
+		FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */; };
+		FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */; };
+		FC1A8C3D1EAC298800E66FF8 /* IHPConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */; };
+		FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +172,14 @@
 		A0D46B881DE0173500637681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0D46B8A1DE0173500637681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDF28F2EE953D3A78F924489 /* Pods-iHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHappy/Pods-iHappy.debug.xcconfig"; sourceTree = "<group>"; };
+		FC1A8C2C1EAC1FD900E66FF8 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		FC1A8C351EAC255900E66FF8 /* IHPSubMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPSubMenuModel.h; sourceTree = "<group>"; };
+		FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPSubMenuModel.m; sourceTree = "<group>"; };
+		FC1A8C381EAC296D00E66FF8 /* IHPMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPMenuModel.h; sourceTree = "<group>"; };
+		FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPMenuModel.m; sourceTree = "<group>"; };
+		FC1A8C3B1EAC298800E66FF8 /* IHPConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPConfigManager.h; sourceTree = "<group>"; };
+		FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPConfigManager.m; sourceTree = "<group>"; };
+		FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */,
 				E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +256,7 @@
 		092CAEEB1DE28620008127DA /* movielist */ = {
 			isa = PBXGroup;
 			children = (
+				FC1A8C2E1EAC213800E66FF8 /* Manager */,
 				092CAEEC1DE28620008127DA /* model */,
 				092CAEEF1DE28620008127DA /* view */,
 				092CAEF31DE28620008127DA /* viewController */,
@@ -491,6 +506,7 @@
 				A05EB8C61DE0244300148A5B /* Utilities */,
 				A0D46B7C1DE0173500637681 /* AppDelegate.h */,
 				A0D46B7D1DE0173500637681 /* AppDelegate.m */,
+				FC1A8C2C1EAC1FD900E66FF8 /* menu.json */,
 				09F90D7B1DE2E22200542684 /* IHYInitialViewController.h */,
 				09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */,
 				092CAED51DE2861F008127DA /* Q2002 */,
@@ -525,9 +541,23 @@
 		BA0789C7B7ED35F85C150384 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */,
 				6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC1A8C2E1EAC213800E66FF8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FC1A8C3B1EAC298800E66FF8 /* IHPConfigManager.h */,
+				FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */,
+				FC1A8C381EAC296D00E66FF8 /* IHPMenuModel.h */,
+				FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */,
+				FC1A8C351EAC255900E66FF8 /* IHPSubMenuModel.h */,
+				FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +628,7 @@
 				A0D46B861DE0173500637681 /* Assets.xcassets in Resources */,
 				A0D46B841DE0173500637681 /* Main.storyboard in Resources */,
 				A05EB9241DE04EF400148A5B /* icon_jiazai@2x.png in Resources */,
+				FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */,
 				092CAEFF1DE28620008127DA /* IHYMovieDetailInfoView.xib in Resources */,
 				A01579F41DE1776C00CD7DDB /* ico_back@3x.png in Resources */,
 				092CAF2F1DE2B20F008127DA /* IHYNewsListCell.xib in Resources */,
@@ -661,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */,
 				092CAF301DE2B20F008127DA /* IHYNewsListViewController.m in Sources */,
 				092CAEFA1DE28620008127DA /* IHYMainViewController.m in Sources */,
 				092CAF071DE28620008127DA /* IHYMoviePlayerViewController.m in Sources */,
@@ -677,6 +709,7 @@
 				A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */,
 				092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */,
 				09F90D6D1DE2BD8600542684 /* IHYNewsModel.m in Sources */,
+				FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */,
 				A05EB91D1DE03B2500148A5B /* XDSRootViewController.m in Sources */,
 				A05EB8EB1DE0244300148A5B /* OCAlertView.m in Sources */,
 				092CAF0E1DE28D23008127DA /* UIView+Extension.m in Sources */,
@@ -701,6 +734,7 @@
 				A0D46B7B1DE0173500637681 /* main.m in Sources */,
 				A05EB91A1DE03B2500148A5B /* XDSRootRequestTableViewController.m in Sources */,
 				A05EB92B1DE0880000148A5B /* XDSRootModel.m in Sources */,
+				FC1A8C3D1EAC298800E66FF8 /* IHPConfigManager.m in Sources */,
 				092CAF2E1DE2B20F008127DA /* IHYNewsListCell.m in Sources */,
 				A05EB9001DE0277E00148A5B /* NSString+Helper.m in Sources */,
 			);
