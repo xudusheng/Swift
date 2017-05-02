@@ -49,7 +49,7 @@
 - (void)check:(NSString *)version{
     NSString * objectId = [version compare:@"1.0.1"] == NSOrderedSame ? @"p3GRIIIM" : @"OEQv7779";
     
-//    NSString * url = [NSString stringWithFormat:@"https://api.bmob.cn/1/classes/Config?where={\"version\":\"%@\"}", version];
+// NSString * url = [NSString stringWithFormat:@"https://api.bmob.cn/1/classes/Config?where={\"version\":\"%@\"}", version];
 
     NSString * url = @"https://api.bmob.cn/1/classes/Config/";
     url = [url stringByAppendingString:objectId];

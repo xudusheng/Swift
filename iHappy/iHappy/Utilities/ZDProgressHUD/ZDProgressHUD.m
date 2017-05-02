@@ -5,7 +5,7 @@
 //
 
 #import "ZDProgressHUD.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 #if __has_feature(objc_arc)//如果是ARC自动内存管理情况下
 	#define ZD_AUTORELEASE(exp) exp

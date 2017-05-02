@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XDSSideMenu.h"
+#import "IHPMenuViewController.h"
+#import "IHYMainViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic, strong) XDSSideMenu* mainmeunVC;
+@property (nonatomic, strong) IHPMenuViewController *leftMenu;
+@property (nonatomic, strong) IHYMainViewController * contentController;
+
 
 - (void)showQ2002;
 

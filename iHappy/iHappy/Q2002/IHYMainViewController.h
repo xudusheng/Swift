@@ -10,6 +10,6 @@
 #import "IHYViewControllerModel.h"
 @interface IHYMainViewController : WMPageController
     
-@property (copy, nonatomic) NSArray<IHYViewControllerModel *> * controllerModels;
+@property (strong, nonatomic) IHPMenuModel *menuModel;
     
 @end
