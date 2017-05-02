@@ -7,7 +7,7 @@
 //
 
 #import "IHYMoviePlayerViewController.h"
-
+#import <JavaScriptCore/JavaScriptCore.h>
 @interface IHYMoviePlayerViewController ()<UIWebViewDelegate>
 @property (strong, nonatomic) UIWebView * webView;
 @end
@@ -104,6 +104,13 @@
             NSLog(@"erorr= 这里有脚本请求");
 
         }
+    }else{
+        NSString *scripString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        JSContext *context = [[JSContext alloc] init];
+        [context evaluateScript:scripString];
+        JSValue *function = context[@"sta"];
+        JSValue *result = [function callWithArguments:@[]];
+        NSLog(@"result= %@", result);
     }
 
 }

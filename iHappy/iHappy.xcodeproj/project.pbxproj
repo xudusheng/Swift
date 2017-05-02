@@ -60,6 +60,7 @@
 		A0D46B841DE0173500637681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B821DE0173500637681 /* Main.storyboard */; };
 		A0D46B861DE0173500637681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B851DE0173500637681 /* Assets.xcassets */; };
 		A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B871DE0173500637681 /* LaunchScreen.storyboard */; };
+		A24B53CD1EB941BE005D34C6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */; };
 		E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */; };
 		FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1A8C2C1EAC1FD900E66FF8 /* menu.json */; };
 		FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */; };
@@ -176,6 +177,7 @@
 		A0D46B851DE0173500637681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D46B881DE0173500637681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0D46B8A1DE0173500637681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		DDF28F2EE953D3A78F924489 /* Pods-iHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHappy/Pods-iHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		FC1A8C2C1EAC1FD900E66FF8 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		FC1A8C351EAC255900E66FF8 /* IHPSubMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPSubMenuModel.h; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24B53CD1EB941BE005D34C6 /* JavaScriptCore.framework in Frameworks */,
 				FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */,
 				E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */,
 			);
@@ -559,6 +562,7 @@
 		BA0789C7B7ED35F85C150384 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */,
 				FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */,
 				6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */,
 			);
