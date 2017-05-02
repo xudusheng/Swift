@@ -84,8 +84,7 @@
                                                    success:^(BOOL success, NSData * htmlData) {
                                                        NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
 //                                                       [weakSelf detailHtmlData:htmlData];
-                      
-                                                       
+                                                       [weakSelf stripVideoSrc:htmlData];
                                                    } failed:^(NSString *errorDescription) {
                                                        
                                                    }];
@@ -93,6 +92,21 @@
     }
 }
 
+- (void)stripVideoSrc:(NSData *)data{
+    TFHpple * hpp = [[TFHpple alloc] initWithHTMLData:data];
+    TFHppleElement * video = [hpp searchWithXPathQuery:@"//video"].firstObject;
+    if (video != nil) {
+        NSString * videoSrc = [video objectForKey:@"src"];
+        NSURL *url = [NSURL URLWithString:videoSrc];
+        if (url) {
+            NSLog(@"videoSrc = %@", videoSrc);
+        }else{
+            NSLog(@"erorr= 这里有脚本请求");
+
+        }
+    }
+
+}
 
 #pragma mark - 内存管理相关
 - (void)moviePlayerViewControllerDataInit{
