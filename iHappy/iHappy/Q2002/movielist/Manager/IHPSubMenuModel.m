@@ -7,7 +7,15 @@
 //
 
 #import "IHPSubMenuModel.h"
+@interface IHPSubMenuModel ()
 
+//@property (strong, nonatomic) NSString *firstPageURL;
+
+@end
 @implementation IHPSubMenuModel
+
+- (NSString *)firstPageURL{
+    return [[IHPConfigManager shareManager].rooturl stringByAppendingString:_url];
+}
 
 @end

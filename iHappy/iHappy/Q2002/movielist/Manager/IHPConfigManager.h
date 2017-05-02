@@ -14,10 +14,9 @@
 @interface IHPConfigManager : JSONModel
 
 + (instancetype)shareManager;
-- (void)setConfigModel:(IHPConfigModel *)configModel;
 
-@property (copy, nonatomic, readonly) NSString *rooturl;
-@property (strong, nonatomic, readonly) IHPForceUpdateModel *forceUpdate;
-@property (strong, nonatomic, readonly) NSArray<IHPMenuModel *> *menus;
+@property (nonatomic, readonly) NSString *rooturl;
+@property (nonatomic, readonly) IHPForceUpdateModel *forceUpdate;
+@property (nonatomic, readonly) NSArray<IHPMenuModel *> *menus;
 
 @end

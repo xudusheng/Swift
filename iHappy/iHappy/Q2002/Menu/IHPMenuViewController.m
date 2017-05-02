@@ -7,7 +7,7 @@
 //
 
 #import "IHPMenuViewController.h"
-
+#import "AppDelegate.h"
 @interface IHPMenuViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) UITableView *menuTable;
 @property (copy, nonatomic) NSArray *menuList;
@@ -49,6 +49,18 @@ static NSString *kMenuTableViewCellIdentifier = @"MenuTableViewCell";
     cell.textLabel.text = theMenu.title;
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [delegate.mainmeunVC hideMenuViewController];
+    
+    IHPMenuModel *theMenu = _menuList[indexPath.row];
+    delegate.contentController.menuModel = theMenu;
+}
+
+
+#pragma mark - XDSSideMenuDelegate
 
 
 #pragma mark - 点击事件处理

@@ -42,6 +42,10 @@
 #import "XDSWebViewController.h"
 
 #import "IHPConfigManager.h"
+#import "IHPConfigManager.h"
+#import "IHPConfigModel.h"
+#import "IHYMovieModel.h"
+#import "IHPSubMenuModel.h"
 
 /**
  *  单例宏

@@ -20,4 +20,6 @@ typedef NS_ENUM(NSInteger, IHPSubMenuType) {
 
 @property (assign, nonatomic) IHPSubMenuType type;
 
+- (NSString *)firstPageURL;
+
 @end

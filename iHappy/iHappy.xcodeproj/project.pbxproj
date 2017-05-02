@@ -66,6 +66,7 @@
 		FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */; };
 		FC1A8C3D1EAC298800E66FF8 /* IHPConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */; };
 		FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */; };
+		FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */; };
 		FCAFC60E1EAED74900B48C83 /* XDSSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC60D1EAED74900B48C83 /* XDSSideMenu.m */; };
 		FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC6101EAED7DF00B48C83 /* IHPConfigModel.m */; };
 		FCAFC6141EAEDB8700B48C83 /* IHPForceUpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC6131EAEDB8700B48C83 /* IHPForceUpdateModel.m */; };
@@ -184,6 +185,8 @@
 		FC1A8C3B1EAC298800E66FF8 /* IHPConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPConfigManager.h; sourceTree = "<group>"; };
 		FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPConfigManager.m; sourceTree = "<group>"; };
 		FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FCAEADD11EB4D3EA006FB6B5 /* IHPXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPXMLNode.h; sourceTree = "<group>"; };
+		FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPXMLNode.m; sourceTree = "<group>"; };
 		FCAFC60C1EAED74900B48C83 /* XDSSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSSideMenu.h; sourceTree = "<group>"; };
 		FCAFC60D1EAED74900B48C83 /* XDSSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSSideMenu.m; sourceTree = "<group>"; };
 		FCAFC60F1EAED7DF00B48C83 /* IHPConfigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPConfigModel.h; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 		092CAED51DE2861F008127DA /* Q2002 */ = {
 			isa = PBXGroup;
 			children = (
+				FCAEADD01EB4D3C5006FB6B5 /* Model */,
 				092CAED61DE2861F008127DA /* IHYMainViewController.h */,
 				092CAED71DE2861F008127DA /* IHYMainViewController.m */,
 				092CAED81DE2861F008127DA /* IHYViewControllerModel.h */,
@@ -578,6 +582,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		FCAEADD01EB4D3C5006FB6B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCAEADD11EB4D3EA006FB6B5 /* IHPXMLNode.h */,
+				FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FCAFC6061EAED5C300B48C83 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,6 +764,7 @@
 				A05EB8FF1DE0277E00148A5B /* ForbidTextField.m in Sources */,
 				A05EB8EF1DE0244300148A5B /* ZDProgressHUD.m in Sources */,
 				A05EB9211DE03CA000148A5B /* XDSHttpRequest.m in Sources */,
+				FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */,
 				A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */,
 				092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */,
 				09F90D6D1DE2BD8600542684 /* IHYNewsModel.m in Sources */,

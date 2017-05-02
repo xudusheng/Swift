@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XDSSideMenu.h"
+@interface IHPMenuViewController : UIViewController <XDSSideMenuDelegate>
 
-@interface IHPMenuViewController : UIViewController
+@property (copy, nonatomic) NSArray<IHPMenuModel *> *menus;
 
 @end

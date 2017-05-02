@@ -12,6 +12,7 @@
 #import "IHYInitialViewController.h"
 #import "IHPConfigManager.h"
 #import "IHPConfigModel.h"
+#import "IHPMenuViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -37,6 +38,9 @@
 
 
 - (void)showQ2002{
+
+    
+    
     NSArray * arr = @[
                       @{@"title":@"电影", @"firstPageURL":@"http://www.q2002.com/type/1.html", @"type":@"0"},
                       @{@"title":@"电视剧", @"firstPageURL":@"http://www.q2002.com/type/2.html", @"type":@"0"},
@@ -53,18 +57,39 @@
         [controllerModels addObject:model];
     }
     
-    IHYMainViewController * mainController = [[IHYMainViewController alloc] init];
-    mainController.controllerModels = controllerModels;
-    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:mainController];
-    self.window.rootViewController = nav;
+    NSArray<IHPMenuModel*> *menus = [IHPConfigManager shareManager].menus;;
+//    self.window.rootViewController = nav;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"menu" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSError* err = nil;
-    IHPConfigModel *configModel = [[IHPConfigModel alloc] initWithData:data error:&err];
-    if (!err) {
-        [[IHPConfigManager shareManager] setConfigModel:configModel];
-    }
+    self.leftMenu = [[IHPMenuViewController alloc] init];
+    _leftMenu.menus = menus;
+    
+    self.contentController = [[IHYMainViewController alloc] init];
+    _contentController.menuModel = menus.firstObject;
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:_contentController];
+    self.mainmeunVC = [[XDSSideMenu alloc] initWithContentViewController:nav
+                                                  leftMenuViewController:_leftMenu
+                                                 rightMenuViewController:nil];
+    self.mainmeunVC.contentViewInLandscapeOffsetCenterX = -480;
+    self.mainmeunVC.contentViewShadowColor = [UIColor lightGrayColor];
+    self.mainmeunVC.contentViewShadowOffset = CGSizeMake(0, 0);
+    self.mainmeunVC.contentViewShadowOpacity = 0.6;
+    self.mainmeunVC.contentViewShadowRadius = 12;
+    self.mainmeunVC.contentViewShadowEnabled = NO;
+    self.mainmeunVC.scaleMenuView = NO;
+    self.mainmeunVC.scaleContentView = NO;
+    self.mainmeunVC.parallaxEnabled = NO;
+    self.mainmeunVC.bouncesHorizontally = NO;
+    
+    
+    self.mainmeunVC.panGestureEnabled = YES;
+    self.mainmeunVC.panFromEdge = YES;
+    self.mainmeunVC.panMinimumOpenThreshold = 60.0;
+    self.mainmeunVC.bouncesHorizontally = NO;
+    
+    self.mainmeunVC.delegate = _leftMenu;
+    
+    self.window.rootViewController = self.mainmeunVC;
+    
 }
 
 - (void)showNews{
