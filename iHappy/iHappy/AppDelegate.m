@@ -13,6 +13,7 @@
 #import "IHPConfigManager.h"
 #import "IHPConfigModel.h"
 #import "IHPMenuViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 @interface AppDelegate ()
 
 @end
@@ -30,8 +31,25 @@
 //    IHYInitialViewController * initialVC = [[IHYInitialViewController alloc] init];
 //    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:initialVC];
 //    self.window.rootViewController = nav;
-    
     [self.window makeKeyAndVisible];
+    
+    
+    
+    
+    NSString *jsPath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js"];
+    NSString *jsString = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"jsString = %@", jsString);
+    
+    
+    JSContext *context = [[JSContext alloc] init];
+    [context evaluateScript:jsString];
+    
+    JSValue *function = context[@"encodeURIComponent"];
+    JSValue *value = [function callWithArguments:@[@"bGllmXCflMaWlsljmmhunGlhZ2NnYcSf"]];
+    
+    NSLog(@"value = %@", value);
+
+    
     
     return YES;
 }

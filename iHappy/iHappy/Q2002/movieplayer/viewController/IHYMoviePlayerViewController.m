@@ -57,9 +57,21 @@
 #pragma mark - 代理方法
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-//    self.context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    NSString *string = [webView stringByEvaluatingJavaScriptFromString:@"sta()"];
-    NSLog(@"string = %@", string);
+    NSString *requestUrl = webView.request.URL.absoluteString;
+    NSLog(@"requestUrl = %@", requestUrl);
+    
+    __weak typeof(self)weakSelf = self;
+    [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requestUrl
+                                         hudController:self
+                                               showHUD:YES
+                                               HUDText:nil
+                                         showFailedHUD:YES
+                                               success:^(BOOL success, NSData * htmlData) {
+                                                   NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
+                                               } failed:^(NSString *errorDescription) {
+                                                   
+                                               }];
+
 }
 
 
@@ -75,19 +87,19 @@
         NSURL * url = [NSURL URLWithString:playerSrc];
         NSURLRequest * request = [NSURLRequest requestWithURL:url];
         [_webView loadRequest:request];
-        __weak typeof(self)weakSelf = self;
-        [[[XDSHttpRequest alloc] init] htmlRequestWithHref:playerSrc
-                                             hudController:self
-                                                   showHUD:YES
-                                                   HUDText:nil
-                                             showFailedHUD:YES
-                                                   success:^(BOOL success, NSData * htmlData) {
-                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
-//                                                       [weakSelf detailHtmlData:htmlData];
-                                                       [weakSelf stripVideoSrc:htmlData];
-                                                   } failed:^(NSString *errorDescription) {
-                                                       
-                                                   }];
+//        __weak typeof(self)weakSelf = self;
+//        [[[XDSHttpRequest alloc] init] htmlRequestWithHref:playerSrc
+//                                             hudController:self
+//                                                   showHUD:YES
+//                                                   HUDText:nil
+//                                             showFailedHUD:YES
+//                                                   success:^(BOOL success, NSData * htmlData) {
+////                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
+////                                                       [weakSelf detailHtmlData:htmlData];
+//                                                       [weakSelf stripVideoSrc:htmlData];
+//                                                   } failed:^(NSString *errorDescription) {
+//                                                       
+//                                                   }];
         
     }
 }
@@ -108,8 +120,8 @@
         NSString *scripString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         JSContext *context = [[JSContext alloc] init];
         [context evaluateScript:scripString];
-        JSValue *function = context[@"sta"];
-        JSValue *result = [function callWithArguments:@[]];
+        JSValue *function = context[@"get"];
+        JSValue *result = [function callWithArguments:@[@"bGllmXCflMaWlsljmmhunGlhZ2NnYcSf"]];
         NSLog(@"result= %@", result);
     }
 

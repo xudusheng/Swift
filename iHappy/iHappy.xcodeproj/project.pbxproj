@@ -62,6 +62,7 @@
 		A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B871DE0173500637681 /* LaunchScreen.storyboard */; };
 		A24B53CD1EB941BE005D34C6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */; };
 		E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */; };
+		FC0900D81EB96838003289BE /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = FC0900D71EB96838003289BE /* jquery.js */; };
 		FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1A8C2C1EAC1FD900E66FF8 /* menu.json */; };
 		FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */; };
 		FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */; };
@@ -179,6 +180,7 @@
 		A0D46B8A1DE0173500637681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		DDF28F2EE953D3A78F924489 /* Pods-iHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHappy/Pods-iHappy.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0900D71EB96838003289BE /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		FC1A8C2C1EAC1FD900E66FF8 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		FC1A8C351EAC255900E66FF8 /* IHPSubMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPSubMenuModel.h; sourceTree = "<group>"; };
 		FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPSubMenuModel.m; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				A0D46B7C1DE0173500637681 /* AppDelegate.h */,
 				A0D46B7D1DE0173500637681 /* AppDelegate.m */,
 				FC1A8C2C1EAC1FD900E66FF8 /* menu.json */,
+				FC0900D71EB96838003289BE /* jquery.js */,
 				09F90D7B1DE2E22200542684 /* IHYInitialViewController.h */,
 				09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */,
 				092CAED51DE2861F008127DA /* Q2002 */,
@@ -690,6 +693,7 @@
 				A0D46B841DE0173500637681 /* Main.storyboard in Resources */,
 				A05EB9241DE04EF400148A5B /* icon_jiazai@2x.png in Resources */,
 				FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */,
+				FC0900D81EB96838003289BE /* jquery.js in Resources */,
 				092CAEFF1DE28620008127DA /* IHYMovieDetailInfoView.xib in Resources */,
 				A01579F41DE1776C00CD7DDB /* ico_back@3x.png in Resources */,
 				092CAF2F1DE2B20F008127DA /* IHYNewsListCell.xib in Resources */,
