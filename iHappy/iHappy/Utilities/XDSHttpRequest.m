@@ -42,6 +42,8 @@ NSString *const key = @"huidaibao";
         self.hudController = hudController;
     }
     
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];//使用这个将得到的是JSON
 
@@ -122,6 +124,7 @@ NSString *const key = @"huidaibao";
         self.hudController = hudController;
     }
 
+    htmlHref = [htmlHref stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setValue:@"text/html" forHTTPHeaderField:@"Content-Type"];

@@ -1,37 +1,44 @@
 //
-//  IHYMovieListViewController.m
+//  IHPSearchViewController.m
 //  iHappy
 //
-//  Created by xudosom on 2016/11/19.
-//  Copyright © 2016年 上海优蜜科技有限公司. All rights reserved.
+//  Created by dusheng.xu on 2017/5/5.
+//  Copyright © 2017年 上海优蜜科技有限公司. All rights reserved.
 //
 
-#import "IHYMovieListViewController.h"
-#import "IHYMovieModel.h"
-#import "IHPMovieCell.h"
-
-#import "IHYMovieDetailViewController.h"
+#import "IHPSearchViewController.h"
 #import "IHPPlayerViewController.h"
-@interface IHYMovieListViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+#import "IHPMovieCell.h"
+@interface IHPSearchViewController ()<UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) NSMutableArray<IHYMovieModel *> * movieList;
 @property (strong, nonatomic) UICollectionView * movieCollectionView;
-@property (copy, nonatomic) NSString * nextPageUrl;
 
+@property (copy, nonatomic) NSString * firstPageUrl;
+@property (copy, nonatomic) NSString * nextPageUrl;
 @end
 
-@implementation IHYMovieListViewController
-
-NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
+@implementation IHPSearchViewController
+NSString * const kSearchViewController_movieCellIdentifier = @"IHPMovieCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self movieListViewControllerDataInit];
-    [self createMovieListViewControllerUI];
+    [self searchViewControllerDataInit];
+    [self createSearchViewControllerUI];
 }
 
 
+
 #pragma mark - UI相关
-- (void)createMovieListViewControllerUI{
+- (void)createSearchViewControllerUI{
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, DEVIECE_SCREEN_WIDTH*2/3, 40)];
+    textField.placeholder = @"视频搜索";
+    textField.returnKeyType = UIReturnKeySearch;
+    textField.delegate = self;
+    self.navigationItem.titleView = textField;
+    
+    
     self.view.backgroundColor = [UIColor whiteColor];
     //创建一个layout布局类
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
@@ -50,54 +57,22 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
     //注册item类型 这里使用系统的类型
     [self.view addSubview:_movieCollectionView];
     
-    [_movieCollectionView registerNib:[UINib nibWithNibName:@"IHPMovieCell" bundle:nil] forCellWithReuseIdentifier:MovieListViewController_movieCellIdentifier];
+    [_movieCollectionView registerNib:[UINib nibWithNibName:kSearchViewController_movieCellIdentifier bundle:nil] forCellWithReuseIdentifier:kSearchViewController_movieCellIdentifier];
     [_movieCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
     
-    _movieCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(fetchMovieListTop)];
     _movieCollectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    [_movieCollectionView.mj_header beginRefreshing];
     
 }
 
 #pragma mark - 网络请求
-- (void)fetchMovieListTop{
-    [self fetchMovieList:YES];
-    [_movieCollectionView.mj_footer resetNoMoreData];
-}
 - (void)loadMoreData{
     if (_nextPageUrl.length) {
         [self fetchMovieList:NO];
     }
 }
-#pragma mark - 代理方法
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _movieList.count;
-}
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    IHPMovieCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:MovieListViewController_movieCellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-    IHYMovieModel * movieModel = _movieList[indexPath.row];
-    [cell cellWithMovieModel:movieModel];
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    IHYMovieModel * movieModel = _movieList[indexPath.row];
-//    IHYMovieDetailViewController * movieDetailVC = [[IHYMovieDetailViewController alloc] init];
-//    movieDetailVC.movieModel = movieModel;
-//    [self.navigationController pushViewController:movieDetailVC animated:YES];
-    
-    IHYMovieModel * movieModel = _movieList[indexPath.row];
-    IHPPlayerViewController * movieDetailVC = [[IHPPlayerViewController alloc] init];
-    movieDetailVC.movieModel = movieModel;
-    [self.navigationController pushViewController:movieDetailVC animated:YES];
-    
-    
-}
-#pragma mark - 点击事件处理
 - (void)fetchMovieList:(BOOL)isTop{
     __weak typeof(self)weakSelf = self;
     [[[XDSHttpRequest alloc] init] htmlRequestWithHref:isTop?_firstPageUrl:_nextPageUrl
@@ -118,8 +93,49 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
                                                }];
 }
 
-#pragma mark - 其他私有方法
 
+#pragma mark - 代理方法
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return _movieList.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    IHPMovieCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:kSearchViewController_movieCellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    IHYMovieModel * movieModel = _movieList[indexPath.row];
+    [cell cellWithMovieModel:movieModel];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    IHYMovieModel * movieModel = _movieList[indexPath.row];
+    IHPPlayerViewController * movieDetailVC = [[IHPPlayerViewController alloc] init];
+    movieDetailVC.movieModel = movieModel;
+    [self.navigationController pushViewController:movieDetailVC animated:YES];
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (!textField.text.length) {
+        [XDSUtilities showHud:self.navigationController.view text:@"请输入搜索关键字"];
+        return NO;
+    }
+    [textField resignFirstResponder];
+    NSString *url = @"http://www.q2002.com/search?wd=";
+    url = [url stringByAppendingString:textField.text];
+    self.firstPageUrl = url;
+    return YES;
+}
+
+#pragma mark - 点击事件处理
+
+#pragma mark - 其他私有方法
+- (void)setFirstPageUrl:(NSString *)firstPageUrl{
+    _firstPageUrl = firstPageUrl;
+    [self fetchMovieList:YES];
+}
 - (void)endRefresh{
     [_movieCollectionView.mj_header endRefreshing];
     [_movieCollectionView.mj_footer endRefreshing];
@@ -182,7 +198,9 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
     }
 }
 #pragma mark - 内存管理相关
-- (void)movieListViewControllerDataInit{
+- (void)searchViewControllerDataInit{
     self.movieList = [[NSMutableArray alloc] initWithCapacity:0];
 }
+
+
 @end

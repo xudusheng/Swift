@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) UIWebView * webView;
 
-@property (strong, nonatomic) IHYMoviePlayButtonModel *selectedMoveModel;
+@property (strong, nonatomic) IHYMoviePlayButtonModel *selectedMovieModel;
 
 @end
 
@@ -106,7 +106,7 @@
 //TODO: 请求播放页面
 - (void)fetchMoviePlayer{
     __weak typeof(self)weakSelf = self;
-    [[[XDSHttpRequest alloc] init] htmlRequestWithHref:self.selectedMoveModel.playerHref
+    [[[XDSHttpRequest alloc] init] htmlRequestWithHref:self.selectedMovieModel.playerHref
                                          hudController:self
                                                showHUD:YES
                                                HUDText:nil
@@ -140,9 +140,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    NSDictionary * buttonList_section = _movieButtonList[indexPath.section];
-//    NSArray * buttonList = buttonList_section[@"buttonLies"];
-//    IHYMoviePlayButtonModel * buttonModel = buttonList[indexPath.row];
+    NSDictionary * buttonList_section = _movieButtonList[indexPath.section];
+    NSArray * buttonList = buttonList_section[@"buttonLies"];
+    IHYMoviePlayButtonModel * buttonModel = buttonList[indexPath.row];
+    self.selectedMovieModel = buttonModel;
 //    IHYMoviePlayerViewController * playerVC = [[IHYMoviePlayerViewController alloc] init];
 //    playerVC.movieSrc = buttonModel.playerHref;
 //    [self.navigationController pushViewController:playerVC animated:YES];
@@ -229,7 +230,7 @@
         NSArray * buttonList = buttonList_section[@"buttonLies"];
         if (buttonList.count) {
             IHYMoviePlayButtonModel * buttonModel = buttonList.firstObject;
-            self.selectedMoveModel = buttonModel;
+            self.selectedMovieModel = buttonModel;
         }
     }
     
@@ -294,7 +295,7 @@
   
     NSURL *videoURL = [NSURL URLWithString:videoSrc];
     ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];
-    playerModel.title            = self.selectedMoveModel.title;
+    playerModel.title            = self.selectedMovieModel.title;
     playerModel.videoURL         = videoURL;
     playerModel.placeholderImage = [UIImage imageNamed:@"loading_bgView1"];
     playerModel.fatherView       = self.playerContentView;
@@ -302,8 +303,8 @@
     [self.playerView playerControlView:nil playerModel:playerModel];
 }
 
-- (void)setSelectedMoveModel:(IHYMoviePlayButtonModel *)selectedMoveModel{
-    _selectedMoveModel = selectedMoveModel;
+- (void)setSelectedMovieModel:(IHYMoviePlayButtonModel *)selectedMovieModel{
+    _selectedMovieModel = selectedMovieModel;
     [self.playerView resetPlayer];
     [self fetchMoviePlayer];
 }

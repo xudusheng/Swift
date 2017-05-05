@@ -67,6 +67,7 @@
 		FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */; };
 		FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */; };
 		FC1A8C3D1EAC298800E66FF8 /* IHPConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */; };
+		FC2F6EA61EBCC05000A5AF3D /* IHPSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2F6EA51EBCC05000A5AF3D /* IHPSearchViewController.m */; };
 		FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */; };
 		FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */; };
 		FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */; };
@@ -189,6 +190,8 @@
 		FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPMenuModel.m; sourceTree = "<group>"; };
 		FC1A8C3B1EAC298800E66FF8 /* IHPConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPConfigManager.h; sourceTree = "<group>"; };
 		FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPConfigManager.m; sourceTree = "<group>"; };
+		FC2F6EA41EBCC05000A5AF3D /* IHPSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPSearchViewController.h; sourceTree = "<group>"; };
+		FC2F6EA51EBCC05000A5AF3D /* IHPSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPSearchViewController.m; sourceTree = "<group>"; };
 		FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FC8B89A81EBC8073000AD27A /* IHPPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPPlayerViewController.h; sourceTree = "<group>"; };
 		FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPPlayerViewController.m; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 				092CAED71DE2861F008127DA /* IHYMainViewController.m */,
 				092CAED81DE2861F008127DA /* IHYViewControllerModel.h */,
 				092CAED91DE28620008127DA /* IHYViewControllerModel.m */,
+				FC2F6EA01EBCC03900A5AF3D /* IHPSearch */,
 				FC8B89A41EBC8030000AD27A /* IHPPlayer */,
 				FCAFC6151EAEDE0400B48C83 /* Menu */,
 				092CAEEB1DE28620008127DA /* movielist */,
@@ -593,6 +597,39 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		FC2F6EA01EBCC03900A5AF3D /* IHPSearch */ = {
+			isa = PBXGroup;
+			children = (
+				FC2F6EA11EBCC03900A5AF3D /* Model */,
+				FC2F6EA21EBCC03900A5AF3D /* View */,
+				FC2F6EA31EBCC03900A5AF3D /* ViewController */,
+			);
+			path = IHPSearch;
+			sourceTree = "<group>";
+		};
+		FC2F6EA11EBCC03900A5AF3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC2F6EA21EBCC03900A5AF3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC2F6EA31EBCC03900A5AF3D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC2F6EA41EBCC05000A5AF3D /* IHPSearchViewController.h */,
+				FC2F6EA51EBCC05000A5AF3D /* IHPSearchViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		FC8B89A41EBC8030000AD27A /* IHPPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +837,7 @@
 				092CAF071DE28620008127DA /* IHYMoviePlayerViewController.m in Sources */,
 				092CAF041DE28620008127DA /* IHPMovieCell.m in Sources */,
 				FCAFC6181EAEDE1900B48C83 /* IHPMenuViewController.m in Sources */,
+				FC2F6EA61EBCC05000A5AF3D /* IHPSearchViewController.m in Sources */,
 				092CAF131DE28D56008127DA /* OCTKeyboardObserverHelper.m in Sources */,
 				092CAF001DE28620008127DA /* IHYMovieInfoHeaderView.m in Sources */,
 				092CAF0F1DE28D23008127DA /* UIViewController+HideNavigationBar.m in Sources */,

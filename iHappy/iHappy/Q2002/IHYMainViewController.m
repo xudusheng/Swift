@@ -10,6 +10,7 @@
 #import "IHYMovieListViewController.h"
 #import "IHPMenuViewController.h"
 #import "AppDelegate.h"
+#import "IHPSearchViewController.h"
 @interface IHYMainViewController ()
 
 @end
@@ -32,6 +33,13 @@
                                                                 target:self
                                                                 action:@selector(showMenu)];
     self.navigationItem.leftBarButtonItem = leftItem;
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索"
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:self
+                                                                action:@selector(showSearchVC)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
 }
 
 #pragma mark - 网络请求
@@ -71,12 +79,17 @@
     NSLog(@"%@", NSStringFromCGRect(menuItem.frame));
 }
 #pragma mark - 点击事件处理
-
+//TODO:菜单
 - (void)showMenu{
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate.mainmeunVC presentLeftMenuViewController];
 }
 
+//TODO:搜索
+- (void)showSearchVC{
+    IHPSearchViewController *searchVC = [[IHPSearchViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
+}
 #pragma mark - 其他私有方法
 - (void)setMenuModel:(IHPMenuModel *)menuModel{
     _menuModel = menuModel;
