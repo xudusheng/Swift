@@ -68,6 +68,7 @@
 		FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */; };
 		FC1A8C3D1EAC298800E66FF8 /* IHPConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */; };
 		FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */; };
+		FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */; };
 		FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */; };
 		FCAFC60E1EAED74900B48C83 /* XDSSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC60D1EAED74900B48C83 /* XDSSideMenu.m */; };
 		FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC6101EAED7DF00B48C83 /* IHPConfigModel.m */; };
@@ -189,6 +190,8 @@
 		FC1A8C3B1EAC298800E66FF8 /* IHPConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPConfigManager.h; sourceTree = "<group>"; };
 		FC1A8C3C1EAC298800E66FF8 /* IHPConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPConfigManager.m; sourceTree = "<group>"; };
 		FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FC8B89A81EBC8073000AD27A /* IHPPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPPlayerViewController.h; sourceTree = "<group>"; };
+		FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPPlayerViewController.m; sourceTree = "<group>"; };
 		FCAEADD11EB4D3EA006FB6B5 /* IHPXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPXMLNode.h; sourceTree = "<group>"; };
 		FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPXMLNode.m; sourceTree = "<group>"; };
 		FCAFC60C1EAED74900B48C83 /* XDSSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSSideMenu.h; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 				092CAED71DE2861F008127DA /* IHYMainViewController.m */,
 				092CAED81DE2861F008127DA /* IHYViewControllerModel.h */,
 				092CAED91DE28620008127DA /* IHYViewControllerModel.m */,
+				FC8B89A41EBC8030000AD27A /* IHPPlayer */,
 				FCAFC6151EAEDE0400B48C83 /* Menu */,
 				092CAEEB1DE28620008127DA /* movielist */,
 				092CAEDA1DE28620008127DA /* moviedetail */,
@@ -589,6 +593,39 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		FC8B89A41EBC8030000AD27A /* IHPPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				FC8B89A51EBC8030000AD27A /* Model */,
+				FC8B89A61EBC8030000AD27A /* View */,
+				FC8B89A71EBC8030000AD27A /* ViewController */,
+			);
+			path = IHPPlayer;
+			sourceTree = "<group>";
+		};
+		FC8B89A51EBC8030000AD27A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC8B89A61EBC8030000AD27A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC8B89A71EBC8030000AD27A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC8B89A81EBC8073000AD27A /* IHPPlayerViewController.h */,
+				FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		FCAEADD01EB4D3C5006FB6B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +804,7 @@
 				092CAF001DE28620008127DA /* IHYMovieInfoHeaderView.m in Sources */,
 				092CAF0F1DE28D23008127DA /* UIViewController+HideNavigationBar.m in Sources */,
 				092CAEFD1DE28620008127DA /* IHYMoviePlayButtonModel.m in Sources */,
+				FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */,
 				092CAEFE1DE28620008127DA /* IHYMovieDetailInfoView.m in Sources */,
 				A05EB9041DE0281D00148A5B /* XDSUtilities.m in Sources */,
 				A05EB8FF1DE0277E00148A5B /* ForbidTextField.m in Sources */,

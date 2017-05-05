@@ -103,6 +103,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/WMPageController/WMPageController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YYModel/YYModel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ZFPlayer/ZFPlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/hpple/hpple.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -125,5 +126,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/WMPageController/WMPageController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YYModel/YYModel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ZFPlayer/ZFPlayer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/hpple/hpple.framework"
 fi
