@@ -11,6 +11,7 @@
 #import "IHPMenuViewController.h"
 #import "AppDelegate.h"
 #import "IHPSearchViewController.h"
+#import "IHYNewsListViewController.h"
 @interface IHYMainViewController ()
 
 @end
@@ -51,10 +52,17 @@
 }
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
-    IHPSubMenuModel * model = _menuModel.subMenus[index];
-    IHYMovieListViewController * movieVC = [[IHYMovieListViewController alloc]init];
-    movieVC.firstPageUrl = model.firstPageURL;
-    return movieVC;
+    if (_menuModel.type == IHPMenuTypeJuheNews) {
+        IHPSubMenuModel * model = _menuModel.subMenus[index];
+        IHYNewsListViewController * newsVC = [[IHYNewsListViewController alloc]init];
+        newsVC.firstPageUrl = model.firstPageURL;
+        return newsVC;
+    }else{
+        IHPSubMenuModel * model = _menuModel.subMenus[index];
+        IHYMovieListViewController * movieVC = [[IHYMovieListViewController alloc]init];
+        movieVC.firstPageUrl = model.firstPageURL;
+        return movieVC;
+    }
 }
 
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
@@ -96,6 +104,28 @@
     self.title = _menuModel.title;
     [self reloadData];
     
+    
+    if ([IHPConfigManager shareManager].menus.count > 1) {
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(showMenu)];
+        self.navigationItem.leftBarButtonItem = leftItem;
+    }else{
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+    
+    if (_menuModel.type < IHPMenuTypeJuheNews) {
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(showSearchVC)];
+        self.navigationItem.rightBarButtonItem = rightItem;
+        
+    }else{
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+
 }
 
 #pragma mark - 内存管理相关

@@ -8,7 +8,7 @@
 
 import UIKit
 typealias ResponseTuple = (requestFetcher:YSERequestFetcher, responseObj : AnyObject?, error : NSError?);
-typealias CompleteType = ResponseTuple->Void;
+typealias CompleteType = (ResponseTuple)->Void;
 
 let kCategoryListKey = "categoryList"
 let kColorListKey = "colorList";
@@ -18,24 +18,24 @@ let kIsLastPageKey = "isLastPage";
 
 class YSERequestFetcher: NSObject {
 
-    private var responseObj : AnyObject?;
-    private var error : NSError?;
+    fileprivate var responseObj : AnyObject?;
+    fileprivate var error : NSError?;
 
-    internal func p_fetchHomePage(classifyModel classifyModel:YSEClassifyModel!, complete:CompleteType) -> Void {
+    internal func p_fetchHomePage(classifyModel:YSEClassifyModel!, complete:CompleteType) -> Void {
         let url = self.encodeEscapesURL(classifyModel.href!);
         let manager = AFHTTPSessionManager();
         manager.responseSerializer = AFHTTPResponseSerializer();
-        manager.GET(url, parameters: nil, progress: nil, success: { (task:NSURLSessionDataTask, respObject:AnyObject?) in
+        manager.get(url, parameters: nil, progress: nil, success: { (task:URLSessionDataTask, respObject:AnyObject?) in
             
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                let result = NSString(data: respObject as! NSData, encoding: NSUTF8StringEncoding);
-                let hptts = TFHpple.init(HTMLData: result?.dataUsingEncoding(NSUTF8StringEncoding));
+            DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: {
+                let result = NSString(data: respObject as! Data, encoding: String.Encoding.utf8);
+                let hptts = TFHpple.init(htmlData: result?.data(using: String.Encoding.utf8));
                 
                 
                 var categoryList = [YSECategoryModel]();
                 var colorList = [YSEColorModel]();
                 var imageList = [YSEImageModel]();
-                let categoryItems = hptts.searchWithXPathQuery("//div[@class=\"options eS hidden\"]//a[@class=\"bt\"]");
+                let categoryItems = hptts.search(withXPathQuery: "//div[@class=\"options eS hidden\"]//a[@class=\"bt\"]");
                 for categoryElement in categoryItems{
                     let element = categoryElement as! TFHppleElement;
                     let name = element.text();
@@ -43,18 +43,18 @@ class YSERequestFetcher: NSObject {
                         continue;
                     }
                     let aModel = YSECategoryModel();
-                    let href = element.objectForKey("href");
+                    let href = element.object(forKey: "href");
                     aModel.p_setName(name, href: href);
                     categoryList.append(aModel);
 //                    NSLog("===\(element.objectForKey("href")) === \(element.text())");
                 }
                 
                 
-                let colorItems = hptts.searchWithXPathQuery("//div[@class=\"options eS hidden\"]//a[contains(@class, 'btcolor color')]");//模糊匹配
+                let colorItems = hptts.search(withXPathQuery: "//div[@class=\"options eS hidden\"]//a[contains(@class, 'btcolor color')]");//模糊匹配
                 for colorElement in colorItems{
                     let element = colorElement as! TFHppleElement;
                     let name = element.text();
-                    let href = element.objectForKey("href");
+                    let href = element.object(forKey: "href");
                     let colorModel = YSEColorModel();
                     colorModel.p_setName(name, href: href);
                     colorList.append(colorModel);
@@ -62,21 +62,21 @@ class YSERequestFetcher: NSObject {
                 }
 
                 
-                let imgItems = hptts.searchWithXPathQuery("//li[@class=\"ty-imgcont\"]//img");
+                let imgItems = hptts.search(withXPathQuery: "//li[@class=\"ty-imgcont\"]//img");
                 for imgElement in imgItems{
                     let element = imgElement as! TFHppleElement;
-                    let src = String(element.objectForKey("src"));                    
+                    let src = String(element.object(forKey: "src"));                    
                     let imageModel = YSEImageModel();
-                    imageModel.p_setTitle(element.objectForKey("alt"), href: src, width: element.objectForKey("width"), height: element.objectForKey("height"));
+                    imageModel.p_setTitle(element.object(forKey: "alt"), href: src, width: element.object(forKey: "width"), height: element.object(forKey: "height"));
                     imageList.append(imageModel);
 //                    NSLog("===\(src) === \(element.objectForKey("alt"))");
                 }
                 
                 let xpath_a = "//div[@id=\"pageNum\"]//span//a";
                 let xpath_span = "//div[@id=\"pageNum\"]//span//span";
-                let pageNumItems = hptts.searchWithXPathQuery("\(xpath_a) | \(xpath_span)");
+                let pageNumItems = hptts.search(withXPathQuery: "\(xpath_a) | \(xpath_span)");
                 let lastPageElement = pageNumItems.last as! TFHppleElement;
-                let nextHref = lastPageElement.objectForKey("href");
+                let nextHref = lastPageElement.object(forKey: "href");
                 
                 let spanElement = pageNumItems[pageNumItems.count-2]  as! TFHppleElement;
                 let isLastPage = (spanElement.tagName == "span");
@@ -97,26 +97,26 @@ class YSERequestFetcher: NSObject {
                 self.safelyCallback(complete, error: nil);
             });
             
-        }) { (task:NSURLSessionDataTask?, error:NSError) in
+        }) { (task:URLSessionDataTask?, error:NSError) in
             self.safelyCallback(complete, error: error);
         };
         
     }
     
-    private func safelyCallback(complete:CompleteType, error:NSError?) -> Void {
+    fileprivate func safelyCallback(_ complete:CompleteType, error:NSError?) -> Void {
         self.error = error;
         let responseTuple = (requestFetcher:self, responseObj : self.responseObj, error : self.error);
-        if NSThread.isMainThread() {
+        if Thread.isMainThread {
             complete(responseTuple);
             return;
         }
-        dispatch_async(dispatch_get_main_queue()) { 
+        DispatchQueue.main.async { 
             complete(responseTuple);
         }
     }
     
     
-    func encodeEscapesURL(value:String) -> String {
+    func encodeEscapesURL(_ value:String) -> String {
         let str:NSString = value
         let originalString = str as CFStringRef
         let charactersToBeEscaped = "!*'();:@&=+$,/?%#[]" as CFStringRef  //":/?&=;+!@#$()',*"    //转意符号
@@ -125,7 +125,7 @@ class YSERequestFetcher: NSObject {
                                                              originalString,
                                                              charactersToBeEscaped,
                                                              nil,
-                                                             CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) as NSString
+                                                             CFStringConvertNSStringEncodingToEncoding(String.Encoding.utf8)) as NSString
         
         return result as String
     }

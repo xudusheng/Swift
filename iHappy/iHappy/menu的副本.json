@@ -1,0 +1,63 @@
+{
+    "rooturl":"http://www.q2002.com/",
+    "forceUpdate":{
+        "enable":false,
+        "isForce":false,
+    },
+    "menus":[
+             {
+             "title":"首页",
+             "subMenuId":"kHome",
+             "type":"0",
+             "subMenus":[
+                         {"title":"电影", "url":"/type/1.html"},
+                         {"title":"电视剧", "url":"/type/2.html"},
+                         {"title":"动漫", "url":"/type/7.html"},
+                         {"title":"音乐", "url":"/type/6.html"},
+                         {"title":"综艺", "url":"/type/4.html"},
+                         {"title":"福利", "url":"/type/3.html"},
+                         {"title":"WWE", "url":"/type/18.html"},
+                         ],
+             },
+             
+             {
+             "title":"排行榜",
+             "subMenuId":"kHot",
+             "type":"1",
+             "subMenus":[
+                         {"title":"电影", "url":"/hot.html"},
+                         {"title":"电视剧", "url":"/hot/tv.html"},
+                         {"title":"动漫", "url":"/hot/dm.html"},
+                         {"title":"福利", "url":"/hot/fl.html"},
+                         {"title":"恐怖", "url":"/hot/kb.html"}
+                         ],
+             
+             },
+             
+             {
+             "title":"新片",
+             "subMenuId":"kNewMovie",
+             "type":"2",
+             "subMenus":[
+                         {"title":"新片", "url":"new.html"},
+                         ],
+             
+             },
+             {
+             "title":"头条新闻",
+             "subMenuId":"kNews",
+             "type":"3",
+             "subMenus":[
+                         {"title":"头条", "url":"http://v.juhe.cn/toutiao/index?type=top&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"社会", "url":"http://v.juhe.cn/toutiao/index?type=shehui&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"国内", "url":"http://v.juhe.cn/toutiao/index?type=guonei&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"国际", "url":"http://v.juhe.cn/toutiao/index?type=guoji&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"娱乐", "url":"http://v.juhe.cn/toutiao/index?type=yule&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"体育", "url":"http://v.juhe.cn/toutiao/index?type=tiyu&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"军事", "url":"http://v.juhe.cn/toutiao/index?type=junshi&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"财经", "url":"http://v.juhe.cn/toutiao/index?type=caijing&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         {"title":"时尚", "url":"http://v.juhe.cn/toutiao/index?type=shishang&key=f2b9c5a8243bc824253119ba09f7759a"},
+                         ],
+             },
+             ]
+}

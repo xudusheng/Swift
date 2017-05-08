@@ -42,7 +42,13 @@
     return _configModel.forceUpdate;
 }
 - (NSArray<IHPMenuModel *> *)menus{
-    return _configModel.menus;
+    NSMutableArray *availibleMenus = [NSMutableArray arrayWithCapacity:0];
+    for (IHPMenuModel *aMenuModel in _configModel.menus) {
+        if (aMenuModel.enable) {
+            [availibleMenus addObject:aMenuModel];
+        }
+    }
+    return availibleMenus;
 }
 
 - (void)setConfigModel:(IHPConfigModel *)configModel{

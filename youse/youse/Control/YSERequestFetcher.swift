@@ -10,7 +10,7 @@ import UIKit
 
 class YSERequestFetcher: NSObject {
     let requestRootUrl = "http://www.169bb.com/";
-    typealias YSERequestComplete = (requestFetcher:YSERequestFetcher) -> Void;
+    typealias YSERequestComplete = (_ requestFetcher:YSERequestFetcher) -> Void;
     var responseObj : AnyObject?;
     var error : NSError?;
     

@@ -1,0 +1,6 @@
+framework module Pods_youse {
+  umbrella header "Pods-youse-umbrella.h"
+
+  export *
+  module * { export * }
+}

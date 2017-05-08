@@ -7,19 +7,46 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class YSEDataBase: NSObject {
+    private static var __once: () = {
+            StaticInstance.instance = YSEDataBase();
+        }()
     var daQueue : FMDatabaseQueue!;
     
-    private override init() {//严格意义上的单例应该将init()方法设为私有
+    fileprivate override init() {//严格意义上的单例应该将init()方法设为私有
         let docPath = UIApplication.cw_documentsPath();
-        let dbPath = docPath.stringByAppendingString("/image_group.db");
+        let dbPath = docPath! + "/image_group.db";
         print("dbPath = \(dbPath)");
         
-        var filemanager = NSFileManager.defaultManager().fileExistsAtPath(dbPath);
+        var filemanager = FileManager.default.fileExists(atPath: dbPath);
         NSLog("\(filemanager)");
         self.daQueue = FMDatabaseQueue(path: dbPath);
-        filemanager = NSFileManager.defaultManager().fileExistsAtPath(dbPath);
+        filemanager = FileManager.default.fileExists(atPath: dbPath);
         NSLog("\(filemanager)");
         
         if self.daQueue != nil {
@@ -41,13 +68,11 @@ class YSEDataBase: NSObject {
     
     //第二种单例写法（struct + dispatch_once）
     struct StaticInstance {
-        static var onceToken : dispatch_once_t = 0;
+        static var onceToken : Int = 0;
         static var instance : YSEDataBase? = nil;
     }
     static internal func shareInstance() -> YSEDataBase{
-        dispatch_once(&StaticInstance.onceToken) {
-            StaticInstance.instance = YSEDataBase();
-        };
+        _ = YSEDataBase.__once;
         return StaticInstance.instance!;
     }
     
@@ -59,7 +84,7 @@ class YSEDataBase: NSObject {
             let totalCount = db.intForQuery("select count (db_id) from \(DB_TABLENAME) where db_id = ?", model.db_id);
             if totalCount > 0 {
                 self.generateSQLForUpdating(imageGroupModel: model, completion: { (sql, arguments) in
-                    let result = db.executeUpdate(sql as String, withArgumentsInArray: arguments as [AnyObject]);
+                    let result = db.executeUpdate(sql as String, withArgumentsIn: arguments as [AnyObject]);
                     
                     if (result) {
                         NSLog("数据更新替换成功");
@@ -84,7 +109,7 @@ class YSEDataBase: NSObject {
                     model.imge_type,
                     model.has_get_total_page.rawValue,
                     model.is_ready_toshow.rawValue];
-                let result = db.executeUpdate(insertSql, withArgumentsInArray: argumentinArray);
+                let result = db.executeUpdate(insertSql, withArgumentsIn: argumentinArray);
                 if result{
                     NSLog("数据插入成功");
                 }else{
@@ -100,15 +125,15 @@ class YSEDataBase: NSObject {
                 newModel = fetchModel;
             }
         }
-        return newModel;
+        return newModel!;
     }
     
     
-    private func fetchImageGroupModelFromDataBase(imageGroupModel model:YSEImageGroupModel!) -> YSEImageGroupModel? {
+    fileprivate func fetchImageGroupModelFromDataBase(imageGroupModel model:YSEImageGroupModel!) -> YSEImageGroupModel? {
         var fetchModel = model;
-        let sql = "select * from \(DB_TABLENAME) where db_id = '\(fetchModel.db_id)'";
+        let sql = "select * from \(DB_TABLENAME) where db_id = '\(fetchModel?.db_id)'";
         self.daQueue.inDatabase { (db:FMDatabase!) in
-            let set = db.executeQuery(sql, withArgumentsInArray: []);
+            let set = db.executeQuery(sql, withArgumentsIn: []);
             while set.next(){
                 let transferModel = self.transferFMResultSetToImageGroupModel(set);
                 fetchModel = transferModel;
@@ -119,7 +144,7 @@ class YSEDataBase: NSObject {
         return fetchModel;
     }
     
-    private func generateSQLForUpdating(imageGroupModel model:YSEImageGroupModel!, completion:(sql:String, arguments:[String]) -> ()){
+    fileprivate func generateSQLForUpdating(imageGroupModel model:YSEImageGroupModel!, completion:(_ sql:String, _ arguments:[String]) -> ()){
         var columns = [String]();
         var arguments = [String]();
         
@@ -179,28 +204,28 @@ class YSEDataBase: NSObject {
         }
 
         let columns_NSArray = columns as NSArray;
-        let sql = "update \(DB_TABLENAME) set \(columns_NSArray.componentsJoinedByString(", ")) where db_id = '\(model.db_id)'";
-        completion(sql: sql, arguments: arguments);
+        let sql = "update \(DB_TABLENAME) set \(columns_NSArray.componentsJoined(by: ", ")) where db_id = '\(model.db_id)'";
+        completion(sql, arguments);
     }
     
     
     
-    private func transferFMResultSetToImageGroupModel(set : FMResultSet) -> YSEImageGroupModel{
+    fileprivate func transferFMResultSetToImageGroupModel(_ set : FMResultSet) -> YSEImageGroupModel{
         let model = YSEImageGroupModel();
-        model.category = set.stringForColumn("category");
-        model.title = set.stringForColumn("title");
-        model.db_id = set.stringForColumn("db_id");
-        model.item_img_url = set.stringForColumn("item_img_url");
-        model.item_img_width = set.stringForColumn("item_img_width");
-        model.item_img_height = set.stringForColumn("item_img_height");
-        model.href = set.stringForColumn("href");
-        model.total_page = set.stringForColumn("total_page");
-        model.total_image_count = set.stringForColumn("total_image_count");
-        model.root_img_url = set.stringForColumn("root_img_url");
-        model.imge_type = set.stringForColumn("imge_type");
+        model.category = set.string(forColumn: "category");
+        model.title = set.string(forColumn: "title");
+        model.db_id = set.string(forColumn: "db_id");
+        model.item_img_url = set.string(forColumn: "item_img_url");
+        model.item_img_width = set.string(forColumn: "item_img_width");
+        model.item_img_height = set.string(forColumn: "item_img_height");
+        model.href = set.string(forColumn: "href");
+        model.total_page = set.string(forColumn: "total_page");
+        model.total_image_count = set.string(forColumn: "total_image_count");
+        model.root_img_url = set.string(forColumn: "root_img_url");
+        model.imge_type = set.string(forColumn: "imge_type");
         
-        let has_get_total_page = set.stringForColumn("has_get_total_page");
-        let is_ready_toshow = set.stringForColumn("is_ready_toshow");
+        let has_get_total_page = set.string(forColumn: "has_get_total_page");
+        let is_ready_toshow = set.string(forColumn: "is_ready_toshow");
         model.has_get_total_page = (has_get_total_page == YSEBOOLString.FALSE.rawValue) ? YSEBOOLString.FALSE : YSEBOOLString.TRUE;
         model.is_ready_toshow = (is_ready_toshow == YSEBOOLString.FALSE.rawValue) ? YSEBOOLString.FALSE : YSEBOOLString.TRUE;
 

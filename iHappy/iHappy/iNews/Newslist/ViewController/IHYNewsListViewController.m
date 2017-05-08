@@ -84,7 +84,9 @@ NSString * const IHYNewsListViewController_IHYNewsMultableImageCellIdentifier = 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _newsList.count;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return CGFLOAT_MIN;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     IHYNewsModel * newsModel = _newsList[indexPath.row];
     
