@@ -29,18 +29,30 @@
 
 #pragma mark - UI相关
 - (void)createMainViewControllerUI{
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(showMenu)];
-    self.navigationItem.leftBarButtonItem = leftItem;
+    [self setBarItems];
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索"
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(showSearchVC)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+}
+- (void)setBarItems{
+    if ([IHPConfigManager shareManager].menus.count > 1) {
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon"]
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(showMenu)];
+        self.navigationItem.leftBarButtonItem = leftItem;
+    }else{
+        self.navigationItem.leftBarButtonItem = nil;
+    }
     
+    if (_menuModel.type < IHPMenuTypeJuheNews) {
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(showSearchVC)];
+        self.navigationItem.rightBarButtonItem = rightItem;
+        
+    }else{
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 #pragma mark - 网络请求
@@ -105,26 +117,7 @@
     [self reloadData];
     
     
-    if ([IHPConfigManager shareManager].menus.count > 1) {
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                     style:UIBarButtonItemStylePlain
-                                                                    target:self
-                                                                    action:@selector(showMenu)];
-        self.navigationItem.leftBarButtonItem = leftItem;
-    }else{
-        self.navigationItem.leftBarButtonItem = nil;
-    }
-    
-    if (_menuModel.type < IHPMenuTypeJuheNews) {
-        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"搜索"
-                                                                      style:UIBarButtonItemStylePlain
-                                                                     target:self
-                                                                     action:@selector(showSearchVC)];
-        self.navigationItem.rightBarButtonItem = rightItem;
-        
-    }else{
-        self.navigationItem.rightBarButtonItem = nil;
-    }
+    [self setBarItems];
 
 }
 

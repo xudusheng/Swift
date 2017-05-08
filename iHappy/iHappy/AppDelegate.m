@@ -56,24 +56,23 @@
 
 
 - (void)showQ2002{
+    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu.json";
+    __weak typeof(self)weakSelf = self;
+    [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requesturl
+                                         hudController:nil
+                                               showHUD:NO
+                                               HUDText:nil
+                                         showFailedHUD:YES
+                                               success:^(BOOL success, NSData * htmlData) {
+                                                   if (success) {
+                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
+                                                   }else{
+//                                                       [XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.window hideAfter:1.2];
+                                                   }
+                                               } failed:^(NSString *errorDescription) {
 
-    
-    
-    NSArray * arr = @[
-                      @{@"title":@"电影", @"firstPageURL":@"http://www.q2002.com/type/1.html", @"type":@"0"},
-                      @{@"title":@"电视剧", @"firstPageURL":@"http://www.q2002.com/type/2.html", @"type":@"0"},
-                      @{@"title":@"动漫", @"firstPageURL":@"http://www.q2002.com/type/7.html", @"type":@"0"},
-                      @{@"title":@"音乐", @"firstPageURL":@"http://www.q2002.com/type/6.html", @"type":@"0"},
-                      @{@"title":@"综艺", @"firstPageURL":@"http://www.q2002.com/type/4.html", @"type":@"0"},
-                      @{@"title":@"福利", @"firstPageURL":@"http://www.q2002.com/type/3.html", @"type":@"0"},
-                      @{@"title":@"美图", @"firstPageURL":@"http://www.q2002.com/type/20.html", @"type":@"1"},
-                      ];
-    NSMutableArray * controllerModels = [NSMutableArray arrayWithCapacity:0];
-    for (NSDictionary * dic in arr) {
-        IHYViewControllerModel * model = [[IHYViewControllerModel alloc] init];
-        [model setValuesForKeysWithDictionary:dic];
-        [controllerModels addObject:model];
-    }
+                                                   
+                                               }];
     
     NSArray<IHPMenuModel*> *menus = [IHPConfigManager shareManager].menus;;
 //    self.window.rootViewController = nav;

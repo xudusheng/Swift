@@ -9,7 +9,7 @@
              "title":"首页",
              "menuId":"kHome",
              "type":"0",
-             "enable":false,
+             "enable":true,
              "subMenus":[
                          {"title":"电影", "url":"/type/1.html"},
                          {"title":"电视剧", "url":"/type/2.html"},
