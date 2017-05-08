@@ -16,6 +16,7 @@
 		09AD5E881D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E7F1D87E27F0064E4B6 /* INSImageItemCollectionViewCell.swift */; };
 		09AD5E891D87E27F0064E4B6 /* YSEMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E801D87E27F0064E4B6 /* YSEMenuView.swift */; };
 		09AD5E8A1D87E27F0064E4B6 /* YSERootTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AD5E811D87E27F0064E4B6 /* YSERootTableViewCell.swift */; };
+		72D345CE74060F29242FC37C /* Pods_youse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B561ECE812D854A11D10CA4 /* Pods_youse.framework */; };
 		A0491BFB1D71148500238ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491BFA1D71148500238ED1 /* AppDelegate.swift */; };
 		A0491C051D71148500238ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0491C031D71148500238ED1 /* LaunchScreen.storyboard */; };
 		A0491C171D713BF800238ED1 /* YSEGlobleVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C141D713BF800238ED1 /* YSEGlobleVar.swift */; };
@@ -24,7 +25,6 @@
 		A0491C2D1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */; };
 		A08126091D7471AB00FFEF44 /* YSESystemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08126081D7471AB00FFEF44 /* YSESystemConfig.swift */; };
 		A081260B1D74827B00FFEF44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A081260A1D74827B00FFEF44 /* Images.xcassets */; };
-		BD0F63A6A989F731251ED2EB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C2FED22BDF6F8EB630E2D0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +38,9 @@
 		09AD5E801D87E27F0064E4B6 /* YSEMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEMenuView.swift; sourceTree = "<group>"; };
 		09AD5E811D87E27F0064E4B6 /* YSERootTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSERootTableViewCell.swift; sourceTree = "<group>"; };
 		56C2FED22BDF6F8EB630E2D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C8042BB387AF37193EDEA1 /* Pods-youse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youse/Pods-youse.debug.xcconfig"; sourceTree = "<group>"; };
+		7B561ECE812D854A11D10CA4 /* Pods_youse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D314EF46397327F7F88AFA9 /* Pods-youse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youse.release.xcconfig"; path = "Pods/Target Support Files/Pods-youse/Pods-youse.release.xcconfig"; sourceTree = "<group>"; };
 		A0491BF71D71148500238ED1 /* youse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0491BFA1D71148500238ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0491C041D71148500238ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,8 +56,6 @@
 		A0491C2C1D716DB500238ED1 /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
 		A08126081D7471AB00FFEF44 /* YSESystemConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSESystemConfig.swift; sourceTree = "<group>"; };
 		A081260A1D74827B00FFEF44 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C89B61022019386613941D0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EF4ED1813C8A2C7780D575EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD0F63A6A989F731251ED2EB /* Pods.framework in Frameworks */,
+				72D345CE74060F29242FC37C /* Pods_youse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				56C2FED22BDF6F8EB630E2D0 /* Pods.framework */,
+				7B561ECE812D854A11D10CA4 /* Pods_youse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,8 +131,8 @@
 			children = (
 				A0491BF91D71148500238ED1 /* youse */,
 				A0491BF81D71148500238ED1 /* Products */,
-				D13A7B0E4DDD3DB1CBDA0518 /* Pods */,
 				2F9C152EAD6FFB41445A2E8E /* Frameworks */,
+				BADFBF12E5C9A975EA167F7E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,11 +207,11 @@
 			path = Vender;
 			sourceTree = "<group>";
 		};
-		D13A7B0E4DDD3DB1CBDA0518 /* Pods */ = {
+		BADFBF12E5C9A975EA167F7E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EF4ED1813C8A2C7780D575EC /* Pods.debug.xcconfig */,
-				C89B61022019386613941D0E /* Pods.release.xcconfig */,
+				77C8042BB387AF37193EDEA1 /* Pods-youse.debug.xcconfig */,
+				9D314EF46397327F7F88AFA9 /* Pods-youse.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -221,12 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0491C091D71148500238ED1 /* Build configuration list for PBXNativeTarget "youse" */;
 			buildPhases = (
-				D7BD64352658C0D534D0455B /* Check Pods Manifest.lock */,
+				EF94E072B570119C27C9AE38 /* [CP] Check Pods Manifest.lock */,
 				A0491BF31D71148500238ED1 /* Sources */,
 				A0491BF41D71148500238ED1 /* Frameworks */,
 				A0491BF51D71148500238ED1 /* Resources */,
-				E2D488FEB37AACF4015EE5C0 /* Embed Pods Frameworks */,
-				1C521F63537C849ACF19AC81 /* Copy Pods Resources */,
+				DFF82BBD80D58F14D45B0DAC /* [CP] Embed Pods Frameworks */,
+				802B22B89CDABE50F02B2CEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +251,7 @@
 				TargetAttributes = {
 					A0491BF61D71148500238ED1 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -283,49 +286,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C521F63537C849ACF19AC81 /* Copy Pods Resources */ = {
+		802B22B89CDABE50F02B2CEB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-youse/Pods-youse-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D7BD64352658C0D534D0455B /* Check Pods Manifest.lock */ = {
+		DFF82BBD80D58F14D45B0DAC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-youse/Pods-youse-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E2D488FEB37AACF4015EE5C0 /* Embed Pods Frameworks */ = {
+		EF94E072B570119C27C9AE38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,7 +457,7 @@
 		};
 		A0491C0A1D71148500238ED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF4ED1813C8A2C7780D575EC /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 77C8042BB387AF37193EDEA1 /* Pods-youse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -463,10 +466,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = youse/YSE_PrefixHeader.h;
-				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(SDKROOT)/usr/include/libxml2",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = youse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -476,6 +476,7 @@
 				PROVISIONING_PROFILE = "1544dedb-ea0e-4d50-b504-ec86f5384089";
 				SWIFT_OBJC_BRIDGING_HEADER = "youse/YSE-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
@@ -483,7 +484,7 @@
 		};
 		A0491C0B1D71148500238ED1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C89B61022019386613941D0E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9D314EF46397327F7F88AFA9 /* Pods-youse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -492,10 +493,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = youse/YSE_PrefixHeader.h;
-				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
-					"$(SDKROOT)/usr/include/libxml2",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = youse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,6 +502,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1544dedb-ea0e-4d50-b504-ec86f5384089";
 				SWIFT_OBJC_BRIDGING_HEADER = "youse/YSE-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};

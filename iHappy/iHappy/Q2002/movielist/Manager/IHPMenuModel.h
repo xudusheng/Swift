@@ -8,10 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "IHPSubMenuModel.h"
+
+typedef NS_ENUM(NSInteger, IHPMenuType) {
+    IHPMenuTypeQ2002 = 0,
+    IHPMenuTypeQ2002Hot = 1,
+    IHPMenuTypeQ2002New = 2,
+    IHPMenuTypeJuheNews = 3,
+};
+
 @protocol IHPSubMenuModel;
 @interface IHPMenuModel : JSONModel
-
-@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *title;//模块标题
+@property (copy, nonatomic) NSString *menuId;//模块ID
+@property (assign, nonatomic) IHPMenuType type;//模块类型
+@property (assign, nonatomic) BOOL enable;//模块是否可用，可用则显示，不可以则不显示，苹果审核期间《关闭》需要提交授权文件的模块。
 @property (copy, nonatomic) NSArray<IHPSubMenuModel> * subMenus;
 
 @end

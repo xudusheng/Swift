@@ -11,7 +11,7 @@
 #import "IHPMovieCell.h"
 
 #import "IHYMovieDetailViewController.h"
-
+#import "IHPPlayerViewController.h"
 @interface IHYMovieListViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) NSMutableArray<IHYMovieModel *> * movieList;
 @property (strong, nonatomic) UICollectionView * movieCollectionView;
@@ -85,10 +85,17 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//    IHYMovieModel * movieModel = _movieList[indexPath.row];
+//    IHYMovieDetailViewController * movieDetailVC = [[IHYMovieDetailViewController alloc] init];
+//    movieDetailVC.movieModel = movieModel;
+//    [self.navigationController pushViewController:movieDetailVC animated:YES];
+    
     IHYMovieModel * movieModel = _movieList[indexPath.row];
-    IHYMovieDetailViewController * movieDetailVC = [[IHYMovieDetailViewController alloc] init];
+    IHPPlayerViewController * movieDetailVC = [[IHPPlayerViewController alloc] init];
     movieDetailVC.movieModel = movieModel;
     [self.navigationController pushViewController:movieDetailVC animated:YES];
+    
+    
 }
 #pragma mark - 点击事件处理
 - (void)fetchMovieList:(BOOL)isTop{
@@ -112,6 +119,7 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
 }
 
 #pragma mark - 其他私有方法
+
 - (void)endRefresh{
     [_movieCollectionView.mj_header endRefreshing];
     [_movieCollectionView.mj_footer endRefreshing];

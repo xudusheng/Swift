@@ -12,10 +12,10 @@ class YSESystemConfig: NSObject {
 
     static internal func config(){
         
-        let attributes = [NSForegroundColorAttributeName:UIColor.whiteColor()];
+        let attributes = [NSForegroundColorAttributeName:UIColor.white];
         UINavigationBar.appearance().titleTextAttributes = attributes;
         UINavigationBar.appearance().barTintColor = UIColor(red: 221/255.0, green: 133/255.0, blue: 184/255.0, alpha: 1);
-        UIApplication.sharedApplication().statusBarStyle = .LightContent;
+        UIApplication.shared.statusBarStyle = .lightContent;
         
     }
 }

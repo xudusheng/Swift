@@ -9,20 +9,20 @@
 import UIKit
 
 class YSEImageModel: NSObject {
-    private(set) var title:String?;
-    private(set) var href:String?;
-    private(set) var width:String?;
-    private(set) var height:String?;
+    fileprivate(set) var title:String?;
+    fileprivate(set) var href:String?;
+    fileprivate(set) var width:String?;
+    fileprivate(set) var height:String?;
     
     override init() {
         super.init();
         self.title = "";
         self.href = "";
-        self.width = String(CGFloat.min);
-        self.height = String(CGFloat.min);
+        self.width = String(CGFloat.leastNormalMagnitude);
+        self.height = String(CGFloat.leastNormalMagnitude);
     }
     
-    internal func p_setTitle(title:String?, href:String?, width:String?, height:String?){
+    internal func p_setTitle(_ title:String?, href:String?, width:String?, height:String?){
         self.title = title;
         self.href = href;
         self.width = width;

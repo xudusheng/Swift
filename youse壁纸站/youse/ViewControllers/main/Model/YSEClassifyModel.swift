@@ -9,15 +9,15 @@
 import UIKit
 
 class YSEClassifyModel: NSObject {
-    private(set) var name:String?;
-    private(set) var href:String?;
+    fileprivate(set) var name:String?;
+    fileprivate(set) var href:String?;
     
     override init() {
         super.init();
         self.name = "";
         self.href = "";
     }
-    internal func p_setName(name:String?, href:String?){
+    internal func p_setName(_ name:String?, href:String?){
         self.name = name;
         self.href = href;
     }

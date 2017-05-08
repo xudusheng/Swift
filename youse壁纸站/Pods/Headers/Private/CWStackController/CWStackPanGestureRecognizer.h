@@ -1,1 +1,0 @@
-../../../CWStackController/CWStackController/CWStackPanGestureRecognizer.h

@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class YSEMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MWPhotoBrowserDelegate{
 
@@ -42,23 +66,23 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     //MARK: - UI
     func createMainViewControllerUI(){
-        self.view.backgroundColor = UIColor.brownColor();
+        self.view.backgroundColor = UIColor.brown;
         self.title = self.selectedClassifyModel?.name;
         let flowLayout = UICollectionViewFlowLayout();
         flowLayout.minimumLineSpacing = gap;//纵向间距
-        flowLayout.minimumInteritemSpacing = CGFloat.min;//横向内边距
+        flowLayout.minimumInteritemSpacing = CGFloat.leastNormalMagnitude;//横向内边距
         
-        self.mainCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout);
+        self.mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout);
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false;
         mainCollectionView.delegate = self;
         mainCollectionView.dataSource = self;
-        self.mainCollectionView.registerClass(INSImageItemCollectionViewCell.self, forCellWithReuseIdentifier: INSImageItemCollectionViewCellIdentifier);
-        mainCollectionView.backgroundColor = UIColor.whiteColor();
+        self.mainCollectionView.register(INSImageItemCollectionViewCell.self, forCellWithReuseIdentifier: INSImageItemCollectionViewCellIdentifier);
+        mainCollectionView.backgroundColor = UIColor.white;
         self.view.addSubview(mainCollectionView);
         
         let viewsDict = ["mainCollectionView":mainCollectionView];
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[mainCollectionView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[mainCollectionView]|", options: .alignAllLeft, metrics: nil, views: viewsDict));
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[mainCollectionView]|", options: .alignAllLeft, metrics: nil, views: viewsDict));
         
 //        let rightItem = UIBarButtonItem(title: "更多", style: .Done, target: self, action: #selector(YSEMainViewController.showMenuList));
 //        rightItem.tintColor = UIColor.whiteColor();
@@ -67,26 +91,26 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     //TODO:addClassifyBarButtonItems
-    private func addClassifyBarButtonItems(){
+    fileprivate func addClassifyBarButtonItems(){
     
         var barButtonArr = [UIBarButtonItem]();
         if self.categoryList.count > 0 {
             self.categoryClassifyButton = UIButton();
-            categoryClassifyButton?.frame = CGRectMake(0, 0, 40, 40);
-            categoryClassifyButton?.setTitle("分类", forState: .Normal);
-            categoryClassifyButton?.addTarget(self, action: #selector(self.showMenuList(_:)), forControlEvents: .TouchUpInside)
+            categoryClassifyButton?.frame = CGRect(x: 0, y: 0, width: 40, height: 40);
+            categoryClassifyButton?.setTitle("分类", for: UIControlState());
+            categoryClassifyButton?.addTarget(self, action: #selector(self.showMenuList(_:)), for: .touchUpInside)
             let categoryBarButtonItem = UIBarButtonItem(customView: categoryClassifyButton!);
-            categoryBarButtonItem.tintColor = UIColor.whiteColor();
+            categoryBarButtonItem.tintColor = UIColor.white;
             barButtonArr.append(categoryBarButtonItem);
         }
         
         if self.colorList.count > 0 {
             self.colorClassifyButton = UIButton();
-            colorClassifyButton?.frame = CGRectMake(0, 0, 40, 40);
-            colorClassifyButton?.setTitle("颜色", forState: .Normal);
-            colorClassifyButton?.addTarget(self, action: #selector(self.showMenuList(_:)), forControlEvents: .TouchUpInside)
+            colorClassifyButton?.frame = CGRect(x: 0, y: 0, width: 40, height: 40);
+            colorClassifyButton?.setTitle("颜色", for: UIControlState());
+            colorClassifyButton?.addTarget(self, action: #selector(self.showMenuList(_:)), for: .touchUpInside)
             let colorBarButtonItem = UIBarButtonItem(customView: colorClassifyButton!);
-            colorClassifyButton?.tintColor = UIColor.whiteColor();
+            colorClassifyButton?.tintColor = UIColor.white;
             barButtonArr.append(colorBarButtonItem);
         }
         
@@ -97,17 +121,17 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.resetBarButtonItems();
     }
     
-    private func resetBarButtonItems(){
+    fileprivate func resetBarButtonItems(){
         if self.selectedClassifyModel is YSECategoryModel {
-            categoryClassifyButton?.setTitle(selectedClassifyModel?.name, forState: .Normal);
-            colorClassifyButton?.setTitle("颜色", forState: .Normal);
+            categoryClassifyButton?.setTitle(selectedClassifyModel?.name, for: UIControlState());
+            colorClassifyButton?.setTitle("颜色", for: UIControlState());
         }else{
-            categoryClassifyButton?.setTitle("分类", forState: .Normal);
-            colorClassifyButton?.setTitle(selectedClassifyModel?.name, forState: .Normal);
+            categoryClassifyButton?.setTitle("分类", for: UIControlState());
+            colorClassifyButton?.setTitle(selectedClassifyModel?.name, for: UIControlState());
         }
     }
     //MARK: - Request
-    private func headerRequest(){
+    fileprivate func headerRequest(){
         YSERequestFetcher().p_fetchHomePage(classifyModel: self.selectedClassifyModel) { (responseTuple) in
             self.mainCollectionView.mj_header.endRefreshing();
             
@@ -134,7 +158,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
-    private func footerRequest(){
+    fileprivate func footerRequest(){
         if nextPageClassifyModel == nil {
             self.mainCollectionView.mj_footer.endRefreshing();
             return;
@@ -155,9 +179,9 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     //TODO:保存下一页的链接
-    private func saveNextPageInfo(result result:[String:AnyObject]){
+    fileprivate func saveNextPageInfo(result:[String:AnyObject]){
         let nextPageHref = result[kNextPageHrefKey];
-        let subfix = nextPageHref?.componentsSeparatedByString("/").last;
+        let subfix = nextPageHref?.components(separatedBy: "/").last;
         let href = (self.selectedClassifyModel?.href)! + subfix!;
         let nextPageModel = YSEClassifyModel();
         nextPageModel.p_setName(self.selectedClassifyModel?.name, href: href);
@@ -174,55 +198,55 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     //MARK: - Delegate
     //TODO:UICollectionViewDelegate, UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.imageList.count;
     }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(INSImageItemCollectionViewCellIdentifier, forIndexPath: indexPath) as! INSImageItemCollectionViewCell;
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: INSImageItemCollectionViewCellIdentifier, for: indexPath) as! INSImageItemCollectionViewCell;
         let model = self.imageList[indexPath.row]
         cell.imageModel = model;
         cell.p_loadCell();
         return cell;
     }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true);
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true);
         self.showPhotoBrowser(UInt(indexPath.row));
     }
     
     //TODO:UICollectionViewDelegateFlowLayout
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let model = imageList[indexPath.row];
         let cellWidth  = (SWIFT_DEVICE_SCREEN_WIDTH - 4*gap)/3;
         let cellHeight = self.getCellHeight(model, width: cellWidth);
-        return CGSizeMake(cellWidth, cellHeight);
+        return CGSize(width: cellWidth, height: cellHeight);
     }
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(gap, gap, 0, gap);
     }
     
     
     //TODO:MWPhotoBrowserDelegate
-    func numberOfPhotosInPhotoBrowser(photoBrowser: MWPhotoBrowser!) -> UInt {
+    func numberOfPhotos(in photoBrowser: MWPhotoBrowser!) -> UInt {
         NSLog("xxxxxxxxxxxxx");
         return UInt(self.imageList.count);
     }
-    func photoBrowser(photoBrowser: MWPhotoBrowser!, photoAtIndex index: UInt) -> MWPhotoProtocol! {
+    func photoBrowser(_ photoBrowser: MWPhotoBrowser!, photoAt index: UInt) -> MWPhotoProtocol! {
         let index_int = Int(index);
         if index_int < self.imageList.endIndex {
             let imageModel = self.imageList[index_int];
             var img_url = imageModel.href!;
             let suffix = ".jpg";
-            img_url = img_url.componentsSeparatedByString(suffix).first!;
-            img_url = img_url.stringByAppendingString(suffix);
+            img_url = img_url.components(separatedBy: suffix).first!;
+            img_url = img_url + suffix;
             
-            let url = NSURL(string: img_url);
-            let photo = MWPhoto(URL: url);
+            let url = URL(string: img_url);
+            let photo = MWPhoto(url: url);
             photo.caption = imageModel.title;
             return photo;
         }
         return nil;
     }
-    func photoBrowser(photoBrowser: MWPhotoBrowser!, didDisplayPhotoAtIndex index: UInt) {
+    func photoBrowser(_ photoBrowser: MWPhotoBrowser!, didDisplayPhotoAt index: UInt) {
         if index == UInt(self.imageList.endIndex - 1) {
 //            self.mainCollectionView.mj_footer.beginRefreshing();
             self.footerRequest();
@@ -230,7 +254,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     //TODO:getCellHeight
-    private func getCellHeight(imageModel:YSEImageModel, width:CGFloat) -> CGFloat{
+    fileprivate func getCellHeight(_ imageModel:YSEImageModel, width:CGFloat) -> CGFloat{
         let imageHeight = CGFloat(Float(imageModel.height!)!);
         let imageWidth = CGFloat(Float(imageModel.width!)!);
         return (imageHeight * width / imageWidth);
@@ -239,7 +263,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     //MARK: - handle touch
     //TODO: showPhotoBrowser
-    private func showPhotoBrowser(currentPhotoIndex:UInt){
+    fileprivate func showPhotoBrowser(_ currentPhotoIndex:UInt){
         let displayActionButton = true;
         let displaySelectionButtons = false;
         let displayNavArrows = false;
@@ -263,7 +287,7 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     //reload photoBrowser
-    private func reloadPhotoBrowser(){
+    fileprivate func reloadPhotoBrowser(){
         if (self.navigationController?.viewControllers.count > 1) {
             let photoBrowserVC = self.navigationController?.viewControllers.last;
             if photoBrowserVC is MWPhotoBrowser {
@@ -274,10 +298,10 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     //TODO:showMenu
-    @objc private func showMenuList(button:UIButton?){
+    @objc fileprivate func showMenuList(_ button:UIButton?){
         let list : [YSEClassifyModel] = (button == self.categoryClassifyButton) ? self.categoryList : self.colorList;
         if menuView == nil {
-            self.menuView = YSEMenuView(frame: CGRectZero);
+            self.menuView = YSEMenuView(frame: CGRect.zero);
             menuView?.callBack = {
                 (classifyModel : YSEClassifyModel) -> Void in
                 self.selectedClassifyModel = classifyModel;
@@ -289,11 +313,11 @@ class YSEMainViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         let frame = mainCollectionView.frame
-        if CGRectGetHeight(menuView!.frame) < 1 {
+        if menuView!.frame.height < 1 {
             menuView!.categoryList = list;
             menuView?.p_show(backView_finalFrame: frame);
         }else{
-            let new_frame = CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), CGFloat.min);
+            let new_frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: CGFloat.leastNormalMagnitude);
             menuView?.p_hide(backView_finalFrame:new_frame);
         }
         self.resetBarButtonItems();

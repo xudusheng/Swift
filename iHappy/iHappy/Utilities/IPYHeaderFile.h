@@ -32,8 +32,9 @@
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"//上拉下拉刷新
 #import "WMPageController.h"
+#import "KeyboardManager.h"
 #import "TFHpple.h"
-
+#import "CWFoundation.h"
 #import "XDSCategoryHeader.h"
 #import "XDSRootModel.h"
 #import "XDSHttpRequest.h"

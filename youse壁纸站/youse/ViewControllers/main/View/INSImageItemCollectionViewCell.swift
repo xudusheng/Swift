@@ -10,8 +10,8 @@ import UIKit
 
 class INSImageItemCollectionViewCell: UICollectionViewCell {
 
-    private var bgImageView = UIImageView(frame: CGRectZero);
-    private var titleLabel = UILabel(frame: CGRectZero);
+    fileprivate var bgImageView = UIImageView(frame: CGRect.zero);
+    fileprivate var titleLabel = UILabel(frame: CGRect.zero);
     
     var imageModel : YSEImageModel?;
     //MARK:init
@@ -24,21 +24,21 @@ class INSImageItemCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK:UI
-    private func createImageItemCollectionViewCellUI(){
-        bgImageView.backgroundColor = UIColor.lightGrayColor();
+    fileprivate func createImageItemCollectionViewCellUI(){
+        bgImageView.backgroundColor = UIColor.lightGray;
         bgImageView.translatesAutoresizingMaskIntoConstraints = false;
         titleLabel.translatesAutoresizingMaskIntoConstraints = false;
-        titleLabel.font = UIFont.systemFontOfSize(12);
-        titleLabel.textColor = UIColor.whiteColor();
+        titleLabel.font = UIFont.systemFont(ofSize: 12);
+        titleLabel.textColor = UIColor.white;
         titleLabel.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4);
         self.contentView.addSubview(bgImageView);
         self.contentView.addSubview(titleLabel);
         
         let viewsDict = ["bgImageView":bgImageView, "titleLabel":titleLabel];
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bgImageView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bgImageView]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[titleLabel]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[titleLabel(25)]|", options: .AlignAllLeft, metrics: nil, views: viewsDict));
+        self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bgImageView]|", options: .alignAllLeft, metrics: nil, views: viewsDict));
+        self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[bgImageView]|", options: .alignAllLeft, metrics: nil, views: viewsDict));
+        self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[titleLabel]|", options: .alignAllLeft, metrics: nil, views: viewsDict));
+        self.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[titleLabel(25)]|", options: .alignAllLeft, metrics: nil, views: viewsDict));
         
     }
 
@@ -47,8 +47,8 @@ class INSImageItemCollectionViewCell: UICollectionViewCell {
         if self.imageModel == nil {
             return;
         }
-        let url = NSURL(string: imageModel!.href!);
-        bgImageView.sd_setImageWithURL(url, placeholderImage: nil);
+        let url = URL(string: imageModel!.href!);
+        bgImageView.sd_setImage(with: url, placeholderImage: nil);
         titleLabel.text = imageModel!.title;
     }
 
