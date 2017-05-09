@@ -42,7 +42,7 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
     NLETask * fetchConfigTask = [NLETask task];
     fetchConfigTask.taskId = kIHPFetchConfigTaskID;
     fetchConfigTask.taskContentBlock = ^(NLETask * task) {
-
+        [weakSelf fetchConfigData];
     };
     [launchTaskQueue addTask:fetchConfigTask];
     [launchTaskQueue goWithFinishedBlock:^(NLETaskQueue *taskQueue) {
@@ -51,9 +51,28 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
     
 }
 
-
+- (void)fetchConfigData{
+    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu.json";
+    __weak typeof(self)weakSelf = self;
+    [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requesturl
+                                         hudController:nil
+                                               showHUD:NO
+                                               HUDText:nil
+                                         showFailedHUD:YES
+                                               success:^(BOOL success, NSData * htmlData) {
+                                                   if (success) {
+                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
+                                                   }else{
+                                                       //                                                       [XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.window hideAfter:1.2];
+                                                   }
+                                               } failed:^(NSString *errorDescription) {
+                                                   
+                                                   
+                                               }];
+}
 
 - (void)showAppView{
+    
     NSArray<IHPMenuModel*> *menus = [IHPConfigManager shareManager].menus;;
     
     self.leftMenu = [[IHPMenuViewController alloc] init];
