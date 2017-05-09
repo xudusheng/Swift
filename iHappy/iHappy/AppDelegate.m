@@ -9,11 +9,12 @@
 #import "AppDelegate.h"
 #import "IHYMainViewController.h"
 #import "IHYNewsMainViewController.h"
-#import "IHYInitialViewController.h"
 #import "IHPConfigManager.h"
 #import "IHPConfigModel.h"
 #import "IHPMenuViewController.h"
-#import <JavaScriptCore/JavaScriptCore.h>
+
+#import "NLETaskQueue.h"
+
 @interface AppDelegate ()
 
 @end
@@ -25,58 +26,35 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
-    [self showQ2002];
-//    [self showNews];
-    
-//    IHYInitialViewController * initialVC = [[IHYInitialViewController alloc] init];
-//    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:initialVC];
-//    self.window.rootViewController = nav;
-    [self.window makeKeyAndVisible];
-    
-    
-    
-    
-//    NSString *jsPath = [[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js"];
-//    NSString *jsString = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:nil];
-//    NSLog(@"jsString = %@", jsString);
-//    
-//    
-//    JSContext *context = [[JSContext alloc] init];
-//    [context evaluateScript:jsString];
-//    
-//    JSValue *function = context[@"encodeURIComponent"];
-//    JSValue *value = [function callWithArguments:@[@"bGllmXCflMaWlsljmmhunGlhZ2NnYcSf"]];
-//    
-//    NSLog(@"value = %@", value);
+    [self stareLaunchQueue];
 
-    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
 
+NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
 
-- (void)showQ2002{
+- (void)stareLaunchQueue{
+    
+    __weak typeof(self)weakSelf = self;
+    NLETaskQueue *launchTaskQueue = [NLETaskQueue taskQueue];
+    NLETask * fetchConfigTask = [NLETask task];
+    fetchConfigTask.taskId = kIHPFetchConfigTaskID;
+    fetchConfigTask.taskContentBlock = ^(NLETask * task) {
 
+    };
+    [launchTaskQueue addTask:fetchConfigTask];
+    [launchTaskQueue goWithFinishedBlock:^(NLETaskQueue *taskQueue) {
+        [weakSelf showAppView];
+    }];
     
-    
-    NSArray * arr = @[
-                      @{@"title":@"电影", @"firstPageURL":@"http://www.q2002.com/type/1.html", @"type":@"0"},
-                      @{@"title":@"电视剧", @"firstPageURL":@"http://www.q2002.com/type/2.html", @"type":@"0"},
-                      @{@"title":@"动漫", @"firstPageURL":@"http://www.q2002.com/type/7.html", @"type":@"0"},
-                      @{@"title":@"音乐", @"firstPageURL":@"http://www.q2002.com/type/6.html", @"type":@"0"},
-                      @{@"title":@"综艺", @"firstPageURL":@"http://www.q2002.com/type/4.html", @"type":@"0"},
-                      @{@"title":@"福利", @"firstPageURL":@"http://www.q2002.com/type/3.html", @"type":@"0"},
-                      @{@"title":@"美图", @"firstPageURL":@"http://www.q2002.com/type/20.html", @"type":@"1"},
-                      ];
-    NSMutableArray * controllerModels = [NSMutableArray arrayWithCapacity:0];
-    for (NSDictionary * dic in arr) {
-        IHYViewControllerModel * model = [[IHYViewControllerModel alloc] init];
-        [model setValuesForKeysWithDictionary:dic];
-        [controllerModels addObject:model];
-    }
-    
+}
+
+
+
+- (void)showAppView{
     NSArray<IHPMenuModel*> *menus = [IHPConfigManager shareManager].menus;;
-//    self.window.rootViewController = nav;
     
     self.leftMenu = [[IHPMenuViewController alloc] init];
     _leftMenu.menus = menus;
@@ -107,36 +85,6 @@
     self.mainmeunVC.delegate = _leftMenu;
     
     self.window.rootViewController = self.mainmeunVC;
-    
-}
-
-- (void)showNews{
-//    类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
-//    http://v.juhe.cn/toutiao/index?type=top&key=APPKEY
-//    http://v.juhe.cn/toutiao/index?type=top&key=f2b9c5a8243bc824253119ba09f7759a
-    
-    NSArray * arr = @[
-                      @{@"title":@"头条", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=top&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"社会", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=shehui&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"国内", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=guonei&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"国际", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=guoji&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"娱乐", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=yule&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"体育", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=tiyu&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"军事", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=junshi&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"财经", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=caijing&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      @{@"title":@"时尚", @"firstPageURL":@"http://v.juhe.cn/toutiao/index?type=shishang&key=f2b9c5a8243bc824253119ba09f7759a", @"type":@"0"},
-                      ];
-    NSMutableArray * controllerModels = [NSMutableArray arrayWithCapacity:0];
-    for (NSDictionary * dic in arr) {
-        IHYViewControllerModel * model = [[IHYViewControllerModel alloc] init];
-        [model setValuesForKeysWithDictionary:dic];
-        [controllerModels addObject:model];
-    }
-    
-    IHYNewsMainViewController * newsMainVC = [[IHYNewsMainViewController alloc] init];
-    newsMainVC.controllerModels = controllerModels;
-    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:newsMainVC];
-    self.window.rootViewController = nav;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

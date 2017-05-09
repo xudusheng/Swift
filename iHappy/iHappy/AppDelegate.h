@@ -19,9 +19,5 @@
 @property (nonatomic, strong) IHYMainViewController * contentController;
 
 
-- (void)showQ2002;
-
-- (void)showNews;
-
 @end
 

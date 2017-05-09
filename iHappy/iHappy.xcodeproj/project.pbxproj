@@ -33,7 +33,6 @@
 		09F90D751DE2C06000542684 /* XDSWebProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D731DE2C06000542684 /* XDSWebProgressView.m */; };
 		09F90D791DE2D2F600542684 /* IHYNewsMultableImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D771DE2D2F600542684 /* IHYNewsMultableImageCell.m */; };
 		09F90D7A1DE2D2F600542684 /* IHYNewsMultableImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09F90D781DE2D2F600542684 /* IHYNewsMultableImageCell.xib */; };
-		09F90D7D1DE2E22200542684 /* IHYInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */; };
 		A01579F31DE1776C00CD7DDB /* ico_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A01579F11DE1776C00CD7DDB /* ico_back@2x.png */; };
 		A01579F41DE1776C00CD7DDB /* ico_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A01579F21DE1776C00CD7DDB /* ico_back@3x.png */; };
 		A05EB8EB1DE0244300148A5B /* OCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB8D81DE0244300148A5B /* OCAlertView.m */; };
@@ -70,6 +69,8 @@
 		FC2F6EA61EBCC05000A5AF3D /* IHPSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2F6EA51EBCC05000A5AF3D /* IHPSearchViewController.m */; };
 		FC6676AF1EAAD55D0066C81F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */; };
 		FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */; };
+		FC9667BC1EC1BE1100DA1A96 /* NLETask.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667B91EC1BE1100DA1A96 /* NLETask.m */; };
+		FC9667BD1EC1BE1100DA1A96 /* NLETaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667BB1EC1BE1100DA1A96 /* NLETaskQueue.m */; };
 		FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */; };
 		FCAFC60E1EAED74900B48C83 /* XDSSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC60D1EAED74900B48C83 /* XDSSideMenu.m */; };
 		FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC6101EAED7DF00B48C83 /* IHPConfigModel.m */; };
@@ -127,8 +128,6 @@
 		09F90D761DE2D2F600542684 /* IHYNewsMultableImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYNewsMultableImageCell.h; sourceTree = "<group>"; };
 		09F90D771DE2D2F600542684 /* IHYNewsMultableImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYNewsMultableImageCell.m; sourceTree = "<group>"; };
 		09F90D781DE2D2F600542684 /* IHYNewsMultableImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHYNewsMultableImageCell.xib; sourceTree = "<group>"; };
-		09F90D7B1DE2E22200542684 /* IHYInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHYInitialViewController.h; sourceTree = "<group>"; };
-		09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHYInitialViewController.m; sourceTree = "<group>"; };
 		6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iHappy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01579F11DE1776C00CD7DDB /* ico_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_back@2x.png"; sourceTree = "<group>"; };
 		A01579F21DE1776C00CD7DDB /* ico_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_back@3x.png"; sourceTree = "<group>"; };
@@ -195,6 +194,10 @@
 		FC6676AE1EAAD55D0066C81F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FC8B89A81EBC8073000AD27A /* IHPPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPPlayerViewController.h; sourceTree = "<group>"; };
 		FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPPlayerViewController.m; sourceTree = "<group>"; };
+		FC9667B81EC1BE1100DA1A96 /* NLETask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLETask.h; sourceTree = "<group>"; };
+		FC9667B91EC1BE1100DA1A96 /* NLETask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLETask.m; sourceTree = "<group>"; };
+		FC9667BA1EC1BE1100DA1A96 /* NLETaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLETaskQueue.h; sourceTree = "<group>"; };
+		FC9667BB1EC1BE1100DA1A96 /* NLETaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLETaskQueue.m; sourceTree = "<group>"; };
 		FCAEADD11EB4D3EA006FB6B5 /* IHPXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPXMLNode.h; sourceTree = "<group>"; };
 		FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPXMLNode.m; sourceTree = "<group>"; };
 		FCAFC60C1EAED74900B48C83 /* XDSSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSSideMenu.h; sourceTree = "<group>"; };
@@ -538,8 +541,6 @@
 				A0D46B7D1DE0173500637681 /* AppDelegate.m */,
 				FC1A8C2C1EAC1FD900E66FF8 /* menu.json */,
 				FC0900D71EB96838003289BE /* jquery.js */,
-				09F90D7B1DE2E22200542684 /* IHYInitialViewController.h */,
-				09F90D7C1DE2E22200542684 /* IHYInitialViewController.m */,
 				092CAED51DE2861F008127DA /* Q2002 */,
 				A05EB90F1DE039D200148A5B /* iNews */,
 				FCAFC6061EAED5C300B48C83 /* Vender */,
@@ -663,6 +664,17 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		FC9667B71EC1BE1100DA1A96 /* NLETask */ = {
+			isa = PBXGroup;
+			children = (
+				FC9667B81EC1BE1100DA1A96 /* NLETask.h */,
+				FC9667B91EC1BE1100DA1A96 /* NLETask.m */,
+				FC9667BA1EC1BE1100DA1A96 /* NLETaskQueue.h */,
+				FC9667BB1EC1BE1100DA1A96 /* NLETaskQueue.m */,
+			);
+			path = NLETask;
+			sourceTree = "<group>";
+		};
 		FCAEADD01EB4D3C5006FB6B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +687,7 @@
 		FCAFC6061EAED5C300B48C83 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				FC9667B71EC1BE1100DA1A96 /* NLETask */,
 				FCAFC60B1EAED74900B48C83 /* XDSSideMenu */,
 			);
 			path = Vender;
@@ -845,6 +858,7 @@
 				FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */,
 				092CAEFE1DE28620008127DA /* IHYMovieDetailInfoView.m in Sources */,
 				A05EB9041DE0281D00148A5B /* XDSUtilities.m in Sources */,
+				FC9667BD1EC1BE1100DA1A96 /* NLETaskQueue.m in Sources */,
 				A05EB8FF1DE0277E00148A5B /* ForbidTextField.m in Sources */,
 				A05EB8EF1DE0244300148A5B /* ZDProgressHUD.m in Sources */,
 				A05EB9211DE03CA000148A5B /* XDSHttpRequest.m in Sources */,
@@ -869,11 +883,11 @@
 				FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */,
 				09F90D791DE2D2F600542684 /* IHYNewsMultableImageCell.m in Sources */,
 				092CAF021DE28620008127DA /* IHYMovieDetailViewController.m in Sources */,
-				09F90D7D1DE2E22200542684 /* IHYInitialViewController.m in Sources */,
 				A05EB8EC1DE0244300148A5B /* OCControlAlertView.m in Sources */,
 				09F90D751DE2C06000542684 /* XDSWebProgressView.m in Sources */,
 				FCAFC60E1EAED74900B48C83 /* XDSSideMenu.m in Sources */,
 				A05EB91B1DE03B2500148A5B /* XDSRootRequestViewController.m in Sources */,
+				FC9667BC1EC1BE1100DA1A96 /* NLETask.m in Sources */,
 				092CAF211DE2B1A7008127DA /* IHYNewsMainViewController.m in Sources */,
 				092CAF011DE28620008127DA /* IHYMoviePlayButtonCell.m in Sources */,
 				A05EB9071DE02D6700148A5B /* UIColor+Hex.m in Sources */,
