@@ -56,9 +56,7 @@
 		A05EB92B1DE0880000148A5B /* XDSRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05EB92A1DE0880000148A5B /* XDSRootModel.m */; };
 		A0D46B7B1DE0173500637681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D46B7A1DE0173500637681 /* main.m */; };
 		A0D46B7E1DE0173500637681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D46B7D1DE0173500637681 /* AppDelegate.m */; };
-		A0D46B841DE0173500637681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B821DE0173500637681 /* Main.storyboard */; };
 		A0D46B861DE0173500637681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B851DE0173500637681 /* Assets.xcassets */; };
-		A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D46B871DE0173500637681 /* LaunchScreen.storyboard */; };
 		A24B53CD1EB941BE005D34C6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */; };
 		E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */; };
 		FC0900D81EB96838003289BE /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = FC0900D71EB96838003289BE /* jquery.js */; };
@@ -177,9 +175,7 @@
 		A0D46B7A1DE0173500637681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D46B7C1DE0173500637681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0D46B7D1DE0173500637681 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0D46B831DE0173500637681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0D46B851DE0173500637681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0D46B881DE0173500637681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0D46B8A1DE0173500637681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		DDF28F2EE953D3A78F924489 /* Pods-iHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHappy/Pods-iHappy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -554,9 +550,7 @@
 				092CAED51DE2861F008127DA /* Q2002 */,
 				A05EB90F1DE039D200148A5B /* iNews */,
 				FCAFC6061EAED5C300B48C83 /* Vender */,
-				A0D46B821DE0173500637681 /* Main.storyboard */,
 				A0D46B851DE0173500637681 /* Assets.xcassets */,
-				A0D46B871DE0173500637681 /* LaunchScreen.storyboard */,
 				A0D46B8A1DE0173500637681 /* Info.plist */,
 				A0D46B791DE0173500637681 /* Supporting Files */,
 			);
@@ -784,10 +778,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				092CAF051DE28620008127DA /* IHPMovieCell.xib in Resources */,
-				A0D46B891DE0173500637681 /* LaunchScreen.storyboard in Resources */,
 				A05EB9251DE04EF400148A5B /* icon_jiazai@3x.png in Resources */,
 				A0D46B861DE0173500637681 /* Assets.xcassets in Resources */,
-				A0D46B841DE0173500637681 /* Main.storyboard in Resources */,
 				A05EB9241DE04EF400148A5B /* icon_jiazai@2x.png in Resources */,
 				FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */,
 				FC0900D81EB96838003289BE /* jquery.js in Resources */,
@@ -913,25 +905,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A0D46B821DE0173500637681 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0D46B831DE0173500637681 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A0D46B871DE0173500637681 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0D46B881DE0173500637681 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A0D46B8B1DE0173500637681 /* Debug */ = {

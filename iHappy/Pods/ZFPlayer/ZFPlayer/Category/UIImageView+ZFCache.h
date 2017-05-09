@@ -87,7 +87,7 @@ typedef void (^ZFImageBlock)(UIImage *image);
  * The download is asynchronous and cached.
  *
  * @param url         The url for the image.
- * @param placeholder The image to be set initially, until the image request finishes.
+ * @param placeholderImage The image to be set initially, until the image request finishes.
  */
 - (void)setImageWithURLString:(NSString *)url placeholder:(UIImage *)placeholderImage;
 

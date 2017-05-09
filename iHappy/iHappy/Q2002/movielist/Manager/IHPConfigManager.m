@@ -19,20 +19,30 @@
         manager = [[IHPConfigManager alloc] init];
     });
     
-    if (nil == manager.configModel) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"menu" ofType:@"json"];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        NSError* err = nil;
-        IHPConfigModel *configModel = [[IHPConfigModel alloc] initWithData:data error:&err];
-        if (!err) {
-            [manager setConfigModel:configModel];
-        }else{
-            NSLog(@"error = %@", err);
-        }
-    }
+//    if (nil == manager.configModel) {
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"menu" ofType:@"json"];
+//        NSData *data = [NSData dataWithContentsOfFile:path];
+//        NSError* err = nil;
+//        IHPConfigModel *configModel = [[IHPConfigModel alloc] initWithData:data error:&err];
+//        if (!err) {
+//            [manager setConfigModel:configModel];
+//        }else{
+//            NSLog(@"error = %@", err);
+//        }
+//    }
     return manager;
 }
 
+- (void)configManagerWithJsondData:(NSData *)configData{
+    NSError* err = nil;
+    IHPConfigModel *configModel = [[IHPConfigModel alloc] initWithData:configData error:&err];
+    if (!err) {
+        [self setConfigModel:configModel];
+    }else{
+        NSLog(@"error = %@", err);
+    }
+
+}
 
 - (NSString *)rooturl{
     return _configModel.rooturl;

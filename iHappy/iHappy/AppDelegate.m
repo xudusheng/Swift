@@ -99,12 +99,14 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
                                                HUDText:nil
                                          showFailedHUD:YES
                                                success:^(BOOL success, NSData * htmlData) {
-                                                   [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];
                                                    if (success) {
-                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
+                                                       [[IHPConfigManager shareManager] configManagerWithJsondData:htmlData];
+//                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
                                                    }else{
-                                                       //                                                       [XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.window hideAfter:1.2];
+                                                       //[XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.window hideAfter:1.2];
                                                    }
+                                                   [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];
+
                                                } failed:^(NSString *errorDescription) {
                                                    [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];                                                   
                                                }];

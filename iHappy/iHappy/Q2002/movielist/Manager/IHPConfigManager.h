@@ -18,5 +18,5 @@
 @property (nonatomic, readonly) NSString *rooturl;
 @property (nonatomic, readonly) IHPForceUpdateModel *forceUpdate;
 @property (nonatomic, readonly) NSArray<IHPMenuModel *> *menus;
-
+- (void)configManagerWithJsondData:(NSData *)configData;
 @end
