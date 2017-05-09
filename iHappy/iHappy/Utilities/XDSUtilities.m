@@ -12,6 +12,7 @@
 #import "OCAlertView.h"
 #import "ZDLoadFailView.h"
 #import "XDSUtilities.h"
+
 @implementation XDSUtilities
 #pragma mark NSUserDefault使用封装
 +(void)setUserDefaultWithValue:(id)value forKey:(NSString *)key{
@@ -536,5 +537,4 @@
     CGSize size = [value boundingRectWithSize:infoSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
     return size.height;
 }
-
 @end

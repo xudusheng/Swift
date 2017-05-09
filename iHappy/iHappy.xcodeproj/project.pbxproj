@@ -71,6 +71,8 @@
 		FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8B89A91EBC8073000AD27A /* IHPPlayerViewController.m */; };
 		FC9667BC1EC1BE1100DA1A96 /* NLETask.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667B91EC1BE1100DA1A96 /* NLETask.m */; };
 		FC9667BD1EC1BE1100DA1A96 /* NLETaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667BB1EC1BE1100DA1A96 /* NLETaskQueue.m */; };
+		FC9667C21EC1C55200DA1A96 /* XDSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667BF1EC1C55200DA1A96 /* XDSMasterViewController.m */; };
+		FC9667C31EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667C11EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m */; };
 		FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */; };
 		FCAFC60E1EAED74900B48C83 /* XDSSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC60D1EAED74900B48C83 /* XDSSideMenu.m */; };
 		FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC6101EAED7DF00B48C83 /* IHPConfigModel.m */; };
@@ -198,6 +200,10 @@
 		FC9667B91EC1BE1100DA1A96 /* NLETask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLETask.m; sourceTree = "<group>"; };
 		FC9667BA1EC1BE1100DA1A96 /* NLETaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLETaskQueue.h; sourceTree = "<group>"; };
 		FC9667BB1EC1BE1100DA1A96 /* NLETaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLETaskQueue.m; sourceTree = "<group>"; };
+		FC9667BE1EC1C55200DA1A96 /* XDSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSMasterViewController.h; sourceTree = "<group>"; };
+		FC9667BF1EC1C55200DA1A96 /* XDSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSMasterViewController.m; sourceTree = "<group>"; };
+		FC9667C01EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSPlaceholdSplashViewController.h; sourceTree = "<group>"; };
+		FC9667C11EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSPlaceholdSplashViewController.m; sourceTree = "<group>"; };
 		FCAEADD11EB4D3EA006FB6B5 /* IHPXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPXMLNode.h; sourceTree = "<group>"; };
 		FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPXMLNode.m; sourceTree = "<group>"; };
 		FCAFC60C1EAED74900B48C83 /* XDSSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSSideMenu.h; sourceTree = "<group>"; };
@@ -413,6 +419,10 @@
 		09F90D6E1DE2BF2A00542684 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FC9667BE1EC1C55200DA1A96 /* XDSMasterViewController.h */,
+				FC9667BF1EC1C55200DA1A96 /* XDSMasterViewController.m */,
+				FC9667C01EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.h */,
+				FC9667C11EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m */,
 				09F90D6F1DE2C06000542684 /* WebViewController */,
 			);
 			path = Components;
@@ -863,6 +873,7 @@
 				A05EB8EF1DE0244300148A5B /* ZDProgressHUD.m in Sources */,
 				A05EB9211DE03CA000148A5B /* XDSHttpRequest.m in Sources */,
 				FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */,
+				FC9667C31EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m in Sources */,
 				A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */,
 				092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */,
 				09F90D6D1DE2BD8600542684 /* IHYNewsModel.m in Sources */,
@@ -878,6 +889,7 @@
 				A05EB8FE1DE0277E00148A5B /* CALayer+Addition.m in Sources */,
 				A05EB91C1DE03B2500148A5B /* XDSRootTableViewController.m in Sources */,
 				A0D46B7E1DE0173500637681 /* AppDelegate.m in Sources */,
+				FC9667C21EC1C55200DA1A96 /* XDSMasterViewController.m in Sources */,
 				A05EB8EE1DE0244300148A5B /* ZDLoadFailView.m in Sources */,
 				092CAEFB1DE28620008127DA /* IHYViewControllerModel.m in Sources */,
 				FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */,
@@ -1017,6 +1029,7 @@
 			baseConfigurationReference = DDF28F2EE953D3A78F924489 /* Pods-iHappy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 85W725W7AQ;
 				GCC_PREFIX_HEADER = iHappy/IPYPrefixHeader.pch;
 				INFOPLIST_FILE = iHappy/Info.plist;
@@ -1032,6 +1045,7 @@
 			baseConfigurationReference = 02BBD5EB2CAC1F6C99464E60 /* Pods-iHappy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 85W725W7AQ;
 				GCC_PREFIX_HEADER = iHappy/IPYPrefixHeader.pch;
 				INFOPLIST_FILE = iHappy/Info.plist;

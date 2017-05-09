@@ -14,9 +14,14 @@
 #import "IHPMenuViewController.h"
 
 #import "NLETaskQueue.h"
+#import "XDSMasterViewController.h"
+#import "XDSPlaceholdSplashViewController.h"
 
 @interface AppDelegate ()
 
+@property (nonatomic, weak) XDSPlaceholdSplashViewController * placeholdSplashViewController;
+
+@property (nonatomic, strong) NLETaskQueue *launchTaskQueue;
 @end
 
 @implementation AppDelegate
@@ -26,29 +31,63 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
+
+    XDSMasterViewController * rootViewController = [XDSMasterViewController sharedRootViewController];
+    self.window.rootViewController = rootViewController;
+    
+    [self showPlaceholderSplashView];
     [self stareLaunchQueue];
 
-    [self.window makeKeyAndVisible];
     
     return YES;
 }
 
-NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
+#pragma mark - Placehold Splash View methods
+//- (void)showPlaceholderSplashViewWithViewController:(XDSPlaceholdSplashViewController *)viewController{
+//    viewController.isCustomView = YES;
+//    [self displayPlaceholderSplashView:viewController];
+//}
 
+- (void)removePlaceholderSplashView{
+    [self.placeholdSplashViewController removeFromParentViewController];
+    if (self.placeholdSplashViewController.view.superview) {
+        [self.placeholdSplashViewController.view removeFromSuperview];
+    }
+    self.placeholdSplashViewController = nil;
+}
+
+- (void)showPlaceholderSplashView{
+    XDSPlaceholdSplashViewController * placeholdSplashViewController = [[XDSPlaceholdSplashViewController alloc] init];
+    [self displayPlaceholderSplashView:placeholdSplashViewController];
+}
+
+- (void)displayPlaceholderSplashView:(XDSPlaceholdSplashViewController *)viewController{
+    [[XDSMasterViewController sharedRootViewController] addChildViewController:viewController];
+    [[XDSMasterViewController sharedRootViewController].view addSubview:viewController.view];
+    self.placeholdSplashViewController = viewController;
+    [self.window makeKeyAndVisible];
+}
+
+
+NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
 - (void)stareLaunchQueue{
-    
     __weak typeof(self)weakSelf = self;
-    NLETaskQueue *launchTaskQueue = [NLETaskQueue taskQueue];
+    self.launchTaskQueue = [NLETaskQueue taskQueue];
     NLETask * fetchConfigTask = [NLETask task];
     fetchConfigTask.taskId = kIHPFetchConfigTaskID;
     fetchConfigTask.taskContentBlock = ^(NLETask * task) {
         [weakSelf fetchConfigData];
     };
-    [launchTaskQueue addTask:fetchConfigTask];
-    [launchTaskQueue goWithFinishedBlock:^(NLETaskQueue *taskQueue) {
+    [self.launchTaskQueue addTask:fetchConfigTask];
+    [self.launchTaskQueue goWithFinishedBlock:^(NLETaskQueue *taskQueue) {
+        [weakSelf removePlaceholderSplashView];
         [weakSelf showAppView];
     }];
-    
+}
+
+- (void)finishTaskWithTaksID:(NSString *)taskID{
+    NLETask *task = [self.launchTaskQueue taskWithTaskId:taskID];
+    [task taskHasFinished];
 }
 
 - (void)fetchConfigData{
@@ -60,14 +99,14 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
                                                HUDText:nil
                                          showFailedHUD:YES
                                                success:^(BOOL success, NSData * htmlData) {
+                                                   [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];
                                                    if (success) {
                                                        NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
                                                    }else{
                                                        //                                                       [XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.window hideAfter:1.2];
                                                    }
                                                } failed:^(NSString *errorDescription) {
-                                                   
-                                                   
+                                                   [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];                                                   
                                                }];
 }
 
