@@ -91,7 +91,7 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
 }
 
 - (void)fetchConfigData{
-    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu.json";
+    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu_v1.0.0.json";
     __weak typeof(self)weakSelf = self;
     [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requesturl
                                          hudController:nil
@@ -99,16 +99,56 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
                                                HUDText:nil
                                          showFailedHUD:YES
                                                success:^(BOOL success, NSData * htmlData) {
-                                                   if (success) {
-                                                       [[IHPConfigManager shareManager] configManagerWithJsondData:htmlData];
-//                                                       NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
-                                                   }else{
-                                                       //[XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.window hideAfter:1.2];
-                                                   }
-                                                   [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];
+                                                   //NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
 
+                                                   IHPConfigManager *manager = [IHPConfigManager shareManager];
+                                                       [manager configManagerWithJsondData:htmlData];
+                                                   if (manager.forceUpdate.enable) {
+                                                       if (manager.forceUpdate.isForce) {
+                                                           [XDSUtilities alertViewWithPresentingController:[XDSMasterViewController sharedRootViewController]
+                                                                                                     title:nil
+                                                                                                   message:manager.forceUpdate.updateMessage
+                                                                                              buttonTitles:@[@"退出", @"立即更新"]
+                                                                                                     block:^(NSInteger index) {
+                                                                                                         if (index == 0) {
+                                                                                                             exit(0);
+                                                                                                         }else{
+                                                                                                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:manager.forceUpdate.url]];
+                                                                                                         }
+                                                                                                     }];
+                                                       }else{
+                                                           [XDSUtilities alertViewWithPresentingController:[XDSMasterViewController sharedRootViewController]
+                                                                                                     title:nil
+                                                                                                   message:manager.forceUpdate.updateMessage
+                                                                                              buttonTitles:@[@"稍后再说", @"立即更新"]
+                                                                                                     block:^(NSInteger index) {
+                                                                                                         if (index == 0) {
+                                                                                                         }else{
+                                                                                                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:manager.forceUpdate.url]];
+                                                                                                         }
+                                                                                                         [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];
+                                                                                                     }];
+
+                                                       }
+                                                       
+                                                   }else{
+                                                       [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];
+                                                   }
+                                                
                                                } failed:^(NSString *errorDescription) {
-                                                   [weakSelf finishTaskWithTaksID:kIHPFetchConfigTaskID];                                                   
+                                                   errorDescription = errorDescription?errorDescription:kLoadFailed;
+                                                   [XDSUtilities alertViewWithPresentingController:[XDSMasterViewController sharedRootViewController]
+                                                                                             title:nil
+                                                                                           message:errorDescription
+                                                                                      buttonTitles:@[@"退出", @"重新连接"]
+                                                                                             block:^(NSInteger index) {
+                                                                                                 if (index == 0) {
+                                                                                                     exit(0);
+                                                                                                 }else{
+                                                                                                     [weakSelf fetchConfigData];
+                                                                                                 }
+                                                                                             }];
+                                                   
                                                }];
 }
 

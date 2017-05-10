@@ -3,6 +3,8 @@
     "forceUpdate":{
         "enable":false,
         "isForce":false,
+        "url":"",
+        "updateMessage":"发现新版本，更新如下\n1、惺惺惜惺惺；\n2、一月又一月晕；\n3、吾问无为谓无",
     },
     "menus":[
              {

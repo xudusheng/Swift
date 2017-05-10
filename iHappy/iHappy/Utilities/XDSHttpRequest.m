@@ -17,8 +17,8 @@
 #pragma mark 网络请求的错误信息显示
 NSString *const kConnectWebFailed = @"无法连接网络，请连接网络重试";//网络连接失败
 NSString *const kAnalysisFailed = @"数据解析出错";//数据解析出错
-NSString *const kLoadFailed = @"请求失败，请稍后重试"; //请求失败
-NSString *const kTimeCallOut = @"网络链接超时，请稍后重试";//链接超时
+NSString *const kLoadFailed = @"网络请求异常，请稍后重试"; //请求失败
+NSString *const kTimeCallOut = @"网络请求超时，请稍后重试";//链接超时
 
 NSString *const key = @"huidaibao";
 
@@ -172,7 +172,7 @@ NSString *const key = @"huidaibao";
 }
 
 - (void)showFailedHUD:(BOOL)showFailedHUD Failed:(NSString *)failed rootView:(UIView *)rootView{
-    if (showFailedHUD) {
+    if (showFailedHUD && rootView) {
         UIWindow * window = [UIApplication sharedApplication].delegate.window;
         [XDSUtilities showHudFailed:failed rootView:window imageName:nil];
     }
