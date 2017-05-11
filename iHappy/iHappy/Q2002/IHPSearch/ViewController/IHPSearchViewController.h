@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IHPSearchViewController : XDSRootViewController
+@interface IHPSearchViewController : XDSRootViewController<UISearchResultsUpdating, UISearchBarDelegate>
+
+@property (strong, nonatomic) UISearchController *searchVC;
+
 
 @end

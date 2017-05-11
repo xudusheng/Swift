@@ -91,7 +91,7 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
 }
 
 - (void)fetchConfigData{
-    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu_v1.0.0.json";
+    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu_v1.0.3.json";
     __weak typeof(self)weakSelf = self;
     [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requesturl
                                          hudController:nil
