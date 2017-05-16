@@ -13,7 +13,6 @@
 
 @interface IHPConfigModel : JSONModel
 
-@property (copy, nonatomic) NSString *rooturl;
 @property (strong, nonatomic) IHPForceUpdateModel *forceUpdate;
 @property (strong, nonatomic) NSArray<IHPMenuModel> *menus;
 @end

@@ -14,11 +14,5 @@
 @end
 @implementation IHPSubMenuModel
 
-- (NSString *)firstPageURL{
-    if ([_url hasPrefix:@"http:"] || [_url hasPrefix:@"https:"]) {
-        return _url;
-    }
-    return [[IHPConfigManager shareManager].rooturl stringByAppendingString:_url];
-}
 
 @end

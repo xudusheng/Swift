@@ -1,5 +1,4 @@
 {
-    "rooturl":"http://www.q2002.com/",
     "forceUpdate":{
         "enable":false,
         "isForce":false,
@@ -8,9 +7,42 @@
     },
     "menus":[
              {
+             "title":"手机壁纸",
+             "menuId":"kPicture",
+             "type":"4",
+             "rooturl":"http://www.3gbizhi.com",
+             "enable":true,
+             "subMenus":[
+                         {"title":"美女", "url":"/wallMV"},
+                         {"title":"明星", "url":"/wallMX"},
+                         {"title":"车模", "url":"/wallCM"},
+                         {"title":"动漫", "url":"/wallDM"},
+                         {"title":"卡通", "url":"/wallKT"},
+                         
+                         {"title":"爱情", "url":"/wallAQ"},
+                         {"title":"游戏", "url":"/wallYX"},
+                         {"title":"影视", "url":"/wallYS"},
+                         {"title":"汽车", "url":"/wallQC"},
+                         {"title":"体育", "url":"/wallTY"},
+                         
+                         {"title":"风景", "url":"/wallQFJ"},
+                         {"title":"品牌", "url":"/wallPP"},
+                         {"title":"爱情", "url":"/wallAQ"},
+                         {"title":"可爱", "url":"/wallKA"},
+                         {"title":"节日", "url":"/wallJR"},
+                         
+                         {"title":"建筑", "url":"/wallJZ"},
+                         {"title":"植物", "url":"/wallZW"},
+                         {"title":"动物", "url":"/wallSW"},
+                         {"title":"创意", "url":"/wallCY"},
+                         {"title":"精美", "url":"/wallQT"},
+                         ],
+             },
+             {
              "title":"首页",
              "menuId":"kHome",
              "type":"0",
+             "rooturl":"http://www.q2002.com",
              "enable":true,
              "subMenus":[
                          {"title":"电影", "url":"/type/1.html"},
@@ -28,6 +60,7 @@
              "menuId":"kNews",
              "type":"3",
              "enable":true,
+             "rooturl":"",
              "subMenus":[
                          {"title":"头条", "url":"http://v.juhe.cn/toutiao/index?type=top&key=f2b9c5a8243bc824253119ba09f7759a"},
                          {"title":"社会", "url":"http://v.juhe.cn/toutiao/index?type=shehui&key=f2b9c5a8243bc824253119ba09f7759a"},

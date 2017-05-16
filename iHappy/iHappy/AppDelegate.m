@@ -91,7 +91,20 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
 }
 
 - (void)fetchConfigData{
-    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu_v1.0.0.json";
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"menu" ofType:@"json"];
+    NSData *menuData = [NSData dataWithContentsOfFile:path];
+    NSLog(@"%@", [[NSString alloc] initWithData:menuData encoding:NSUTF8StringEncoding]);
+
+    IHPConfigManager *manager = [IHPConfigManager shareManager];
+    [manager configManagerWithJsondData:menuData];
+    
+    [self removePlaceholderSplashView];
+    [self showAppView];
+    
+    return;
+    
+    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu_v1.0.3.json";
     __weak typeof(self)weakSelf = self;
     [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requesturl
                                          hudController:nil
@@ -99,10 +112,10 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
                                                HUDText:nil
                                          showFailedHUD:YES
                                                success:^(BOOL success, NSData * htmlData) {
-                                                   //NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
+                                                   NSLog(@"%@", [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding]);
 
                                                    IHPConfigManager *manager = [IHPConfigManager shareManager];
-                                                       [manager configManagerWithJsondData:htmlData];
+                                                   [manager configManagerWithJsondData:htmlData];
                                                    if (manager.forceUpdate.enable) {
                                                        if (manager.forceUpdate.isForce) {
                                                            [XDSUtilities alertViewWithPresentingController:[XDSMasterViewController sharedRootViewController]
@@ -175,7 +188,6 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
     self.mainmeunVC.scaleContentView = NO;
     self.mainmeunVC.parallaxEnabled = NO;
     self.mainmeunVC.bouncesHorizontally = NO;
-    
     
     self.mainmeunVC.panGestureEnabled = YES;
     self.mainmeunVC.panFromEdge = YES;

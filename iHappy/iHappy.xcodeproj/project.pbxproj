@@ -60,6 +60,14 @@
 		A24B53CD1EB941BE005D34C6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */; };
 		E28B84A8A36AAB50D4A6C2B8 /* Pods_iHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */; };
 		FC0900D81EB96838003289BE /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = FC0900D71EB96838003289BE /* jquery.js */; };
+		FC0B7C6E1EC751C90022E504 /* IHPBiZhiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C6D1EC751C90022E504 /* IHPBiZhiListViewController.m */; };
+		FC0B7C721EC759880022E504 /* YSERequestFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C711EC759880022E504 /* YSERequestFetcher.m */; };
+		FC0B7C781EC75C290022E504 /* YSEClassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C771EC75C290022E504 /* YSEClassifyModel.m */; };
+		FC0B7C7B1EC7FD5A0022E504 /* YSECategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C7A1EC7FD5A0022E504 /* YSECategoryModel.m */; };
+		FC0B7C7E1EC7FF840022E504 /* YSEColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C7D1EC7FF830022E504 /* YSEColorModel.m */; };
+		FC0B7C811EC801B50022E504 /* YSEImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C801EC801B50022E504 /* YSEImageModel.m */; };
+		FC0B7C841EC8B2260022E504 /* INSImageItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C831EC8B2260022E504 /* INSImageItemCollectionViewCell.m */; };
+		FC0B7C881EC8B7A70022E504 /* IHPRootCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0B7C871EC8B7A70022E504 /* IHPRootCollectionCell.m */; };
 		FC1A8C2D1EAC1FD900E66FF8 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = FC1A8C2C1EAC1FD900E66FF8 /* menu.json */; };
 		FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */; };
 		FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1A8C391EAC296D00E66FF8 /* IHPMenuModel.m */; };
@@ -180,6 +188,22 @@
 		A24B53CC1EB941BE005D34C6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		DDF28F2EE953D3A78F924489 /* Pods-iHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iHappy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iHappy/Pods-iHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		FC0900D71EB96838003289BE /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		FC0B7C6C1EC751C90022E504 /* IHPBiZhiListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPBiZhiListViewController.h; sourceTree = "<group>"; };
+		FC0B7C6D1EC751C90022E504 /* IHPBiZhiListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPBiZhiListViewController.m; sourceTree = "<group>"; };
+		FC0B7C701EC759880022E504 /* YSERequestFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSERequestFetcher.h; sourceTree = "<group>"; };
+		FC0B7C711EC759880022E504 /* YSERequestFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSERequestFetcher.m; sourceTree = "<group>"; };
+		FC0B7C761EC75C290022E504 /* YSEClassifyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEClassifyModel.h; sourceTree = "<group>"; };
+		FC0B7C771EC75C290022E504 /* YSEClassifyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEClassifyModel.m; sourceTree = "<group>"; };
+		FC0B7C791EC7FD5A0022E504 /* YSECategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSECategoryModel.h; sourceTree = "<group>"; };
+		FC0B7C7A1EC7FD5A0022E504 /* YSECategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSECategoryModel.m; sourceTree = "<group>"; };
+		FC0B7C7C1EC7FF830022E504 /* YSEColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEColorModel.h; sourceTree = "<group>"; };
+		FC0B7C7D1EC7FF830022E504 /* YSEColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEColorModel.m; sourceTree = "<group>"; };
+		FC0B7C7F1EC801B50022E504 /* YSEImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEImageModel.h; sourceTree = "<group>"; };
+		FC0B7C801EC801B50022E504 /* YSEImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEImageModel.m; sourceTree = "<group>"; };
+		FC0B7C821EC8B2260022E504 /* INSImageItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSImageItemCollectionViewCell.h; sourceTree = "<group>"; };
+		FC0B7C831EC8B2260022E504 /* INSImageItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSImageItemCollectionViewCell.m; sourceTree = "<group>"; };
+		FC0B7C861EC8B7A70022E504 /* IHPRootCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPRootCollectionCell.h; sourceTree = "<group>"; };
+		FC0B7C871EC8B7A70022E504 /* IHPRootCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPRootCollectionCell.m; sourceTree = "<group>"; };
 		FC1A8C2C1EAC1FD900E66FF8 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		FC1A8C351EAC255900E66FF8 /* IHPSubMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPSubMenuModel.h; sourceTree = "<group>"; };
 		FC1A8C361EAC255900E66FF8 /* IHPSubMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPSubMenuModel.m; sourceTree = "<group>"; };
@@ -415,6 +439,7 @@
 		09F90D6E1DE2BF2A00542684 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FC0B7C851EC8B7920022E504 /* View */,
 				FC9667BE1EC1C55200DA1A96 /* XDSMasterViewController.h */,
 				FC9667BF1EC1C55200DA1A96 /* XDSMasterViewController.m */,
 				FC9667C01EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.h */,
@@ -547,6 +572,7 @@
 				A0D46B7D1DE0173500637681 /* AppDelegate.m */,
 				FC1A8C2C1EAC1FD900E66FF8 /* menu.json */,
 				FC0900D71EB96838003289BE /* jquery.js */,
+				FC0B7C6B1EC751690022E504 /* Bizhi */,
 				092CAED51DE2861F008127DA /* Q2002 */,
 				A05EB90F1DE039D200148A5B /* iNews */,
 				FCAFC6061EAED5C300B48C83 /* Vender */,
@@ -583,6 +609,68 @@
 				6CB566B05B747CCEC832F7BB /* Pods_iHappy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC0B7C6B1EC751690022E504 /* Bizhi */ = {
+			isa = PBXGroup;
+			children = (
+				FC0B7C6F1EC7597E0022E504 /* Control */,
+				FC0B7C731EC75C190022E504 /* Model */,
+				FC0B7C741EC75C190022E504 /* View */,
+				FC0B7C751EC75C190022E504 /* ViewController */,
+				FC0B7C6C1EC751C90022E504 /* IHPBiZhiListViewController.h */,
+				FC0B7C6D1EC751C90022E504 /* IHPBiZhiListViewController.m */,
+			);
+			path = Bizhi;
+			sourceTree = "<group>";
+		};
+		FC0B7C6F1EC7597E0022E504 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				FC0B7C701EC759880022E504 /* YSERequestFetcher.h */,
+				FC0B7C711EC759880022E504 /* YSERequestFetcher.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		FC0B7C731EC75C190022E504 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC0B7C761EC75C290022E504 /* YSEClassifyModel.h */,
+				FC0B7C771EC75C290022E504 /* YSEClassifyModel.m */,
+				FC0B7C791EC7FD5A0022E504 /* YSECategoryModel.h */,
+				FC0B7C7A1EC7FD5A0022E504 /* YSECategoryModel.m */,
+				FC0B7C7C1EC7FF830022E504 /* YSEColorModel.h */,
+				FC0B7C7D1EC7FF830022E504 /* YSEColorModel.m */,
+				FC0B7C7F1EC801B50022E504 /* YSEImageModel.h */,
+				FC0B7C801EC801B50022E504 /* YSEImageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC0B7C741EC75C190022E504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC0B7C821EC8B2260022E504 /* INSImageItemCollectionViewCell.h */,
+				FC0B7C831EC8B2260022E504 /* INSImageItemCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC0B7C751EC75C190022E504 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FC0B7C851EC8B7920022E504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC0B7C861EC8B7A70022E504 /* IHPRootCollectionCell.h */,
+				FC0B7C871EC8B7A70022E504 /* IHPRootCollectionCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FC1A8C2E1EAC213800E66FF8 /* Manager */ = {
@@ -849,6 +937,7 @@
 				FC1A8C3A1EAC296D00E66FF8 /* IHPMenuModel.m in Sources */,
 				092CAF301DE2B20F008127DA /* IHYNewsListViewController.m in Sources */,
 				092CAEFA1DE28620008127DA /* IHYMainViewController.m in Sources */,
+				FC0B7C7E1EC7FF840022E504 /* YSEColorModel.m in Sources */,
 				092CAF071DE28620008127DA /* IHYMoviePlayerViewController.m in Sources */,
 				092CAF041DE28620008127DA /* IHPMovieCell.m in Sources */,
 				FCAFC6181EAEDE1900B48C83 /* IHPMenuViewController.m in Sources */,
@@ -858,13 +947,17 @@
 				092CAF0F1DE28D23008127DA /* UIViewController+HideNavigationBar.m in Sources */,
 				092CAEFD1DE28620008127DA /* IHYMoviePlayButtonModel.m in Sources */,
 				FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */,
+				FC0B7C7B1EC7FD5A0022E504 /* YSECategoryModel.m in Sources */,
 				092CAEFE1DE28620008127DA /* IHYMovieDetailInfoView.m in Sources */,
 				A05EB9041DE0281D00148A5B /* XDSUtilities.m in Sources */,
+				FC0B7C841EC8B2260022E504 /* INSImageItemCollectionViewCell.m in Sources */,
 				FC9667BD1EC1BE1100DA1A96 /* NLETaskQueue.m in Sources */,
 				A05EB8FF1DE0277E00148A5B /* ForbidTextField.m in Sources */,
 				A05EB8EF1DE0244300148A5B /* ZDProgressHUD.m in Sources */,
 				A05EB9211DE03CA000148A5B /* XDSHttpRequest.m in Sources */,
 				FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */,
+				FC0B7C781EC75C290022E504 /* YSEClassifyModel.m in Sources */,
+				FC0B7C811EC801B50022E504 /* YSEImageModel.m in Sources */,
 				FC9667C31EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m in Sources */,
 				A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */,
 				092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */,
@@ -873,6 +966,7 @@
 				A05EB91D1DE03B2500148A5B /* XDSRootViewController.m in Sources */,
 				A05EB8EB1DE0244300148A5B /* OCAlertView.m in Sources */,
 				FCAFC6141EAEDB8700B48C83 /* IHPForceUpdateModel.m in Sources */,
+				FC0B7C881EC8B7A70022E504 /* IHPRootCollectionCell.m in Sources */,
 				092CAF0E1DE28D23008127DA /* UIView+Extension.m in Sources */,
 				09F90D741DE2C06000542684 /* XDSWebViewController.m in Sources */,
 				092CAF061DE28620008127DA /* IHYMovieListViewController.m in Sources */,
@@ -885,6 +979,7 @@
 				A05EB8EE1DE0244300148A5B /* ZDLoadFailView.m in Sources */,
 				092CAEFB1DE28620008127DA /* IHYViewControllerModel.m in Sources */,
 				FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */,
+				FC0B7C721EC759880022E504 /* YSERequestFetcher.m in Sources */,
 				09F90D791DE2D2F600542684 /* IHYNewsMultableImageCell.m in Sources */,
 				092CAF021DE28620008127DA /* IHYMovieDetailViewController.m in Sources */,
 				A05EB8EC1DE0244300148A5B /* OCControlAlertView.m in Sources */,
@@ -895,6 +990,7 @@
 				092CAF211DE2B1A7008127DA /* IHYNewsMainViewController.m in Sources */,
 				092CAF011DE28620008127DA /* IHYMoviePlayButtonCell.m in Sources */,
 				A05EB9071DE02D6700148A5B /* UIColor+Hex.m in Sources */,
+				FC0B7C6E1EC751C90022E504 /* IHPBiZhiListViewController.m in Sources */,
 				A0D46B7B1DE0173500637681 /* main.m in Sources */,
 				A05EB91A1DE03B2500148A5B /* XDSRootRequestTableViewController.m in Sources */,
 				A05EB92B1DE0880000148A5B /* XDSRootModel.m in Sources */,
@@ -1011,6 +1107,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1028,6 +1125,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

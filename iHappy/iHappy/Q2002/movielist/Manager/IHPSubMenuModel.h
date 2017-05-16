@@ -15,6 +15,4 @@
 @property (copy, nonatomic) NSString *url;
 
 
-- (NSString *)firstPageURL;
-
 @end

@@ -44,10 +44,6 @@
 
 }
 
-- (NSString *)rooturl{
-    return _configModel.rooturl;
-}
-
 - (IHPForceUpdateModel *)forceUpdate{
     return _configModel.forceUpdate;
 }

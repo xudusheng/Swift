@@ -10,6 +10,7 @@
 
 @interface IHYMovieListViewController : XDSRootRequestViewController
 NS_ASSUME_NONNULL_BEGIN
+@property (copy, nonatomic) NSString * rootUrl;
 @property (copy, nonatomic) NSString * firstPageUrl;
 NS_ASSUME_NONNULL_END
 @end

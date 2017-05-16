@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "IHPSearchViewController.h"
 #import "IHYNewsListViewController.h"
+#import "IHPBiZhiListViewController.h"
 @interface IHYMainViewController ()
 
 @end
@@ -64,15 +65,22 @@
 }
 
 - (UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
+    IHPSubMenuModel * model = _menuModel.subMenus[index];
     if (_menuModel.type == IHPMenuTypeJuheNews) {
-        IHPSubMenuModel * model = _menuModel.subMenus[index];
         IHYNewsListViewController * newsVC = [[IHYNewsListViewController alloc]init];
-        newsVC.firstPageUrl = model.firstPageURL;
+        newsVC.rootUrl = _menuModel.rooturl;
+        newsVC.firstPageUrl = model.url;
         return newsVC;
+    }else if(_menuModel.type == IHPMenuTypeBizhi){
+        IHPBiZhiListViewController * bizhiVC = [[IHPBiZhiListViewController alloc]init];
+        bizhiVC.rootUrl = _menuModel.rooturl;
+        bizhiVC.firstPageUrl = model.url;
+        return bizhiVC;
+        
     }else{
-        IHPSubMenuModel * model = _menuModel.subMenus[index];
         IHYMovieListViewController * movieVC = [[IHYMovieListViewController alloc]init];
-        movieVC.firstPageUrl = model.firstPageURL;
+        movieVC.rootUrl = _menuModel.rooturl;
+        movieVC.firstPageUrl = model.url;
         return movieVC;
     }
 }

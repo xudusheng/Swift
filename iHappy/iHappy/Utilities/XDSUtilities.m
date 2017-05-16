@@ -10,7 +10,6 @@
 #import "XDSKeychain.h"
 #import "ZDProgressHUD.h"
 #import "OCAlertView.h"
-#import "ZDLoadFailView.h"
 #import "XDSUtilities.h"
 
 @implementation XDSUtilities
@@ -255,11 +254,7 @@
     rightBarButton.style = UIBarButtonItemStylePlain;
 }
 
-#pragma mark - 列表加载失败页面
-+ (UIView *)showNoRecordsViewWithFrame:(CGRect)frame  title:(NSString *)title topGap:(CGFloat)topGap{
-    ZDLoadFailView *failedView = [[ZDLoadFailView alloc] initWithFrame:frame title:title topGap:topGap];
-    return failedView;
-}
+
 #pragma mark - HUD
 + (void)showHud:(UIView*)rootView text:(NSString*)text {
     ZDProgressHUD *HUD = [ZDProgressHUD showHUDAddedTo:rootView animated:YES];

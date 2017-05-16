@@ -68,8 +68,7 @@
 +(void)rightNavigaitonBarButtons:(UINavigationItem *)navigationItem
                        imageName:(NSString *)imageName
                           target:(id)target action:(SEL)action;//设置导航栏菜单按钮
-#pragma mark - 列表加载失败页面
-+ (UIView *)showNoRecordsViewWithFrame:(CGRect)frame title:(NSString *)title topGap:(CGFloat)topGap;
+
 #pragma mark - HUD
 + (void)showHud:(UIView*)rootView text:(NSString*)text;//显示HUD
 +(void)hideHud:(UIView*)rootView;

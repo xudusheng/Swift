@@ -273,11 +273,6 @@ NSString *const key = @"huidaibao";
 
 
 
-
-
-
-
-
 - (void)queryInitialInfoWithUrlString:(NSString *)urlString
                 reqParam:(NSDictionary *)reqParam
            hudController:(UIViewController *)hudController

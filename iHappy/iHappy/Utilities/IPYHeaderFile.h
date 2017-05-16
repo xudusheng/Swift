@@ -35,10 +35,13 @@
 #import "KeyboardManager.h"
 #import "TFHpple.h"
 #import "CWFoundation.h"
+#import "UIImageView+WebCache.h"
+
 #import "XDSCategoryHeader.h"
 #import "XDSRootModel.h"
 #import "XDSHttpRequest.h"
 #import "XDSUtilities.h"
+#import "IHPRootCollectionCell.h"
 #import "XDSRootControllerHeader.h"
 #import "XDSWebViewController.h"
 

@@ -32,15 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     
-    //    //MARK: - UI
-    //    func createSwiftRootTableViewControllerUI(){
-    //    }
-    //
-    //    //MARK: - Delegate
-    //
-    //    //MARK: - web request
-    //
-    //    //MARK: - handle touch
+//        //MARK: - UI
+//        func createSwiftRootTableViewControllerUI(){
+//        }
+//    
+//        //MARK: - Delegate
+//    
+//        //MARK: - web request
+//    
+//        //MARK: - handle touch
 
     
     
