@@ -15,6 +15,9 @@
 #import "IHPBiZhiListViewController.h"
 @interface IHYMainViewController ()
 
+@property (strong, nonatomic) UISearchController *searchVC;
+@property (strong, nonatomic) IHPSearchViewController *searchResultVC;
+
 @end
 
 @implementation IHYMainViewController
@@ -31,6 +34,33 @@
 #pragma mark - UI相关
 - (void)createMainViewControllerUI{
     [self setBarItems];
+    
+    self.searchResultVC = [[IHPSearchViewController alloc] init];
+    self.searchVC = ({
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_searchResultVC];
+        UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nav];
+        //设置后可以看到实时输入内容,可以在结果页的代理里面设置输入长度
+        [searchController setSearchResultsUpdater: _searchResultVC];
+        [searchController.searchBar setPlaceholder:@"搜索"];
+        [searchController.searchBar setBarTintColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.00f]];
+        //设置搜索logo
+        [searchController.searchBar setImage:[UIImage imageNamed:@"last.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+        [searchController.searchBar sizeToFit];
+        [searchController.searchBar setDelegate:_searchResultVC];
+        searchController.hidesNavigationBarDuringPresentation = NO;
+        
+//        [searchController.searchBar.layer setBorderWidth:0.5f];
+//        [searchController.searchBar.layer setBorderColor:[UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1.0].CGColor];
+        
+//        searchController.searchBar.frame = CGRectMake(0, 64, 300, 44);
+//        [self.view addSubview:searchController.searchBar];
+        self.navigationItem.titleView = searchController.searchBar;
+        _searchResultVC.searchVC = searchController;
+        searchController;
+    });
+    
+    
+    
     
 }
 - (void)setBarItems{

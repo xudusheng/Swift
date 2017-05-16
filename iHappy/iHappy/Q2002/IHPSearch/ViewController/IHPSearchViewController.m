@@ -9,12 +9,16 @@
 #import "IHPSearchViewController.h"
 #import "IHPPlayerViewController.h"
 #import "IHPMovieCell.h"
-@interface IHPSearchViewController ()<UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface IHPSearchViewController ()<UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) NSMutableArray<IHYMovieModel *> * movieList;
 @property (strong, nonatomic) UICollectionView * movieCollectionView;
 
+
+
 @property (copy, nonatomic) NSString * firstPageUrl;
 @property (copy, nonatomic) NSString * nextPageUrl;
+
+
 @end
 
 @implementation IHPSearchViewController
@@ -31,13 +35,15 @@ NSString * const kSearchViewController_movieCellIdentifier = @"IHPMovieCell";
 #pragma mark - UI相关
 - (void)createSearchViewControllerUI{
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, DEVIECE_SCREEN_WIDTH*2/3, 40)];
-    textField.placeholder = @"视频搜索";
-    textField.returnKeyType = UIReturnKeySearch;
-    textField.delegate = self;
-    self.navigationItem.titleView = textField;
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, DEVIECE_SCREEN_WIDTH*2/3, 40)];
+//    textField.placeholder = @"视频搜索";
+//    textField.returnKeyType = UIReturnKeySearch;
+//    textField.delegate = self;
+//    self.navigationItem.titleView = textField;
     
+
+
     
     self.view.backgroundColor = [UIColor whiteColor];
     //创建一个layout布局类
@@ -63,6 +69,9 @@ NSString * const kSearchViewController_movieCellIdentifier = @"IHPMovieCell";
     }];
     
     _movieCollectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    
+    
+
     
 }
 
@@ -129,6 +138,21 @@ NSString * const kSearchViewController_movieCellIdentifier = @"IHPMovieCell";
     return YES;
 }
 
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    if (!searchBar.text.length) {
+        [XDSUtilities showHud:self.navigationController.view text:@"请输入搜索关键字"];
+        return;
+    }
+//    [textField resignFirstResponder];
+    NSString *url = @"http://www.q2002.com/search?wd=";
+    url = [url stringByAppendingString:searchBar.text];
+    self.firstPageUrl = url;
+}
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    NSLog(@"xxxxxxxxxxxxx");
+}
 #pragma mark - 点击事件处理
 
 #pragma mark - 其他私有方法
