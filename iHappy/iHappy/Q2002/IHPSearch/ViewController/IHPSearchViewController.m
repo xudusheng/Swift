@@ -35,12 +35,12 @@ NSString * const kSearchViewController_movieCellIdentifier = @"IHPMovieCell";
 #pragma mark - UI相关
 - (void)createSearchViewControllerUI{
     
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, DEVIECE_SCREEN_WIDTH*2/3, 40)];
-//    textField.placeholder = @"视频搜索";
-//    textField.returnKeyType = UIReturnKeySearch;
-//    textField.delegate = self;
-//    self.navigationItem.titleView = textField;
+    self.view.backgroundColor = [UIColor whiteColor];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, DEVIECE_SCREEN_WIDTH*2/3, 40)];
+    textField.placeholder = @"视频搜索";
+    textField.returnKeyType = UIReturnKeySearch;
+    textField.delegate = self;
+    self.navigationItem.titleView = textField;
     
 
 
