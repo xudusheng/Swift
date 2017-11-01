@@ -39,7 +39,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addChildViewController:self.pageViewController];
-    [_pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [_pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]]
+                                  direction:UIPageViewControllerNavigationDirectionForward
+                                   animated:YES
+                                 completion:nil];
     _chapter = _model.record.chapter;
     _page = _model.record.page;
     [self.view addGestureRecognizer:({
@@ -73,15 +76,16 @@
 {
     return UIStatusBarStyleLightContent;
 }
--(void)showToolMenu
-{
+-(void)showToolMenu{
     [_readView.readView cancelSelected];
     NSString * key = [NSString stringWithFormat:@"%d_%d",(int)_model.record.chapter,(int)_model.record.page];
     
     id state = _model.marksRecord[key];
-    state?(_menuView.topView.state=1): (_menuView.topView.state=0);
-    [self.menuView showAnimation:YES];
+    state?
+    (_menuView.topView.state=1):
+    (_menuView.topView.state=0);
     
+    [self.menuView showAnimation:YES];
 }
 
 #pragma mark - init
@@ -207,16 +211,12 @@
 }
 -(void)menuViewFontSize:(LSYBottomMenuView *)bottomMenu
 {
-
     [_model.record.chapterModel updateFont];
     [_pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:(_model.record.page>_model.record.chapterModel.pageCount-1)?_model.record.chapterModel.pageCount-1:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     [self updateReadModelWithChapter:_model.record.chapter page:(_model.record.page>_model.record.chapterModel.pageCount-1)?_model.record.chapterModel.pageCount-1:_model.record.page];
 }
 
--(void)menuViewMark:(LSYTopMenuView *)topMenu
-{
-
-
+-(void)menuViewMark:(LSYTopMenuView *)topMenu{
     NSString * key = [NSString stringWithFormat:@"%d_%d",(int)_model.record.chapter,(int)_model.record.page];
     id state = _model.marksRecord[key];
     if (state) {
@@ -240,7 +240,6 @@
 
 -(LSYReadViewController *)readViewWithChapter:(NSUInteger)chapter page:(NSUInteger)page{
 
-    
     if (_model.record.chapter != chapter) {
         [_model.record.chapterModel updateFont];
         if (_model.type == ReaderEpub) {
@@ -254,12 +253,12 @@
     }
     _readView = [[LSYReadViewController alloc] init];
     _readView.recordModel = _model.record;
-//     NSLog(@"---%@",[NSURL fileURLWithPath:_model.chapters[chapter].chapterpath]);
+
     if (_model.type == ReaderEpub) {
         _readView.type = ReaderEpub;
         if (!_model.chapters[chapter].epubframeRef) {
-            NSLog(@"%@",_model.chapters[chapter].chapterpath);
-            NSString* html = [[NSString alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL fileURLWithPath:_model.chapters[chapter].chapterpath]] encoding:NSUTF8StringEncoding];
+            NSURL *fileURL = [NSURL fileURLWithPath:_model.chapters[chapter].chapterpath];
+            NSString* html = [[NSString alloc] initWithData:[NSData dataWithContentsOfURL:fileURL] encoding:NSUTF8StringEncoding];
             _model.chapters[chapter].content = [html stringByConvertingHTMLToPlainText];
             [_model.chapters[chapter] parserEpubToDictionary];
             [_model.chapters[chapter] paginateEpubWithBounds:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width-LeftSpacing-RightSpacing, [UIScreen mainScreen].bounds.size.height-TopSpacing-BottomSpacing)];
@@ -278,8 +277,7 @@
     
     return _readView;
 }
--(void)updateReadModelWithChapter:(NSUInteger)chapter page:(NSUInteger)page
-{
+-(void)updateReadModelWithChapter:(NSUInteger)chapter page:(NSUInteger)page{
     _chapter = chapter;
     _page = page;
     _model.record.chapterModel = _model.chapters[chapter];
@@ -307,8 +305,9 @@
     }
 }
 #pragma mark -PageViewController DataSource
-- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
+
+
+- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
 
     _pageChange = _page;
     _chapterChange = _chapter;
@@ -327,8 +326,7 @@
     return [self readViewWithChapter:_chapterChange page:_pageChange];
     
 }
-- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
+- (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
 
     _pageChange = _page;
     _chapterChange = _chapter;

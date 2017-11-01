@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface LSYReadConfig : NSObject<NSCoding>
-+(instancetype)shareInstance;
+
++ (instancetype)shareInstance;
+
 @property (nonatomic) CGFloat fontSize;
 @property (nonatomic) CGFloat lineSpace;
 @property (nonatomic,strong) UIColor *fontColor;
 @property (nonatomic,strong) UIColor *theme;
+
 @end

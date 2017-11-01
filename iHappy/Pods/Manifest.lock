@@ -47,8 +47,6 @@ PODS:
   - SDWebImage/Core (3.7.6)
   - WMPageController (2.1.0)
   - YYModel (1.0.4)
-  - ZFPlayer (2.1.3):
-    - Masonry
 
 DEPENDENCIES:
   - AFNetworking
@@ -69,7 +67,6 @@ DEPENDENCIES:
   - SDWebImage (~> 3.7.3)
   - WMPageController
   - YYModel (~> 1.0.4)
-  - ZFPlayer (~> 2.1.3)
 
 EXTERNAL SOURCES:
   CWFoundation:
@@ -108,8 +105,7 @@ SPEC CHECKSUMS:
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   WMPageController: 1a2aa3cc00da3ccb62203205cafffa0d10735195
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
-  ZFPlayer: 8dc82b4508fbba4ee59d0304c52e30f8b3390244
 
-PODFILE CHECKSUM: e57fd0e9b9a93b4cd652b78968e09611f33fd09d
+PODFILE CHECKSUM: 26a6866327ba27f6729cee02db0cbf96d36582bc
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

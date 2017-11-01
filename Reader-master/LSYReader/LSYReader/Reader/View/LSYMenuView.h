@@ -20,6 +20,7 @@
 -(void)menuViewFontSize:(LSYBottomMenuView *)bottomMenu;
 -(void)menuViewMark:(LSYTopMenuView *)topMenu;
 @end
+
 @interface LSYMenuView : UIView
 @property (nonatomic,weak) id<LSYMenuViewDelegate> delegate;
 @property (nonatomic,strong) LSYRecordModel *recordModel;

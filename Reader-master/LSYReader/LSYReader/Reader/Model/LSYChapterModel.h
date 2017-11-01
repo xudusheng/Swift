@@ -15,7 +15,6 @@ typedef  NS_ENUM(NSInteger,ReaderType){
 
 /**
  epubs images信息
- 
  */
 @interface LSYImageData : NSObject
 @property (nonatomic,strong) NSString *url; //图片链接

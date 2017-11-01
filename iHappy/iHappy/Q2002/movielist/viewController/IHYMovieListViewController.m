@@ -78,11 +78,13 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     IHPMovieCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:MovieListViewController_movieCellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
     IHYMovieModel * movieModel = _movieList[indexPath.row];
     [cell cellWithMovieModel:movieModel];
     return cell;
 }
+
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 //    IHYMovieModel * movieModel = _movieList[indexPath.row];
@@ -106,15 +108,14 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
                                                HUDText:nil
                                          showFailedHUD:YES
                                                success:^(BOOL success, NSData * htmlData) {
-                                                   [weakSelf endRefresh];
                                                    if (success) {
-                                                       [weakSelf detailHtmlData:htmlData];
+                                                       [weakSelf detailHtmlData:htmlData needClearOldData:isTop];
                                                    }else{
                                                        [XDSUtilities showHud:@"数据请求失败，请稍后重试" rootView:self.navigationController.view hideAfter:1.2];
                                                    }
+                                                   [weakSelf endRefresh];
                                                } failed:^(NSString *errorDescription) {
                                                    [weakSelf endRefresh];
-                                                   
                                                }];
 }
 
@@ -123,8 +124,13 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
 - (void)endRefresh{
     [_movieCollectionView.mj_header endRefreshing];
     [_movieCollectionView.mj_footer endRefreshing];
+    if (!self.nextPageUrl.length) {
+        [_movieCollectionView.mj_footer endRefreshingWithNoMoreData];
+    }else {
+        [_movieCollectionView.mj_footer resetNoMoreData];
+    }
 }
-- (void)detailHtmlData:(NSData *)htmlData{
+- (void)detailHtmlData:(NSData *)htmlData needClearOldData:(BOOL)needClearOldData{
     TFHpple * hpp = [[TFHpple alloc] initWithHTMLData:htmlData];
     
     NSArray * pageElements = [hpp searchWithXPathQuery:@"//div[@class =\"pages\"]//ul"];
@@ -175,6 +181,9 @@ NSString * const MovieListViewController_movieCellIdentifier = @"IHPMovieCell";
         [newMovies addObject:model];
     }
     if (newMovies.count > 0) {
+        if (needClearOldData) {
+            [_movieList removeAllObjects];
+        }
         [_movieList addObjectsFromArray:newMovies];
         [_movieCollectionView reloadData];
     }else{

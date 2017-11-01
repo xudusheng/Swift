@@ -64,6 +64,8 @@
         return @"";
     }
     NSString *content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    
+    //解决中文乱码
     if (!content) {
         content = [NSString stringWithContentsOfURL:url encoding:0x80000632 error:nil];
     }

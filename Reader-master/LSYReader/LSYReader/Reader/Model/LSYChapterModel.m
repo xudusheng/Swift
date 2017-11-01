@@ -149,7 +149,6 @@
     else{
         [self paginateWithBounds:CGRectMake(LeftSpacing, TopSpacing, [UIScreen mainScreen].bounds.size.width-LeftSpacing-RightSpacing, [UIScreen mainScreen].bounds.size.height-TopSpacing-BottomSpacing)];
     }
-    
 }
 -(void)paginateWithBounds:(CGRect)bounds
 {

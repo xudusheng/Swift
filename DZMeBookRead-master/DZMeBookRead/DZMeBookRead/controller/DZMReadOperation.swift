@@ -18,7 +18,7 @@ class DZMReadOperation: NSObject {
     init(vc:DZMReadController) {
         
         super.init()
-        
+
         self.vc = vc
     }
     

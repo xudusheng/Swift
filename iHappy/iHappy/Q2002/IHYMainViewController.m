@@ -13,9 +13,11 @@
 #import "IHPSearchViewController.h"
 #import "IHYNewsListViewController.h"
 #import "IHPBiZhiListViewController.h"
-@interface IHYMainViewController ()
 
-@property (strong, nonatomic) UISearchController *searchVC;
+#import "PYSearch.h"
+
+@interface IHYMainViewController ()<PYSearchViewControllerDelegate>
+
 @property (strong, nonatomic) IHPSearchViewController *searchResultVC;
 
 @end
@@ -34,34 +36,6 @@
 #pragma mark - UI相关
 - (void)createMainViewControllerUI{
     [self setBarItems];
-    
-    self.searchResultVC = [[IHPSearchViewController alloc] init];
-    self.searchVC = ({
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_searchResultVC];
-        UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:nav];
-        //设置后可以看到实时输入内容,可以在结果页的代理里面设置输入长度
-        [searchController setSearchResultsUpdater: _searchResultVC];
-        [searchController.searchBar setPlaceholder:@"搜索"];
-        [searchController.searchBar setBarTintColor:[UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.00f]];
-        //设置搜索logo
-        [searchController.searchBar setImage:[UIImage imageNamed:@"last.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-        [searchController.searchBar sizeToFit];
-        [searchController.searchBar setDelegate:_searchResultVC];
-        searchController.hidesNavigationBarDuringPresentation = NO;
-        
-//        [searchController.searchBar.layer setBorderWidth:0.5f];
-//        [searchController.searchBar.layer setBorderColor:[UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1.0].CGColor];
-        
-//        searchController.searchBar.frame = CGRectMake(0, 64, 300, 44);
-//        [self.view addSubview:searchController.searchBar];
-        self.navigationItem.titleView = searchController.searchBar;
-        _searchResultVC.searchVC = searchController;
-        searchController;
-    });
-    
-    
-    
-    
 }
 - (void)setBarItems{
     if ([IHPConfigManager shareManager].menus.count > 1) {
@@ -109,7 +83,6 @@
         
     }else{
         IHYMovieListViewController * movieVC = [[IHYMovieListViewController alloc]init];
-        movieVC.rootUrl = _menuModel.rooturl;
         movieVC.firstPageUrl = model.url;
         return movieVC;
     }
@@ -136,6 +109,26 @@
 - (void)menuView:(WMMenuView *)menu didLayoutItemFrame:(WMMenuItem *)menuItem atIndex:(NSInteger)index {
     NSLog(@"%@", NSStringFromCGRect(menuItem.frame));
 }
+
+#pragma mark - PYSearchViewControllerDelegate
+- (void)searchViewController:(PYSearchViewController *)searchViewController searchTextDidChange:(UISearchBar *)seachBar searchText:(NSString *)searchText {
+    if (searchText.length) {
+        // Simulate a send request to get a search suggestions
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSMutableArray *searchSuggestionsM = [NSMutableArray array];
+            for (int i = 0; i < searchViewController.searchHistories.count; i++) {
+                NSString *historySearch = searchViewController.searchHistories[i];
+                if ([historySearch.lowercaseString containsString:searchText.lowercaseString]) {
+                    [searchSuggestionsM addObject:historySearch];
+                }
+            }
+            // Refresh and display the search suggustions
+            searchViewController.searchSuggestions = searchSuggestionsM;
+        });
+    }else {
+        searchViewController.searchSuggestions = @[];
+    }
+}
 #pragma mark - 点击事件处理
 //TODO:菜单
 - (void)showMenu{
@@ -145,15 +138,53 @@
 
 //TODO:搜索
 - (void)showSearchVC{
-    IHPSearchViewController *searchVC = [[IHPSearchViewController alloc] init];
-    [self.navigationController pushViewController:searchVC animated:YES];
+//    IHPSearchViewController *searchVC = [[IHPSearchViewController alloc] init];
+//    [self.navigationController pushViewController:searchVC animated:YES];
+    // 1. Create an Array of popular search
+    NSArray *hotSeaches = @[];
+    // 2. Create a search view controller
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"输入视频关键词" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+        // Called when search begain.
+        // eg：Push to a temp view controller
+        
+        UIViewController *targetVC;
+        IHPSubMenuModel * model = _menuModel.subMenus.firstObject;
+        if (_menuModel.type == IHPMenuTypeJuheNews) {
+            IHYNewsListViewController * newsVC = [[IHYNewsListViewController alloc]init];
+            newsVC.rootUrl = _menuModel.rooturl;
+            newsVC.firstPageUrl = model.url;
+            targetVC = newsVC;
+        }else if(_menuModel.type == IHPMenuTypeBizhi){
+            IHPBiZhiListViewController * bizhiVC = [[IHPBiZhiListViewController alloc]init];
+            bizhiVC.rootUrl = _menuModel.rooturl;
+            bizhiVC.firstPageUrl = model.url;
+            targetVC = bizhiVC;
+        }else{
+            NSString *url = @"http://www.q2002.com/search?wd=";
+            url = [url stringByAppendingString:searchText];
+            
+            IHYMovieListViewController * movieVC = [[IHYMovieListViewController alloc]init];
+            movieVC.firstPageUrl = url;
+            movieVC.title = searchText;
+            targetVC = movieVC;
+        }
+        [searchViewController.navigationController pushViewController:targetVC animated:YES];
+    }];
+    // 3. Set style for popular search and search history
+    searchViewController.hotSearchStyle = PYHotSearchStyleDefault;
+    searchViewController.searchHistoryStyle = PYSearchHistoryStyleNormalTag;
+    // 4. Set delegate
+    searchViewController.delegate = self;
+    // 5. Present a navigation controller
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav animated:YES completion:nil];
+    
 }
 #pragma mark - 其他私有方法
 - (void)setMenuModel:(IHPMenuModel *)menuModel{
     _menuModel = menuModel;
     self.title = _menuModel.title;
     [self reloadData];
-    
     
     [self setBarItems];
 
@@ -165,6 +196,20 @@
 }
 
 
+//// New Autorotation support.
+////是否自动旋转,返回YES可以自动旋转
+//- (BOOL)shouldAutorotate NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED {
+//    return YES;
+//}
+////返回支持的方向
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_9_0
+//- (NSUInteger)supportedInterfaceOrientations
+//#else
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+//#endif
+//{
+//    return UIInterfaceOrientationMaskAll;
+//}
 
 
 @end

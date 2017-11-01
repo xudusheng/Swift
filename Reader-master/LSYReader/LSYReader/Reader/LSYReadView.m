@@ -72,8 +72,13 @@
     CGPoint point = [longPress locationInView:self];
     [self hiddenMenu];
     if (longPress.state == UIGestureRecognizerStateBegan || longPress.state == UIGestureRecognizerStateChanged) {
+       
+        //传入手势坐标，返回选择文本的range和frame
         CGRect rect = [LSYReadParser parserRectWithPoint:point range:&_selectRange frameRef:_frameRef];
+        
+        //显示放大镜
         [self showMagnifier];
+        
         self.magnifierView.touchPoint = point;
         if (!CGRectEqualToRect(rect, CGRectZero)) {
             _pathArray = @[NSStringFromCGRect(rect)];
@@ -82,6 +87,8 @@
         }
     }
     if (longPress.state == UIGestureRecognizerStateEnded) {
+        
+        //隐藏放大
         [self hiddenMagnifier];
         if (!CGRectEqualToRect(_menuRect, CGRectZero)) {
             [self showMenu];
@@ -106,7 +113,7 @@
             _selectState = YES;
         }
         if (_selectState) {
-//            NSArray *path = [LSYReadParser parserRectsWithPoint:point range:&_selectRange frameRef:_frameRef paths:_pathArray];
+            //传入手势坐标，返回选择文本的range和frame数组，一行一个frame
             NSArray *path = [LSYReadParser parserRectsWithPoint:point range:&_selectRange frameRef:_frameRef paths:_pathArray direction:_direction];
             _pathArray = path;
             [self setNeedsDisplay];
@@ -151,6 +158,8 @@
         }
        
     }
+    
+    //绘制选择区域的背景色
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextAddPath(ctx, _path);
     CGContextFillPath(ctx);
@@ -280,9 +289,11 @@
     CGContextScaleCTM(ctx, 1.0, -1.0);
     CGRect leftDot,rightDot = CGRectZero;
     _menuRect = CGRectZero;
+    
+    //绘制选中区域的背景色
     [self drawSelectedPath:_pathArray LeftDot:&leftDot RightDot:&rightDot];
+    
     CTFrameDraw(_frameRef, ctx);
-//    [self fillImagePosition];
     if (_imageArray.count) {
         for (LSYImageData * imageData in self.imageArray) {
             UIImage *image = [UIImage imageWithContentsOfFile:imageData.url];
@@ -304,6 +315,8 @@
             }
         }
     }
+    
+    //绘制选中区域前后的大头针
     [self drawDotWithLeft:leftDot right:rightDot];
 }
 -(BOOL)showImage

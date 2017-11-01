@@ -79,6 +79,13 @@
 		FC9667BD1EC1BE1100DA1A96 /* NLETaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667BB1EC1BE1100DA1A96 /* NLETaskQueue.m */; };
 		FC9667C21EC1C55200DA1A96 /* XDSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667BF1EC1C55200DA1A96 /* XDSMasterViewController.m */; };
 		FC9667C31EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9667C11EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m */; };
+		FCA032411F8DD7DE00600581 /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA032341F8DD7DE00600581 /* NSBundle+PYSearchExtension.m */; };
+		FCA032421F8DD7DE00600581 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FCA032351F8DD7DE00600581 /* PYSearch.bundle */; };
+		FCA032431F8DD7DE00600581 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA032381F8DD7DE00600581 /* PYSearchConst.m */; };
+		FCA032441F8DD7DE00600581 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA0323A1F8DD7DE00600581 /* PYSearchSuggestionViewController.m */; };
+		FCA032451F8DD7DE00600581 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA0323C1F8DD7DE00600581 /* PYSearchViewController.m */; };
+		FCA032461F8DD7DE00600581 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA0323E1F8DD7DE00600581 /* UIColor+PYSearchExtension.m */; };
+		FCA032471F8DD7DE00600581 /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA032401F8DD7DE00600581 /* UIView+PYSearchExtension.m */; };
 		FCAEADD31EB4D3EA006FB6B5 /* IHPXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */; };
 		FCAFC60E1EAED74900B48C83 /* XDSSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC60D1EAED74900B48C83 /* XDSSideMenu.m */; };
 		FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAFC6101EAED7DF00B48C83 /* IHPConfigModel.m */; };
@@ -224,6 +231,20 @@
 		FC9667BF1EC1C55200DA1A96 /* XDSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSMasterViewController.m; sourceTree = "<group>"; };
 		FC9667C01EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSPlaceholdSplashViewController.h; sourceTree = "<group>"; };
 		FC9667C11EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSPlaceholdSplashViewController.m; sourceTree = "<group>"; };
+		FCA032331F8DD7DE00600581 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
+		FCA032341F8DD7DE00600581 /* NSBundle+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PYSearchExtension.m"; sourceTree = "<group>"; };
+		FCA032351F8DD7DE00600581 /* PYSearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PYSearch.bundle; sourceTree = "<group>"; };
+		FCA032361F8DD7DE00600581 /* PYSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearch.h; sourceTree = "<group>"; };
+		FCA032371F8DD7DE00600581 /* PYSearchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchConst.h; sourceTree = "<group>"; };
+		FCA032381F8DD7DE00600581 /* PYSearchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchConst.m; sourceTree = "<group>"; };
+		FCA032391F8DD7DE00600581 /* PYSearchSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchSuggestionViewController.h; sourceTree = "<group>"; };
+		FCA0323A1F8DD7DE00600581 /* PYSearchSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchSuggestionViewController.m; sourceTree = "<group>"; };
+		FCA0323B1F8DD7DE00600581 /* PYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PYSearchViewController.h; sourceTree = "<group>"; };
+		FCA0323C1F8DD7DE00600581 /* PYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PYSearchViewController.m; sourceTree = "<group>"; };
+		FCA0323D1F8DD7DE00600581 /* UIColor+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PYSearchExtension.h"; sourceTree = "<group>"; };
+		FCA0323E1F8DD7DE00600581 /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
+		FCA0323F1F8DD7DE00600581 /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
+		FCA032401F8DD7DE00600581 /* UIView+PYSearchExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYSearchExtension.m"; sourceTree = "<group>"; };
 		FCAEADD11EB4D3EA006FB6B5 /* IHPXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPXMLNode.h; sourceTree = "<group>"; };
 		FCAEADD21EB4D3EA006FB6B5 /* IHPXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPXMLNode.m; sourceTree = "<group>"; };
 		FCAFC60C1EAED74900B48C83 /* XDSSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSSideMenu.h; sourceTree = "<group>"; };
@@ -693,6 +714,7 @@
 		FC2F6EA01EBCC03900A5AF3D /* IHPSearch */ = {
 			isa = PBXGroup;
 			children = (
+				FCA032321F8DD7DE00600581 /* PYSearch */,
 				FC2F6EA11EBCC03900A5AF3D /* Model */,
 				FC2F6EA21EBCC03900A5AF3D /* View */,
 				FC2F6EA31EBCC03900A5AF3D /* ViewController */,
@@ -767,6 +789,27 @@
 			path = NLETask;
 			sourceTree = "<group>";
 		};
+		FCA032321F8DD7DE00600581 /* PYSearch */ = {
+			isa = PBXGroup;
+			children = (
+				FCA032351F8DD7DE00600581 /* PYSearch.bundle */,
+				FCA032331F8DD7DE00600581 /* NSBundle+PYSearchExtension.h */,
+				FCA032341F8DD7DE00600581 /* NSBundle+PYSearchExtension.m */,
+				FCA032361F8DD7DE00600581 /* PYSearch.h */,
+				FCA032371F8DD7DE00600581 /* PYSearchConst.h */,
+				FCA032381F8DD7DE00600581 /* PYSearchConst.m */,
+				FCA032391F8DD7DE00600581 /* PYSearchSuggestionViewController.h */,
+				FCA0323A1F8DD7DE00600581 /* PYSearchSuggestionViewController.m */,
+				FCA0323B1F8DD7DE00600581 /* PYSearchViewController.h */,
+				FCA0323C1F8DD7DE00600581 /* PYSearchViewController.m */,
+				FCA0323D1F8DD7DE00600581 /* UIColor+PYSearchExtension.h */,
+				FCA0323E1F8DD7DE00600581 /* UIColor+PYSearchExtension.m */,
+				FCA0323F1F8DD7DE00600581 /* UIView+PYSearchExtension.h */,
+				FCA032401F8DD7DE00600581 /* UIView+PYSearchExtension.m */,
+			);
+			path = PYSearch;
+			sourceTree = "<group>";
+		};
 		FCAEADD01EB4D3C5006FB6B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,8 +880,7 @@
 				TargetAttributes = {
 					A0D46B751DE0173500637681 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 85W725W7AQ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -875,6 +917,7 @@
 				A01579F41DE1776C00CD7DDB /* ico_back@3x.png in Resources */,
 				092CAF2F1DE2B20F008127DA /* IHYNewsListCell.xib in Resources */,
 				A01579F31DE1776C00CD7DDB /* ico_back@2x.png in Resources */,
+				FCA032421F8DD7DE00600581 /* PYSearch.bundle in Resources */,
 				09F90D7A1DE2D2F600542684 /* IHYNewsMultableImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,13 +931,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iHappy-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7BEC1C0D1423FA7936C80A9E /* [CP] Copy Pods Resources */ = {
@@ -918,9 +964,50 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iHappy/Pods-iHappy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AspectsV1.4.2/AspectsV1_4_2.framework",
+				"${BUILT_PRODUCTS_DIR}/CWFoundation/CWFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/CWStackController/CWStackController.framework",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JDStatusBarNotification/JDStatusBarNotification.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONKit-NoWarning/JSONKit_NoWarning.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MWPhotoBrowser/MWPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/hpple/hpple.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AspectsV1_4_2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CWFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CWStackController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JDStatusBarNotification.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONKit_NoWarning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hpple.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -944,12 +1031,14 @@
 				FC2F6EA61EBCC05000A5AF3D /* IHPSearchViewController.m in Sources */,
 				092CAF131DE28D56008127DA /* OCTKeyboardObserverHelper.m in Sources */,
 				092CAF001DE28620008127DA /* IHYMovieInfoHeaderView.m in Sources */,
+				FCA032431F8DD7DE00600581 /* PYSearchConst.m in Sources */,
 				092CAF0F1DE28D23008127DA /* UIViewController+HideNavigationBar.m in Sources */,
 				092CAEFD1DE28620008127DA /* IHYMoviePlayButtonModel.m in Sources */,
 				FC8B89AA1EBC8073000AD27A /* IHPPlayerViewController.m in Sources */,
 				FC0B7C7B1EC7FD5A0022E504 /* YSECategoryModel.m in Sources */,
 				092CAEFE1DE28620008127DA /* IHYMovieDetailInfoView.m in Sources */,
 				A05EB9041DE0281D00148A5B /* XDSUtilities.m in Sources */,
+				FCA032441F8DD7DE00600581 /* PYSearchSuggestionViewController.m in Sources */,
 				FC0B7C841EC8B2260022E504 /* INSImageItemCollectionViewCell.m in Sources */,
 				FC9667BD1EC1BE1100DA1A96 /* NLETaskQueue.m in Sources */,
 				A05EB8FF1DE0277E00148A5B /* ForbidTextField.m in Sources */,
@@ -959,8 +1048,10 @@
 				FC0B7C781EC75C290022E504 /* YSEClassifyModel.m in Sources */,
 				FC0B7C811EC801B50022E504 /* YSEImageModel.m in Sources */,
 				FC9667C31EC1C55200DA1A96 /* XDSPlaceholdSplashViewController.m in Sources */,
+				FCA032411F8DD7DE00600581 /* NSBundle+PYSearchExtension.m in Sources */,
 				A05EB9011DE0277E00148A5B /* NSString+Tony.m in Sources */,
 				092CAF031DE28620008127DA /* IHYMovieModel.m in Sources */,
+				FCA032461F8DD7DE00600581 /* UIColor+PYSearchExtension.m in Sources */,
 				09F90D6D1DE2BD8600542684 /* IHYNewsModel.m in Sources */,
 				FC1A8C371EAC255900E66FF8 /* IHPSubMenuModel.m in Sources */,
 				A05EB91D1DE03B2500148A5B /* XDSRootViewController.m in Sources */,
@@ -974,9 +1065,11 @@
 				A05EB8ED1DE0244300148A5B /* XDSKeychain.m in Sources */,
 				A05EB8FE1DE0277E00148A5B /* CALayer+Addition.m in Sources */,
 				A05EB91C1DE03B2500148A5B /* XDSRootTableViewController.m in Sources */,
+				FCA032471F8DD7DE00600581 /* UIView+PYSearchExtension.m in Sources */,
 				A0D46B7E1DE0173500637681 /* AppDelegate.m in Sources */,
 				FC9667C21EC1C55200DA1A96 /* XDSMasterViewController.m in Sources */,
 				A05EB8EE1DE0244300148A5B /* ZDLoadFailView.m in Sources */,
+				FCA032451F8DD7DE00600581 /* PYSearchViewController.m in Sources */,
 				092CAEFB1DE28620008127DA /* IHYViewControllerModel.m in Sources */,
 				FCAFC6111EAED7DF00B48C83 /* IHPConfigModel.m in Sources */,
 				FC0B7C721EC759880022E504 /* YSERequestFetcher.m in Sources */,
@@ -1099,14 +1192,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 85W725W7AQ;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (P7MYHR66R7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiepeng Zheng (P7MYHR66R7)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = iHappy/IPYPrefixHeader.pch;
 				INFOPLIST_FILE = iHappy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e20e7920-cd13-4e93-95c0-5cae77e0ad50";
+				PROVISIONING_PROFILE_SPECIFIER = develop_new;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1117,14 +1214,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 85W725W7AQ;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiepeng Zheng (P7MYHR66R7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiepeng Zheng (P7MYHR66R7)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = iHappy/IPYPrefixHeader.pch;
 				INFOPLIST_FILE = iHappy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youmi.youse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e20e7920-cd13-4e93-95c0-5cae77e0ad50";
+				PROVISIONING_PROFILE_SPECIFIER = develop_new;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

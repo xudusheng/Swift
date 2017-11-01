@@ -30,11 +30,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-
-
+    
     XDSMasterViewController * rootViewController = [XDSMasterViewController sharedRootViewController];
     self.window.rootViewController = rootViewController;
-    
+
     [self showPlaceholderSplashView];
     [self stareLaunchQueue];
 
@@ -105,7 +104,7 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
 //    return;
     
 //    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/iHappy/menu_v1.0.3.json";
-    NSString *requesturl = @"http://dusheng-1253766321.costj.myqcloud.com/iHappy/menu_v1.0.3.json";
+    NSString *requesturl = @"http://opno6uar4.bkt.clouddn.com/menu_v1.0.4.json";
     __weak typeof(self)weakSelf = self;
     [[[XDSHttpRequest alloc] init] htmlRequestWithHref:requesturl
                                          hudController:nil
@@ -176,9 +175,13 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
     self.contentController = [[IHYMainViewController alloc] init];
     _contentController.menuModel = menus.firstObject;
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:_contentController];
+//    self.window.rootViewController = nav;
+//    return;
+    
     self.mainmeunVC = [[XDSSideMenu alloc] initWithContentViewController:nav
                                                   leftMenuViewController:_leftMenu
                                                  rightMenuViewController:nil];
+    
     self.mainmeunVC.contentViewInLandscapeOffsetCenterX = -480;
     self.mainmeunVC.contentViewShadowColor = [UIColor lightGrayColor];
     self.mainmeunVC.contentViewShadowOffset = CGSizeMake(0, 0);
@@ -198,6 +201,19 @@ NSString *const kIHPFetchConfigTaskID = @"IHPFetchConfigTask";
     self.mainmeunVC.delegate = _leftMenu;
     
     self.window.rootViewController = self.mainmeunVC;
+}
+
+
+
+
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    if (self.allowRotation) {
+        return UIInterfaceOrientationMaskAll;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+//    return UIInterfaceOrientationMaskAll;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

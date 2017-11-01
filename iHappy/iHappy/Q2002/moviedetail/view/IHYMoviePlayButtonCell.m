@@ -25,10 +25,21 @@
                                               font:[UIFont systemFontOfSize:13]
                                               text:nil
                                          textColor:[UIColor colorWithHexString:@"#666666"]];
+    self.titleLabel.numberOfLines = 1;
     [self.contentView addSubview:_titleLabel];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.top.mas_equalTo(5);
+        make.bottom.mas_equalTo(-5);
+
     }];
+}
+
+
+
+- (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
+    return [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
 }
 @end
