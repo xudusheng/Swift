@@ -38,13 +38,17 @@ static UIStatusBarStyle splashVCStatusBarStyle = UIStatusBarStyleDefault;
     [super viewDidLoad];
     
     if (!self.isCustomView) {
-        self.view.backgroundColor = [UIColor blackColor];
+//        self.splashImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+//        [self.view addSubview:self.splashImageView];
+//
+//        NSString * imageName = [self getCurrentLaunchImageName];
+//        self.splashImageView.image = [UIImage imageNamed:imageName];
         
-        self.splashImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-        [self.view addSubview:self.splashImageView];
-        
-        NSString * imageName = [self getCurrentLaunchImageName];
-        self.splashImageView.image = [UIImage imageNamed:imageName];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil];
+        UIViewController *lanchVC = [storyboard instantiateViewControllerWithIdentifier:@"LaunchScreenViewController"];
+        lanchVC.view.frame = self.view.bounds;
+        [self.view addSubview:lanchVC.view];
+        [self addChildViewController:lanchVC];
     }
 }
 
@@ -70,7 +74,7 @@ static UIStatusBarStyle splashVCStatusBarStyle = UIStatusBarStyleDefault;
 
 -(BOOL)shouldAutorotate
 {
-    return YES;
+    return NO;
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
