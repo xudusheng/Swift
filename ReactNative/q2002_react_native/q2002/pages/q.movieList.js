@@ -1,7 +1,6 @@
 /**
  * Created by zhengda on 16/10/26.
  */
-
 import React, {Component} from 'react';
 import {
     AppRegistry,
@@ -24,17 +23,17 @@ import NavigatiowView from '../component/navigationbar'
 import * as GlobleConst from './p.const';
 import ScrollableTabView, {DefaultTabBar} from 'react-native-scrollable-tab-view';
 
-var DomParser = require('react-native-html-parser').DOMParser;
+let DomParser = require('react-native-html-parser').DOMParser;
 
 export default class QHome extends Component {
 
     constructor() {
         super();
 
-        var getSectionDataSource = (dataBlob, sectionID) => {
+        let getSectionDataSource = (dataBlob, sectionID) => {
             return dataBlob[sectionID];
         };
-        var getRowDataSource = (dataBlob, sectionID, rowID) => {
+        let getRowDataSource = (dataBlob, sectionID, rowID) => {
             return dataBlob[sectionID + ':' + rowID];
         };
 
@@ -85,9 +84,9 @@ export default class QHome extends Component {
             },
 
             {
-                typeId: 19,
-                typeName: '写真',
-                typeHref: 'http://www.q2002.com/type/19.html',
+                typeId: 3,
+                typeName: '福利',
+                typeHref: 'http://www.q2002.com/type/3.html',
             },
         ];
     }
@@ -140,7 +139,7 @@ export default class QHome extends Component {
 
     configContentViews() {
         var views = [];
-        for (var i = 0; i < this.typeList.length; i++) {
+        for (let i = 0; i < this.typeList.length; i++) {
             let viewIndex = i;
             let viewInfo = this.typeList[viewIndex];
 
@@ -222,8 +221,8 @@ export default class QHome extends Component {
             >
                 <Image source={{uri: rowData.imageurl}} style={styles.imageStyle}/>
                 <View style={styles.textViewStyle}>
-                    <Text style={styles.titleStyle}>{rowData.title}</Text>
-                    <Text style={styles.moneyStyle}>¥{rowData.updateDate}</Text>
+                    <Text style={styles.titleStyle} numberOfLines={2}>{rowData.title}</Text>
+                    <Text style={styles.moneyStyle}>{rowData.updateDate}</Text>
                 </View>
             </TouchableOpacity>;
         return view;
@@ -315,13 +314,14 @@ const styles = StyleSheet.create({
     textViewStyle: {
         justifyContent: 'center',
         position: 'absolute',
-        backgroundColor: 'yellow',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         bottom: 0,
         left: 0,
         right: 0,
     },
     titleStyle: {
         flex: 1,
+        color: 'white',
     },
     moneyStyle: {
         flex: 1,
