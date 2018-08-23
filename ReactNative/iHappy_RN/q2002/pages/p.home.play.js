@@ -62,9 +62,9 @@ export default class QWebView extends Component {
                 let doc = new DomParser().parseFromString(data, 'text/html');
                 console.log('解析完成');
 
-                let playerNode = doc.querySelect('iframe[src]')[0];
+                // let playerNode = doc.querySelect('iframe[src]')[0];
 
-
+let  playerNode = doc.getElementsByTagName
                 let src = playerNode.getAttribute('src');
 
                 console.log(src);
